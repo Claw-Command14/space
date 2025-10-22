@@ -7,7 +7,7 @@ paperwork-justice-pardon-request =
     { paperwork-separator-justice }
         {"["}head=2]PARDON REQUEST[/head]
     { paperwork-separator-justice }
-        {"["}bold]SECTOR:[/bold] Floof Station
+        {"["}bold]SECTOR:[/bold] Claw Command Station
         {"["}bold]STATION:[/bold] {$stationName}
         {"["}bold]SHIFT TIME:[/bold] XX:XX
         {"["}bold]CAPTAIN:[/bold]
@@ -37,7 +37,7 @@ paperwork-justice-restraining-order =
     { paperwork-separator-justice }
     {"["}head=2]RESTRAINING ORDER[/head]
     { paperwork-separator-justice }
-        {"["}bold]SECTOR:[/bold] Floof Station
+        {"["}bold]SECTOR:[/bold] Claw Command Station
         {"["}bold]STATION:[/bold] {$stationName}
         {"["}bold]SHIFT TIME:[/bold] XX:XX
         {"["}bold]DOCUMENT COMPLIER:[/bold]
@@ -61,7 +61,7 @@ paperwork-justice-trial-docket-civil =
     { paperwork-separator-justice }
     {"["}head=2]TRIAL DOCKET - CIVIL[/head]
     { paperwork-separator-justice }
-    {"["}bold]SECTOR:[/bold] Floof Station
+    {"["}bold]SECTOR:[/bold] Claw Command Station
     {"["}bold]STATION:[/bold] {$stationName}
     {"["}bold]CASE:[/bold] (PLAINTIFF) v. (DEFENDANT)
 
@@ -93,7 +93,7 @@ paperwork-justice-trial-docket-criminal =
     { paperwork-separator-justice }
         {"["}head=2]TRIAL DOCKET - CRIMINAL[/head]
     { paperwork-separator-justice }
-        {"["}bold]SECTOR:[/bold] Floof Station
+        {"["}bold]SECTOR:[/bold] Claw Command Station
         {"["}bold]STATION:[/bold] {$stationName}
         {"["}bold]CASE:[/bold] STATION SECURITY v. (DEFENDANT)
         {"["}bold]CAPTAIN:[/bold]

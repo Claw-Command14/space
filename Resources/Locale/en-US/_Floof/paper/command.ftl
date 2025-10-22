@@ -32,7 +32,7 @@ paperwork-command-station-request-for-assistance =
     { paperwork-command-separator }
         {"["}bold]STATION REQUEST FOR ASSISTANCE[/bold]
     { paperwork-command-separator }
-        {"["}bold]SECTOR:[/bold] Floof Station
+        {"["}bold]SECTOR:[/bold] Claw Command Station
         {"["}bold]STATION:[/bold] {$stationName}
         {"["}bold]SHIFT TIME:[/bold] XX:XX
         {"["}bold]CAPTAIN:[/bold]

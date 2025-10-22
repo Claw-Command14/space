@@ -1,6 +1,5 @@
 nsfw-disclaimer-title = ⚠️ ERP Server Disclaimer – Explicit Adult Content ⚠️
-nsfw-disclaimer-text = 
-    Please note that [color=yellow]every Sunday is 'Syndie Sunday', where shifts are much less likely to be calm. Admin-driven events on these days also tend to be more chaotic and impactful.[/color]
+nsfw-disclaimer-text =
 
     This server contains [bold]explicit adult sexual roleplay (ERP)[/bold] and mature themes that are not suitable for minors or individuals sensitive to said explicit material.
 

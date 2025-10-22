@@ -6,7 +6,7 @@ paperwork-security-arrest-report =
     { paperwork-separator-security }
         {"["}head=2]ARREST REPORT[/head]
     { paperwork-separator-security }
-        {"["}bold]SECTOR:[/bold] Floof Station
+        {"["}bold]SECTOR:[/bold] Claw Command Station
         {"["}bold]STATION:[/bold] {$stationName}
         {"["}bold]SHIFT TIME:[/bold] XX:XX
         {"["}bold]HEAD OF SECURITY:[/bold]
@@ -88,7 +88,7 @@ paperwork-security-arrest-warrant =
     { paperwork-separator-security }
         {"["}head=2]ARREST WARRANT [/head]
     { paperwork-separator-security }
-        {"["}bold]SECTOR:[/bold] Floof Station
+        {"["}bold]SECTOR:[/bold] Claw Command Station
         {"["}bold]STATION:[/bold] {$stationName}
         {"["}bold]SHIFT TIME:[/bold] XX:XX
         {"["}bold]ARRESTING OFFICER: [/bold]
@@ -113,7 +113,7 @@ paperwork-security-department-search-warrant =
     { paperwork-separator-security }
         {"["}head=2]DEPARTMENT SEARCH WARRANT [/head]
     { paperwork-separator-security }
-        {"["}bold]SECTOR:[/bold] Floof Station
+        {"["}bold]SECTOR:[/bold] Claw Command Station
         {"["}bold]STATION:[/bold] {$stationName}
         {"["}bold]SHIFT TIME:[/bold] XX:XX
         {"["}bold]PROSECUTOR:[/bold]
@@ -200,7 +200,7 @@ paperwork-security-individual-search-warrant =
     { paperwork-separator-security }
         {"["}head=2]INDIVIDUAL SEARCH WARRANT [/head]
     { paperwork-separator-security }
-        {"["}bold]SECTOR:[/bold] Floof Station
+        {"["}bold]SECTOR:[/bold] Claw Command Station
         {"["}bold]STATION:[/bold] {$stationName}
         {"["}bold]SHIFT TIME:[/bold] XX:XX
         {"["}bold]PROSECUTOR:[/bold]
@@ -229,7 +229,7 @@ paperwork-security-inmate-request =
     { paperwork-separator-security }
         {"["}head=2]Inmate Request form [/head]
     { paperwork-separator-security }
-        {"["}bold]  SECTOR:[/bold] Floof Station
+        {"["}bold]  SECTOR:[/bold] Claw Command Station
         {"["}bold]  STATION:[/bold] {$stationName}
         {"["}bold]  SHIFT TIME:[/bold] XX:XX
         {"["}bold]  WARDEN:[/bold]

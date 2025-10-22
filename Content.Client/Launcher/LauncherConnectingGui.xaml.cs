@@ -53,8 +53,8 @@ namespace Content.Client.Launcher
             RetryButton.OnPressed += _ => _state.RetryConnect();
             ExitButton.OnPressed += _ => _state.Exit();
 
-            WhitelistApplyButton.OnPressed += _ => _uri.OpenUri("https://discord.gg/floofstation"); // Floof discord link
-            WhitelistApplyButtonDisconnect.OnPressed += _ => _uri.OpenUri("https://discord.gg/floofstation"); // Floof discord link
+            WhitelistApplyButton.OnPressed += _ => _uri.OpenUri("https://discord.gg/Bj5DjEJNPq"); // discord link
+            WhitelistApplyButtonDisconnect.OnPressed += _ => _uri.OpenUri("https://discord.gg/Bj5DjEJNPq"); // discord link
 
             var addr = state.Address;
             if (addr != null)

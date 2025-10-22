@@ -6,7 +6,7 @@ paperwork-medical-death-certificate =
     { paperwork-separator-medical }
         {"["}head=2]DEATH CERTIFICATE[/head]
     { paperwork-separator-medical }
-        {"["}bold]SECTOR:[/bold] Floof Station
+        {"["}bold]SECTOR:[/bold] Claw Command Station
         {"["}bold]STATION:[/bold] {$stationName}
         {"["}bold]SHIFT TIME:[/bold] XX:XX
         {"["}bold]CMO:[/bold]
@@ -30,7 +30,7 @@ paperwork-medical-order-of-dismissal =
     { paperwork-separator-medical }
         {"["}head=2]ORDER OF DISMISSAL - MEDICALLY UNFIT [/head]
     { paperwork-separator-medical }
-        {"["}bold]SECTOR:[/bold] Floof Station
+        {"["}bold]SECTOR:[/bold] Claw Command Station
         {"["}bold]STATION:[/bold] {$stationName}
         {"["}bold]SHIFT TIME:[/bold] XX:XX
         {"["}bold]CAPTAIN:[/bold]

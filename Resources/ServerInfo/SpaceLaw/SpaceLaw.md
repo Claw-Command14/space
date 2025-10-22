@@ -1,4 +1,4 @@
-# Floof Station Law
+# Claw Command Law
 
 ## Crime Codes
 
