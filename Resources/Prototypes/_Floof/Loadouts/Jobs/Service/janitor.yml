@@ -181,7 +181,7 @@
         - Janitor
     - !type:CharacterPlaytimeRequirement
       tracker: JobJanitor
-      min: 36000 # 10 hours
+      min: 9000 # 2.5 hours
 
 # Mask
 

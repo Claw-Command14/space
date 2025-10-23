@@ -277,7 +277,7 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobCaptain
-      min: 36000 # 10 hours
+      min: 9000 # 2.5 hrs
     - !type:CharacterItemGroupRequirement
       group: LoadoutCaptainId
     - !type:CharacterJobRequirement

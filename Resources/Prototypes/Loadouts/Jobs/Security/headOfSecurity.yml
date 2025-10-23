@@ -147,7 +147,7 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobHeadOfSecurity
-      min: 36000 # 10 hours
+      min: 9000 # 2.5 hrs
     - !type:CharacterItemGroupRequirement
       group: LoadoutHeadOfSecurityId
     - !type:CharacterJobRequirement
@@ -226,7 +226,7 @@
         - HeadOfSecurity
   items:
     - ClothingLongcoatHoS
-    
+
 - type: loadout
   id: LoadoutCommandHOSOuterTrench
   category: JobsSecurityHeadOfSecurity

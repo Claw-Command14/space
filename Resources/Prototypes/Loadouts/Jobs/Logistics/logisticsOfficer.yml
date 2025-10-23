@@ -35,7 +35,7 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobQuartermaster
-      min: 36000 # 10 hours
+      min: 9000 # 2.5 hrs
     - !type:CharacterItemGroupRequirement
       group: LoadoutLogisticsOfficerId
     - !type:CharacterJobRequirement

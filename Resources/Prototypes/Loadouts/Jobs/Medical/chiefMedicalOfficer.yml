@@ -75,7 +75,7 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobChiefMedicalOfficer
-      min: 36000 # 10 hours
+      min: 9000 # 2.5 hrs
     - !type:CharacterItemGroupRequirement
       group: LoadoutChiefMedicalOfficerId
     - !type:CharacterJobRequirement
