@@ -4,9 +4,9 @@
   name: lewd crate
   components:
   - type: Icon
-    sprite: _Floof/Structures/lewdcrate.rsi
+    sprite: Structures/Storage/Crates/generic.rsi
   - type: Sprite
-    sprite: _Floof/Structures/lewdcrate.rsi
+    sprite: Structures/Storage/Crates/generic.rsi
   - type: Reflect
     reflects:
     - Energy
@@ -19,9 +19,9 @@
   name: kink crate
   components:
   - type: Icon
-    sprite: _Floof/Structures/kinkcrate.rsi
+    sprite: Structures/Storage/Crates/generic.rsi
   - type: Sprite
-    sprite: _Floof/Structures/kinkcrate.rsi
+    sprite: Structures/Storage/Crates/generic.rsi
   - type: Reflect
     reflects:
     - Energy

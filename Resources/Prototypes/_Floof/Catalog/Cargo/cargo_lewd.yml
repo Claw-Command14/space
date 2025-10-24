@@ -4,7 +4,7 @@
     sprite: _Floof/Objects/Fun/Lewd/lewd_icons.rsi
     state: dildo
   product: CrateLewdToys
-  cost: 1000
+  cost: 250
   category: cargoproduct-category-name-fun
   group: market
 
@@ -14,6 +14,6 @@
     sprite: _Floof/Objects/Fun/Lewd/Weapons/crotch_pink.rsi
     state: icon
   product: CrateLewdKink
-  cost: 1000
+  cost: 250
   category: cargoproduct-category-name-fun
   group: market

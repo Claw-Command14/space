@@ -19,20 +19,20 @@
 - type: entity
   parent: [DrinkBottleVisualsOpenable, DrinkBottleGlassBaseFull]
   id: DrinkCumBottleFull
-  name: bottle'o'cum
+  name: Just a drink
                                                                       # you're welcome azzy
-  description: Straight nard nectar. 100% Ethically Sourced Guaranteed! Boneless.
+  description: Just a drink.
   components:
   - type: SolutionContainerManager
     solutions:
       drink:
         reagents:
-        - ReagentId: Cum
+        - ReagentId: Eggnog
           Quantity: 100
   - type: Label
-    currentLabel: bottle'o'cum
+    currentLabel: Just a drink.
   - type: Sprite
-    sprite: _Floof/Objects/Consumable/Drinks/bottleocum.rsi
+    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
   - type: Sealable
 
 - type: entity

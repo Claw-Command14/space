@@ -7,7 +7,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_human.rsi
+      - sprite: _Floof/Objects/Fun/Lewd/Weapons/crotch_pink.rsi
         state: icon
   - type: EntityTableSpawner
     table: !type:NestedSelector
@@ -23,7 +23,7 @@
   - type: Sprite
     layers:
       - state: red
-      - sprite: _Floof/Objects/Fun/Lewd/Toys/Fleshlights/fleshlight_pink.rsi
+      - sprite: _Floof/Objects/Fun/Lewd/Weapons/crotch_pink.rsi
         state: icon
   - type: EntityTableSpawner
     table: !type:NestedSelector
@@ -51,79 +51,56 @@
   table: !type:GroupSelector
     children:
     - !type:NestedSelector
-      tableId: LewdVibes
-      weight: 10
-    - !type:NestedSelector
-      tableId: LewdFleshlights
-      weight: 10
-    - !type:NestedSelector
-      tableId: LewdDildos
-      weight: 10
-    - !type:NestedSelector
-      tableId: LewdImpactPlay
-      weight: 5
-    - !type:NestedSelector
       tableId: LewdKinkClothing
       weight: 10
     - !type:NestedSelector
-      tableId: LewdKinkTools
-      weight: 5
+      tableId: LewdImpactPlay
+
 
 - type: entityTable
   id: LewdLootToys
   table: !type:GroupSelector
     children:
     - !type:NestedSelector
-      tableId: LewdVibes
+      tableId: LewdKinkClothing
     - !type:NestedSelector
-      tableId: LewdFleshlights
-    - !type:NestedSelector
-      tableId: LewdDildos
+      tableId: LewdImpactPlay
 
 - type: entityTable
   id: LewdLootKinky
   table: !type:GroupSelector
     children:
     - !type:NestedSelector
-      tableId: LewdImpactPlay
-    - !type:NestedSelector
       tableId: LewdKinkClothing
     - !type:NestedSelector
-      tableId: LewdKinkTools
+      tableId: LewdImpactPlay
 
 - type: entityTable
   id: LewdVibes
   table: !type:GroupSelector
     children:
-    - id: LewdWand
-    - id: LewdVibeGreen
-    - id: LewdVibeTeal
-    - id: LewdVibePink
-    - id: LewdVibeRed
-    - id: LewdVibeYellow
+    - !type:NestedSelector
+      tableId: LewdKinkClothing
+    - !type:NestedSelector
+      tableId: LewdImpactPlay
 
 - type: entityTable
   id: LewdFleshlights
   table: !type:GroupSelector
     children:
-    - id: LewdFleshlightGreen
-    - id: LewdFleshlightTeal
-    - id: LewdFleshlightPink
-    - id: LewdFleshlightRed
-    - id: LewdFleshlightYellow
+    - !type:NestedSelector
+      tableId: LewdKinkClothing
+    - !type:NestedSelector
+      tableId: LewdImpactPlay
 
 - type: entityTable
   id: LewdDildos
   table: !type:GroupSelector
     children:
-    - id: AvianDildo
-    - id: CanineDildo
-    - id: CanineDildoRed
-    - id: HorseDildo
-    - id: DragonDildo
-    - id: NormalDildo
-    - id: TentacleDildo
-    - id: DoubleDildo
+    - !type:NestedSelector
+      tableId: LewdKinkClothing
+    - !type:NestedSelector
+      tableId: LewdImpactPlay
 
 - type: entityTable
   id: LewdImpactPlay
@@ -287,7 +264,6 @@
     - id: ClothingMaskGasMuffled
     - id: ClothingMaskMuzzle
     - id: ClothingEyesBlindfold
-    - id: DrinkCumBottleFull
     - id: Handcuffs
       weight: 0.5 # Making these a little rarer since they're power items
     - id: Zipties # These should never actually be used for kink
