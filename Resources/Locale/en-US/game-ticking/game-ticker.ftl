@@ -7,7 +7,7 @@ game-ticker-unknown-role = Unknown
 game-ticker-delay-start = Round start has been delayed for {$seconds} seconds.
 game-ticker-pause-start = Round start has been paused.
 game-ticker-pause-start-resumed = Round start countdown is now resumed.
-game-ticker-player-join-game-message = Welcome to Claw Command Station 14 [18+]! If this is your first time playing, be sure to read the game rules in the top left, and don't be afraid to ask for help in the chat via LOOC (local OOC) or OOC (usually available only between rounds).
+game-ticker-player-join-game-message = Welcome to Claw Command Station 14 [18+], a brand new welcoming server for adults! Be sure to read the game rules, and don't be afraid to ask for help in the chat via LOOC or OOC (usually available only between rounds) or in our Discord server. If the station is without power or filled with danger, you may request a round restart in our Discord.
 game-ticker-get-info-text = Hi and welcome to [color=white]Space Station 14![/color]
                             The current round is: [color=white]#{$roundId}[/color]
                             The current player count is: [color=white]{$playerCount}[/color]
@@ -25,7 +25,7 @@ game-ticker-get-info-preround-text = Hi and welcome to [color=white]Space Statio
                             >[color=yellow]{$desc}[/color]
 game-ticker-no-map-selected = [color=yellow]Map not yet selected![/color]
 game-ticker-player-no-jobs-available-when-joining = When attempting to join to the game, no jobs were available.
-game-ticker-welcome-to-the-station = Welcome to the station crew, enjoy your stay!
+game-ticker-welcome-to-the-station = Welcome to the station claw crew, enjoy your stay!
 
 # Displayed in chat to admins when a player joins
 player-join-message = Player {$name} joined.
