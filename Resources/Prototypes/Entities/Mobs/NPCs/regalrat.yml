@@ -1,4 +1,4 @@
-- type: entity
+- type: entity #
   name: Rat King
   id: MobRatKing
   parent: [ SimpleMobBase, MobCombat ]
@@ -19,7 +19,7 @@
       Extinguish: [Touch]
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - RatKingFaction # Claw
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/regalrat.rsi
@@ -207,7 +207,7 @@
       Extinguish: [Touch]
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - RatKingFaction # Claw
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/rat.rsi

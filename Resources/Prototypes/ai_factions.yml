@@ -8,6 +8,7 @@
     - Zombie
     - Revolutionary
     - Gorilla # Floof
+    - RatKingFaction # CLAW
 
 - type: npcFaction
   id: NanoTrasen
@@ -52,6 +53,7 @@
   - Revolutionary
   - Gorilla  # Floof
   - GeometerOfBlood
+  - RatKingFaction # Claw
 
 - type: npcFaction
   id: SimpleNeutral
@@ -76,6 +78,7 @@
   - Zombie
   - Revolutionary
   - Gorilla # Floof
+  - RatKingFaction #claw
 
 - type: npcFaction
   id: Zombie
@@ -173,3 +176,18 @@
     - GladiabotRed
     - GladiabotGreen
     - GladiabotBlue
+
+# Claw command
+- type: npcFaction
+  id: RatKingFaction # the servants should go against its king
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - Gorilla
+  - GeometerOfBlood
+  - AnimalFriend
+  - Xeno
