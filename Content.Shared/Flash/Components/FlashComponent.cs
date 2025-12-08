@@ -25,7 +25,7 @@ namespace Content.Shared.Flash.Components
 
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("aoeFlashDuration")]
-        public int AoeFlashDuration { get; set; } = 2000;
+        public int AoeFlashDuration { get; set; } = 3000;
 
         [DataField("slowTo")]
         [ViewVariables(VVAccess.ReadWrite)]
