@@ -7,7 +7,7 @@
     startAnnouncement: true
     earliestStart: 20
     reoccurrenceDelay: 20
-    minimumPlayers: 5
+    minimumPlayers: 10
     weight: 6 # Really weak compared to other critters
     duration: 80
   - type: VentCrittersRule
