@@ -234,7 +234,7 @@
   - type: StationEvent
     earliestStart: 20
     weight: 7.5
-    minimumPlayers: 2 # Floof
+    minimumPlayers: 8 # claw command
     startAnnouncement: true
     endAnnouncement: true
     duration: null #ending is handled by MeteorSwarmRule
