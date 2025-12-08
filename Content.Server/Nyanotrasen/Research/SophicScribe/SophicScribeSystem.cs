@@ -40,6 +40,10 @@ public sealed partial class SophicScribeSystem : EntitySystem
 
             var message = Loc.GetString("glimmer-report", ("level", _glimmerSystem.Glimmer));
             var channel = _prototypeManager.Index<RadioChannelPrototype>("Science");
+            if (_glimmerSystem.Glimmer > 175)
+            {
+                channel = _prototypeManager.Index<RadioChannelPrototype>("Common");
+            }
             _radioSystem.SendRadioMessage(scribe, message, channel, scribe);
 
             scribeComponent.NextAnnounceTime = curTime + scribeComponent.AnnounceInterval;
