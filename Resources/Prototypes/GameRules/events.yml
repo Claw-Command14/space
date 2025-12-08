@@ -186,7 +186,7 @@
     weight: 7 # Floof - Changed from 7.5
     duration: 1
     earliestStart: 45
-    minimumPlayers: 3
+    minimumPlayers: 15
   - type: RandomSpawnRule
     prototype: MobRevenant
 
