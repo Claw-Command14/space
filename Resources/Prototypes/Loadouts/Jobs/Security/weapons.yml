@@ -669,7 +669,7 @@
 - type: loadout
   id: LoadoutSecurityPistolViper
   category: JobsSecurityWeapons
-  cost: 2
+  cost: 4
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
