@@ -173,8 +173,11 @@
   name: svalinn laser pistol
   parent: BaseWeaponPowerCellSmall
   id: WeaponLaserSvalinn
-  description: A cheap and widely used laser pistol.
+  description: A cheap and widely used civilian-grade laser pistol.
   components:
+  - type: Tag
+    tags:
+    - WeaponLaserSvalinn
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
     layers:

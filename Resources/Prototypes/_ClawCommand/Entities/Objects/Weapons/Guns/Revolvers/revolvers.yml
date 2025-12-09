@@ -25,3 +25,17 @@
   - type: Appearance
   - type: StaticPrice
     price: 5000
+
+
+- type: entity
+  name: Trash Remover
+  description: A very rare, special made revolver meant for Claw Command Maid to face the dangers of people trespassers on the bridge. Rosie gold plated.
+  parent: WeaponRevolverTrashRemover
+  id: WeaponRevolverTrashRemoverLoaded
+  components:
+  - type: RevolverAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - SpeedLoaderMagnum
+    proto: CartridgeMagnumRubber

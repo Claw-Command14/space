@@ -156,6 +156,9 @@
     - type: LimitedCharges
       maxCharges: 5
       charges: 5
+    - type: Tag
+      tags:
+      - Flash
     - type: MeleeWeapon
       wideAnimationRotation: 180
       damage:

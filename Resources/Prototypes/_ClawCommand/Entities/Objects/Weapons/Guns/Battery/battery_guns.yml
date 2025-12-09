@@ -1,0 +1,36 @@
+- type: entity
+  name: jury-rigged svalinn PDW
+  parent: WeaponLaserSvalinn
+  id: WeaponLaserSvalinnPDW
+  description: A technically-legal modification of a civilian-grade laser pistol, meant for pest control in sectors where "pests" really means "dog-sized carnivorous spiders". The low quality of the base gun means the emitter tends to overheat on full-auto even with the oversized sink built into the thing.
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Weapons/Guns/Battery/svalinn.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Item
+    sprite: _ClawCommand/Objects/Weapons/Guns/Battery/svalinn.rsi
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: Gun
+    selectedMode: FullAuto
+    fireRate: 4
+    availableModes:
+      - SemiAuto
+      - FullAuto
+    minAngle: 5
+    maxAngle: 30
+    angleIncrease: 5
+    angleDecay: 20
+  - type: Construction
+    graph: SvalinnPDWGraph
+    node: svalinnPDW
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true

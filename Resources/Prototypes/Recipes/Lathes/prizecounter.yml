@@ -607,14 +607,6 @@
     PrizeTicket: 50
 
 - type: latheRecipe
-  id: SynthesizerInstrument
-  result: SynthesizerInstrument
-  applyMaterialDiscount: false
-  completetime: 0.1
-  materials:
-    PrizeTicket: 50
-
-- type: latheRecipe
   id: TomDrumsInstrument
   result: TomDrumsInstrument
   applyMaterialDiscount: false
@@ -639,16 +631,8 @@
     PrizeTicket: 100
 
 - type: latheRecipe
-  id: ModularReceiver
-  result: ModularReceiver
-  applyMaterialDiscount: false
-  completetime: 0.1
-  materials:
-    PrizeTicket: 300
-
-- type: latheRecipe
   id: ClothingHandsGlovesColorYellow
-  result: ModularClothingHandsGlovesColorYellowReceiver
+  result: ClothingHandsGlovesColorYellow
   applyMaterialDiscount: false
   completetime: 0.1
   materials:

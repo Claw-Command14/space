@@ -1,0 +1,12 @@
+- type: construction
+  name: svalinn PDW upgrade
+  id: svalinnPDW
+  graph: SvalinnPDWGraph
+  startNode: start
+  targetNode: svalinnPDW
+  category: construction-category-weapons
+  description: An extra large heatsink and some rewiring to make svalinn fire faster.
+  icon:
+    sprite: _ClawCommand/Objects/Weapons/Guns/Battery/svalinn.rsi
+    state: icon
+  objectType: Item

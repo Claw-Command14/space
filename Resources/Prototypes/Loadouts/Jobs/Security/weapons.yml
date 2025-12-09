@@ -738,7 +738,7 @@
 - type: loadout
   id: LoadoutSecurityPistolSvalin
   category: JobsSecurityWeapons
-  cost: 1
+  cost: 0 # Its only upside is being a laser - deals one third of any other laser at the same firerate.
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -758,6 +758,30 @@
       - BlueshieldMaid
   items:
   - WeaponLaserSvalinn
+  
+- type: loadout
+  id: LoadoutSecurityPistolSvalinPDW
+  category: JobsSecurityWeapons
+  cost: 1 # Upgradeable a bit, but very inaccurate and still worse than any other laser.
+  canBeHeirloom: true
+  guideEntry: SecurityWeapons
+  requirements:
+  - !type:CharacterDepartmentTimeRequirement
+    department: Security
+    min: 3600 # 1 hours
+  - !type:CharacterItemGroupRequirement
+    group: LoadoutSecurityWeapons
+  - !type:CharacterLogicOrRequirement
+    requirements:
+    - !type:CharacterDepartmentRequirement
+      departments:
+      - Security
+    - !type:CharacterJobRequirement
+      jobs:
+      - BlueshieldOfficer
+      - BlueshieldMaid
+  items:
+  - WeaponLaserSvalinnPDW
 
 - type: loadout
   id: LoadoutSecurityEnergyGunMini
