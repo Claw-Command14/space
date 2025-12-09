@@ -45,7 +45,7 @@
   storage:
     back:
     - BoxSurvivalSyndicate
-    - WeaponPistolViper
+    #- WeaponPistolViper
     - PinpointerSyndicateNuclear
     - DeathAcidifierImplanter
 

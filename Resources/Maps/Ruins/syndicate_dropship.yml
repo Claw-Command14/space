@@ -1179,15 +1179,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 11.5,0.5
       parent: 1
-- proto: WeaponPistolViper
-  entities:
-  - uid: 144
-    components:
-    - type: Transform
-      pos: 12.406186,-3.55441
-      parent: 1
-    - type: ChamberMagazineAmmoProvider
-      boltClosed: True
 - proto: WeaponTurretHostile
   entities:
   - uid: 11
