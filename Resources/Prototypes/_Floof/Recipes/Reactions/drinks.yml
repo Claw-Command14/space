@@ -45,46 +45,6 @@
     AppleberryFizz: 3
 
 - type: reaction
-  id: BandE
-  requiredMixerCategories:
-  - Stir
-  reactants:
-    BlackRussian:
-      amount: 1
-    BlueCuracao:
-      amount: 1
-    Cum:
-      amount: 1
-  products:
-    BandE: 3
-
-- type: reaction
-  id: BethanysCumLust
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Cum:
-      amount: 4
-    Pomelustine:
-      amount: 3
-    NikkosNaughtyNectar:
-      amount: 4
-  products:
-    BethanysCumLust: 11
-
-- type: reaction
-  id: BethanysSluttyCumLust
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    BethanysCumLust:
-      amount: 11
-    Philterex:
-      amount: 3
-  products:
-    BethanysSluttyCumLust: 14
-
-- type: reaction
   id: BlueBaller
   requiredMixerCategories:
   - Stir
@@ -195,22 +155,6 @@
     DeadMansDraught: 4
 
 - type: reaction
-  id: DemonSeed
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Blood:
-      amount: 2
-    Cum:
-      amount: 1
-    Pomelustine:
-      amount: 2
-    Vodka:
-      amount: 1
-  products:
-    DemonSeed: 6
-
-- type: reaction
   id: DirtyWastelander
   reactants:
     JuiceBerry:
@@ -221,20 +165,6 @@
       amount: 1
   products:
     DirtyWastelander: 3
-
-- type: reaction
-  id: DoubleCreamBlaster
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Cream:
-      amount: 1
-    Cum:
-      amount: 1
-    RootBeer:
-      amount: 1
-  products:
-    DoubleCreamBlaster: 3
 
 - type: reaction
   id: DragonsBlood
@@ -263,22 +193,6 @@
       amount: 1
   products:
     DragonsBreath: 3
-
-- type: reaction
-  id: DragonsSeed
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    CapsaicinOil:
-      amount: 1
-    Cum:
-      amount: 1
-    JuiceOrange:
-      amount: 1
-    JuiceTomato:
-      amount: 1
-  products:
-    DragonsSeed: 4
 
 - type: reaction
   id: Eggnog
@@ -409,20 +323,6 @@
     KoboldKooler: 15
 
 - type: reaction
-  id: KoboldKorkscrew
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Cum:
-      amount: 1
-    JuiceOrange:
-      amount: 1
-    SodaWater:
-      amount: 1
-  products:
-    KoboldKorkscrew: 3
-
-- type: reaction
   id: Lamplight
   requiredMixerCategories:
   - Stir
@@ -481,20 +381,6 @@
     MarieJulep: 4
 
 - type: reaction
-  id: MarsBar
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Cum:
-      amount: 1
-    HotCocoa:
-      amount: 1
-    Whiskey:
-      amount: 1
-  products:
-    MarsBar: 3
-
-- type: reaction
   id: MilkChoco
   requiredMixerCategories:
   - Stir
@@ -547,22 +433,6 @@
       amount: 1
   products:
     OpsShine: 3
-
-- type: reaction
-  id: OrgasmOnTheBeach
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Cum:
-      amount: 1
-    JuiceOrange:
-      amount: 2
-    JuiceWatermelon:
-      amount: 2
-    Vodka:
-      amount: 1
-  products:
-    OrgasmOnTheBeach: 5
 
 - type: reaction
   id: Pomonade
@@ -639,22 +509,6 @@
     PrisonWine: 4
 
 - type: reaction
-  id: QuadrupleCreamChalice
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Cream:
-      amount: 1
-    Cum:
-      amount: 1
-    IceCream:
-      amount: 1
-    Milk:
-      amount: 1
-  products:
-    QuadrupleCreamChalice: 4
-
-- type: reaction
   id: RandyStallion
   reactants:
     Coffee:
@@ -699,46 +553,6 @@
     SalvagersDelight: 10
 
 - type: reaction
-  id: SemenBomb
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Ale:
-      amount: 2
-    Cum:
-      amount: 1
-  products:
-    SemenBomb: 3
-
-- type: reaction
-  id: SemenHemorrhage
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Cum:
-      amount: 1
-    Grenadine:
-      amount: 1
-    JuiceApple:
-      amount: 2
-  products:
-    SemenHemorrhage: 5
-
-- type: reaction
-  id: SilverStallion
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Coffee:
-      amount: 1
-    Cum:
-      amount: 1
-    SodaWater:
-      amount: 1
-  products:
-    SilverStallion: 3
-
-- type: reaction
   id: SlimesDelight
   requiredMixerCategories:
   - Shake
@@ -751,35 +565,6 @@
       amount: 1
   products:
     SlimesDelight: 3
-
-
-- type: reaction
-  id: Snowball
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Cum:
-      amount: 1
-    Ice:
-      amount: 2
-    Sugar:
-      amount: 1
-  products:
-    Snowball: 4
-
-- type: reaction
-  id: SpecialSundae
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Cum:
-      amount: 1
-    IceCream:
-      amount: 1
-    JuicePomegranate:
-      amount: 1
-  products:
-    SpecialSundae: 3
 
 - type: reaction
   id: SyndicateEggnog
@@ -854,36 +639,6 @@
       amount: 1
   products:
     WakeUpJuice: 4
-
-- type: reaction
-  id: WatermelonGinJizz
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Cum:
-      amount: 1
-    JuiceWatermelon:
-      amount: 2
-    SodaWater:
-      amount: 1
-    Vodka:
-      amount: 1
-  products:
-    WatermelonGinJizz: 5
-
-- type: reaction
-  id: TheWaterslide
-  requiredMixerCategories:
-  - Shake
-  reactants:
-    Beer:
-      amount: 1
-    Cum:
-      amount: 1
-    Water:
-      amount: 1
-  products:
-    TheWaterslide: 3
 
 - type: reaction
   id: WhiskeySour

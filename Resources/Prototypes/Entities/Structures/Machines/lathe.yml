@@ -1753,7 +1753,6 @@
       - ClothingHandsChefWarmers
       - ClothingUnderSocksChef
       - ClothingUniformChefThong
-      - ClothingUniformNudityPermit
       # Floofstation section end
   - type: EmagLatheRecipes
     emagStaticRecipes:
@@ -1940,6 +1939,17 @@
     idleState: icon
     runningState: icon
     staticRecipes:
+      - SuperSynthesizerInstrument # claw command
+      - MedkitAdvancedFilled  #claw command
+      - ClothingUniformSmallWeaponPermit #claw command
+      - HarmonicaInstrument #claw command
+      - SaxophoneInstrument #claw command
+      - SynthesizerInstrument #claw command
+      - TomDrumsInstrument #claw command
+      - KalimbaInstrument #claw command
+      - ElectricGuitarInstrument #claw command
+      - ModularReceiver #claw command
+      - ClothingHandsGlovesColorYellow #claw command
       - PrizeBall
       - PlushieMothRandom
       - PlushieShadowkin

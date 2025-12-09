@@ -32,38 +32,6 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkDemonSeedGlass
-  suffix: demon seed
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: DemonSeed
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/demonseed.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkDoubleCreamBlasterGlass
-  suffix: double cream blaster
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: DoubleCreamBlaster
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/doublecreamblaster.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
   id: DrinkDragonsBloodGlass
   suffix: dragon's blood
   components:
@@ -92,22 +60,6 @@
           Quantity: 30
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/dragonsbreath.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkDragonsSeedGlass
-  suffix: dragon's seed
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: DragonsSeed
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/dragonsseed.rsi
     state: icon
 
 - type: entity
@@ -208,22 +160,6 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkKoboldKorkscrewGlass
-  suffix: kobold korkscrew
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: KoboldKorkscrew
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/koboldkorkscrew.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
   id: DrinkLamplightGlass
   suffix: lamplight
   components:
@@ -288,22 +224,6 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkMarsBarGlass
-  suffix: mars bar
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: MarsBar
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/marsbar.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
   id: DrinkMossBloodShotGlass
   suffix: moss' blood shot
   components:
@@ -332,22 +252,6 @@
           Quantity: 30
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/opsshine.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkOrgasmOnTheBeachGlass
-  suffix: orgasm on the beach
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: OrgasmOnTheBeach
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/orgasmonthebeach.rsi
     state: icon
 
 - type: entity
@@ -448,54 +352,6 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkSemenBombGlass
-  suffix: semen bomb
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SemenBomb
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/semenbomb.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkSemenHemorrhageGlass
-  suffix: semen hemorrhage
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SemenHemorrhage
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/semenhemorrhage.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkSilverStallionGlass
-  suffix: silver stallion
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SilverStallion
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/silverstallion.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
   id: DrinkSyndicatesOverseerGlass
   suffix: syndicates's overseer
   components:
@@ -524,22 +380,6 @@
           Quantity: 30
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/voltage.rsi
-    state: icon
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkWatermelonGinJizzGlass
-  suffix: watermelon gin jizz
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: WatermelonGinJizz
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/watermelonginjizz.rsi
     state: icon
 
 - type: entity

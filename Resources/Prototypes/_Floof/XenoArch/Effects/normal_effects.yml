@@ -14,7 +14,6 @@
       maxVol: 100
       canReact: false
     possibleChemicals:
-    - Cum
     - NaturalLubricant
     - Pomelustine
 
@@ -35,7 +34,6 @@
       canReact: false
     possibleChemicals:
     - Blood
-    - Cum
     - NaturalLubricant
     - Pomelustine
 
@@ -147,7 +145,7 @@
 
 - type: artifactEffect # Floof - A Supermatter is still safer then a Singulo or a Tesla
   id: EffectSupermatter
-  targetDepth: 8 
+  targetDepth: 8
   effectHint: artifact-effect-hint-destruction
   components:
   - type: SpawnArtifact

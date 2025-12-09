@@ -1,13 +1,3 @@
-- type: loadout
-  id: ClothingUniformNudityPermit
-  category: Uniform
-  cost: 0
-  exclusive: true
-  items:
-    - ClothingUniformNudityPermit
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutUniformsCivilian
 
 - type: loadout
   id: LoadoutUniformJumpskirtTacticalMaid

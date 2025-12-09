@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingUniformThongBase
+  id: ClothingUniformSmallWeaponPermit
+  name: prize weapon permit
+  description: This permit entitles the bearer to conduct their duties with a small side-arm. This item is obtainable at the prize counter.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/nuditypermit.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/nuditypermit.rsi
+    equipDelay: 0
+    unequipDelay: 0

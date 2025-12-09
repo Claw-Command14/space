@@ -193,8 +193,6 @@
     id: LoadoutClothingJumpsuitSuitWhiteMob
   # start Floof
   - type: loadout
-    id: ClothingUniformNudityPermit
-  - type: loadout
     id: LoadoutUniformJumpskirtTacticalMaid
   - type: loadout
     id: LoadoutUniformJumpskirtJanimaid

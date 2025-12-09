@@ -68867,13 +68867,6 @@ entities:
     - type: Transform
       pos: -3.5586867,-1.3939255
       parent: 2
-- proto: DrinkKoboldKorkscrewGlass
-  entities:
-  - uid: 16348
-    components:
-    - type: Transform
-      pos: -26.938158,57.683617
-      parent: 2
 - proto: DrinkLemonJuice
   entities:
   - uid: 5279
