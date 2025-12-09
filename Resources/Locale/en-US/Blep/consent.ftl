@@ -18,14 +18,14 @@ consent-examine-verb = Consent Info
 consent-examine-not-set = This player has no consent preferences set. Ask for consent first before engaging in any erotic roleplay.
 
 # Consent toggles
-consent-Vore-name = Vore Prey
-consent-Vore-desc = Allow yourself to be prey or insert yourself into a pred.
+consent-Vore-name = Vore Prey (disabled)
+consent-Vore-desc = Don't enable this, vore is disallowed on Claw Command.
 
-consent-VorePred-name = Vore Pred
-consent-VorePred-desc = Allow yourself to be pred or have prey insert themselves into you.
+consent-VorePred-name = Vore Pred (disabled)
+consent-VorePred-desc = Don't enable this, vore is disallowed on Claw Command.
 
-consent-Digestion-name = Digestion
-consent-Digestion-desc = Allow yourself to be digested. WARNING: BEING DIGESTED WILL ROUND-REMOVE YOU.
+consent-Digestion-name = Digestion (disabled)
+consent-Digestion-desc = Don't enable this, vore is disallowed on Claw Command.
 
 consent-Hypno-name = Hypnosis
 consent-Hypno-desc = Allow yourself to be hypnotized.

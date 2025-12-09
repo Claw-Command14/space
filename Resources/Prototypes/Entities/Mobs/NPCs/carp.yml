@@ -81,8 +81,8 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
-    - type: Vore # Floofstation - Vore
-      canVore: true
+    #- type: Vore # Floofstation - Vore
+    #  canVore: true
     - type: Body # Shitmed - Adds carp organs.
       prototype: Carp
     - type: SurgeryTarget
