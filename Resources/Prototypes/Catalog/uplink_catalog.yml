@@ -8,7 +8,7 @@
   productEntity: WeaponPistolViper
   discountCategory: rareDiscounts
   discountDownTo:
-    Telecrystal: 3
+    Telecrystal: 1
   cost:
     Telecrystal: 5
   categories:

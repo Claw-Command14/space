@@ -669,7 +669,7 @@
 - type: loadout
   id: LoadoutSecurityPistolViper
   category: JobsSecurityWeapons
-  cost: 4
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -693,7 +693,7 @@
 - type: loadout
   id: LoadoutSecurityPistolViperNonLethal
   category: JobsSecurityWeapons
-  cost: 2
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -714,7 +714,7 @@
 - type: loadout
   id: LoadoutSecurityPistolViperWood
   category: JobsSecurityWeapons
-  cost: 2
+  cost: 5
   canBeHeirloom: true
   guideEntry: SecurityWeapons
   requirements:
@@ -758,7 +758,7 @@
       - BlueshieldMaid
   items:
   - WeaponLaserSvalinn
-  
+
 - type: loadout
   id: LoadoutSecurityPistolSvalinPDW
   category: JobsSecurityWeapons
