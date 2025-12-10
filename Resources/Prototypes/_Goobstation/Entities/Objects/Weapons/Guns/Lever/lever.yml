@@ -31,7 +31,7 @@
           tags:
           - CartridgeMagnum
   - type: Gun
-    fireRate: 0.70
+    fireRate: 0.80
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   - type: ChamberMagazineAmmoProvider
