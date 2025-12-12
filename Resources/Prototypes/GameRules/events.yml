@@ -186,7 +186,7 @@
     weight: 7 # Floof - Changed from 7.5
     duration: 1
     earliestStart: 45
-    minimumPlayers: 15
+    minimumPlayers: 30
   - type: RandomSpawnRule
     prototype: MobRevenant
 
@@ -239,10 +239,10 @@
     endAnnouncement: true
     duration: null #ending is handled by MeteorSwarmRule
     startDelay: 10
-    #conditions: # Floof
-    #- !type:DepartmentCountCondition
-    #  department: Engineering
-    #  range: {min: 2}
+    conditions: # Floof
+    - !type:DepartmentCountCondition
+      department: Engineering
+      range: {min: 1}
   - type: MeteorSwarmRule
 
 - type: entity
@@ -407,7 +407,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 20
-    minimumPlayers: 9
+    minimumPlayers: 10
     weight: 5
     duration: 60
   - type: VentCrittersRule
@@ -428,7 +428,7 @@
     startAnnouncement: true
     startDelay: 10
     earliestStart: 20
-    minimumPlayers: 6
+    minimumPlayers: 7
     weight: 5
     duration: 60
   - type: VentCrittersRule
@@ -500,7 +500,7 @@
   - type: StationEvent
     earliestStart: 20 # Claw Command - Changed from 60
     weight: 3 # Floof - Changed from 5.5
-    minimumPlayers: 10 # Claw Command - changed from 30
+    minimumPlayers: 15 # Claw Command - changed from 30
     duration: 1
   - type: LoadMapRule
     preloadedGrid: ShuttleStriker

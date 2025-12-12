@@ -40,7 +40,7 @@ public sealed partial class SophicScribeSystem : EntitySystem
 
             var message = Loc.GetString("glimmer-report", ("level", _glimmerSystem.Glimmer));
             var channel = _prototypeManager.Index<RadioChannelPrototype>("Science");
-            if (_glimmerSystem.Glimmer > 175)
+            if (_glimmerSystem.Glimmer > 250)
             {
                 channel = _prototypeManager.Index<RadioChannelPrototype>("Common");
             }

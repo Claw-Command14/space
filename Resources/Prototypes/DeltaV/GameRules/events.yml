@@ -7,8 +7,8 @@
     startAnnouncement: true
     earliestStart: 20
     reoccurrenceDelay: 20
-    minimumPlayers: 10
-    weight: 6 # Really weak compared to other critters
+    minimumPlayers: 15
+    weight: 3 # Really weak compared to other critters
     duration: 80
   - type: VentCrittersRule
     entries:
@@ -78,7 +78,8 @@
     startAnnouncement: true
     earliestStart: 20
     reoccurrenceDelay: 20
-    minimumPlayers: 1
+    minimumPlayers: 9
+    weight: 3
   - type: VentCrittersRule
     entries:
     - id: MobXeno

@@ -53630,6 +53630,53 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 12.5,-21.5
       parent: 1
+- proto: WeaponPistolViper
+  entities:
+  - uid: 3843
+    components:
+    - type: Transform
+      parent: 3837
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 3844
+    components:
+    - type: Transform
+      parent: 3837
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 3845
+    components:
+    - type: Transform
+      parent: 3837
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 3846
+    components:
+    - type: Transform
+      parent: 3837
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 3847
+    components:
+    - type: Transform
+      parent: 3837
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: WeaponSubMachineGunC20r
   entities:
   - uid: 3838

@@ -332,8 +332,7 @@
   - type: StorageFill
     contents:
       - id: BoxSurvivalSyndicate
-      - id: WeaponRevolverPython
-      - id: WeaponPistolMk58
+      - id: WeaponPistolViper
       - id: PinpointerSyndicateNuclear
       - id: DeathAcidifierImplanter
 
@@ -351,8 +350,7 @@
       - id: SawAdvanced
       - id: Cautery
       - id: CombatKnife
-      - id: WeaponRevolverPython
-      - id: WeaponPistolMk58
+      - id: WeaponPistolViper
       - id: PinpointerSyndicateNuclear
       - id: HandheldHealthAnalyzer
       - id: CombatMedipen

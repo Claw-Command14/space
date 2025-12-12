@@ -105,6 +105,33 @@
       prob: 0.002
 
 - type: entity
+  id: reagentslimeVentsEasy
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StationEvent
+    startAnnouncement: true
+    earliestStart: 60
+    reoccurrenceDelay: 12
+    minimumPlayers: 8 # Claw changed from 30
+    weight: 6 # Really weak compared to other critters
+    duration: 60
+  - type: VentCrittersRule
+    entries:
+    - id: ReagentSlimeOmnizine
+      prob: 0.0003
+    - id: ReagentSlimeBeer
+      prob: 0.0003
+    - id: ReagentCognizine
+      prob: 0.0003
+    - id: ReagentSlimeWehjuice
+      prob: 0.0003
+    - id: ReagentSlimeIchor
+      prob: 0.0002
+    - id: ReagentSlimeSpaceDrugs
+      prob: 0.0003
+
+- type: entity
   id: reagentslimeVents
   parent: BaseGameRule
   categories: [ HideSpawnMenu ]
@@ -113,7 +140,7 @@
     startAnnouncement: true
     earliestStart: 60
     reoccurrenceDelay: 12
-    minimumPlayers: 5 # Claw changed from 30
+    minimumPlayers: 14 # Claw changed from 30
     weight: 6 # Really weak compared to other critters
     duration: 60
   - type: VentCrittersRule
