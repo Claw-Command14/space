@@ -45,6 +45,7 @@
       description: ghost-role-information-Death-Squad-description
       raffle:
         settings: short
+    - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ DeathSquadGear ]
     - type: RandomMetadata
