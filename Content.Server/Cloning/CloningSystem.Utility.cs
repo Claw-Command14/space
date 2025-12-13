@@ -87,10 +87,12 @@ public sealed partial class CloningSystem
         if (clonePod.ConnectedConsole is null)
             return false;
 
-        var cloningCost = (int) Math.Round(physics.FixturesMass
+        // Claw command no biomass cloning cost.
+        var cloningCost = 0;
+        /*var cloningCost = (int) Math.Round(physics.FixturesMass
             * _config.GetCVar(CCVars.CloningBiomassCostMultiplier)
             * clonePod.BiomassCostMultiplier
-            * cloningCostMultiplier);
+            * cloningCostMultiplier);*/
 
         if (_material.GetMaterialAmount(uid, clonePod.RequiredMaterial) < cloningCost)
         {
