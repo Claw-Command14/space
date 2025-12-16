@@ -162,7 +162,7 @@ paperwork-hop-dismissal-of-department-head =
 
     {"["}color=red]This document is not valid unless stamped by at least one of the required personnel.[/color]
 
-    {"["}italic]NOTE: The initialization of dismissal can only be carried out by the Commanding Officer or the Head of Personnel (with the permission of the Commanding Officer or Central Command). This document must have the signature of the dismissed person (except in cases of direct refusal to sign the order). This document is only valid if there is a stamp of the Commanding Officer, or the stamp of Central Command.[/italic]
+    {"["}italic]NOTE: The initialization of dismissal can only be carried out by the Commanding Officer or the Head of Personnel (with the permission of the Commanding Officer or Claw Command). This document must have the signature of the dismissed person (except in cases of direct refusal to sign the order). This document is only valid if there is a stamp of the Commanding Officer, or the stamp of Claw Command.[/italic]
 
     {"["}bold]Commanding Officer's Signature:
     Head Of Personnel's Signature:[/bold]

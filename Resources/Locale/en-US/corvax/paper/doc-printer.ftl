@@ -231,9 +231,9 @@ doc-text-printer-application-appointment-interim =
     Author's position:
 
     I, (full name), in the position of (full job title), request the approval of my appointment as Acting Head of (full department name)/Captain.
-    Upon assuming the position, I undertake to follow the Standard Operating Procedures and, until the arrival of the Head of (full department name)/Captain from Central Command, ensure order and management of the department, as well as the safekeeping of valuable items and equipment entrusted to me.
+    Upon assuming the position, I undertake to follow the Standard Operating Procedures and, until the arrival of the Head of (full department name)/Captain from Claw Command, ensure order and management of the department, as well as the safekeeping of valuable items and equipment entrusted to me.
 
-    Upon the arrival of the Head of the department/Captain from Central Command, I undertake to return elevated access, valuable items, and equipment.
+    Upon the arrival of the Head of the department/Captain from Claw Command, I undertake to return elevated access, valuable items, and equipment.
     =============================================
                                 ⠀          [italic]Place for seals[/italic]
 doc-text-printer-application-employment =
@@ -267,7 +267,7 @@ doc-text-printer-letter-resignation =
     Author's position:
 
     I, (full name), in the current position of (full job title), want to resign from the department (department name) for the reason (reason).
-    I undertake to pay the fine stipulated by the terms of the termination of the fixed-term/permanent contract, at the Central Command station.
+    I undertake to pay the fine stipulated by the terms of the termination of the fixed-term/permanent contract, at the Claw Command station.
     =============================================
                                 ⠀          [italic]Place for seals[/italic]
 doc-text-printer-application-access =
@@ -341,7 +341,7 @@ doc-text-printer-evacuation-shuttle-request =
     Document author:
     Author's position:
 
-    Dear Central Command! I, (full name), in the position of (full job title), request the initiation of evacuation protocols and the dispatch of an evacuation shuttle, having decided to end the shift.
+    Dear Claw Command! I, (full name), in the position of (full job title), request the initiation of evacuation protocols and the dispatch of an evacuation shuttle, having decided to end the shift.
     Reason for ending the shift:
 
     =============================================
@@ -897,7 +897,7 @@ doc-text-printer-ordering-special-equipment =
     Document author:
     Author's position:
 
-    I, (full name), in the position of (full job title), request special equipment for the station from Central Command.
+    I, (full name), in the position of (full job title), request special equipment for the station from Claw Command.
     List of requested equipment:
 
     Reason for request:

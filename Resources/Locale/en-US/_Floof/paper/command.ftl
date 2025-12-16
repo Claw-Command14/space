@@ -1,4 +1,4 @@
-paperwork-command-header = {"["}color=#009100]◥[bold]N[/bold]◣ [head=3][bold]Central Command[/bold][/head][/color]
+paperwork-command-header = {"["}color=#009100]◥[bold]N[/bold]◣ [head=3][bold]Claw Command[/bold][/head][/color]
 paperwork-command-separator = {"["}color=#009100]‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/color]
 
 paperwork-command-emergency-personal-recovery =
@@ -13,15 +13,15 @@ paperwork-command-emergency-personal-recovery =
         {"["}bold]HEAD OF SECURITY:[/bold]
         {"["}bold]QUARTERMASTER:[/bold]
     { paperwork-command-separator }
-    Reason for Faxing Central Command:
-    Desired Response From Central Command:
+    Reason for Faxing Claw Command:
+    Desired Response From Claw Command:
     Details of Missing person(s):
     Last Known Local:
     { paperwork-command-separator }
 
     {"["}color=red]This document is not valid unless stamped by The Captain & least two of the required personnel.[/color]
 
-    {"["}italic]Note: Please note, Central Command is not liable for any personal lost, as that is responsibility placed upon the applicable department head. Central Command will take this form into consideration, however they are allowed to deny it on the grounds the department must recover said personnel.[/italic]
+    {"["}italic]Note: Please note, Claw Command is not liable for any personal lost, as that is responsibility placed upon the applicable department head. Claw Command will take this form into consideration, however they are allowed to deny it on the grounds the department must recover said personnel.[/italic]
 
     {"["}bold]CAPTAINS SIGNATURE:[/bold]
     {"["}bold]COMMAND MEMBER'S SIGNATURE:[/bold]
@@ -44,8 +44,8 @@ paperwork-command-station-request-for-assistance =
         {"["}bold]RESEARCH DIRECTOR:[/bold]
     { paperwork-command-separator }
 
-    Reason for Faxing Central Command:
-    Desired Reponse From Central Command:
+    Reason for Faxing Claw Command:
+    Desired Reponse From Claw Command:
     Are You Really Sure?: {"{ }"}
     Are You Really Really Sure?: {"{ }"}
 
@@ -53,7 +53,7 @@ paperwork-command-station-request-for-assistance =
 
     {"["}color=red]This document is not valid unless stamped by The Captain & least two of the required personnel.[/color]
 
-    {"["}italic]Note: Please place an "X" in the two "really sure" boxes if you ready to fully commit to this course of action. These boxes will be taken into consideration by Central Command.[/italic]
+    {"["}italic]Note: Please place an "X" in the two "really sure" boxes if you ready to fully commit to this course of action. These boxes will be taken into consideration by Claw Command.[/italic]
 
     {"["}bold]CAPTAIN SIGNATURE:[/bold]
     {"["}bold]HEAD OF PERSONNEL SIGNATURE:[/bold]

@@ -11,4 +11,4 @@ eta-units-seconds = seconds
 
 # Vulpstation
 round-end-system-shuttle-call-vote = Call the emergency shuttle (end the shift)?
-round-end-system-shuttle-call-vote-initiator = Central Command
+round-end-system-shuttle-call-vote-initiator = Claw Command

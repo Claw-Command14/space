@@ -1,4 +1,4 @@
-job-supervisors-centcom = Central Command
+job-supervisors-centcom = Claw Command
 job-supervisors-captain = the captain
 job-supervisors-hop = the head of personnel
 job-supervisors-hos = the head of security

@@ -27,7 +27,7 @@ namespace Content.Server.Announcements
                     return;
                 case 1:
                     announcer.SendAnnouncement(announcer.GetAnnouncementId("CommandReport"), Filter.Broadcast(),
-                        args[0], "Central Command", Color.Gold);
+                        args[0], "Claw Command", Color.Gold);
                     break;
                 case 2:
                     announcer.SendAnnouncement(announcer.GetAnnouncementId("CommandReport"), Filter.Broadcast(),
@@ -56,32 +56,32 @@ namespace Content.Server.Announcements
             switch (args.Length)
             {
                 case 3:
-                {
-                    var list = new List<string>();
-
-                    foreach (var prototype in IoCManager.Resolve<IPrototypeManager>()
-                                 .EnumeratePrototypes<AnnouncerPrototype>()
-                                 .SelectMany<AnnouncerPrototype, string>(p => p.Announcements.Select(a => a.ID)))
                     {
-                        if (!list.Contains(prototype))
-                            list.Add(prototype);
-                    }
+                        var list = new List<string>();
 
-                    return CompletionResult.FromHintOptions(list, Loc.GetString("admin-announce-hint-sound"));
-                }
+                        foreach (var prototype in IoCManager.Resolve<IPrototypeManager>()
+                                     .EnumeratePrototypes<AnnouncerPrototype>()
+                                     .SelectMany<AnnouncerPrototype, string>(p => p.Announcements.Select(a => a.ID)))
+                        {
+                            if (!list.Contains(prototype))
+                                list.Add(prototype);
+                        }
+
+                        return CompletionResult.FromHintOptions(list, Loc.GetString("admin-announce-hint-sound"));
+                    }
                 case 4:
-                {
-                    var list = new List<string>();
-
-                    foreach (var prototype in IoCManager.Resolve<IPrototypeManager>()
-                        .EnumeratePrototypes<AnnouncerPrototype>())
                     {
-                        if (!list.Contains(prototype.ID))
-                            list.Add(prototype.ID);
-                    }
+                        var list = new List<string>();
 
-                    return CompletionResult.FromHintOptions(list, Loc.GetString("admin-announce-hint-voice"));
-                }
+                        foreach (var prototype in IoCManager.Resolve<IPrototypeManager>()
+                            .EnumeratePrototypes<AnnouncerPrototype>())
+                        {
+                            if (!list.Contains(prototype.ID))
+                                list.Add(prototype.ID);
+                        }
+
+                        return CompletionResult.FromHintOptions(list, Loc.GetString("admin-announce-hint-voice"));
+                    }
                 default:
                     return CompletionResult.Empty;
             }

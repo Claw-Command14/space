@@ -28,7 +28,7 @@ alert-level-yellow-announcement = There is a major issue with the atmospheric sy
 alert-level-yellow-instructions = Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
 
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = Central Command has called the Gamma Alert; the Station is on its last legs, almost everyone is dead, or there is another existential crisis affecting the station. Martial Law is now in effect.
+alert-level-gamma-announcement = Claw Command has called the Gamma Alert; the Station is on its last legs, almost everyone is dead, or there is another existential crisis affecting the station. Martial Law is now in effect.
 alert-level-gamma-instructions = All civilians are to immediately seek their nearest head for transportation to a secure location.
 
 alert-level-delta = Delta

@@ -399,10 +399,10 @@ namespace Content.Server.RoundEnd
 
                 Action wontact = () =>
                 {
-                    _chatSystem.DispatchGlobalAnnouncement( Loc.GetString("floof-round-end-system-autocall-stay"), "Central Command",true, null, Color.Gold);
+                    _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("floof-round-end-system-autocall-stay"), "Claw Command", true, null, Color.Gold);
                     _autoCalledBefore = true;
                 };
-                
+
                 Action cantact = () =>
                 {
                     RequestRoundEnd(null, false, "floof-round-end-system-autocall-tie");

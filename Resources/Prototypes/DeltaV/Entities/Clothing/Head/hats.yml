@@ -164,7 +164,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatDirCap
   name: director's cap
-  description: A green cap with a director's rank emblem, belonging to a high-ranking member of Central Command. Whoever it is, they mean business.
+  description: A green cap with a director's rank emblem, belonging to a high-ranking member of Claw Command. Whoever it is, they mean business.
   components:
   - type: Sprite
     sprite: DeltaV/Clothing/Head/Hats/dircap.rsi

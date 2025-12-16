@@ -2,7 +2,7 @@
   name: emergency personal recovery
   parent: PaperTemplate
   id: PaperTemplateCommandEmergencyPersonalRecovery
-  description: 'Another salvager lost in space? Central Command might know how to help.'
+  description: 'Another salvager lost in space? Claw Command might know how to help.'
   components:
   - type: Paper
     contentSize: 10000
