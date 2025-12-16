@@ -51,7 +51,7 @@
     ears: ClothingHeadsetAltCommand
     gloves: ClothingHandsGlovesCombat
     id: BlueshieldPDA
-    outerClothing: ClothingOuterArmorDuraVest
+    #outerClothing: ClothingOuterArmorDuraVest
     #pocket1: UniqueBlueshieldOfficerLockerTeleporter
 
     #outerClothing: ClothingBlueshieldArmourVest

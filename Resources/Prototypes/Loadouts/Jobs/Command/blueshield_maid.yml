@@ -1,6 +1,34 @@
 # Uncategorized
 # Backpacks
 - type: loadout
+  id: LoadoutClothingBackpackSatchelBlueshieldMaid
+  category: JobsCommandBlueshieldMaid
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldMaidBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldMaid
+  items:
+    - ClothingBackpackSatchelBlueshield
+
+- type: loadout
+  id: LoadoutClothingBackpackDuffelBlueshieldMaid
+  category: JobsCommandBlueshieldMaid
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldMaidBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldMaid
+  items:
+    - ClothingBackpackDuffelBlueshield
+
+- type: loadout
   id: LoadoutClothingBackpackBlueshieldMaid
   category: JobsCommandBlueshieldMaid
   cost: 0
@@ -56,6 +84,20 @@
 # Mask
 
 # Outer
+- type: loadout
+  id: LoadoutClothingBlueshieldMaidArmorVest
+  category: JobsCommandBlueshieldMaid
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldMaidVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldMaid
+  items:
+    - ClothingBlueshieldArmourVest
+
 - type: loadout
   id: LoadoutClothingBlueshieldMaidDuraVest
   category: JobsCommandBlueshieldMaid

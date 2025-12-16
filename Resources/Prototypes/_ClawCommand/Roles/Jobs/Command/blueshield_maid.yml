@@ -59,7 +59,7 @@
     id: BlueshieldPDA
     ears: ClothingHeadsetAltCommand
     #pocket1: UniqueBlueshieldOfficerLockerTeleporter
-    outerClothing: ClothingOuterArmorDuraVest
+    #outerClothing: ClothingOuterArmorDuraVest
     #belt: ClothingBeltKatanaSheathFilledMaid
   storage:
     back:
