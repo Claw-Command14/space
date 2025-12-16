@@ -4347,6 +4347,20 @@ entities:
     - type: Transform
       pos: 10.5,-22.5
       parent: 2
+- proto: AirlockBlueshieldOfficerCommandLocked
+  entities:
+  - uid: 11975
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 54.5,-15.5
+      parent: 2
+  - uid: 11976
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 50.5,-15.5
+      parent: 2
 - proto: AirlockCaptainGlassLocked
   entities:
   - uid: 2359
@@ -4414,18 +4428,6 @@ entities:
     components:
     - type: Transform
       pos: 5.5,10.5
-      parent: 2
-- proto: AirlockCentralCommandLocked
-  entities:
-  - uid: 12051
-    components:
-    - type: Transform
-      pos: 50.5,-15.5
-      parent: 2
-  - uid: 12052
-    components:
-    - type: Transform
-      pos: 54.5,-15.5
       parent: 2
 - proto: AirlockChapelLocked
   entities:
