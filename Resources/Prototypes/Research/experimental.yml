@@ -104,6 +104,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponGauntletGorilla
+  - BorgModuleGorillaGauntlet
   # Goobstation R&D Console rework start
   position: -3,1
   technologyPrerequisites:

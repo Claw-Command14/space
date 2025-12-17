@@ -178,6 +178,7 @@
     - Wirecutter
     - Multitool
     - WelderIndustrial
+    - FlashlightSeclite
 
 # cargo modules
 - type: entity
@@ -376,10 +377,10 @@
     - state: icon-treatment
   - type: ItemBorgModule
     items:
-    - Brutepack10Lingering
-    - Ointment10Lingering
-    - Gauze10Lingering
-    - Bloodpack10Lingering
+    - Brutepack
+    - Ointment
+    - Gauze
+    - Bloodpack
     - Syringe
     - Dropper
 

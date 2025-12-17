@@ -61,6 +61,7 @@
   - WeaponLaserCarbine
   - WeaponMechCombatFiredartLaser # Goobstation
   - WeaponLaserSvalinn
+  - BorgModuleadvancedmeasures
   # Goobstation R&D Console rework start
   position: 4,0
   #technologyPrerequisites:

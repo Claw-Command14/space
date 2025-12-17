@@ -911,6 +911,8 @@
       - ShockCollar
       - BorgModuleStun # Floof (why was this not commented?)
       - BorgModuleKill # Floof (why was this not commented?)
+      - BorgModuleadvancedmeasures #Claw Command
+      - BorgModuleGorillaGauntlet #Claw Command
       - BorgModuleInvestigation # Floof (why was this not commented?)
       - ClothingOuterShadowkinRestraints # Floof
       # DeltaV - .38 special ammo - Add various .38 special ammo to security techfab
