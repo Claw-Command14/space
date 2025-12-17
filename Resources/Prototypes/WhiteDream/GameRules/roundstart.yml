@@ -4,7 +4,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
-    minPlayers: 2
+    minPlayers: 8
   - type: BloodCultRule
   - type: AntagSelection
     definitions:
