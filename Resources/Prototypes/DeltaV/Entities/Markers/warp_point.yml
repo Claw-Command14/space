@@ -102,19 +102,19 @@
 - type: entity
   id: WarpPointEpistemics
   parent: WarpPoint
-  suffix: Epistemics
+  suffix: Science
   components:
   - type: WarpPoint
-    location: Epistemics
+    location: Science
 
 #Logistics
 - type: entity
   id: WarpPointLogistics
   parent: WarpPoint
-  suffix: Logistics
+  suffix: Cargo
   components:
   - type: WarpPoint
-    location: Logistics
+    location: Cargo
 
 - type: entity
   id: WarpPointSalvage
