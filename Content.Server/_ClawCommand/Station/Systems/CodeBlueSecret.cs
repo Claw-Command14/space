@@ -16,7 +16,10 @@ public sealed class CodeBlueSecretStateSystem : EntitySystem
     public ISawmill _sawmill { get; private set; } = default!;
     private TimeSpan _acoDelay = TimeSpan.FromMinutes(8);
     private bool _isAutoCodeBlueInPlay = false;
-    private int _latestRound = 0;
+    private int _latestRound = -1;
+
+    private TimeSpan _lastRoundTime = TimeSpan.FromHours(10);
+
     public override void Initialize()
     {
         base.Initialize();
@@ -26,12 +29,17 @@ public sealed class CodeBlueSecretStateSystem : EntitySystem
     {
         base.Update(frameTime);
         var timePassed = _ticker.RoundDuration();
-        if (timePassed < _acoDelay) // Avoid timing issues. No need to run before _acoDelay is reached anyways.
+        if (timePassed < _acoDelay || timePassed > _lastRoundTime) // Avoid timing issues. No need to run before _acoDelay is reached anyways.
             return;
-        if (_latestRound != _ticker.RoundId)
+        if (_latestRound != -1 && _latestRound != _ticker.RoundId)
         {
+            if (_latestRound != -1)
+            {
+                _lastRoundTime = timePassed;
+            }
             _latestRound = _ticker.RoundId;
             _isAutoCodeBlueInPlay = false;
+            return;
         }
         if (_isAutoCodeBlueInPlay)
         {

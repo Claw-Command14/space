@@ -32,7 +32,9 @@ public sealed class EmergencyAccessMedbayStateSystem : EntitySystem
     private int _maxDoctorsForEA = 2;
     private bool _isAAInPlay = false;
     private int _doctorCount = 0;
-    private int _latestRound = 0;
+    private int _latestRound = -1;
+
+    private TimeSpan _lastRoundTime = TimeSpan.FromHours(10);
 
     public override void Initialize()
     {
@@ -46,14 +48,19 @@ public sealed class EmergencyAccessMedbayStateSystem : EntitySystem
     {
         base.Update(frameTime);
         var timePassed = _ticker.RoundDuration();
-        if (timePassed < _acoDelay) // Avoid timing issues. No need to run before _acoDelay is reached anyways.
+        if (timePassed < _acoDelay || timePassed > _lastRoundTime) // Avoid timing issues. No need to run before _acoDelay is reached anyways.
             return;
         if (_latestRound != _ticker.RoundId)
         {
+            if (_latestRound != -1)
+            {
+                _lastRoundTime = timePassed;
+            }
             _latestRound = _ticker.RoundId;
 
             _isAAInPlay = false;
             _doctorCount = 0;
+            return;
         }
 
         var query = EntityQueryEnumerator<EmergencyAccessMedbayStateComponent>();
