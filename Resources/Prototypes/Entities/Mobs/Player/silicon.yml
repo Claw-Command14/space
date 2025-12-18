@@ -374,7 +374,7 @@
     unlistedNumber: true
     requiresPower: false
   - type: Holopad
-  - type: StationAiWhitelist  
+  - type: StationAiWhitelist
   - type: UserInterface
     interfaces:
         enum.HolopadUiKey.AiRequestWindow:
@@ -520,7 +520,7 @@
 # Borgs
 - type: entity
   id: PlayerBorgGeneric
-  parent: BorgChassisGeneric
+  parent: BorgChassisQuadserv
   suffix: Battery, Tools
   components:
   - type: ContainerFill
