@@ -48,6 +48,7 @@
     - WeaponAdvancedLaser
     - WeaponborgPistolMk58
     - CombatKnife
+    - Gauze10Lingering
   - type: GuideHelp
     guides:
     - Quadborgs
@@ -88,8 +89,8 @@
     - WeaponAdvancedLaser
     - WeaponborgPistolMk58
     - CombatKnife
+    - Gauze
     - BorgWeaponXrayCannon
-    - Gauze10Lingering
   - type: GuideHelp
     guides:
     - Quadborgs
