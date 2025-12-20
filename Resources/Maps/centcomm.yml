@@ -2934,10 +2934,20 @@ entities:
     - type: Transform
       pos: -16.5,4.5
       parent: 1668
+  - uid: 6279
+    components:
+    - type: Transform
+      pos: 11.5,-11.5
+      parent: 1668
   - uid: 6513
     components:
     - type: Transform
       pos: 12.5,-7.5
+      parent: 1668
+  - uid: 6610
+    components:
+    - type: Transform
+      pos: 5.5,-10.5
       parent: 1668
 - proto: Airlock
   entities:
@@ -21661,12 +21671,6 @@ entities:
       parent: 1668
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 6279
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 14.5,-6.5
-      parent: 1668
   - uid: 6308
     components:
     - type: Transform
@@ -21705,6 +21709,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 11.5,-4.5
+      parent: 1668
+  - uid: 6592
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-7.5
       parent: 1668
   - uid: 6660
     components:
@@ -21948,6 +21958,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 11.5,-6.5
+      parent: 1668
+  - uid: 4395
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 12.5,-6.5
       parent: 1668
   - uid: 4702
     components:
@@ -24431,6 +24447,12 @@ entities:
       color: '#990000FF'
 - proto: GasPipeTJunction
   entities:
+  - uid: 185
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-6.5
+      parent: 1668
   - uid: 3671
     components:
     - type: Transform
@@ -24447,11 +24469,6 @@ entities:
     components:
     - type: Transform
       pos: 14.5,-5.5
-      parent: 1668
-  - uid: 5414
-    components:
-    - type: Transform
-      pos: 12.5,-6.5
       parent: 1668
   - uid: 5465
     components:
@@ -24841,10 +24858,10 @@ entities:
       rot: 3.141592653589793 rad
       pos: -16.5,4.5
       parent: 1668
-  - uid: 4395
+  - uid: 5414
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 12.5,-7.5
       parent: 1668
   - uid: 6705
@@ -24885,6 +24902,12 @@ entities:
       parent: 1668
     - type: AtmosPipeColor
       color: '#990000FF'
+  - uid: 6578
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 13.5,-7.5
+      parent: 1668
 - proto: GasThermoMachineFreezer
   entities:
   - uid: 6641
@@ -41462,6 +41485,12 @@ entities:
     - type: Transform
       pos: 12.5,2.5
       parent: 1668
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
+    - type: Door
+      secondsUntilStateChange: -202.18135
+      state: Opening
   - uid: 564
     components:
     - type: Transform
@@ -41931,14 +41960,6 @@ entities:
       parent: 1668
 - proto: Wrench
   entities:
-  - uid: 185
-    components:
-    - type: Transform
-      pos: 19.86338,-3.5774717
-      parent: 1668
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
   - uid: 6720
     components:
     - type: Transform
