@@ -48,7 +48,7 @@ public sealed class EmergencyAccessMedbayStateSystem : EntitySystem
     {
         base.Update(frameTime);
         var timePassed = _ticker.RoundDuration();
-        if (timePassed < _acoDelay || timePassed > _lastRoundTime) // Avoid timing issues. No need to run before _acoDelay is reached anyways.
+        if (timePassed < _acoDelay) // Avoid timing issues. No need to run before _acoDelay is reached anyways.
             return;
         if (_latestRound != _ticker.RoundId)
         {
