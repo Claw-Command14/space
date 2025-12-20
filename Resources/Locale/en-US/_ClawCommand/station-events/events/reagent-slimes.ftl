@@ -1,0 +1,1 @@
+station-event-reagentslime-vents-easy-announcement = Suspected signatures of hostile alien wildlife detected on the station. Personnel are advised to arm themselves, barricade doors, and defend themselves if necessary. Security is advised to eradicate the threat as soon as possible.
