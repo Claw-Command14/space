@@ -3,77 +3,80 @@
   mapName: 'TalonStride'
   mapPath: /Maps/ClawCommand/talonstride.yml # Claw Command
   minPlayers: 0
-  maxPlayers: 300
+  maxPlayers: 500
   stations:
-    PebbleStation:
+    TalonStride:
       stationProto: StandardNanotrasenStation
       components:
-        - type: StationNameSetup
-          mapNameTemplate: '{0} TalonStride City {1}'
-          nameGenerator:
-            !type:NanotrasenNameGenerator
-            prefixCreator: 'CC'
-        - type: StationJobs
-          overflowJobs:
-            - Passenger
-            #- Anomaly # Floofstation
-          availableJobs:
-            Anomaly: [ 4, 4 ] # Floofstation
-          #service
-            Captain: [ 1, 1 ]
-            BlueshieldOfficer: [ 1, 1]
-            NanotrasenRepresentative: [ 1, 1 ]
-            AdministrativeAssistant: [ 1, 1 ]
-            HeadOfPersonnel: [ 1, 1 ]
-            Bartender: [ 1, 2 ]
-            Botanist: [ 2, 2 ]
-            Boxer: [ 2, 2 ]
-            Chef: [ 2 , 2 ]
-            Clown: [ 1, 1 ]
-            Musician: [ 1, 1 ]
-            Janitor: [ 1, 2 ]
-            Mime: [ 1, 1 ]
-          #engineering
-            ChiefEngineer: [ 1, 1 ]
-            AtmosphericTechnician: [ 1, 1]
-            StationEngineer: [ 2, 3 ]
-            TechnicalAssistant: [ 2, 2 ]
-            SeniorEngineer: [ 1, 1 ]
-          #medical
-            ChiefMedicalOfficer: [ 1, 1 ]
-            Chemist: [ 1, 1 ]
-            MedicalDoctor: [ 2, 3 ]
-            MedicalIntern: [ 2, 2 ]
-            Paramedic: [ 1, 1 ]
-            Psychologist: [ 1, 1 ]
-            SeniorPhysician: [ 1, 1 ]
-          #science
-            ResearchDirector: [ 1, 1 ]
-            Chaplain: [ 1, 1 ]
-            ForensicMantis: [ 1, 1 ]
-            Scientist: [ 2, 3 ]
-            ResearchAssistant: [ 2, 2 ]
-            Borg: [ 1, 1 ]
-            SeniorResearcher: [ 1, 1 ]
-          #security
-            HeadOfSecurity: [ 1, 1 ]
-            Warden: [ 1, 1 ]
-            Detective: [ 1, 1 ]
-            SecurityOfficer: [ 2, 2 ]
-            SecurityCadet: [ 1, 1 ]
-            SeniorOfficer: [ 1, 1 ]
-          #supply
-            Quartermaster: [ 1, 1 ]
-            InventorySpecialist: [ 1, 1 ] #FloofStation
-            MailCarrier: [ 1, 2 ]
-            SalvageSpecialist: [ 2, 2 ]
-            CargoTechnician: [ 2, 3 ]
-          #civilian
-            Passenger: [ -1, -1 ]
-          # Justice added by FloofStation
-            ChiefJustice: [ 1, 1 ] #FloofStation
-            Clerk: [ 1, 1 ] #FloofStation
-            Lawyer: [ 2, 2 ] #FloofStation
-            Prosecutor: [ 1, 1 ] #FloofStation
-            #silicon
-            StationAi: [ 1, 1 ]
+      - type: StationEmergencyShuttle
+        emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Delta.yml
+      - type: StationNameSetup
+        mapNameTemplate: '{0} TalonStride City {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: 'CC'
+      - type: StationJobs
+        overflowJobs:
+          - Passenger
+          #- Anomaly # Floofstation
+        availableJobs:
+          Anomaly: [ 8, 8 ] # Floofstation
+        #service
+          Captain: [ 1, 1 ]
+          BlueshieldOfficer: [ 1, 1]
+          BlueshieldMaid: [ 1, 1]
+          NanotrasenRepresentative: [ 1, 1 ]
+          AdministrativeAssistant: [ 1, 1 ]
+          HeadOfPersonnel: [ 1, 1 ]
+          Bartender: [ 6, 6 ]
+          Botanist: [ 6, 6 ]
+          Boxer: [ 2, 2 ]
+          Chef: [ 6 , 6 ]
+          Clown: [ 4, 4 ]
+          Musician: [ 2, 2 ]
+          Janitor: [ 6, 6 ]
+          Mime: [ 4, 4 ]
+        #engineering
+          ChiefEngineer: [ 2, 2 ]
+          AtmosphericTechnician: [ 6, 6]
+          StationEngineer: [ 8, 8 ]
+          TechnicalAssistant: [ 4, 4 ]
+          SeniorEngineer: [ 8, 8 ]
+        #medical
+          ChiefMedicalOfficer: [ 1, 1 ]
+          Chemist: [ 6, 6 ]
+          MedicalDoctor: [ 8, 8 ]
+          MedicalIntern: [ 8, 8 ]
+          Paramedic: [ 8, 8 ]
+          Psychologist: [ 8, 8 ]
+          SeniorPhysician: [ 8, 8 ]
+        #science
+          ResearchDirector: [ 1, 1 ]
+          Chaplain: [ 3, 3 ]
+          ForensicMantis: [ 3, 3 ]
+          Scientist: [ 8, 8 ]
+          ResearchAssistant: [ 8, 8 ]
+          Borg: [ 10, 10 ]
+          SeniorResearcher: [ 8, 8 ]
+        #security
+          HeadOfSecurity: [ 1, 1 ]
+          Warden: [ 1, 1 ]
+          Detective: [ 4, 4 ]
+          SecurityOfficer: [ 12, 12 ]
+          SecurityCadet: [ 12, 12 ]
+          SeniorOfficer: [ 12, 12 ]
+        #supply
+          Quartermaster: [ 1, 1 ]
+          InventorySpecialist: [ 8, 8 ] #FloofStation
+          MailCarrier: [ 8, 8 ]
+          SalvageSpecialist: [ 8, 8 ]
+          CargoTechnician: [ 8, 8 ]
+        #civilian
+          Passenger: [ -1, -1 ]
+        # Justice added by FloofStation
+          ChiefJustice: [ 1, 1 ] #FloofStation
+          Clerk: [ 4, 4 ] #FloofStation
+          Lawyer: [ 6, 6 ] #FloofStation
+          Prosecutor: [ 4, 4 ] #FloofStation
+          #silicon
+          StationAi: [ 1, 1 ]
