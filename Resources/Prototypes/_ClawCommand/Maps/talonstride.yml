@@ -65,6 +65,7 @@
           SecurityOfficer: [ 12, 12 ]
           SecurityCadet: [ 12, 12 ]
           SeniorOfficer: [ 12, 12 ]
+          Brigmedic: [ 4, 4 ]
         #supply
           Quartermaster: [ 1, 1 ]
           InventorySpecialist: [ 8, 8 ] #FloofStation
