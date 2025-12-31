@@ -62,21 +62,25 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
             // If it's unset, then we allow it to be used for both roundstart and midround joins
 
             // Claw Command disable spawning in cryo.
-
-            // make sure we also check the job here for various reasons.
-            if (spawnPoint.Job == null || spawnPoint.Job == args.Job?.Prototype)
-                possibleContainers.Add((uid, spawnPoint, container, xform));
-            continue;
             /*
-    if (_gameTicker.RunLevel == GameRunLevel.InRound
-        && spawnPoint.SpawnType == SpawnPointType.LateJoin
-        && jobProto.JobEntity == null)
-        possibleContainers.Add((uid, spawnPoint, container, xform));
+                if (spawnPoint.SpawnType == SpawnPointType.Unset)
+                {
+                    // make sure we also check the job here for various reasons.
+                    if (spawnPoint.Job == null || spawnPoint.Job == args.Job?.Prototype)
+                        possibleContainers.Add((uid, spawnPoint, container, xform));
+                    continue;
+                }
+
+                    */
+            if (_gameTicker.RunLevel == GameRunLevel.InRound
+                && spawnPoint.SpawnType == SpawnPointType.LateJoin
+                && jobProto.JobEntity == null)
+                possibleContainers.Add((uid, spawnPoint, container, xform));
+
             if (_gameTicker.RunLevel != GameRunLevel.InRound &&
                 spawnPoint.SpawnType == SpawnPointType.Job &&
                 (args.Job == null || spawnPoint.Job == args.Job.Prototype))
                 possibleContainers.Add((uid, spawnPoint, container, xform));
-*/
         }
 
         if (possibleContainers.Count == 0)

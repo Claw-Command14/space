@@ -326,7 +326,6 @@ public sealed class ArrivalsSystem : EntitySystem
         // Claw Command, late joiners always spawn at arrivals.
         //if (ev.HumanoidCharacterProfile?.SpawnPriority != SpawnPriorityPreference.Arrivals)
         //    return;
-        return;
 
         // Only works on latejoin even if enabled.
         if (!Enabled || _ticker.RunLevel != GameRunLevel.InRound)
