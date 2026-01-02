@@ -194,7 +194,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
-    minPlayers: 2
+    minPlayers: 14
   - type: RevolutionaryRule
   - type: AntagSelection
     definitions:
