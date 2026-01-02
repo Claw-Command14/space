@@ -114,6 +114,9 @@
       - id: PlushieMothRandom
         prob: 0.80
         orGroup: Prize
+      - id: PlushieSteele
+        prob: 0.80
+        orGroup: Prize
       - id: PlushieMothMusician
         prob: 0.80
         orGroup: Prize

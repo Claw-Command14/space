@@ -1279,3 +1279,91 @@
   completetime: 0.1
   materials:
     PrizeTicket: 100
+
+#claw command
+- type: latheRecipe
+  id: PlushieSteele
+  result: PlushieSteele
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 50
+- type: latheRecipe
+  id: PlushieStefanie
+  result: PlushieStefanie
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 50
+- type: latheRecipe
+  id: PlushieMattew
+  result: PlushieMattew
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 50
+
+- type: latheRecipe
+  id: HarmonicaInstrument
+  result: HarmonicaInstrument
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 50
+- type: latheRecipe
+  id: SaxophoneInstrument
+  result: SaxophoneInstrument
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 50
+- type: latheRecipe
+  id: TomDrumsInstrument
+  result: TomDrumsInstrument
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 50
+- type: latheRecipe
+  id: KalimbaInstrument
+  result: KalimbaInstrument
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 150
+- type: latheRecipe
+  id: ElectricGuitarInstrument
+  result: ElectricGuitarInstrument
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 250
+- type: latheRecipe
+  id: ClothingHandsGlovesColorYellow
+  result: ClothingHandsGlovesColorYellow
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 1099
+
+- type: latheRecipe
+  id: ClothingUniformSmallWeaponPermit
+  result: ClothingUniformSmallWeaponPermit
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 2000
+- type: latheRecipe
+  id: MedkitAdvancedFilled
+  result: MedkitAdvancedFilled
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 600
+- type: latheRecipe
+  id: SuperSynthesizerInstrument
+  result: SuperSynthesizerInstrument
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 1500
