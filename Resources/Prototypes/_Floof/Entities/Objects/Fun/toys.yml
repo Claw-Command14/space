@@ -1250,7 +1250,532 @@
     tags:
      - Fleshlight
 
+- type: entity
+  parent: PlushieHuman
+  id: PlushieHarmlessCaptain
+  name: Harmless captain plushie
+  description: Premium nukie bait - smells like sweetpeas in bloom.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: harmless
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Handling/disk_drop.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Handling/disk_drop.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Machines/scan_finish.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Animals/fox8.ogg
+      params:
+        variation: 0.05
+        volume: 4
 
+- type: entity
+  parent: BasePlushie
+  id: MadScientistPlushie
+  name: Mad Scientist Plushie
+  description: Smells of oil and harsh chemicals.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: madscientist
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Machines/scan_finish.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Machines/scan_finish.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Machines/scan_finish.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Machines/scan_finish.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieBrashKitsune
+  name: Brash kitsune plushie
+  description: A soft plushie of a pink-haired kitsune. Even looking at it fills you with mischief and the urge to say snarky comments. Smells faintly of cigarette smoke, but it is flooded out by the aroma of lavender.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: brash
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_DV/Voice/Kitsune/fox_scream1.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/_DV/Voice/Kitsune/fox_scream1.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: SleepyHarpyPlushie
+  name: Sleepy Harpy Plushie
+  description: It conveys a sense of innate sleepiness. Its soundbox emits a faint snore.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: sleepyharpy
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      collection: HarpyBeeps
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      collection: HarpyBeeps
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/DeltaV/Voice/Harpy/caw1.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: NotASpiderPlushie
+  name: Not A Spider Plushie
+  description: Everything but the flower crown is removable.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: notaspider
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Animals/snake_hiss.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Animals/snake_hiss.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Animals/snake_hiss.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Animals/snake_hiss.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: NTUnathiPlushie
+  name: NT Unathi Plushie
+  description: Comes with real paperwork!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: ntunathi
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/paper_pickup.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/paper_pickup.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/SimpleStation14/Items/Handling/paper_drop.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/SimpleStation14/Items/Handling/paper_pickup.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: HappyParamedicPlushie
+  name: Happy Paramedic Plushie
+  description: There's a tag on the back that reads, 'I love women'.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: happyparamedic
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/DeltaV/Voice/Talk/vulp.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/DeltaV/Voice/Talk/vulp.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/DeltaV/Voice/Talk/vulp.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/DeltaV/Voice/Talk/vulp.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: BraveCaptainPlushie
+  name: Brave Captain Plushie
+  description: It's definitely not cowardly.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: bravecaptain
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Talk/speak_2.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Human/cry_female_1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Human/femalescream_1.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Voice/Human/femalescream_3.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: BlueCorpsmanShadekinPlushie #The temptation to make a dire dire docks refference is melting me btw
+  name: Blue Corpsman Shadekin Plushie
+  description: It depicts a sweet-hearted Shadekin in a corpsman's uniform. It's very fluffy.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: bluecorpsmanshadekin
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Shadowkin/mar.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Shadowkin/mar.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Slime/slime_scream_m1.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Voice/Slime/slime_scream_m1.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: MedicalMothPlushie
+  name: Medical Moth Plushie
+  description: Smells like maple syrup.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: medicalmoth
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: CheerfulQuadborgPlushie
+  name: Cheerful Quadborg Plushie
+  description: Bedside manner not included.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: cheerfulquadborg
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Voice/IPC/whirr3.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Voice/IPC/whirr3.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Voice/IPC/whirr3.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Voice/IPC/whirr3.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: VampiricVulpkaninPlushie
+  name: Vampiric Vulpkanin Plushie
+  description: It looks so classy in its little suit.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: vampiricvulpkanin
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      collection: VulpkaninBarks
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      collection: VulpkaninBarks
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      collection: VulpkaninBarks
+  - type: MeleeWeapon
+    soundHit:
+      collection: VulpkaninBarks
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: KindDetectivePlushie
+  name: Kind Detective Plushie
+  description: It can't stop tipping its hat, and it is holding a pink bat!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: kinddetective
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/bottle_open1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/bottle_open1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Effects/glass_break1.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/bottle_open1.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: MusicianRaccoonPlushie
+  name: Musician Raccoon Plushie
+  description: Smells like berries and vodka.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: musicianraccoon
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Animals/raccoon_chatter.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Animals/raccoon_chatter.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Animals/raccoon_chatter.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Animals/raccoon_chatter.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: GoblinPlushie
+  name: Goblin Plushie
+  description: Undoubtedly the scariest goblin around!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: goblin
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: MutantPlushie
+  name: Mutant Plushie
+  description: It's fluffy and soft, but there's a bit of sand on it.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: mutant
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        variation: 0.05
+        volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: TwoTailedCommandPlushie
+  name: Two-Tailed Command Plushie
+  description: Fluffy and soft, you are getting this plushie, whether you like it or not!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: twotailedcommand
+  - type: UseDelay
+    delay: 3.0
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        variation: 0.05
+        volume: 4
 # Banned individual
 # - type: entity
 #   parent: PlushieHuman
@@ -1344,6 +1869,32 @@
 #       params:
 #         variation: 0.05
 #         volume: 4
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDetectiveVulps
+  name: Detective Vulps Plushie
+  description: "FDP: Funny Drunk Puppy"
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: detectivevulps
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_Floof/Voice/Vulpkanin/yap.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Floof/Voice/Vulpkanin/yap.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_Floof/Voice/Vulpkanin/yap.ogg
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Animals/fox_squeak.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Floof/Voice/Vulpkanin/gekker.ogg
+
 
 # Artistic
 

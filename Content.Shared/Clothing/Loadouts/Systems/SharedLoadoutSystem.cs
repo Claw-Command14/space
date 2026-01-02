@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared.CCVar;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
@@ -78,6 +79,12 @@ public sealed class SharedLoadoutSystem : EntitySystem
         if (!job.SpawnLoadout)
             return (failedLoadouts, allLoadouts);
 
+        // Floof section start
+        var points = _configuration.GetCVar(CCVars.GameLoadoutsPoints);
+        // Create a copy of the profile without any loadouts to bypass CIG not accounting for unused loadouts
+        var profileCopy = profile.WithLoadoutPreferences(new List<LoadoutPreference>());
+        // Floof section end
+
         foreach (var loadout in profile.LoadoutPreferences)
         {
             var slot = "";
@@ -87,10 +94,17 @@ public sealed class SharedLoadoutSystem : EntitySystem
                 continue;
 
             if (!_characterRequirements.CheckRequirementsValid(
-                loadoutProto.Requirements, job, profile, playTimes, whitelisted, loadoutProto,
+                loadoutProto.Requirements, job, profileCopy, playTimes, whitelisted, loadoutProto,
                 EntityManager, _prototype, _configuration,
                 out _))
                 continue;
+
+            // Floofstation - loadout is valid, check points
+            if (points - loadoutProto.Cost < 0)
+                continue;
+            points -= loadoutProto.Cost;
+            profileCopy = profileCopy.WithLoadoutPreference(loadoutProto.ID, true);
+            // Floofstation section end
 
             // Spawn the loadout items
             var spawned = EntityManager.SpawnEntities(
@@ -159,7 +173,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
 [Serializable, NetSerializable, ImplicitDataDefinitionForInheritors]
 public abstract partial class Loadout
 {
-    [DataField] public string LoadoutName { get; set; }
+    [DataField] public string LoadoutName { get; set; } // Floof note - this is an ID, not a name.
     [DataField] public string? CustomName { get; set; }
     [DataField] public string? CustomDescription { get; set; }
     [DataField] public string? CustomColorTint { get; set; }
@@ -193,4 +207,15 @@ public sealed partial class LoadoutPreference : Loadout
         string? customColorTint = null,
         bool? customHeirloom = null
     ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
+
+    // Floofstation - copy constructor
+    public LoadoutPreference(LoadoutPreference other) : this(
+        other.LoadoutName,
+        other.CustomName,
+        other.CustomDescription,
+        other.CustomColorTint,
+        other.CustomHeirloom)
+    {
+        Selected = other.Selected;
+    }
 }

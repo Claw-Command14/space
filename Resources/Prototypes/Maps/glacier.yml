@@ -3,7 +3,7 @@
   mapName: Glacier
   mapPath: /Maps/Floof/glacier.yml # Floofstation
   minPlayers: 15
-  maxPlayers: 70
+  maxPlayers: 60
   stations:
     Glacier:
       stationProto: StandardNanotrasenStation
@@ -61,7 +61,6 @@
           Psychologist: [ 1, 1 ]
           MedicalDoctor: [ 2, 3 ]
           MedicalIntern: [ 2, 2 ]
-          MedicalBorg: [ 1, 2 ]
           SeniorPhysician: [ 1, 1 ]
         #science
           ResearchDirector: [ 1, 1 ]
@@ -69,7 +68,6 @@
           ForensicMantis: [ 1, 1 ]
           Scientist: [ 2, 3 ]
           ResearchAssistant: [ 2, 2 ]
-          Borg: [ 2, 3 ]
           Roboticist: [ 1, 1 ]
           Librarian: [ 1, 1 ]
           SeniorResearcher: [ 1, 1 ]
@@ -89,4 +87,10 @@
           MailCarrier: [ 2, 3 ]
           SalvageSpecialist: [ 2, 3 ]
           CargoTechnician: [ 2, 3 ]
+        # Silicon
+          # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+          Borg: [ 1, 2 ]
+          MedicalBorg: [ 1, 2 ]
+          ServiceQuadBorg: [ 1, 2 ] #Floofstation
+          MedicalQuadBorg: [ 1, 2 ] #Floofstation
 

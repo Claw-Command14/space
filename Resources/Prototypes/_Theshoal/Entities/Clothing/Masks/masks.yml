@@ -1,0 +1,53 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskAuralis
+  name: auralis worship mask
+  description: An Auralis worship mask, frequently worn by vox zealots going on holy wars. Its the up to the wearer's interpretation if the black tears mean something possitive or not.
+  components:
+  - type: Sprite
+    sprite: _Theshoal/Clothing/Mask/voxcorpsepaint.rsi
+  - type: Clothing
+    sprite: _Theshoal/Clothing/Mask/voxcorpsepaint.rsi
+  - type: Tag
+    tags: []
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Snout
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskEnforcer
+  name: enforcer gasmask
+  description: The mask of the dreaded Shoal Enforcers. This mask has its armored plating removed for civilian use.
+  components:
+  - type: Sprite
+    sprite: _Theshoal/Clothing/Mask/enforcer.rsi
+  - type: Clothing
+    sprite: _Theshoal/Clothing/Mask/enforcer.rsi
+  - type: Tag
+    tags: []
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Snout
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskVoxSpecial
+  name: specialized vox gasmask
+  description: An old Nanotrasen standard issue vox gasmask made to fit on a beak. it has dents and markings from the previous owner.
+  components:
+  - type: Sprite
+    sprite: _Theshoal/Clothing/Mask/specvoxmask.rsi
+  - type: Clothing
+    sprite: _Theshoal/Clothing/Mask/specvoxmask.rsi
+  - type: Tag
+    tags: []
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Snout

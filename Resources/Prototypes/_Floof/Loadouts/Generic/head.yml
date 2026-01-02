@@ -230,3 +230,27 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutHead
+
+- type: loadout
+  id: HatPirateTricord
+  canBeHeirloom: true #FLOOF
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadHatPirateTricord
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead
+
+- type: loadout
+  id: LoadoutHeadHatPirate
+  canBeHeirloom: true #FLOOF
+  category: Head
+  cost: 1
+  exclusive: true
+  items:
+    - ClothingHeadHatPirate
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutHead

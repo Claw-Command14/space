@@ -17,6 +17,7 @@
     ClothingHandsGlovesNitrile: 2
     ClothingHeadsetMedical: 4
     ClothingOuterWinterMed: 2
+    ClothingShoesBootsWinterMed: 2
     ClothingOuterHospitalGown: 5
     UniformScrubsColorGreen: 4
     UniformScrubsColorBlue: 4
@@ -24,7 +25,6 @@
     ClothingHeadHatSurgcapGreen: 4 
     ClothingHeadHatSurgcapBlue: 4
     ClothingHeadHatSurgcapPurple: 4
-    ClothingShoesBootsWinterMed: 2
     ClothingNeckCollarMed: 1 # Floofstation - Collar addition
     ClothingHandsMedicWarmers: 1 # Floofstation
     ClothingUnderSocksMedic: 1 # Floofstation
@@ -33,4 +33,4 @@
     UniformScrubsColorCybersun: 1 #DeltaV
     ClothingHeadHatSurgcapCybersun: 1 #DeltaV
     ClothingOuterCoatCybersunWindbreaker: 1 #DeltaV
-    ClothingShoesBootsWinterMed: 2
+

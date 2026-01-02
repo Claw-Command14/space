@@ -249,15 +249,6 @@
       - id: PlushieCatBlack
         prob: 0.80
         orGroup: Prize
-      - id: PlushieSteele # claw command
-        prob: 0.80
-        orGroup: Prize
-      - id: PlushieMattew # claw command
-        prob: 0.80
-        orGroup: Prize
-      - id: PlushieStefanie # claw command
-        prob: 0.80
-        orGroup: Prize
       - id: PlushieCatGrey
         prob: 0.80
         orGroup: Prize
@@ -501,6 +492,15 @@
       - id: PlushieSecurityTank
         prob: 0.50
         orGroup: Prize
+      - id: PlushieBrashKitsune
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieHarmlessCaptain
+        prob: 0.50
+        orGroup: Prize
+      - id: PlushieDetectiveVulps
+        prob: 0.50
+        orGroup: Prize
       # Floof - End
       # Rare
       - id: PlushieAbductorAgent
@@ -535,5 +535,50 @@
         orGroup: Prize
       - id: PlushieHypnoTempCap # Floofstation
         prob: 0.30
+        orGroup: Prize
+      - id: MadScientistPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: NotASpiderPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: NTUnathiPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: HappyParamedicPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: BraveCaptainPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: BlueCorpsmanShadekinPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: MedicalMothPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: CheerfulQuadborgPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: VampiricVulpkaninPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: KindDetectivePlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: MusicianRaccoonPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: SleepyHarpyPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: GoblinPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: MutantPlushie
+        prob: 0.50
+        orGroup: Prize
+      - id: TwoTailedCommandPlushie
+        prob: 0.50
         orGroup: Prize
 

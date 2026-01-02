@@ -79,3 +79,6 @@
           # #silicon
           StationAi: [ 1, 1 ]
           Borg: [ 3, 3 ]
+          MedicalBorg: [ 1, 2 ]
+          ServiceQuadBorg: [ 2, 3 ] #Floofstation
+          MedicalQuadBorg: [ 2, 3 ] #Floofstation

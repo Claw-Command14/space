@@ -4,6 +4,11 @@
   id: WeaponSniperGrand
   description: A heavy and reliable self-loading rifle, utilising a modified version of a centuries-old design. Uses .30 rifle ammo.
   components:
+  - type: Item # Floof - Gun Shape Refactor
+    size: Large
+    storedRotation: 45
+    shape:
+    - 0,0,5,1
   - type: Sprite
     sprite: Nyanotrasen/Objects/Weapons/Guns/Snipers/grand_rifle.rsi
     layers:
@@ -45,6 +50,11 @@
   id: WeaponSniperCeremonial
   description: A ceremonial variant of the Mark 1 Rifle, in tasteful blue and white. Uses .30 rifle ammo.
   components:
+  - type: Item # Floof - Gun Shape Refactor
+    size: Large
+    storedRotation: 45
+    shape:
+    - 0,0,5,1
   - type: Sprite
     sprite: Nyanotrasen/Objects/Weapons/Guns/Snipers/ceremonial_grand.rsi
     layers:

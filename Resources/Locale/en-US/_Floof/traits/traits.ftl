@@ -88,3 +88,9 @@ trait-name-TraitorTeachTarget = Marked for Death
 trait-description-TraitorTeachTarget = Someone or something wants you taught a lesson. Traitors can recieve orders to kill you.
 # Target Consent Traits: End
 
+trait-name-OniShooting = Can't Aim
+trait-description-OniShooting = Due to an innate skill issue, you can't aim at all.
+
+trait-name-BadShooting = Bad Aim
+trait-description-BadShooting = Due to a lack of training or simply a lack of skill or talent, you can't aim very well.
+

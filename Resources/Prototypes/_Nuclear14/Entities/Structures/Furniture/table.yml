@@ -492,5 +492,5 @@
   - type: Icon
     sprite: _Nuclear14/Structures/Furniture/Tables/barcounter.rsi
   - type: Construction
-    graph: N14TableCounterBarRecipes
-    node: start
+    graph: BarCounter
+    node: barcounter

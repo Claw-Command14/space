@@ -1,0 +1,49 @@
+# start of vox masks
+
+- type: loadout
+  id: LoadoutSpeciesAuralismask
+  category: Species
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vox
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
+  items:
+    - ClothingMaskAuralis
+
+- type: loadout
+  id: LoadoutSpeciesEnforcermask
+  category: Species
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vox
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
+  items:
+    - ClothingMaskEnforcer
+
+- type: loadout
+  id: LoadoutSpeciesspecializedmask
+  category: Species
+  cost: 0
+  exclusive: true
+  canBeHeirloom: true
+  customColorTint: true
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - Vox
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutMasks
+  items:
+    - ClothingMaskVoxSpecial
+
+#end of vox masks

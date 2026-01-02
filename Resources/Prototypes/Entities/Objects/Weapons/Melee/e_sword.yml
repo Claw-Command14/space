@@ -95,6 +95,8 @@
   # Shitmed Change
   - type: Scalpel
     speed: 0.75
+  - type: BoneSaw # Floof - It'll take a while but you'll get through bone
+    speed: 0.5
   - type: Cautery
     speed: 0.2
   - type: SurgeryTool

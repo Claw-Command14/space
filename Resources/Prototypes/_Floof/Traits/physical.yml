@@ -185,7 +185,7 @@
     inverted: true
     traits:
       - Small # conflicts with PseudoItem changes
-  - !type:CharacterSpeciesRequirement 
+  - !type:CharacterSpeciesRequirement
     inverted: true
     species:
     - Oni # incompatable due to use of the PlayerToolModifier and BonusMeleeDamage - a special trait will need to be made
@@ -219,12 +219,12 @@
       critThresholdModifier: -20 # reduce health to crit by 20 (20% for most standard races)
     - type: DeadModifier
       deadThresholdModifier: -20 # reduce health to dead by 20 to align with the crit modifier. This effectively means they have the same health after being crit as someone without the trait.
-    - type: StaminaCritModifier 
+    - type: StaminaCritModifier
       critThresholdModifier: -20 # reduce stamina by 20 (20% for standard races)
   - !type:TraitSetScale
     scale: 0.7
   - !type:TraitAddArmor
-    damageModifierSets: 
+    damageModifierSets:
       - TinyTrait # Increase physical damage taken by 10%
   - !type:TraitPushDescription
     descriptionExtensions:
@@ -240,7 +240,7 @@
     jobs:
     - Borg
     - MedicalBorg
-  - !type:CharacterSpeciesRequirement 
+  - !type:CharacterSpeciesRequirement
     inverted: true
     species:
     - Harpy # Doesn't really make sense with their wings and flight ability
@@ -271,7 +271,7 @@
   functions:
   - !type:TraitModifySilicon
     batteryDrainModifier: 1 # Floof - M3739 - #1209 - Lasts roughly 10 minutes on a medium cap power cell.
-      
+
 - type: trait
   id: SlowBatteryDrain
   category: Physical
@@ -287,4 +287,54 @@
   functions:
   - !type:TraitModifySilicon
     batteryDrainModifier: -0.25 # Floof - M3739 - #1209 - Roughly 32 minutes on a medium capacity power cell.
-    
+
+- type: trait # This just adds the Oni-like shooting malcus to anyone (edit: a lot less than that of an oni, but still enough to make ranged weapons useless to you)
+  id: OniShooting
+  category: Physical
+  points: 5
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Oni # already defaultly has this
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - Borg
+      - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - BadShooting
+  functions:
+    - !type:TraitAddComponent
+      components:
+      - type: PlayerAccuracyModifier
+        spreadMultiplier: 5.5
+        maxSpreadAngle: 90
+
+- type: trait
+  id: BadShooting
+  category: Physical
+  points: 2
+  slots: 0 # for flavor
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+      - Oni # already defaultly has this
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+      - Borg
+      - MedicalBorg
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - OniShooting
+  functions:
+    - !type:TraitAddComponent
+      components:
+      - type: PlayerAccuracyModifier
+        spreadMultiplier: 2.5
+        maxSpreadAngle: 90

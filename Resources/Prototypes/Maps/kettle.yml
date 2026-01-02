@@ -22,7 +22,7 @@
             #service
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
-            Bartender: [ 1, 1 ]
+            Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]
             Chef: [ 2, 2 ]
             Janitor: [ 2, 3 ]
@@ -36,7 +36,6 @@
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 3 ]
-            MedicalBorg: [ 1, 1 ]
             MedicalDoctor: [ 3, 4 ]
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
@@ -48,7 +47,6 @@
             Scientist: [ 3, 4 ]
             ForensicMantis: [ 1, 1 ]
             ResearchAssistant: [ 2, 2 ]
-            Borg: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             SeniorResearcher: [ 1, 1 ]
@@ -81,3 +79,9 @@
             Clerk: [ 1, 1 ] #FloofStation
             Lawyer: [ 2, 2 ] #FloofStation
             Prosecutor: [ 1, 1 ] #FloofStation
+            # Silicon
+            # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            Borg: [ 1, 2 ]
+            MedicalBorg: [ 1, 2 ]
+            ServiceQuadBorg: [ 1, 2 ] #Floofstation
+            MedicalQuadBorg: [ 1, 2 ] #Floofstation

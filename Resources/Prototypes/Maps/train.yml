@@ -14,7 +14,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'ED'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/DeltaV/NTES_Delta.yml #floofstation
+          emergencyShuttlePath: /Maps/Floof/Shuttles/evac_train.yml #floofstation
         - type: StationJobs
           overflowJobs:
             - Passenger
@@ -71,7 +71,6 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            Borg: [ 2, 2 ]
             Reporter: [ 1, 1 ]
             #justice added by FloofStation
             ChiefJustice: [ 1, 1 ] #FloofStation
@@ -80,3 +79,9 @@
             Prosecutor: [ 1, 1 ] #FloofStation
             #Anomaly
             Anomaly: [ 4, 4 ] # Floofstation
+            # Silicon
+            # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            Borg: [ 1, 2 ]
+            MedicalBorg: [ 1, 2 ]
+            ServiceQuadBorg: [ 1, 2 ] #Floofstation
+            MedicalQuadBorg: [ 1, 2 ] #Floofstation

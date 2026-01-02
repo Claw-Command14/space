@@ -18,7 +18,7 @@
   - type: Storage
     maxItemSize: Huge
     grid:
-    - 0,0,6,3
+    - 0,0,7,4 # Floof - Gun Shape Refactor 
   - type: StorageFill
     contents:
       - id: WeaponSniperHristov

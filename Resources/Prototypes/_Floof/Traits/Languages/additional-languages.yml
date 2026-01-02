@@ -63,7 +63,7 @@
   - !type:CharacterSpeciesRequirement
     species:
     - Felinid
-  #    - Tajaran # one day...
+    - Tajaran
   functions:
   - !type:TraitModifyLanguages
     languagesSpoken:

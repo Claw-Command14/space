@@ -72,7 +72,6 @@
             ResearchAssistant: [ 2, 4 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
-            Borg: [ 3, 3 ] #FloofStation
             SeniorResearcher: [ 1, 1 ]
           #supply
             Quartermaster: [ 1, 1 ]
@@ -85,3 +84,9 @@
             Clerk: [ 1, 1 ] #FloofStation
             Lawyer: [ 2, 2 ] #FloofStation
             Prosecutor: [ 1, 1 ] #FloofStation
+          # Silicon
+          # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            Borg: [ 2, 3 ]
+            MedicalBorg: [ 1, 2 ]
+            ServiceQuadBorg: [ 2, 3 ] #Floofstation
+            MedicalQuadBorg: [ 2, 3 ] #Floofstation
