@@ -11,6 +11,18 @@
   items:
     - ClothingOuterVestTank #Specialized outer-wear for holding large tanks.
 
+- type: loadout # Vox Issue
+  id: LoadoutSpeciesNitrogenTank
+  category: Species
+  cost: 0
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      species:
+        - SlimePerson
+        - Vox
+  items:
+    - NitrogenTankFilled
+
 - type: loadout
   id: LoadoutSpeciesEmergencyNitrogenTank
   category: Species

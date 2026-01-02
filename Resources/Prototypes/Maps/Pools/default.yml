@@ -3,22 +3,23 @@
   maps:
   - Arena
   - Asterisk
-  - Core
+  - Core # - Maintainer Dunrab
   - Edge
-  - Glacier
+  - Glacier # - Maintainer WhiteLightningTwister
   - Hammurabi
-  - Lighthouse
+  - Lighthouse # - Maintainer Dunrab
   - Pebble
-  - Saltern
-  - Shoukou
-  - Submarine
+  - Saltern # - Maintainer WhiteLightningTwister
+  - Shoukou # - Maintainer WhiteLightningTwister
+  - Submarine # - Maintainer Dunrab
   - Tortuga
   - TheHive
   #- Gax # Floof - Remove Gax due to mapping issues, power, access, etc. | M3739 - No current maintainer
   - Rad
-  - Meta
-  - Kettle # Floof
-  - Fland # Floof
-  - Train # Floof
+  - Meta # - Maintainer Dunrab
+  - Kettle # Floof - Maintainer Dunrab
+  - Fland # Floof - Maintainer Dunrab
+  - Train # Floof - Maintainer Dunrab
   - Amber # Floof
+  - Getaway # Floof - Maintainer Dunrab
   #- talos # Floof!  - Removed from rotation due to severe design issues. Maintainer presumed to be Mudyin.

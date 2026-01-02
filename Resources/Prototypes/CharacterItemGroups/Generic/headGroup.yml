@@ -57,7 +57,11 @@
     id: LoadoutHeadTurbanColorable
   - type: loadout
     id: LoadoutHeadKippahColorable
-  # start Floof
+# start Floof
+  - type: loadout
+    id: HatPirateTricord
+  - type: loadout
+    id: LoadoutHeadHatPirate
   - type: loadout
     id: LoadoutHeadLily
   - type: loadout

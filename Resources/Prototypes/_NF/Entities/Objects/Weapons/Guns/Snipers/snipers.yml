@@ -5,6 +5,11 @@
   id: WeaponSniperRepeater
   description: A civilian grade lever action firearm, favored by space cowboys across the Frontier for its reliability and stopping power. Uses .45 magnum ammo.
   components:
+  - type: Item # Floof - Gun Shape Refactor
+    size: Large
+    storedRotation: 45
+    shape:
+    - 0,0,5,1
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Snipers/repeater.rsi
   - type: Clothing

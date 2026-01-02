@@ -56,7 +56,7 @@
             Bartender: [ 2, 3 ]
             Botanist: [ 2, 3 ]
             Boxer: [ 2, 2 ]
-            Chef: [ 3, 4 ]
+            Chef: [ 2, 3 ]
             Clown: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Janitor: [ 2, 4 ]
@@ -69,7 +69,6 @@
             Scientist: [ 4, 6 ]
             ResearchAssistant: [ 2, 3 ]
             Chaplain: [ 1, 1 ]
-            Borg: [ 2, 3 ]
             ForensicMantis: [ 1, 1 ]
             Roboticist: [ 1, 1 ]
             SeniorResearcher: [ 1, 1 ]
@@ -84,3 +83,9 @@
             Clerk: [ 1, 1 ] #FloofStation
             Lawyer: [ 2, 2 ] #FloofStation
             Prosecutor: [ 1, 1 ] #FloofStation
+          # Silicon
+            # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            Borg: [ 2, 3 ]
+            MedicalBorg: [ 2, 3 ]
+            ServiceQuadBorg: [ 2, 3 ] #Floofstation
+            MedicalQuadBorg: [ 2, 3 ] #Floofstation

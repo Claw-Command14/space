@@ -41,7 +41,6 @@
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 2, 2 ]
-            MedicalBorg: [ 2, 2 ]
             MedicalDoctor: [ 3, 3 ]
             Paramedic: [ 1, 1 ]
             MedicalIntern: [ 2, 2 ]
@@ -52,7 +51,6 @@
             Scientist: [ 5, 5 ]
             ForensicMantis: [ 1, 1 ]
             ResearchAssistant: [ 2, 2 ]
-            Borg: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             SeniorResearcher: [ 1, 1 ]
             #security
@@ -83,3 +81,9 @@
             Clerk: [ 1, 1 ]
             Lawyer: [ 1, 1 ]
             Prosecutor: [ 1, 1]
+            # Silicon
+            # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            Borg: [ 1, 2 ]
+            MedicalBorg: [ 1, 2 ]
+            ServiceQuadBorg: [ 1, 2 ] #Floofstation
+            MedicalQuadBorg: [ 1, 2 ] #Floofstation

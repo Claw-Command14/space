@@ -23,6 +23,7 @@
     - TraitsSpeechUncategorized
     - TraitsSpeechAccents
     - TraitsSpeechLanguages
+    - TraitsSpeechNatural #Floof
 
 - type: traitCategory
   id: TraitsSpeechUncategorized
@@ -32,6 +33,9 @@
 
 - type: traitCategory
   id: TraitsSpeechLanguages
+
+- type: traitCategory #Floof
+  id: TraitsSpeechNatural #Floof
 
 - type: traitCategory
   id: Visual

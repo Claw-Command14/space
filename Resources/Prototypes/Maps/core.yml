@@ -44,7 +44,6 @@
             Chemist: [ 2, 3 ]
             MedicalIntern: [ 2, 6 ]
             Paramedic: [ 1, 2 ]
-            MedicalBorg: [ 1, 2 ]
             SeniorPhysician: [ 1, 1 ]
             Psychologist: [ 1, 1 ]
             # Epistemics
@@ -52,7 +51,6 @@
             Scientist: [ 3, 6 ]
             ResearchAssistant: [ 3, 6 ]
             Roboticist: [ 1, 2 ]
-            Borg: [ 1, 2 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
@@ -84,3 +82,9 @@
             Clerk: [ 1, 1 ] #FloofStation
             Lawyer: [ 1, 1 ] #FloofStation
             Prosecutor: [ 1, 1 ] #FloofStation
+            # Silicon
+            # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            Borg: [ 1, 2 ]
+            MedicalBorg: [ 1, 2 ]
+            ServiceQuadBorg: [ 1, 2 ] #Floofstation
+            MedicalQuadBorg: [ 1, 2 ] #Floofstation

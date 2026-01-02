@@ -2355,7 +2355,6 @@ entities:
             1417: -51,19
             1418: -51,18
             1419: -48,19
-            1420: -47,17
             1421: -45,17
             1473: -38,25
             1474: -23,31
@@ -4449,6 +4448,11 @@ entities:
             2589: -20,37
             2590: -27,34
         - node:
+            color: '#FFFFFFFF'
+            id: WoodTrimThinCornerSe
+          decals:
+            2848: -47,18
+        - node:
             cleanable: True
             color: '#FFFFFFFF'
             id: WoodTrimThinCornerSe
@@ -4494,7 +4498,6 @@ entities:
           decals:
             2267: 9,-35
             2459: -51,20
-            2476: -47,18
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -4562,7 +4565,6 @@ entities:
             2479: -47,21
             2480: -47,20
             2481: -47,19
-            2482: -47,18
             2486: -47,24
             2487: -47,25
             2488: -47,26
@@ -4645,6 +4647,15 @@ entities:
             2497: -49,25
             2498: -50,25
             2499: -51,25
+            2838: -56,18
+            2839: -55,18
+            2840: -54,18
+            2841: -53,18
+            2842: -52,18
+            2843: -51,18
+            2844: -50,18
+            2845: -49,18
+            2846: -48,18
         - node:
             cleanable: True
             color: '#FFFFFFFF'
@@ -5691,17 +5702,13 @@ entities:
             0: 65485
           11,5:
             0: 47923
-            1: 8
           11,6:
             0: 56603
           11,7:
             0: 65309
           12,4:
-            1: 62256
+            1: 49968
             0: 3276
-          12,5:
-            1: 15
-            0: 26112
           12,6:
             0: 30470
           12,7:
@@ -6496,6 +6503,9 @@ entities:
             1: 12848
           16,3:
             1: 50
+          12,5:
+            0: 26112
+            1: 14
           13,5:
             1: 22367
           13,6:
@@ -9064,6 +9074,11 @@ entities:
     components:
     - type: Transform
       pos: -29.5,-37.5
+      parent: 2
+  - uid: 12449
+    components:
+    - type: Transform
+      pos: -19.5,21.5
       parent: 2
   - uid: 20921
     components:
@@ -45211,6 +45226,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -68.5,11.5
       parent: 2
+  - uid: 19073
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,-19.5
+      parent: 2
   - uid: 19284
     components:
     - type: Transform
@@ -45222,6 +45243,30 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 41.5,0.5
+      parent: 2
+  - uid: 21518
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,-20.5
+      parent: 2
+  - uid: 21519
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,-21.5
+      parent: 2
+  - uid: 21520
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 38.5,-18.5
+      parent: 2
+  - uid: 21521
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 38.5,-19.5
       parent: 2
 - proto: ChairFolding
   entities:
@@ -57406,7 +57451,7 @@ entities:
       pos: -19.5,40.5
       parent: 2
     - type: FaxMachine
-      name: Prosecutor office
+      name: Prosecutor
 - proto: FaxMachineCaptain
   entities:
   - uid: 7524
@@ -60728,7 +60773,7 @@ entities:
       pos: 40.5,14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -126253.36
+      secondsUntilStateChange: -127048.9
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -97693,7 +97738,7 @@ entities:
   - uid: 20781
     components:
     - type: MetaData
-      name: attorney office
+      name: Prosecutor Office
     - type: Transform
       pos: -19.5,39.5
       parent: 2
@@ -99012,6 +99057,13 @@ entities:
     - type: Transform
       pos: 10.5,18.5
       parent: 2
+- proto: LockerClerkFilled
+  entities:
+  - uid: 18053
+    components:
+    - type: Transform
+      pos: -25.5,49.5
+      parent: 2
 - proto: LockerClownFilled
   entities:
   - uid: 10202
@@ -100111,10 +100163,10 @@ entities:
     - type: Transform
       pos: -52.276764,-6.6527042
       parent: 2
-  - uid: 18053
+  - uid: 14427
     components:
     - type: Transform
-      pos: 0.5,9.5
+      pos: -0.5,10.5
       parent: 2
 - proto: MopItem
   entities:
@@ -100697,20 +100749,10 @@ entities:
     - type: Transform
       pos: -57.5,23.5
       parent: 2
-  - uid: 4669
-    components:
-    - type: Transform
-      pos: -55.5,23.5
-      parent: 2
   - uid: 10612
     components:
     - type: Transform
       pos: -58.5,23.5
-      parent: 2
-  - uid: 12059
-    components:
-    - type: Transform
-      pos: -54.5,23.5
       parent: 2
 - proto: N14PlantpotBroken2
   entities:
@@ -101291,11 +101333,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -21.5,49.5
-      parent: 2
-  - uid: 19073
-    components:
-    - type: Transform
-      pos: -25.5,49.5
       parent: 2
   - uid: 19188
     components:
@@ -107983,7 +108020,6 @@ entities:
   - uid: 7814
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: -54.5,25.5
       parent: 2
   - uid: 13240
@@ -116326,11 +116362,6 @@ entities:
     - type: Transform
       pos: -40.5,41.5
       parent: 2
-  - uid: 18764
-    components:
-    - type: Transform
-      pos: -39.5,41.5
-      parent: 2
   - uid: 18765
     components:
     - type: Transform
@@ -116524,15 +116555,59 @@ entities:
       parent: 2
 - proto: SpawnPointJanitor
   entities:
+  - uid: 12059
+    components:
+    - type: Transform
+      pos: -0.5,11.5
+      parent: 2
   - uid: 14426
     components:
     - type: Transform
       pos: 0.5,11.5
       parent: 2
-  - uid: 14427
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 21522
     components:
     - type: Transform
-      pos: -0.5,10.5
+      rot: 1.5707963267948966 rad
+      pos: 28.5,-19.5
+      parent: 2
+  - uid: 21523
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,-20.5
+      parent: 2
+  - uid: 21524
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,-21.5
+      parent: 2
+  - uid: 21525
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 38.5,-18.5
+      parent: 2
+  - uid: 21526
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 38.5,-19.5
+      parent: 2
+  - uid: 21527
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 41.5,-5.5
+      parent: 2
+  - uid: 21528
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 41.5,-6.5
       parent: 2
 - proto: SpawnPointLawyer
   entities:
@@ -116652,6 +116727,13 @@ entities:
     - type: Transform
       pos: 16.5,-27.5
       parent: 2
+- proto: SpawnPointMedicalBorg
+  entities:
+  - uid: 21517
+    components:
+    - type: Transform
+      pos: 20.5,6.5
+      parent: 2
 - proto: SpawnPointMedicalDoctor
   entities:
   - uid: 16429
@@ -116690,6 +116772,13 @@ entities:
     components:
     - type: Transform
       pos: 17.5,4.5
+      parent: 2
+- proto: SpawnPointMedicalQuadborg
+  entities:
+  - uid: 21516
+    components:
+    - type: Transform
+      pos: 19.5,6.5
       parent: 2
 - proto: SpawnPointMime
   entities:
@@ -117119,6 +117208,13 @@ entities:
     components:
     - type: Transform
       pos: -55.5,35.5
+      parent: 2
+- proto: SpawnPointServiceQuadborg
+  entities:
+  - uid: 18764
+    components:
+    - type: Transform
+      pos: -39.5,41.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:
@@ -120772,11 +120868,6 @@ entities:
     components:
     - type: Transform
       pos: -24.5,48.5
-      parent: 2
-  - uid: 12449
-    components:
-    - type: Transform
-      pos: -25.5,49.5
       parent: 2
   - uid: 13239
     components:
@@ -135654,6 +135745,11 @@ entities:
       parent: 2
 - proto: WaterTankHighCapacity
   entities:
+  - uid: 4669
+    components:
+    - type: Transform
+      pos: 0.5,9.5
+      parent: 2
   - uid: 6483
     components:
     - type: Transform

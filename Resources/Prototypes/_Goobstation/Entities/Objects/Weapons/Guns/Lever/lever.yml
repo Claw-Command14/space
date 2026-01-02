@@ -4,6 +4,11 @@
   id: WeaponLeverChester
   description: An improved lever-action rifle designed to fire specialized .45 caliber ammunition for rapid threat removal.
   components:
+  - type: Item # Floof - Gun Shape Refactor
+    size: Large
+    storedRotation: 45
+    shape:
+    - 0,0,4,1
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Lever/chester.rsi
     layers:

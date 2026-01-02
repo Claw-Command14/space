@@ -109,3 +109,17 @@
     sprite: _Floof/Clothing/Head/sodajerkhat.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Head/sodajerkhat.rsi
+
+- type: entity
+  parent: ClothingHeadHatMagician
+  id: ClothingHeadHatMagicianSyndie
+  name: magician's tophat
+  description: "A magician's tophat."
+  suffix: syndicate
+  components:
+  - type: Item
+    size: Ginormous # Must be bigger than the items it can fit inside, to prevent players from creating a fucking singularity with these.
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,5,4

@@ -66,7 +66,6 @@
             ServiceWorker: [ 2, 3 ]
             Zookeeper: [ 2, 2 ]
           #science
-            MedicalBorg: [ 2, 3 ]
             Chaplain: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
             ResearchAssistant: [ 2, 3 ]
@@ -79,6 +78,12 @@
             SalvageSpecialist: [ 3, 5 ]
             Quartermaster: [ 1, 1 ]
             InventorySpecialist: [ 1, 1 ] #FloofStation
+          #Silicon
+            # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            Borg: [ 2, 3 ]
+            MedicalBorg: [ 2, 3 ]
+            ServiceQuadBorg: [ 2, 3 ] #Floofstation
+            MedicalQuadBorg: [ 2, 3 ] #Floofstation
           # Justice added by FloofStation
             ChiefJustice: [ 1, 1 ] #FloofStation
             Clerk: [ 1, 1 ] #FloofStation

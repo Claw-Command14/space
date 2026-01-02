@@ -41,6 +41,10 @@
   id: WeaponLauncherChinaLake
   description: PLOOP
   components:
+  - type: Item # Floof - Gun Shape Refactor
+    size: Large
+    shape:
+    - 0,0,3,1
   - type: Sprite
     sprite: Objects/Weapons/Guns/Launchers/china_lake.rsi
     layers:

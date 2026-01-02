@@ -135,3 +135,14 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 2
+
+- type: listing
+  id: UplinkClothingHeadHatMagicianSyndie
+  name: Uplink-Clothing-Head-Hat-Magician-Syndie-name
+  description: Uplink-Clothing-Head-Hat-Magician-Syndie-desc
+  icon: { sprite: Clothing/Head/Hats/magician.rsi, state: icon }
+  productEntity: ClothingHeadHatMagicianSyndie
+  cost:
+    Telecrystal: 4 # Pretty OP storage
+  categories:
+  - UplinkDeception

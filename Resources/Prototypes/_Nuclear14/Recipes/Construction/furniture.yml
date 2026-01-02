@@ -382,9 +382,9 @@
 - type: construction
   name: bar counter
   id: N14TableCounterBar
-  graph: N14TableCounterBarRecipes
+  graph: BarCounter #floof station
   startNode: start
-  targetNode: TableCounterBar
+  targetNode: barcounter #floof station
   category: construction-category-furniture
   description: An alcohol stained bartop.
   objectType: Structure

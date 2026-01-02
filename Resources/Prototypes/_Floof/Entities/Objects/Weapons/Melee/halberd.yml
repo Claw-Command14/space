@@ -1,10 +1,14 @@
-
 - type: entity
   name: halberd
   parent: UnholyHalberd
   id: WeaponHalberd
   description: A polarm with an axe blade, topped with a spike, mounted on a long shaft. Produced by SESWC!
   components:
+  - type: Item
+    size: Huge
+    storedRotation: 45
+    shape: # Floof - Changes the Halbard to Fit in Bags... barely
+    - 0,0,7,1
   - type: MeleeRequiresWield
   - type: MeleeWeapon
     heavyStaminaCost: 10

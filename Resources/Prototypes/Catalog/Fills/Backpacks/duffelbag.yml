@@ -14,6 +14,10 @@
       - id: Scalpel
       - id: BoneGel # Shitmed Change
       - id: NitrousOxideTankFilled # DeltaV - add anesthesia
+      - id: ClothingHandsGlovesNitrile # Floof
+      - id: EmergencyRollerBedSpawnFolded
+      - id: ClothingMaskBreathMedical
+      - id: ClothingMaskSterile
 
 - type: entity
   id: ClothingBackpackDuffelCBURNFilled
@@ -50,6 +54,8 @@
       - id: EmergencyRollerBedSpawnFolded
       - id: BoneGel # Shitmed Change
       - id: NitrousOxideTankFilled # DeltaV - add anesthesia
+      - id: ClothingMaskBreathMedical # Floof
+      - id: ClothingMaskSterile
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle

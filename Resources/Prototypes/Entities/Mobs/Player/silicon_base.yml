@@ -78,7 +78,7 @@
           Cold: 0.1 #per second, scales with temperature & other constants
       heatDamage:
         types:
-          Heat: 3 #per second, scales with temperature & other constants
+          Heat: 0.5 #per second, scales with temperature & other constants # Floof - tuned down from 3 to 0.5
       atmosTemperatureTransferEfficiency: 0.05
     - type: KillOnOverheat # GoobStation
     - type: Deathgasp
