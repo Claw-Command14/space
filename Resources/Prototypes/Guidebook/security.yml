@@ -3,6 +3,7 @@
   name: guide-entry-security
   text: "/ServerInfo/Guidebook/Security/Security.xml"
   children:
+  - SecurityWeapons
   - Forensics
   - Defusal
   - CriminalRecords
@@ -21,3 +22,8 @@
   id: CriminalRecords
   name: guide-entry-criminal-records
   text: "/ServerInfo/Guidebook/Security/CriminalRecords.xml"
+
+- type: guideEntry
+  id: SecurityWeapons
+  name: guide-entry-loadout-info-security-weapons
+  text: "/ServerInfo/Guidebook/Security/SecurityWeapons.xml"
