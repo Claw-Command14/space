@@ -1,7 +1,7 @@
 - type: gameMap
   id: Shoukou
   mapName: 'Shōkō'
-  mapPath: /Maps/Floof/shoukou.yml # FloofStation
+  mapPath: /Maps/ClawCommand/shoukou.yml # Claw Command
   minPlayers: 35
   maxPlayers: 60
   stations:

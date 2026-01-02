@@ -1,7 +1,7 @@
 - type: gameMap
   id: Saltern
   mapName: 'Saltern'
-  mapPath: /Maps/Floof/saltern.yml # FloofStation
+  mapPath: /Maps/ClawCommand/saltern.yml # Claw Command
   minPlayers: 30
   maxPlayers: 60
   fallback: true
