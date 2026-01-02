@@ -200,7 +200,7 @@
     definitions:
     - prefRoles: [ HeadRev ]
       max: 2
-      playerRatio: 20 # WD
+      playerRatio: 10 # claw command
       briefing:
         text: head-rev-role-greeting
         color: CornflowerBlue

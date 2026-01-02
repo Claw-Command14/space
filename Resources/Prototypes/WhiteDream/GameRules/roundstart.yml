@@ -11,7 +11,7 @@
     - prefRoles: [ BloodCultist ]
       max: 4
       min: 2
-      playerRatio: 15
+      playerRatio: 10 #claw command
       briefing:
         text: blood-cult-role-greeting
         color: Red
