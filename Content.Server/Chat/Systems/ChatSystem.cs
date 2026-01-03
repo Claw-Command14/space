@@ -426,7 +426,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         )
     {
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
-        _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, Color.FromHex("#f1356aff"));
+        Color? realColor = null;
+        if (sender == "Michael")
+        {
+            realColor = colorOverride;
+        }
+        else
+        {
+            realColor = Color.FromHex("#ff2768ff");
+        }
+        _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, realColor);
         if (playSound)
         {
             _audio.PlayGlobal(announcementSound != null ? announcementSound.ToString() : DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
