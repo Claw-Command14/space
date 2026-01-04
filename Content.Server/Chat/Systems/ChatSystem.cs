@@ -427,7 +427,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     {
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
         Color? realColor = null;
-        if (sender == "Michael")
+        if (sender != "Claw Command")
         {
             realColor = colorOverride;
         }
