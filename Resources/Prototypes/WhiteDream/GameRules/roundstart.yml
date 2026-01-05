@@ -4,7 +4,12 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
-    minPlayers: 8
+    minPlayers: 10
+  - type: StationEvent # Claw Command
+    minPlayers: 10
+    reoccurrenceDelay: 600
+    startAnnouncement: false
+    weight: 2
   - type: BloodCultRule
   - type: AntagSelection
     definitions:

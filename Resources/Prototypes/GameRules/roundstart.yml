@@ -194,7 +194,12 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
-    minPlayers: 8
+    minPlayers: 10
+  - type: StationEvent # Claw Command
+    minPlayers: 10
+    reoccurrenceDelay: 600
+    startAnnouncement: false
+    weight: 2
   - type: RevolutionaryRule
   - type: AntagSelection
     definitions:
@@ -213,6 +218,14 @@
       - type: RevolutionaryRole
         prototype: HeadRev
 
+#claw command
+#- type: entity
+#  id: RevolutionaryEvent
+#  parent: Revolutionary
+#  components:
+#  - type: StationEvent
+#    minPlayers: 8
+#end claw command
 - type: entity
   id: Sandbox
   parent: BaseGameRule
