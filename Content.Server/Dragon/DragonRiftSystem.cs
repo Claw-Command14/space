@@ -56,7 +56,7 @@ public sealed class DragonRiftSystem : EntitySystem
                     _dragon.RiftCharged(comp.Dragon.Value);
 
                 comp.Accumulator = comp.MaxAccumulator;
-                RemComp<DamageableComponent>(uid);
+                //RemComp<DamageableComponent>(uid);
                 comp.State = DragonRiftState.Finished;
                 Dirty(uid, comp);
             }
@@ -67,7 +67,7 @@ public sealed class DragonRiftSystem : EntitySystem
 
             comp.SpawnAccumulator += frameTime;
 
-            if (comp.State < DragonRiftState.AlmostFinished && comp.Accumulator > comp.MaxAccumulator / 2f)
+            if (comp.State < DragonRiftState.AlmostFinished && comp.Accumulator > comp.MaxAccumulator / 10f) // clawcommand 2f to 10f.
             {
                 comp.State = DragonRiftState.AlmostFinished;
                 Dirty(uid, comp);
