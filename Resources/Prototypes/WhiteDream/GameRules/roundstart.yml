@@ -9,7 +9,7 @@
     minPlayers: 10
     reoccurrenceDelay: 600
     startAnnouncement: false
-    weight: 2
+    weight: 1
   - type: BloodCultRule
   - type: AntagSelection
     definitions:
