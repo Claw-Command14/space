@@ -99,7 +99,8 @@ namespace Content.Shared.Movement.Systems
             Direction dir = (vector2i == Vector2i.Zero) ? Direction.Invalid : vector2i.AsDirection();
             var moveEvent = new MoveInputEvent(component.Owner, component, component.HeldMoveButtons, dir, buttons != 0);
 
-            // Shitmed Change End            component.HeldMoveButtons = buttons;
+            // Shitmed Change End
+            component.HeldMoveButtons = buttons;
             RaiseLocalEvent(component.Owner, ref moveEvent);
             Dirty(component.Owner, component);
 

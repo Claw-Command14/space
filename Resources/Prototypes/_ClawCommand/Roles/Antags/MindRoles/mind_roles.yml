@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseMindRoleAntag
+  #parent: BaseMindRoleAntag
   id: MindRoleLoneAbductor
   name: Lone Abductor Role
   components:
@@ -9,7 +9,7 @@
   - type: Abductor
 
 - type: entity
-  parent: BaseMindRoleAntag
+  #parent: BaseMindRoleAntag
   id: MindRoleAbductorVictim
   name: Abductee Role
   components:

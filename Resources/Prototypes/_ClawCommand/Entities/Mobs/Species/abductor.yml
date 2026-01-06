@@ -7,7 +7,7 @@
   - BaseMobSpecies
   id: MobAbductor
   components:
-  - type: Absorbable # BLOOD FOR THE BLOOD GOD
+  #- type: Absorbable # enable when changelings implemented
   - type: Psionic
     removable: false
     roller: false

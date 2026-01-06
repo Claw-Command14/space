@@ -443,8 +443,6 @@
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
-  - type: BoneSaw
-    speed: 1.5
 
 - type: entity
   name: advanced circular saw

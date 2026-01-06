@@ -4,6 +4,7 @@ using Content.Shared.Mind.Components;
 using Robust.Shared.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Mind
 {
@@ -109,5 +110,10 @@ namespace Content.Shared.Mind
         [ViewVariables, Access(typeof(SharedMindSystem), typeof(SharedGameTicker))]
         // TODO remove this after moving IPlayerManager functions to shared
         public ICommonSession? Session { get; set; }
+        /// <summary>
+        ///     The mind's current antagonist/special role, or lack thereof;
+        /// </summary>
+        [DataField, AutoNetworkedField]
+        public ProtoId<RoleTypePrototype> RoleType = "Neutral";
     }
 }
