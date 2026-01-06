@@ -43,3 +43,6 @@ chat-language-Sheep-name = Sheep
 chat-language-Xeno-name = Xeno
 # Floof
 chat-language-ScugSign-name = ScugSign
+
+# Abductor
+chat-language-Xeeplian-name = Xeeplian

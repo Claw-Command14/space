@@ -86,6 +86,11 @@ language-Kagebun-description =
 
 # Animal Languages
 
+language-Xeeplian-name = Xeeplian
+language-Xeeplian-description =
+    Our language is highly advanced, efficient and to the point.
+    We have taken a liking to mimic some of the inferior lifeforms' babbling in the further pursuit of Our goals.
+
 # Floof - some of those are rebranded. Why do we have two sources of truth for language names?
 language-Cat-name = Felidae
 language-Cat-description = The proto-language primarily utilized by felids, such as house cats or lions.

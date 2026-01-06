@@ -2,3 +2,8 @@
   id: clawtail
   flavorType: Complex
   description: flavor-complex-clawtail
+
+- type: flavor
+  id: alienblood
+  flavorType: Base
+  description: flavor-base-alienblood

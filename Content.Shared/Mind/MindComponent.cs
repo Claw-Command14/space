@@ -97,7 +97,11 @@ namespace Content.Shared.Mind
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("preventSuicide")]
         public bool PreventSuicide { get; set; }
-
+        /// <summary>
+        ///     Mind Role Entities belonging to this Mind
+        /// </summary>
+        [DataField, AutoNetworkedField]
+        public List<EntityUid> MindRoles = new List<EntityUid>();
         /// <summary>
         ///     The session of the player owning this mind.
         ///     Can be null, in which case the player is currently not logged in.

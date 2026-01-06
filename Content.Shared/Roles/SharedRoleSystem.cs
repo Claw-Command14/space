@@ -1,4 +1,6 @@
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
+
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Mind;
@@ -193,7 +195,84 @@ public abstract class SharedRoleSystem : EntitySystem
         MindRemoveRole<T>(mindId);
         return true;
     }
+    /// <summary>
+    /// Finds the first mind role of a specific T type on a mind entity.
+    /// Outputs entity components for the mind role's MindRoleComponent and for T
+    /// </summary>
+    /// <param name="mind">The mind entity</param>
+    /// <typeparam name="T">The type of the role to find.</typeparam>
+    /// <param name="role">The Mind Role entity component</param>
+    /// <returns>True if the role is found</returns>
+    public bool MindHasRole<T>(Entity<MindComponent?> mind,
+        [NotNullWhen(true)] out Entity<MindRoleComponent, T>? role) where T : IComponent
+    {
+        role = null;
+        if (!Resolve(mind.Owner, ref mind.Comp))
+            return false;
 
+        foreach (var roleEnt in mind.Comp.MindRoles)
+        {
+            if (!TryComp(roleEnt, out T? tcomp))
+                continue;
+
+            if (!TryComp(roleEnt, out MindRoleComponent? roleComp))
+            {
+                Log.Error($"Encountered mind role entity {ToPrettyString(roleEnt)} without a {nameof(MindRoleComponent)}");
+                continue;
+            }
+
+            role = (roleEnt, roleComp, tcomp);
+            return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
+    /// Finds the first mind role of a specific type on a mind entity.
+    /// Outputs an entity component for the mind role's MindRoleComponent
+    /// </summary>
+    /// <param name="mindId">The mind entity</param>
+    /// <param name="type">The Type to look for</param>
+    /// <param name="role">The output role</param>
+    /// <returns>True if the role is found</returns>
+    public bool MindHasRole(EntityUid mindId,
+        Type type,
+        [NotNullWhen(true)] out Entity<MindRoleComponent>? role)
+    {
+        role = null;
+        // All MindRoles have this component, it would just return the first one.
+        // Order might not be what is expected.
+        // Better to report null
+        if (type == Type.GetType("MindRoleComponent"))
+        {
+            Log.Error($"Something attempted to query mind role 'MindRoleComponent' on mind {mindId}. This component is present on every single mind role.");
+            return false;
+        }
+
+        if (!TryComp<MindComponent>(mindId, out var mind))
+            return false;
+
+        var found = false;
+
+        foreach (var roleEnt in mind.MindRoles)
+        {
+            if (!HasComp(roleEnt, type))
+                continue;
+
+            if (!TryComp(roleEnt, out MindRoleComponent? roleComp))
+            {
+                Log.Error($"Encountered mind role entity {ToPrettyString(roleEnt)} without a {nameof(MindRoleComponent)}");
+                continue;
+            }
+
+            role = (roleEnt, roleComp);
+            found = true;
+            break;
+        }
+
+        return found;
+    }
     public bool MindHasRole<T>(EntityUid mindId) where T : IComponent
     {
         DebugTools.Assert(HasComp<MindComponent>(mindId));

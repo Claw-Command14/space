@@ -97,3 +97,7 @@
 - type: font # Floof - Tajaran Update b7660b9
   id: RubikDirt
   path: /Fonts/Rubik_Dirt/RubikDirt.ttf
+
+- type: font
+  id: YoureGone
+  path: /Fonts/YoureGone.otf

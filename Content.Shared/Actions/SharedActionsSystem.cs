@@ -17,6 +17,10 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+// Shitmed Change
+using Content.Shared._ClawCommand.Antags.Abductor;
+using Content.Shared.Silicons.StationAi;
+using Content.Shared.Popups;
 
 namespace Content.Shared.Actions;
 
@@ -33,6 +37,7 @@ public abstract class SharedActionsSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!; // Shitmed Change
 
     public override void Initialize()
     {
@@ -457,35 +462,36 @@ public abstract class SharedActionsSystem : EntitySystem
 
                 break;
             case EntityWorldTargetActionComponent entityWorldAction:
-            {
-                var actionEntity = GetEntity(ev.EntityTarget);
-                var actionCoords = GetCoordinates(ev.EntityCoordinatesTarget);
-
-                if (actionEntity is null && actionCoords is null)
                 {
-                    Log.Error($"Attempted to perform an entity-world-targeted action without an entity or world coordinates! Action: {name}");
-                    return;
+                    var actionEntity = GetEntity(ev.EntityTarget);
+                    var actionCoords = GetCoordinates(ev.EntityCoordinatesTarget);
+
+                    if (actionEntity is null && actionCoords is null)
+                    {
+                        Log.Error($"Attempted to perform an entity-world-targeted action without an entity or world coordinates! Action: {name}");
+                        return;
+                    }
+
+                    var entWorldAction = new Entity<EntityWorldTargetActionComponent>(actionEnt, entityWorldAction);
+
+                    if (!ValidateEntityWorldTarget(user, actionEntity, actionCoords, entWorldAction))
+                        return;
+
+                    _adminLogger.Add(LogType.Action,
+                        $"{ToPrettyString(user):user} is performing the {name:action} action (provided by {ToPrettyString(action.Container ?? user):provider}) targeted at {ToPrettyString(actionEntity):target} {actionCoords:target}.");
+
+                    if (entityWorldAction.Event != null)
+                    {
+                        entityWorldAction.Event.Entity = actionEntity;
+                        entityWorldAction.Event.Coords = actionCoords;
+                        Dirty(actionEnt, entityWorldAction);
+                        performEvent = entityWorldAction.Event;
+                    }
+                    break;
                 }
-
-                var entWorldAction = new Entity<EntityWorldTargetActionComponent>(actionEnt, entityWorldAction);
-
-                if (!ValidateEntityWorldTarget(user, actionEntity, actionCoords, entWorldAction))
-                    return;
-
-                _adminLogger.Add(LogType.Action,
-                    $"{ToPrettyString(user):user} is performing the {name:action} action (provided by {ToPrettyString(action.Container ?? user):provider}) targeted at {ToPrettyString(actionEntity):target} {actionCoords:target}.");
-
-                if (entityWorldAction.Event != null)
-                {
-                    entityWorldAction.Event.Entity = actionEntity;
-                    entityWorldAction.Event.Coords = actionCoords;
-                    Dirty(actionEnt, entityWorldAction);
-                    performEvent = entityWorldAction.Event;
-                }
-                break;
-            }
             case InstantActionComponent instantAction:
-                if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, null))
+                var hasNoSpecificComponents = !HasComp<StationAiOverlayComponent>(user) && !HasComp<AbductorScientistComponent>(user); // Shitmed Change
+                if (action.CheckCanInteract && !_actionBlockerSystem.CanInteract(user, null) && hasNoSpecificComponents) // Shitmed Change
                     return;
 
                 _adminLogger.Add(LogType.Action,
@@ -575,7 +581,8 @@ public abstract class SharedActionsSystem : EntitySystem
         if (entityCoordinates is not { } coords)
             return false;
 
-        if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, null))
+        var hasNoSpecificComponents = !HasComp<StationAiOverlayComponent>(user) && !HasComp<AbductorScientistComponent>(user); // Shitmed Change
+        if (checkCanInteract && !_actionBlockerSystem.CanInteract(user, null) && hasNoSpecificComponents) // Shitmed Change
             return false;
 
         if (!checkCanAccess)
@@ -584,7 +591,10 @@ public abstract class SharedActionsSystem : EntitySystem
             var xform = Transform(user);
 
             if (xform.MapID != coords.GetMapId(EntityManager))
+            {
+                _popup.PopupCursor(Loc.GetString("world-target-out-of-range"), user); // Goobstation Change
                 return false;
+            }
 
             if (range <= 0)
                 return true;
@@ -1083,4 +1093,42 @@ public abstract class SharedActionsSystem : EntitySystem
         action.EntityIcon = icon;
         Dirty(uid, action);
     }
+
+    /// <summary>
+    ///     Checks if the action has a cooldown and if it's still active
+    /// </summary>
+    protected bool IsCooldownActive(BaseActionComponent action, TimeSpan? curTime = null)
+    {
+        curTime ??= GameTiming.CurTime;
+        // TODO: Check for charge recovery timer
+        return action.Cooldown.HasValue && action.Cooldown.Value.End > curTime;
+    }
+
+    protected bool ShouldResetCharges(BaseActionComponent action)
+    {
+        return action is { Charges: < 1, RenewCharges: true };
+    }
+
+    // Shitmed Change Start - Starlight Abductors
+    public EntityUid[] HideActions(EntityUid performer, ActionsComponent? comp = null)
+    {
+        if (!Resolve(performer, ref comp, false))
+            return [];
+
+        var actions = comp.Actions.ToArray();
+        comp.Actions.Clear();
+        Dirty(performer, comp);
+        return actions;
+    }
+
+    public void UnHideActions(EntityUid performer, EntityUid[] actions, ActionsComponent? comp = null)
+    {
+        if (!Resolve(performer, ref comp, false))
+            return;
+
+        foreach (var action in actions)
+            comp.Actions.Add(action);
+        Dirty(performer, comp);
+    }
+    // Shitmed Change End
 }

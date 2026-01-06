@@ -68,3 +68,15 @@
     contents:
       - id: WakizashiStun
       - id: Katana
+
+
+- type: entity
+  parent: ClothingBeltUtility
+  id: ClothingAbductorBelt
+  name:  alien belt
+  description: Can hold various of OUR things.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Clothing/Belt/abductor.rsi
+  - type: Clothing
+    sprite: _Shitmed/Clothing/Belt/abductor.rsi
