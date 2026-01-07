@@ -10,6 +10,9 @@
     sprite: _Shitmed/Mobs/Species/Misc/Dubious/organs.rsi
     state: gland
   - type: AbductorOrgan
+  - type: Perishable
+    rotAfter: 30000 # Claw Command 500 minutes - cant rot
+
 
 - type: entity
   id: OrganDubiousHealth

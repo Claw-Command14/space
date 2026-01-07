@@ -29,6 +29,11 @@
     node: cyborg
   - type: Speech
     speechVerb: Robotic
+  # Have to add the following components here or it doesn't work.
+  - type: SurgeryIgnoreClothing
+  - type: SurgerySpeedModifier
+    speedModifier: 1.5
+  - type: Sanitized
 
 - type: entity
   id: BorgChassisMining
@@ -266,6 +271,9 @@
     interactFailureString: petting-failure-medical-cyborg
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: SurgeryIgnoreClothing
+  - type: SurgerySpeedModifier
+    speedModifier: 1.5
 
 - type: entity
   id: BorgChassisService
