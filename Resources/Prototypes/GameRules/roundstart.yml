@@ -82,7 +82,7 @@
   id: Nukeops
   components:
   - type: GameRule
-    minPlayers: 2
+    minPlayers: 20
   - type: LoadMapRule
     gameMap: NukieOutpost
   - type: AntagSelection
@@ -194,9 +194,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
-    minPlayers: 10
+    minPlayers: 15
   - type: StationEvent # Claw Command
-    minPlayers: 10
+    minPlayers: 15
     reoccurrenceDelay: 600
     startAnnouncement: false
     weight: 1
