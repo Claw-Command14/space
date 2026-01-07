@@ -106,8 +106,8 @@
     pocket1: DoubleEmergencyOxygenTankFilled
     pocket2: BaseUplinkRadio40TC
     belt: ClothingBeltMilitaryWebbing
-  #inhand: # DeltaV - Prevent commander spawning with the declaration of war
-  #  - NukeOpsDeclarationOfWar
+  inhand: # DeltaV - Prevent commander spawning with the declaration of war
+    - NukeOpsDeclarationOfWar
   innerClothingSkirt: ClothingUniformJumpskirtOperative
   satchel: ClothingBackpackDuffelSyndicateOperative
   duffelbag: ClothingBackpackDuffelSyndicateOperative
@@ -313,7 +313,7 @@
     jumpsuit: ClothingUniformJumpsuitClownBanana
     mask: ClothingMaskClownBanana
 
-- type: startingGear # Floofstation 
+- type: startingGear # Floofstation
   id: Infiltrator
   equipment:
     jumpsuit: ClothingUniformJumpsuitChameleon
