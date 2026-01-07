@@ -1699,13 +1699,13 @@ entities:
             color: '#CB004FFF'
             id: FullTileOverlayGreyscale
           decals:
-            3301: 25,-2
-            3302: 25,-1
-            3305: 25,0
-            3309: 26,1
-            3311: 26,-3
-            3313: 23,1
-            3316: 29,-3
+            3293: 25,-2
+            3294: 25,-1
+            3295: 25,0
+            3296: 26,1
+            3297: 26,-3
+            3298: 23,1
+            3299: 29,-3
         - node:
             color: '#FF00008C'
             id: FullTileOverlayGreyscale
@@ -3196,7 +3196,7 @@ entities:
             color: '#CB004FFF'
             id: ThreeQuarterTileOverlayGreyscale
           decals:
-            3327: 27,1
+            3307: 27,1
         - node:
             color: '#F2E03CCC'
             id: ThreeQuarterTileOverlayGreyscale
@@ -3275,7 +3275,7 @@ entities:
             color: '#CB004FFF'
             id: ThreeQuarterTileOverlayGreyscale180
           decals:
-            3326: 25,1
+            3306: 25,1
         - node:
             color: '#F2E03CCC'
             id: ThreeQuarterTileOverlayGreyscale180
@@ -3345,9 +3345,9 @@ entities:
             color: '#CB004FFF'
             id: ThreeQuarterTileOverlayGreyscale270
           decals:
-            3322: 30,-3
-            3323: 29,-2
-            3324: 27,-3
+            3302: 30,-3
+            3303: 29,-2
+            3304: 27,-3
         - node:
             color: '#F2E03CCC'
             id: ThreeQuarterTileOverlayGreyscale270
@@ -3443,9 +3443,9 @@ entities:
             color: '#CB004FFF'
             id: ThreeQuarterTileOverlayGreyscale90
           decals:
-            3319: 22,1
-            3320: 25,-3
-            3325: 23,0
+            3300: 22,1
+            3301: 25,-3
+            3305: 23,0
         - node:
             color: '#F2E03CCC'
             id: ThreeQuarterTileOverlayGreyscale90
@@ -9422,7 +9422,7 @@ entities:
       pos: -19.5,-24.5
       parent: 1668
     - type: Door
-      secondsUntilStateChange: -63886.22
+      secondsUntilStateChange: -63928.37
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
