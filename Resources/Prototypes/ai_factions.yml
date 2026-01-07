@@ -9,6 +9,7 @@
     - Revolutionary
     - Gorilla # Floof
     - RatKingFaction # CLAW
+    - Changeling
 
 - type: npcFaction
   id: NanoTrasen
@@ -54,6 +55,7 @@
   - Gorilla  # Floof
   - GeometerOfBlood
   - RatKingFaction # Claw
+  - Changeling
 
 - type: npcFaction
   id: SimpleNeutral
@@ -67,6 +69,7 @@
   - PetsNT
   - Zombie
   - Gorilla # Floof
+  - Changeling
 
 - type: npcFaction
   id: Xeno
@@ -79,6 +82,7 @@
   - Revolutionary
   - Gorilla # Floof
   - RatKingFaction #claw
+  - Changeling
 
 - type: npcFaction
   id: Zombie
@@ -91,6 +95,7 @@
   - PetsNT
   - Revolutionary
   - Gorilla # Floof
+  - Changeling
 
 - type: npcFaction
   id: Revolutionary
@@ -191,3 +196,4 @@
   - GeometerOfBlood
   - AnimalFriend
   - Xeno
+  - Changeling

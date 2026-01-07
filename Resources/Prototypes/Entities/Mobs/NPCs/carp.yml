@@ -99,6 +99,7 @@
       color: "#808080"
       activateSound: null
       deactivateSound: null
+    - type: Absorbable
 
 - type: entity
   parent: BaseMobCarp
@@ -263,6 +264,7 @@
       interfaces:
         enum.SurgeryUIKey.Key:
           type: SurgeryBui
+    - type: Absorbable
 
 - type: entity
   id: MobSharkSalvage

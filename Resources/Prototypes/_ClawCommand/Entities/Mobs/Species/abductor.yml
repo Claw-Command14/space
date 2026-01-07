@@ -7,7 +7,7 @@
   - BaseMobSpecies
   id: MobAbductor
   components:
-  #- type: Absorbable # enable when changelings implemented
+  - type: Absorbable
   - type: Psionic
     removable: false
     roller: false

@@ -41,7 +41,8 @@ public sealed partial class ProjectileComponent : Component
     /// <summary>
     ///     The amount of damage the projectile will do.
     /// </summary>
-    [DataField(required: true)] [ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
+    [ViewVariables(VVAccess.ReadWrite)]
     public DamageSpecifier Damage = new();
 
     /// <summary>
@@ -79,4 +80,12 @@ public sealed partial class ProjectileComponent : Component
     /// </summary>
     [DataField]
     public bool DamagedEntity;
+
+    // Goobstation start
+    [DataField]
+    public bool Penetrate;
+
+    [NonSerialized]
+    public List<EntityUid> IgnoredEntities = new();
+    // Goobstation end
 }

@@ -241,6 +241,8 @@ public sealed class ItemToggleSystem : EntitySystem
     /// </summary>
     private void TurnOffOnUnwielded(Entity<ItemToggleComponent> ent, ref ItemUnwieldedEvent args)
     {
+        if (!ent.Comp.WieldToggle) // Goobstation
+            return;
         TryDeactivate((ent, ent.Comp), args.User);
     }
 
@@ -249,6 +251,8 @@ public sealed class ItemToggleSystem : EntitySystem
     /// </summary>
     private void TurnOnOnWielded(Entity<ItemToggleComponent> ent, ref ItemWieldedEvent args)
     {
+        if (!ent.Comp.WieldToggle) // Goobstation
+            return;
         // FIXME: for some reason both client and server play sound
         TryActivate((ent, ent.Comp));
     }
@@ -287,7 +291,7 @@ public sealed class ItemToggleSystem : EntitySystem
             var stream = args.Predicted
                 ? _audio.PlayPredicted(comp.ActiveSound, uid, args.User, loop)
                 : _audio.PlayPvs(comp.ActiveSound, uid, loop);
-            if (stream?.Entity is {} entity)
+            if (stream?.Entity is { } entity)
                 comp.PlayingStream = entity;
         }
     }
@@ -303,10 +307,10 @@ public sealed class ItemToggleSystem : EntitySystem
             {
                 var newThrowingAngle = new ThrowingAngleComponent();
 
-                if (component.ActivatedAngle is {} activatedAngle)
+                if (component.ActivatedAngle is { } activatedAngle)
                     newThrowingAngle.Angle = activatedAngle;
 
-                if (component.ActivatedAngularVelocity is {} activatedAngularVelocity)
+                if (component.ActivatedAngularVelocity is { } activatedAngularVelocity)
                     newThrowingAngle.AngularVelocity = activatedAngularVelocity;
 
                 AddComp(uid, newThrowingAngle);
@@ -322,19 +326,19 @@ public sealed class ItemToggleSystem : EntitySystem
         if (args.Activated)
         {
             component.DeactivatedAngle ??= throwingAngle.Angle;
-            if (component.ActivatedAngle is {} activatedAngle)
+            if (component.ActivatedAngle is { } activatedAngle)
                 throwingAngle.Angle = activatedAngle;
 
             component.DeactivatedAngularVelocity ??= throwingAngle.AngularVelocity;
-            if (component.ActivatedAngularVelocity is {} activatedAngularVelocity)
+            if (component.ActivatedAngularVelocity is { } activatedAngularVelocity)
                 throwingAngle.AngularVelocity = activatedAngularVelocity;
         }
         else
         {
-            if (component.DeactivatedAngle is {} deactivatedAngle)
+            if (component.DeactivatedAngle is { } deactivatedAngle)
                 throwingAngle.Angle = deactivatedAngle;
 
-            if (component.DeactivatedAngularVelocity is {} deactivatedAngularVelocity)
+            if (component.DeactivatedAngularVelocity is { } deactivatedAngularVelocity)
                 throwingAngle.AngularVelocity = deactivatedAngularVelocity;
         }
     }
@@ -350,33 +354,33 @@ public sealed class ItemToggleSystem : EntitySystem
         if (args.Activated)
         {
             component.DeactivatedRemovalTime ??= embeddable.RemovalTime;
-            if (component.ActivatedRemovalTime is {} activatedRemovalTime)
+            if (component.ActivatedRemovalTime is { } activatedRemovalTime)
                 embeddable.RemovalTime = activatedRemovalTime;
 
             component.DeactivatedOffset ??= embeddable.Offset;
-            if (component.ActivatedOffset is {} activatedOffset)
+            if (component.ActivatedOffset is { } activatedOffset)
                 embeddable.Offset = activatedOffset;
 
             component.DeactivatedEmbedOnThrow ??= embeddable.EmbedOnThrow;
-            if (component.ActivatedEmbedOnThrow is {} activatedEmbedOnThrow)
+            if (component.ActivatedEmbedOnThrow is { } activatedEmbedOnThrow)
                 embeddable.EmbedOnThrow = activatedEmbedOnThrow;
 
             component.DeactivatedSound ??= embeddable.Sound;
-            if (component.ActivatedSound is {} activatedSound)
+            if (component.ActivatedSound is { } activatedSound)
                 embeddable.Sound = activatedSound;
         }
         else
         {
-            if (component.DeactivatedRemovalTime is {} deactivatedRemovalTime)
+            if (component.DeactivatedRemovalTime is { } deactivatedRemovalTime)
                 embeddable.RemovalTime = deactivatedRemovalTime;
 
-            if (component.DeactivatedOffset is {} deactivatedOffset)
+            if (component.DeactivatedOffset is { } deactivatedOffset)
                 embeddable.Offset = deactivatedOffset;
 
-            if (component.DeactivatedEmbedOnThrow is {} deactivatedEmbedOnThrow)
+            if (component.DeactivatedEmbedOnThrow is { } deactivatedEmbedOnThrow)
                 embeddable.EmbedOnThrow = deactivatedEmbedOnThrow;
 
-            if (component.DeactivatedSound is {} deactivatedSound)
+            if (component.DeactivatedSound is { } deactivatedSound)
                 embeddable.Sound = deactivatedSound;
         }
     }

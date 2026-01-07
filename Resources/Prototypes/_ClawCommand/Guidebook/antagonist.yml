@@ -2,3 +2,7 @@
   id: Abductors
   name: guide-entry-abductors
   text: "/ServerInfo/_ClawCommand/Guidebook/Antagonist/Abductors.xml"
+- type: guideEntry
+  id: Changelings
+  name: guide-entry-changelings
+  text: "/ServerInfo/_ClawCommand/Guidebook/Antagonist/Changelings.xml"

@@ -182,7 +182,7 @@ public sealed partial class StaminaSystem : EntitySystem
 
             if (hitEvent.Handled)
                 return;
-            
+
             // Begin DeltaV additions
             // Allow users to modifier stamina damage as well, this part of the event is not handle-able by listeners.
             RaiseLocalEvent(args.User, hitEvent);

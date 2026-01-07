@@ -156,6 +156,7 @@
     understands:
     - TauCetiBasic
     - Kobold
+  - type: Absorbable
 
 - type: entity
   parent: BaseMobDragon

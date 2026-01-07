@@ -9,13 +9,16 @@ using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Storage.EntitySystems;
 
 namespace Content.Shared.Item;
 
 public abstract class SharedItemSystem : EntitySystem
 {
+    [Dependency] private readonly SharedTransformSystem _transform = default!; // Goobstation
+    [Dependency] private readonly SharedStorageSystem _storage = default!; // Goobstation
     [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private   readonly SharedHandsSystem _handsSystem = default!;
+    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] protected readonly SharedContainerSystem Container = default!;
 
     public override void Initialize()
@@ -244,6 +247,15 @@ public abstract class SharedItemSystem : EntitySystem
                 SetSize(uid, (ProtoId<ItemSizePrototype>) itemToggleSize.DeactivatedSize, item);
             }
         }
+
+        if (Container.TryGetContainingContainer((uid, null, null), out var container) &&
+            TryComp(container.Owner,
+                out StorageComponent? storage)) // Goobstation - reinsert item in storage because size changed
+        {
+            _transform.AttachToGridOrMap(uid);
+            _storage.Insert(container.Owner, uid, out _, null, storage, false);
+        }
+
 
         Dirty(uid, item);
     }

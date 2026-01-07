@@ -1,5 +1,21 @@
 - type: entity
-  #parent: BaseMindRoleAntag
+  id: BaseMindRole
+  name: Mind Role
+  description: Mind Role entity
+  abstract: true
+  components:
+  - type: MindRole
+
+- type: entity
+  parent: BaseMindRole
+  id: BaseMindRoleAntag
+  abstract: true
+  components:
+  - type: MindRole
+    antag: true
+
+- type: entity
+  parent: BaseMindRoleAntag
   id: MindRoleLoneAbductor
   name: Lone Abductor Role
   components:
@@ -9,10 +25,21 @@
   - type: Abductor
 
 - type: entity
-  #parent: BaseMindRoleAntag
+  parent: BaseMindRoleAntag
   id: MindRoleAbductorVictim
   name: Abductee Role
   components:
   - type: MindRole
     antagPrototype: AbductorVictimAntag
   - type: AbductorVictim
+
+# goob edit - antags
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleChangeling
+  name: Changeling Role
+  components:
+  - type: MindRole
+    antagPrototype: Changeling
+    exclusiveAntag: true
+  - type: ChangelingRole

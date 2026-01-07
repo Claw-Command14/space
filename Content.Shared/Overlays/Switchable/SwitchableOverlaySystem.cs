@@ -1,3 +1,4 @@
+using Content.Shared._ClawCommand.Flashbang;
 using Content.Shared.Actions;
 using Content.Shared.Inventory;
 using Robust.Shared.Audio.Systems;
@@ -26,8 +27,28 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
         SubscribeLocalEvent<TComp, GetItemActionsEvent>(OnGetItemActions);
         SubscribeLocalEvent<TComp, ComponentGetState>(OnGetState);
         SubscribeLocalEvent<TComp, ComponentHandleState>(OnHandleState);
+        SubscribeLocalEvent<TComp, FlashDurationMultiplierEvent>(OnGetFlashMultiplier);
+        SubscribeLocalEvent<TComp, InventoryRelayedEvent<FlashDurationMultiplierEvent>>(OnGetInventoryFlashMultiplier);
     }
 
+    private void OnGetFlashMultiplier(Entity<TComp> ent, ref FlashDurationMultiplierEvent args)
+    {
+        if (!ent.Comp.IsEquipment)
+            args.Multiplier *= GetFlashMultiplier(ent);
+    }
+    private void OnGetInventoryFlashMultiplier(Entity<TComp> ent,
+        ref InventoryRelayedEvent<FlashDurationMultiplierEvent> args)
+    {
+        if (ent.Comp.IsEquipment)
+            args.Args.Multiplier *= GetFlashMultiplier(ent);
+    }
+    private float GetFlashMultiplier(TComp comp)
+    {
+        if (!comp.IsActive && (comp.PulseTime <= 0f || comp.PulseAccumulator >= comp.PulseTime))
+            return 1f;
+
+        return comp.FlashDurationMultiplier;
+    }
     public override void FrameUpdate(float frameTime)
     {
         base.FrameUpdate(frameTime);
@@ -117,7 +138,7 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
     {
         if (component.IsEquipment)
             return;
-            
+
         _actions.RemoveAction(uid, component.ToggleActionEntity);
     }
 

@@ -55,7 +55,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         if (modifiedDamage is not null && EntityManager.EntityExists(component.Shooter))
         {
             if (modifiedDamage.AnyPositive() && !deleted)
-                _color.RaiseEffect(Color.Red, [ target, ], Filter.Pvs(target, entityManager: EntityManager));
+                _color.RaiseEffect(Color.Red, [target,], Filter.Pvs(target, entityManager: EntityManager));
 
             _adminLogger.Add(
                 LogType.BulletHit,
@@ -71,7 +71,12 @@ public sealed class ProjectileSystem : SharedProjectileSystem
                 _sharedCameraRecoil.KickCamera(target, args.OurBody.LinearVelocity.Normalized());
         }
 
-        component.DamagedEntity = true;
+        // Goobstation start
+        if (component.Penetrate)
+            component.IgnoredEntities.Add(target);
+        else
+            component.DamagedEntity = true;
+        // Goobstation end
 
         if (component.DeleteOnCollide)
             QueueDel(uid);
