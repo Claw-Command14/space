@@ -25,6 +25,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
+using Content.Server._ClawCommand.Bible.Components;
 
 namespace Content.Server.WhiteDream.BloodCult.Runes;
 
@@ -118,7 +119,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         _audio.PlayPvs(args.EndDrawingSound, args.User, AudioParams.Default.WithMaxDistance(2f));
         var runeEnt = SpawnRune(args.User, runeSelector.Prototype);
-        if (TryComp(runeEnt, out CultRuneBaseComponent? rune) 
+        if (TryComp(runeEnt, out CultRuneBaseComponent? rune)
             && rune.TriggerRendingMarkers
             && !_cultRule.TryConsumeNearestMarker(ent))
             return;

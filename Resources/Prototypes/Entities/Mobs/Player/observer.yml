@@ -67,6 +67,11 @@
     tags:
     - BypassInteractionRangeChecks
   - type: UniversalLanguageSpeaker # Ghosts should understand any language.
+  - type: UserInterface
+    interfaces:
+      enum.RevivalContractUiKey.Key: # Goobstation - Devil
+        type: RevivalContractBoundUserInterface
+        requireInputValidation: false
 
 - type: entity
   id: ActionGhostBoo

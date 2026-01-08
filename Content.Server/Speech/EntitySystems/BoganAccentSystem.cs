@@ -7,12 +7,12 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Goobstation.Common.Speech;
+using Content.Client._ClawCommand.Common.Speech;
 using Content.Server.Speech;
 using Content.Server.Speech.EntitySystems;
 using Robust.Shared.Random;
 
-namespace Content.Goobstation.Server.Speech;
+namespace Content.Server._ClawCommand.Speech;
 
 public sealed class BoganAccentSystem : EntitySystem
 {

@@ -12,6 +12,7 @@ using Content.Shared.Verbs;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Server._ClawCommand.devil.GameTicking.Rules;
 
 namespace Content.Server.Administration.Systems;
 
@@ -171,5 +172,19 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-blood-cultist"),
         };
         args.Verbs.Add(cultist);
+        // Goobstation - Devil
+        Verb devilAntag = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-devil"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("_ClawCommand/Actions/devil.rsi"), "summon-contract"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<DevilRuleComponent>(targetPlayer, "Devil");
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-devil"),
+        };
+        args.Verbs.Add(devilAntag);
     }
 }

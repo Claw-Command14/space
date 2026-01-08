@@ -19,6 +19,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Content.Server._ClawCommand.Bible.Components;
 
 namespace Content.Server.Bible
 {

@@ -1,7 +1,9 @@
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
+using Content.Shared.Damage.Prototypes;
+using Content.Shared.FixedPoint;
 
-namespace Content.Server.Bible.Components
+namespace Content.Server._ClawCommand.Bible.Components
 {
     [RegisterComponent]
     public sealed partial class BibleComponent : Component
@@ -9,37 +11,46 @@ namespace Content.Server.Bible.Components
         /// <summary>
         /// Damage that will be healed on a success
         /// </summary>
-        [DataField("damage", required: true)]
-        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField(required: true)]
         public DamageSpecifier Damage = default!;
 
         /// <summary>
         /// Damage that will be dealt on a failure
         /// </summary>
-        [DataField("damageOnFail", required: true)]
-        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField(required: true)]
         public DamageSpecifier DamageOnFail = default!;
 
         /// <summary>
         /// Damage that will be dealt when a non-chaplain attempts to heal
         /// </summary>
-        [DataField("damageOnUntrainedUse", required: true)]
-        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField(required: true)]
         public DamageSpecifier DamageOnUntrainedUse = default!;
 
         /// <summary>
         /// Chance the bible will fail to heal someone with no helmet
         /// </summary>
-        [DataField("failChance")]
-        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
         public float FailChance = 0.34f;
 
         [DataField("sizzleSound")]
         public SoundSpecifier SizzleSoundPath = new SoundPathSpecifier("/Audio/Effects/lightburn.ogg");
         [DataField("healSound")]
-        public SoundSpecifier HealSoundPath = new  SoundPathSpecifier("/Audio/Effects/holy.ogg");
+        public SoundSpecifier HealSoundPath = new SoundPathSpecifier("/Audio/Effects/holy.ogg");
 
-        [DataField("locPrefix")]
+        [DataField]
         public string LocPrefix = "bible";
+
+        /// <summary>
+        /// How much damage to deal to the entity being smitten - Goob
+        /// </summary>
+        [DataField]
+        public DamageSpecifier SmiteDamage = new() { DamageDict = new Dictionary<string, FixedPoint2>() { { "Holy", 25 } } }; // Ungodly
+
+        /// <summary>
+        /// How long to stun the entity being smitten - Goob
+        /// </summary>
+        [DataField]
+        public TimeSpan SmiteStunDuration = TimeSpan.FromSeconds(8);
+
     }
 }
