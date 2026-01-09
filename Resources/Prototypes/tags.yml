@@ -1517,3 +1517,6 @@
 
 - type: Tag
   id: MagazineMarkOne
+
+- type: Tag
+  id: RPD

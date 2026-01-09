@@ -216,6 +216,7 @@
     - JawsOfLife
     - BorgModuleAdvancedTool
     - BorgModuleRCD
+    - BorgModuleRPD
   # Goobstation R&D Console rework start
   position: 2,-5
   technologyPrerequisites:
