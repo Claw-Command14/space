@@ -78,7 +78,7 @@ namespace Content.Shared.Maps
         // Heat capacity is opt-in, not opt-out.
         [DataField("heatCapacity")] public float HeatCapacity = Atmospherics.MinimumHeatCapacity;
 
-        [DataField("itemDrop", customTypeSerializer:typeof(PrototypeIdSerializer<EntityPrototype>))]
+        [DataField("itemDrop", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
         public string ItemDropPrototypeName { get; private set; } = "FloorTileItemSteel";
 
         // TODO rename data-field in yaml
@@ -94,10 +94,11 @@ namespace Content.Shared.Maps
         public float? MobFriction { get; private set; }
 
         /// <summary>
-        ///     No-input friction override for mob mover in <see cref="SharedMoverController"/>
+        ///     "Average" static coefficient of friction for assuming a steel tile. This is only used as a fallback for a fallback for a fallback,
+        ///     except in the case of Space Wind. This default value is assuming an interaction interface of "Rubber on steel tile".
         /// </summary>
-        [DataField("mobFrictionNoInput")]
-        public float? MobFrictionNoInput { get; private set; }
+        [DataField]
+        public float MobFrictionNoInput = 0.2f;
 
         /// <summary>
         ///     Accel override for mob mover in <see cref="SharedMoverController"/>
