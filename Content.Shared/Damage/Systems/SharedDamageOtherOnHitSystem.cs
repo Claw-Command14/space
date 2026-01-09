@@ -78,11 +78,11 @@ namespace Content.Shared.Damage.Systems
                 !TryComp<DamageOtherOnHitComponent>(uid, out var damage))
                 return;
 
-            if (component.ActivatedDamage == null && itemToggleMelee.ActivatedDamage is {} activatedDamage)
+            if (component.ActivatedDamage == null && itemToggleMelee.ActivatedDamage is { } activatedDamage)
                 component.ActivatedDamage = activatedDamage * damage.MeleeDamageMultiplier;
             if (component.ActivatedSoundHit == null)
                 component.ActivatedSoundHit = itemToggleMelee.ActivatedSoundOnHit;
-            if (component.ActivatedSoundNoDamage == null && itemToggleMelee.ActivatedSoundOnHitNoDamage is {} activatedSoundOnHitNoDamage)
+            if (component.ActivatedSoundNoDamage == null && itemToggleMelee.ActivatedSoundOnHitNoDamage is { } activatedSoundOnHitNoDamage)
                 component.ActivatedSoundNoDamage = activatedSoundOnHitNoDamage;
 
             RaiseLocalEvent(uid, new ItemToggleDamageOtherOnHitStartupEvent((uid, component)));
@@ -90,7 +90,8 @@ namespace Content.Shared.Damage.Systems
 
         private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)
         {
-            if (component.HitQuantity >= component.MaxHitQuantity)
+            if (TerminatingOrDeleted(args.Target)
+                || component.HitQuantity >= component.MaxHitQuantity)
                 return;
 
             var modifiedDamage = _damageable.TryChangeDamage(args.Target, GetDamage(uid, component, args.Component.Thrower),
@@ -142,13 +143,13 @@ namespace Content.Shared.Damage.Systems
 
             if (args.Activated)
             {
-                if (itemToggle.ActivatedDamage is {} activatedDamage)
+                if (itemToggle.ActivatedDamage is { } activatedDamage)
                 {
                     itemToggle.DeactivatedDamage ??= component.Damage;
                     component.Damage = activatedDamage * component.MeleeDamageMultiplier;
                 }
 
-                if (itemToggle.ActivatedStaminaCost is {} activatedStaminaCost)
+                if (itemToggle.ActivatedStaminaCost is { } activatedStaminaCost)
                 {
                     itemToggle.DeactivatedStaminaCost ??= component.StaminaCost;
                     component.StaminaCost = activatedStaminaCost;
@@ -157,7 +158,7 @@ namespace Content.Shared.Damage.Systems
                 itemToggle.DeactivatedSoundHit ??= component.SoundHit;
                 component.SoundHit = itemToggle.ActivatedSoundHit;
 
-                if (itemToggle.ActivatedSoundNoDamage is {} activatedSoundNoDamage)
+                if (itemToggle.ActivatedSoundNoDamage is { } activatedSoundNoDamage)
                 {
                     itemToggle.DeactivatedSoundNoDamage ??= component.SoundNoDamage;
                     component.SoundNoDamage = activatedSoundNoDamage;
@@ -165,15 +166,15 @@ namespace Content.Shared.Damage.Systems
             }
             else
             {
-                if (itemToggle.DeactivatedDamage is {} deactivatedDamage)
+                if (itemToggle.DeactivatedDamage is { } deactivatedDamage)
                     component.Damage = deactivatedDamage;
 
-                if (itemToggle.DeactivatedStaminaCost is {} deactivatedStaminaCost)
+                if (itemToggle.DeactivatedStaminaCost is { } deactivatedStaminaCost)
                     component.StaminaCost = deactivatedStaminaCost;
 
                 component.SoundHit = itemToggle.DeactivatedSoundHit;
 
-                if (itemToggle.DeactivatedSoundNoDamage is {} deactivatedSoundNoDamage)
+                if (itemToggle.DeactivatedSoundNoDamage is { } deactivatedSoundNoDamage)
                     component.SoundNoDamage = deactivatedSoundNoDamage;
             }
         }

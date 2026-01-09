@@ -71,7 +71,7 @@ public sealed partial class SupermatterSystem : EntitySystem
             if (sm.UpdateAccumulator >= sm.UpdateTimer)
             {
                 sm.UpdateAccumulator -= sm.UpdateTimer;
-                Cycle(uid, sm);
+                Cycle(uid, sm, frameTime);
             }
         }
     }
