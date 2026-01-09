@@ -41,6 +41,8 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] public readonly PuddleSystem Puddle = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
+
+    [Dependency] private readonly ThrownItemSystem _thrown = default!;
     [Dependency] private readonly SharedStunSystem _sharedStunSystem = default!;
     [Dependency] private readonly StandingStateSystem _standingSystem = default!;
 
