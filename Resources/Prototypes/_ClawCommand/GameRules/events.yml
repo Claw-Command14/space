@@ -213,3 +213,19 @@
       - type: AbductorScientist # Should be removed when we have proper teleportation system
       mindRoles:
       - MindRoleLoneAbductor
+
+- type: entity
+  id: BingleSpawn
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    #startAnnouncement: bingle-station-announcement
+    startAnnouncement: true
+    startAudio:
+     path: /Audio/Announcements/attention.ogg
+    earliestStart: 20
+    weight: 2
+    duration: 50
+    minimumPlayers: 15
+  - type: RandomSpawnRule
+    prototype: SpawnPointGhostBinglePrime
