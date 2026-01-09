@@ -15,7 +15,7 @@
     definitions:
     - prefRoles: [ Changeling ]
       max: 4
-      playerRatio: 12
+      playerRatio: 18
       lateJoinAdditional: true
       mindRoles:
       - MindRoleChangeling
@@ -26,7 +26,7 @@
   components:
   - type: DevilRule
   - type: GameRule
-    minPlayers: 1
+    minPlayers: 0
   - type: AntagObjectives
     objectives:
     - DevilContractObjective

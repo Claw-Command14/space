@@ -26,7 +26,7 @@ public sealed partial class ChangelingComponent : Component
     };
 
     [DataField("soundShriek")]
-    public SoundSpecifier ShriekSound = new SoundPathSpecifier("/Audio/_ClawCommand/Changeling/Effects/changeling_shriek.ogg");
+    public SoundSpecifier ShriekSound = new SoundPathSpecifier("/Audio/_Goobstation/Ambience/Antag/changeling_start.ogg");
 
     [DataField]
     public float ShriekPower = 2.5f;

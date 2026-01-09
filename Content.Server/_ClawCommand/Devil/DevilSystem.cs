@@ -48,11 +48,13 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Server.Hands.Systems;
 
 namespace Content.Server._ClawCommand.devil;
 
 public sealed partial class DevilSystem : EntitySystem
 {
+    [Dependency] private readonly HandsSystem _hands = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly PolymorphSystem _poly = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
