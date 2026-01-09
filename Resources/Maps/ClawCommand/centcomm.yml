@@ -9422,7 +9422,7 @@ entities:
       pos: -19.5,-24.5
       parent: 1668
     - type: Door
-      secondsUntilStateChange: -63928.37
+      secondsUntilStateChange: -63975.062
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -101605,13 +101605,6 @@ entities:
     - type: Transform
       pos: -41.5,43.5
       parent: 1668
-- proto: PlayerStationAiEmpty
-  entities:
-  - uid: 4971
-    components:
-    - type: Transform
-      pos: -3.5,-56.5
-      parent: 1668
 - proto: PortableRecharger
   entities:
   - uid: 17486
@@ -121562,6 +121555,13 @@ entities:
     components:
     - type: Transform
       pos: 22.55147,-10.231859
+      parent: 1668
+- proto: ToyAi
+  entities:
+  - uid: 4971
+    components:
+    - type: Transform
+      pos: -3.5531423,-56.333332
       parent: 1668
 - proto: TrialTimer
   entities:
