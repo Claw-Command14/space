@@ -174,6 +174,9 @@ chat-speech-verb-electricity-3 = screeches
 
 chat-speech-verb-marish = Mars
 
+chat-speech-verb-name-supermatter = Supermatter
+chat-speech-verb-supermatter = states
+
 chat-speech-verb-name-oldvox = Old-Kin
 chat-speech-verb-oldvox-1 = croaks
 chat-speech-verb-oldvox-2 = rasps

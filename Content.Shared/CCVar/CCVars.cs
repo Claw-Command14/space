@@ -1,5 +1,5 @@
 using Content.Shared.Maps;
-using Content.Shared.Supermatter.Components;
+using Content.Shared._EE.Supermatter.Components;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
@@ -2918,16 +2918,32 @@ namespace Content.Shared.CCVar
             CVarDef.Create("supermatter.do_force_delam", false, CVar.SERVER);
 
         /// <summary>
+        ///     Base amount of radiation that the supermatter emits.
+        /// </summary>
+        public static readonly CVarDef<float> SupermatterRadsBase =
+            CVarDef.Create("supermatter.rads_base", 3f, CVar.SERVER);
+
+
+        /// <summary>
         ///     If supermatter.do_force_delam is true, this determines the delamination type, bypassing the normal checks.
         /// </summary>
         public static readonly CVarDef<DelamType> SupermatterForcedDelamType =
             CVarDef.Create("supermatter.forced_delam_type", DelamType.Singulo, CVar.SERVER);
 
         /// <summary>
+
+        /// <summary>
         ///     Directly multiplies the amount of rads put out by the supermatter. Be VERY conservative with this.
         /// </summary>
         public static readonly CVarDef<float> SupermatterRadsModifier =
             CVarDef.Create("supermatter.rads_modifier", 1f, CVar.SERVER);
+
+
+        /// <summary>
+        ///     How often the supermatter should announce its status.
+        /// </summary>
+        public static readonly CVarDef<float> SupermatterYellTimer =
+            CVarDef.Create("supermatter.yell_timer", 60f, CVar.SERVER);
 
         #endregion
         #region Mood System
