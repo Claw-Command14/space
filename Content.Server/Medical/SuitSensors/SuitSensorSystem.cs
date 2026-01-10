@@ -36,7 +36,7 @@ public sealed class SuitSensorSystem : EntitySystem
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly SingletonDeviceNetServerSystem _singletonServerSystem = default!;
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
-
+    private readonly HashSet<Entity<SuitSensorComponent>> _wornSensors = new();
     public override void Initialize()
     {
         base.Initialize();
@@ -57,18 +57,22 @@ public sealed class SuitSensorSystem : EntitySystem
         base.Update(frameTime);
 
         var curTime = _gameTiming.CurTime;
-        var sensors = EntityManager.EntityQueryEnumerator<SuitSensorComponent, DeviceNetworkComponent>();
-
-        while (sensors.MoveNext(out var uid, out var sensor, out var device))
+        foreach (var ent in _wornSensors)
         {
-            if (device.TransmitFrequency is null)
+            var (uid, sensor) = ent;
+            if (!TryComp(uid, out DeviceNetworkComponent? device)
+                || device.TransmitFrequency is null
+                || !Exists(sensor.User))
+            {
+                _wornSensors.Remove(ent); //Not a valid suit sensor array, cease all processing for it.
                 continue;
+            }
 
             // check if sensor is ready to update
             if (curTime < sensor.NextUpdate)
                 continue;
 
-            if (!CheckSensorAssignedStation(uid, sensor))
+            if (!CheckSensorAssignedStation(ent))
                 continue;
 
             // TODO: This would cause imprecision at different tick rates.
@@ -82,8 +86,10 @@ public sealed class SuitSensorSystem : EntitySystem
             // get sensor status
             var status = GetSensorState(uid, sensor);
             if (status == null)
+            {
+                _wornSensors.Remove(ent); //Someone turned the suit off, cease all checking.
                 continue;
-
+            }
             //Retrieve active server address if the sensor isn't connected to a server
             if (sensor.ConnectedServer == null)
             {
@@ -112,12 +118,14 @@ public sealed class SuitSensorSystem : EntitySystem
     /// and tries to assign an unassigned sensor to a station if it's currently on a grid
     /// </summary>
     /// <returns>True if the sensor is assigned to a station or assigning it was successful. False otherwise.</returns>
-    private bool CheckSensorAssignedStation(EntityUid uid, SuitSensorComponent sensor)
+    private bool CheckSensorAssignedStation(Entity<SuitSensorComponent> ent)
     {
-        if (!sensor.StationId.HasValue && Transform(uid).GridUid == null)
+        var (uid, sensor) = ent;
+        var xform = Transform(uid);
+        if (!sensor.StationId.HasValue && xform.GridUid is null)
             return false;
 
-        sensor.StationId = _stationSystem.GetOwningStation(uid);
+        sensor.StationId = _stationSystem.GetOwningStation(uid, xform);
         return sensor.StationId.HasValue;
     }
 
@@ -339,7 +347,7 @@ public sealed class SuitSensorSystem : EntitySystem
         var isAlive = false;
         if (EntityManager.TryGetComponent(sensor.User.Value, out MobStateComponent? mobState))
             isAlive = !_mobStateSystem.IsDead(sensor.User.Value, mobState);
-        
+
         // Floofstation - get IPC battery status
         var isDischarged = TryComp(sensor.User.Value, out SiliconComponent? SiliconComp) && (SiliconComp.ChargeState == 0);
 

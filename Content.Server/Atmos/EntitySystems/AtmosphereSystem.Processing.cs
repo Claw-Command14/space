@@ -2,14 +2,14 @@ using Content.Server.Atmos.Components;
 using Content.Server.Atmos.Piping.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
+using Content.Shared.Gravity;
 using Content.Shared.Maps;
+using Content.Shared.Projectiles;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Projectiles;
-using Content.Shared.Gravity;
 
 namespace Content.Server.Atmos.EntitySystems
 {
@@ -410,7 +410,6 @@ namespace Content.Server.Atmos.EntitySystems
                 && mapGravity.Enabled)
                 sumGravity += mapGravity.Acceleration;
 
-
             while (atmosphere.CurrentRunTiles.TryDequeue(out var tile))
             {
                 HighPressureMovements(ent, tile, bodies, xforms, pressureQuery, metas, projectileQuery, sumGravity);
@@ -573,10 +572,14 @@ namespace Content.Server.Atmos.EntitySystems
                 _currentRunAtmosphereIndex = 0;
                 _currentRunAtmosphere.Clear();
 
-                var query = EntityQueryEnumerator<GridAtmosphereComponent, GasTileOverlayComponent, MapGridComponent, TransformComponent>();
-                while (query.MoveNext(out var uid, out var atmos, out var overlay, out var grid, out var xform))
+                var query = EntityQueryEnumerator<GridAtmosphereComponent>();
+                while (query.MoveNext(out var uid, out var atmos))
                 {
-                    _currentRunAtmosphere.Add((uid, atmos, overlay, grid, xform));
+                    if (!TryComp(uid, out GasTileOverlayComponent? overlay)
+                        || !TryComp(uid, out MapGridComponent? grid))
+                        continue;
+
+                    _currentRunAtmosphere.Add((uid, atmos, overlay, grid, Transform(uid)));
                 }
             }
 
