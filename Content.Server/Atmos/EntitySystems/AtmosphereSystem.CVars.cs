@@ -29,6 +29,9 @@ namespace Content.Server.Atmos.EntitySystems
         public float HeatScale { get; private set; }
         public float HumanoidThrowMultiplier { get; private set; }
 
+        public bool SpaceWindAllowKnockdown { get; private set; }
+        public bool SpaceWindVisuals { get; private set; }
+
         /// <summary>
         /// Time between each atmos sub-update.  If you are writing an atmos device, use AtmosDeviceUpdateEvent.dt
         /// instead of this value, because atmos devices do not update each are sub-update and sometimes are skipped to
@@ -58,6 +61,8 @@ namespace Content.Server.Atmos.EntitySystems
             Subs.CVar(_cfg, CCVars.ExcitedGroups, value => ExcitedGroups = value, true);
             Subs.CVar(_cfg, CCVars.ExcitedGroupsSpaceIsAllConsuming, value => ExcitedGroupsSpaceIsAllConsuming = value, true);
             Subs.CVar(_cfg, CCVars.AtmosHumanoidThrowMultiplier, value => HumanoidThrowMultiplier = value, true);
+            Subs.CVar(_cfg, CCVars.SpaceWindAllowKnockdown, value => SpaceWindAllowKnockdown = value, true);
+            Subs.CVar(_cfg, CCVars.SpaceWindVisuals, value => SpaceWindVisuals = value, true);
         }
     }
 }
