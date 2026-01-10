@@ -81,11 +81,12 @@ public sealed class TileAtmosphere : IGasMixtureHolder
     [Access(typeof(AtmosphereSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends
     public GasMixture? Air { get; set; }
 
+    [ViewVariables]
+    public GasMixture? AirArchived { get; set; }
+
+
     [DataField("lastShare")]
     public float LastShare;
-
-    [ViewVariables]
-    public readonly float[] MolesArchived = new float[Atmospherics.AdjustedNumberOfGases];
 
     GasMixture IGasMixtureHolder.Air
     {
@@ -127,6 +128,7 @@ public sealed class TileAtmosphere : IGasMixtureHolder
         GridIndex = gridIndex;
         GridIndices = gridIndices;
         Air = mixture;
+        AirArchived = Air?.Clone();
         Space = space;
 
         if (immutable)
@@ -143,6 +145,6 @@ public sealed class TileAtmosphere : IGasMixtureHolder
         NoGridTile = other.NoGridTile;
         MapAtmosphere = other.MapAtmosphere;
         Air = other.Air?.Clone();
-        Array.Copy(other.MolesArchived, MolesArchived, MolesArchived.Length);
+        AirArchived = Air?.Clone();
     }
 }
