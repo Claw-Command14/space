@@ -119,6 +119,16 @@
   result: FireAlarmElectronics
 
 - type: latheRecipe
+  id: DroneElectronics
+  result: DroneElectronics
+  category: Circuitry
+  completetime: 2
+  materials:
+    Steel: 1000
+    Plastic: 1000
+    Gold: 500
+
+- type: latheRecipe
   parent: BaseCheapElectronicsRecipe
   id: SignalTimerElectronics
   result: SignalTimerElectronics

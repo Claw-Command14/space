@@ -500,6 +500,7 @@
     - HolopadMachineCircuitboard # Vulp
     dynamicRecipes:
       - ThermomachineFreezerMachineCircuitBoard
+      - DroneElectronics
       - HellfireFreezerMachineCircuitBoard
       - PortableScrubberMachineCircuitBoard
       - CloningPodMachineCircuitboard
