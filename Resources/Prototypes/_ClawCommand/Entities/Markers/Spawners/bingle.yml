@@ -50,7 +50,7 @@
     animation: WeaponArcSlash
     damage:
       types:
-        Blunt: 7
+        Blunt: 6
         Structural: 14 # breaks down the walls and airlocks in 10 hits
         Ion: 5
     bluntStaminaDamageFactor: 2.0
@@ -60,8 +60,8 @@
   - type: Stamina
     critThreshold: 120
   - type: StaminaDamageOnHit # from stunbaton
-    damage: 15
-    overtime: 40
+    damage: 7
+    overtime: 20
     sound: /Audio/Weapons/egloves.ogg
   - type: Damageable
     damageContainer: Biological
@@ -157,8 +157,8 @@
     animation: WeaponArcSlash
     damage:
       types:
-        Blunt: 14
-        Structural: 28
+        Blunt: 10
+        Structural: 20
         Ion: 7
   - type: Damageable
     damageContainer: Biological
