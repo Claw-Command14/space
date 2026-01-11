@@ -37,8 +37,8 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] Grids =
         {
-            "/Maps/CentralCommand/main.yml",
-            "/Maps/CentralCommand/harmony.yml", // Harmony CC version
+            "/Maps/centcomm.yml",
+            "/Maps/ClawCommand/harmony.yml", // Harmony CC version
             "/Maps/Shuttles/cargo.yml",
             "/Maps/Shuttles/emergency.yml",
             "/Maps/Shuttles/infiltrator.yml",
