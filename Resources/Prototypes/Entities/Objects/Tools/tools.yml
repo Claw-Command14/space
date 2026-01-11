@@ -90,7 +90,7 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
-        
+
 - type: entity
   name: screwdriver
   parent: BaseItem
@@ -593,6 +593,13 @@
     - CanisterPort
     - FilterGas
     - Deconstruct
+    - VolumetricPumpHighFlow
+    - PressureValveHighFlow
+    - OutletInjectorHighFlow
+    - VentScrubberHighFlow
+    - DualPortVentHighFlow
+    - MixerGasHighFlow
+    - FilterGasHighFlow
   - type: LimitedCharges
     maxCharges: 50
     charges: 50

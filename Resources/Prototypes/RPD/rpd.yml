@@ -69,6 +69,18 @@
   fx: EffectRCDConstruct0
 
 - type: rcd
+  id: VolumetricPumpHighFlow
+  category: PumpsValves
+  sprite: /Textures/Interface/Radial/RPD/pump_volume_high_flow.png
+  mode: ConstructObject
+  prototype: GasVolumePumpHighFlow
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
   id: ManualValve
   category: PumpsValves
   sprite: /Textures/Interface/Radial/RPD/pump_manual_valve.png
@@ -105,6 +117,18 @@
   fx: EffectRCDConstruct0
 
 - type: rcd
+  id: PressureValveHighFlow
+  category: PumpsValves
+  sprite: /Textures/Interface/Radial/RPD/pneumatic_valve_high_flow.png
+  mode: ConstructObject
+  prototype: PressureControlledValveHighFlow
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
   id: OutletInjector
   category: Vents
   sprite: /Textures/Interface/Radial/RPD/injector.png
@@ -117,11 +141,35 @@
   fx: EffectRCDConstruct0
 
 - type: rcd
+  id: OutletInjectorHighFlow
+  category: Vents
+  sprite: /Textures/Interface/Radial/RPD/injector_high_flow.png
+  mode: ConstructObject
+  prototype: GasOutletInjectorHighFlow
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
   id: VentScrubber
   category: Vents
   sprite: /Textures/Interface/Radial/RPD/scrub_off.png
   mode: ConstructObject
   prototype: GasVentScrubber
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: VentScrubberHighFlow
+  category: Vents
+  sprite: /Textures/Interface/Radial/RPD/scrub_off_high_flow.png
+  mode: ConstructObject
+  prototype: GasVentScrubberHighFlow
   cost: 1
   delay: 0
   collisionMask: Impassable
@@ -146,6 +194,18 @@
   sprite: /Textures/Interface/Radial/RPD/dual_port.png
   mode: ConstructObject
   prototype: GasDualPortVentPump
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: DualPortVentHighFlow
+  category: Vents
+  sprite: /Textures/Interface/Radial/RPD/dual_port_high_flow.png
+  mode: ConstructObject
+  prototype: GasDualPortVentPumpHighFlow
   cost: 1
   delay: 0
   collisionMask: Impassable
@@ -190,12 +250,38 @@
   fx: EffectRCDConstruct0
 
 - type: rcd
+  id: MixerGasHighFlow
+  category: AtmosphericUtility
+  sprite: /Textures/Interface/Radial/RPD/gas_mixer_high_flow.png
+  mode: ConstructObject
+  prototype: GasMixerHighFlow
+  mirrorPrototype: GasMixerFlippedHighFlow
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
   id: FilterGas
   category: AtmosphericUtility
   sprite: /Textures/Interface/Radial/RPD/gas_filter.png
   mode: ConstructObject
   prototype: GasFilter
   mirrorPrototype: GasFilterFlipped
+  cost: 1
+  delay: 0
+  collisionMask: Impassable
+  rotation: User
+  fx: EffectRCDConstruct0
+
+- type: rcd
+  id: FilterGasHighFlow
+  category: AtmosphericUtility
+  sprite: /Textures/Interface/Radial/RPD/gas_filter_high_flow.png
+  mode: ConstructObject
+  prototype: GasFilterHighFlow
+  mirrorPrototype: GasFilterFlippedHighFlow
   cost: 1
   delay: 0
   collisionMask: Impassable
