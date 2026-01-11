@@ -9,11 +9,15 @@ using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
+using Content.Server.Decals;
+using Robust.Shared.Random;
 
 namespace Content.Server.Atmos.EntitySystems
 {
     public sealed partial class AtmosphereSystem
     {
+        [Dependency] private readonly DecalSystem _decalSystem = default!;
+        [Dependency] private readonly IRobustRandom _random = default!;
         private const int HotspotSoundCooldownCycles = 200;
 
         private int _hotspotSoundCooldown = 0;
@@ -40,7 +44,7 @@ namespace Content.Server.Atmos.EntitySystems
                 return;
             }
 
-            if(tile.ExcitedGroup != null)
+            if (tile.ExcitedGroup != null)
                 ExcitedGroupResetCooldowns(tile.ExcitedGroup);
 
             if ((tile.Hotspot.Temperature < Atmospherics.FireMinimumTemperatureToExist) || (tile.Hotspot.Volume <= 1f)
@@ -56,7 +60,29 @@ namespace Content.Server.Atmos.EntitySystems
             if (tile.Hotspot.Bypassing)
             {
                 tile.Hotspot.State = 3;
-                // TODO ATMOS: Burn tile here
+                var gridUid = ent.Owner;
+                var tilePos = tile.GridIndices;
+
+                // Get the existing decals on the tile
+                var tileDecals = _decalSystem.GetDecalsInRange(gridUid, tilePos);
+
+                // Count the burnt decals on the tile
+                var tileBurntDecals = 0;
+
+                foreach (var set in tileDecals)
+                {
+                    if (Array.IndexOf(_burntDecals, set.Decal.Id) == -1)
+                        continue;
+
+                    tileBurntDecals++;
+
+                    if (tileBurntDecals > 4)
+                        break;
+                }
+
+                // Add a random burned decal to the tile only if there are less than 4 of them
+                if (tileBurntDecals < 4)
+                    _decalSystem.TryAddDecal(_burntDecals[_random.Next(_burntDecals.Length)], new EntityCoordinates(gridUid, tilePos), out _, cleanable: true);
 
                 if (tile.Air.Temperature > Atmospherics.FireMinimumTemperatureToSpread)
                 {
@@ -67,8 +93,8 @@ namespace Content.Server.Atmos.EntitySystems
                         if (otherTile == null)
                             continue;
 
-                        if(!otherTile.Hotspot.Valid)
-                            HotspotExpose(gridAtmosphere, otherTile, radiatedTemperature, Atmospherics.CellVolume/4);
+                        if (!otherTile.Hotspot.Valid)
+                            HotspotExpose(gridAtmosphere, otherTile, radiatedTemperature, Atmospherics.CellVolume / 4);
                     }
                 }
             }
@@ -87,7 +113,7 @@ namespace Content.Server.Atmos.EntitySystems
                 // A few details on the audio parameters for fire.
                 // The greater the fire state, the lesser the pitch variation.
                 // The greater the fire state, the greater the volume.
-                _audio.PlayPvs(HotspotSound, coordinates, AudioParams.Default.WithVariation(0.15f/tile.Hotspot.State).WithVolume(-5f + 5f * tile.Hotspot.State));
+                _audio.PlayPvs(HotspotSound, coordinates, AudioParams.Default.WithVariation(0.15f / tile.Hotspot.State).WithVolume(-5f + 5f * tile.Hotspot.State));
             }
 
             if (_hotspotSoundCooldown > HotspotSoundCooldownCycles)
@@ -149,7 +175,7 @@ namespace Content.Server.Atmos.EntitySystems
         {
             if (tile.Air == null || !tile.Hotspot.Valid) return;
 
-            tile.Hotspot.Bypassing = tile.Hotspot.SkippedFirstProcess && tile.Hotspot.Volume > tile.Air.Volume*0.95f;
+            tile.Hotspot.Bypassing = tile.Hotspot.SkippedFirstProcess && tile.Hotspot.Volume > tile.Air.Volume * 0.95f;
 
             if (tile.Hotspot.Bypassing)
             {

@@ -322,7 +322,7 @@
   parent: BaseCircuitboardRecipe
   id: CentrifugeMachineCircuitboard
   result: CentrifugeMachineCircuitboard
-  
+
 - type: latheRecipe # Floof
   parent: BaseCircuitboardRecipe
   id: MaterialReclaimerMachineCircuitboard
@@ -393,11 +393,11 @@
   parent: BaseCircuitboardRecipe
   id: SMESMachineCircuitboard
   result: SMESMachineCircuitboard
-# Floof - Uncomment when we get there.
-#- type: latheRecipe
-#  parent: BaseGoldCircuitboardRecipe
-#  id: SMESAdvancedMachineCircuitboard
-#  result: SMESAdvancedMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: SMESAdvancedMachineCircuitboard
+  result: SMESAdvancedMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseCircuitboardRecipe

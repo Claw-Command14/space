@@ -13,11 +13,6 @@
       - id: Retractor
       - id: Scalpel
       - id: BoneGel # Shitmed Change
-      - id: NitrousOxideTankFilled # DeltaV - add anesthesia
-      - id: ClothingHandsGlovesNitrile # Floof
-      - id: EmergencyRollerBedSpawnFolded
-      - id: ClothingMaskBreathMedical
-      - id: ClothingMaskSterile
 
 - type: entity
   id: ClothingBackpackDuffelCBURNFilled
@@ -53,9 +48,6 @@
       - id: ClothingHandsGlovesNitrile
       - id: EmergencyRollerBedSpawnFolded
       - id: BoneGel # Shitmed Change
-      - id: NitrousOxideTankFilled # DeltaV - add anesthesia
-      - id: ClothingMaskBreathMedical # Floof
-      - id: ClothingMaskSterile
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
@@ -117,9 +109,9 @@
     contents:
       - id: WeaponLauncherChinaLake
       - id: GrenadeBlast
-        amount: 8 # Floof - Only blast to reduce overall damage.
-      # - id: GrenadeFrag
-      #   amount: 4
+        amount: 4
+      - id: GrenadeFrag
+        amount: 4
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle
@@ -371,13 +363,19 @@
   components:
   - type: StorageFill
     contents:
+      - id: DefibrillatorSyndicate
       - id: MedkitCombatFilled
-      - id: Defibrillator
+        amount: 4
+      - id: Tourniquet
+        amount: 4
       - id: CombatMedipen
-        amount: 3
-      - id: ClothingHandsGlovesNitrile
-      - id: SyringeTranexamicAcid
-      - id: SyringeHyronalin
+        amount: 4
+      - id: PunctAutoInjector
+        amount: 4
+      - id: PyraAutoInjector
+        amount: 4
+      - id: AirlossAutoInjector
+        amount: 4
 
 - type: entity
   parent: ClothingBackpackDuffelSyndicateBundle

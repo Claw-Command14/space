@@ -37,6 +37,7 @@
   recipeUnlocks:
   - PowerCellHigh
   - TurboItemRechargerCircuitboard
+  - SMESAdvancedMachineCircuitboard
   # Goobstation R&D Console rework start
   position: 1,-6
   technologyPrerequisites:

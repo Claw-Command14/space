@@ -19,11 +19,6 @@
   - type: PipeAppearance
   - type: Anchorable
   - type: Rotatable
-  - type: RCDDeconstructable
-    cost: 1
-    delay: 2
-    fx: EffectRCDDeconstruct2
-    rpd: true
   - type: Destructible
     thresholds:
     - trigger: # for nukes
@@ -56,9 +51,9 @@
   - type: Appearance
   - type: PipeColorVisuals
   - type: NodeContainer
-  # - type: PipeRestrictOverlap - Allow pipe stacking
   - type: AtmosUnsafeUnanchor
   - type: AtmosPipeColor
+  - type: AtmosMonitoringConsoleDevice
   - type: Tag
     tags:
     - Pipe
@@ -68,19 +63,10 @@
   - type: StaticPrice
     price: 11
 
-# Goobstation - Allow device-on-pipe stacking
-
-- type: entity
-  abstract: true
-  parent: GasPipeBase
-  id: GasPipeNoOverlap
-  components:
-  - type: PipeRestrictOverlap
-
 #Note: The PipeDirection of the PipeNode should be the south-facing version, because the entity starts at an angle of 0 (south)
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeHalf
   suffix: Half
   components:
@@ -132,7 +118,7 @@
       collection: MetalThud # this NEEDS to changed to the metal pipe falling sound effect on april first every year
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeBend
   suffix: Bend
   components:
@@ -172,7 +158,7 @@
         Blunt: 3 #This should be 6 but throwing damage is doubled at the moment for some reason so for now it's 3
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeTJunction
   suffix: TJunction
   components:
@@ -208,7 +194,7 @@
       collection: MetalThud
 
 - type: entity
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   id: GasPipeFourway
   suffix: Fourway
   components:
@@ -244,7 +230,7 @@
 
 - type: entity
   id: GasPipeBroken
-  parent: GasPipeNoOverlap
+  parent: GasPipeBase
   name: broken pipe
   description: It used to hold gas.
   components:
