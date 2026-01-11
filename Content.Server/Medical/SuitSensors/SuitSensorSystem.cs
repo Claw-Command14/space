@@ -57,14 +57,13 @@ public sealed class SuitSensorSystem : EntitySystem
         base.Update(frameTime);
 
         var curTime = _gameTiming.CurTime;
-        foreach (var ent in _wornSensors)
+        var sensors = EntityManager.EntityQueryEnumerator<SuitSensorComponent, DeviceNetworkComponent>();
+
+        while (sensors.MoveNext(out var uid, out var sensor, out var device))
         {
-            var (uid, sensor) = ent;
-            if (!TryComp(uid, out DeviceNetworkComponent? device)
-                || device.TransmitFrequency is null
-                || !Exists(sensor.User))
+            if (device.TransmitFrequency is null)
             {
-                _wornSensors.Remove(ent); //Not a valid suit sensor array, cease all processing for it.
+                //_wornSensors.Remove(ent); //Not a valid suit sensor array, cease all processing for it.
                 continue;
             }
 
@@ -72,7 +71,7 @@ public sealed class SuitSensorSystem : EntitySystem
             if (curTime < sensor.NextUpdate)
                 continue;
 
-            if (!CheckSensorAssignedStation(ent))
+            if (!CheckSensorAssignedStation(uid, sensor))
                 continue;
 
             // TODO: This would cause imprecision at different tick rates.
@@ -87,7 +86,7 @@ public sealed class SuitSensorSystem : EntitySystem
             var status = GetSensorState(uid, sensor);
             if (status == null)
             {
-                _wornSensors.Remove(ent); //Someone turned the suit off, cease all checking.
+                //_wornSensors.Remove(ent); //Someone turned the suit off, cease all checking.
                 continue;
             }
             //Retrieve active server address if the sensor isn't connected to a server
@@ -118,14 +117,12 @@ public sealed class SuitSensorSystem : EntitySystem
     /// and tries to assign an unassigned sensor to a station if it's currently on a grid
     /// </summary>
     /// <returns>True if the sensor is assigned to a station or assigning it was successful. False otherwise.</returns>
-    private bool CheckSensorAssignedStation(Entity<SuitSensorComponent> ent)
+    private bool CheckSensorAssignedStation(EntityUid uid, SuitSensorComponent sensor)
     {
-        var (uid, sensor) = ent;
-        var xform = Transform(uid);
-        if (!sensor.StationId.HasValue && xform.GridUid is null)
+        if (!sensor.StationId.HasValue && Transform(uid).GridUid == null)
             return false;
 
-        sensor.StationId = _stationSystem.GetOwningStation(uid, xform);
+        sensor.StationId = _stationSystem.GetOwningStation(uid);
         return sensor.StationId.HasValue;
     }
 
