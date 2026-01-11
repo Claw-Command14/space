@@ -18930,11 +18930,6 @@ entities:
     - type: Transform
       pos: 66.5,-100.5
       parent: 2
-  - uid: 1154
-    components:
-    - type: Transform
-      pos: 68.5,-100.5
-      parent: 2
   - uid: 1155
     components:
     - type: Transform
@@ -18954,6 +18949,11 @@ entities:
     components:
     - type: Transform
       pos: 66.5,-102.5
+      parent: 2
+  - uid: 15089
+    components:
+    - type: Transform
+      pos: 68.5,-100.5
       parent: 2
 - proto: AtmosFixNitrogenMarker
   entities:
@@ -33794,11 +33794,6 @@ entities:
     components:
     - type: Transform
       pos: 29.5,-35.5
-      parent: 2
-  - uid: 4072
-    components:
-    - type: Transform
-      pos: 30.5,-35.5
       parent: 2
   - uid: 4073
     components:
@@ -101016,6 +101011,11 @@ entities:
       parent: 2
 - proto: GasFilter
   entities:
+  - uid: 13054
+    components:
+    - type: Transform
+      pos: 29.5,-35.5
+      parent: 2
   - uid: 15862
     components:
     - type: Transform
@@ -101357,6 +101357,24 @@ entities:
       parent: 2
 - proto: GasPipeBend
   entities:
+  - uid: 4072
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 28.5,-35.5
+      parent: 2
+  - uid: 13037
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 29.5,-36.5
+      parent: 2
+  - uid: 13140
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 30.5,-36.5
+      parent: 2
   - uid: 15907
     components:
     - type: Transform
@@ -102262,20 +102280,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 16029
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 28.5,-34.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#990000FF'
-  - uid: 16030
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 29.5,-35.5
-      parent: 2
   - uid: 16031
     components:
     - type: Transform
@@ -102284,12 +102288,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 16032
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 30.5,-35.5
-      parent: 2
   - uid: 16033
     components:
     - type: Transform
@@ -103407,6 +103405,12 @@ entities:
       color: '#990000FF'
 - proto: GasPipeStraight
   entities:
+  - uid: 13274
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 30.5,-35.5
+      parent: 2
   - uid: 16185
     components:
     - type: Transform
@@ -122933,6 +122937,12 @@ entities:
       color: '#0054CDFF'
 - proto: GasPipeTJunction
   entities:
+  - uid: 13036
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,-34.5
+      parent: 2
   - uid: 17492
     components:
     - type: Transform
@@ -145199,20 +145209,10 @@ entities:
       parent: 2
 - proto: PlayerStationAi
   entities:
-  - uid: 22180
-    components:
-    - type: Transform
-      pos: 65.5,-101.5
-      parent: 2
-  - uid: 22181
+  - uid: 1154
     components:
     - type: Transform
       pos: 68.5,-100.5
-      parent: 2
-  - uid: 22182
-    components:
-    - type: Transform
-      pos: 71.5,-101.5
       parent: 2
 - proto: PlushieLamp
   entities:
@@ -145381,6 +145381,18 @@ entities:
     - type: Transform
       pos: -0.5,-77.5
       parent: 2
+- proto: PortalShadowkin
+  entities:
+  - uid: 14994
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 67.5,12.5
+      parent: 2
+    - type: LinkedEntity
+      linkedEntities:
+      - invalid
+      - invalid
 - proto: PosterClawCommand
   entities:
   - uid: 12872
@@ -162928,6 +162940,14 @@ entities:
       parent: 2
     - type: SpamEmitSound
       enabled: False
+- proto: SpareIdCabinetFilled
+  entities:
+  - uid: 15090
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,-18.5
+      parent: 2
 - proto: SpawnMechRipley
   entities:
   - uid: 25186
