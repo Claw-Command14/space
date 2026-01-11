@@ -123,6 +123,26 @@
     - sprite: _ClawCommand/Mobs/Bingle/bingle.rsi
       state: icon
 
+- type: entity
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostBingle
+  categories: [ HideSpawnMenu, Spawner ]
+  name: ghost role spawn point
+  suffix: bingle
+  components:
+  - type: GhostRole
+    name: ghost-role-information-bingle-name
+    description: ghost-role-information-bingle-description
+    rules: ghost-role-component-default-rules
+    raffle:
+      settings: short
+  - type: GhostRoleMobSpawner
+    prototype: MobBingle
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _ClawCommand/Mobs/Bingle/bingle.rsi
+      state: icon
 
 - type: entity
   id: MobBingleUpgraded
