@@ -18,7 +18,8 @@ public sealed partial class StationCentcommComponent : Component
     public List<ResPath> Maps = new()
     {
         new("/Maps/ClawCommand/centcomm.yml"),
-        new("/Maps/ClawCommand/harmony.yml")
+        //enable again one day with ert support.
+        //new("/Maps/ClawCommand/harmony.yml")
     };
 
     /// <summary>
