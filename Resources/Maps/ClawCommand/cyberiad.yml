@@ -94151,6 +94151,13 @@ entities:
     - type: Transform
       pos: 71.5,-33.5
       parent: 2
+- proto: DresserWardenFilled
+  entities:
+  - uid: 15167
+    components:
+    - type: Transform
+      pos: 3.5,30.5
+      parent: 2
 - proto: DrinkBeerBottleFull
   entities:
   - uid: 14967
@@ -95391,11 +95398,6 @@ entities:
     components:
     - type: Transform
       pos: 69.5,-33.5
-      parent: 2
-  - uid: 15167
-    components:
-    - type: Transform
-      pos: 3.5,30.5
       parent: 2
   - uid: 15168
     components:
@@ -162886,6 +162888,13 @@ entities:
     components:
     - type: Transform
       pos: 57.5,-1.5
+      parent: 2
+- proto: SpawnMobCatBingus
+  entities:
+  - uid: 16029
+    components:
+    - type: Transform
+      pos: 35.5,-30.5
       parent: 2
 - proto: SpawnMobCatRuntime
   entities:
