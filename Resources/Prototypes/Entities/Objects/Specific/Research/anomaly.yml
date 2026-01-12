@@ -128,13 +128,13 @@
   - type: Item
     size: Large
   - type: MeleeWeapon
-    attackRate: 2
+    attackRate: 1
     angle: 0
     animation: WeaponArcFist
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 20
+        Blunt: 18
   - type: CorePoweredThrower
   - type: MeleeThrowOnHit
     unanchorOnHit: true
