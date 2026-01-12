@@ -20,6 +20,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Objectives.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
+using Robust.Shared.Audio.Systems;
 using Content.Server.Announcements.Systems;
 
 namespace Content.Server.GameTicking.Rules;
@@ -34,6 +35,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
     [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly AnnouncerSystem _announcer = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -138,7 +140,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                     colorOverride: Color.Red
                     );
 
-                // blobRuleComp.DetectedAudio,
+                _audio.PlayGlobal(blobRuleComp.DetectedAudio, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
 
                 _alertLevelSystem.SetLevel(stationUid, StationAlertDetected, true, true, true, true);
 
@@ -163,7 +165,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                             station: stationUid,
                             colorOverride: Color.Red
                             );
-                        // blobRuleComp.CriticalAudio
+                        _audio.PlayGlobal(blobRuleComp.CriticalAudio, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
                     }
                     else
                     {
@@ -175,7 +177,7 @@ public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
                             Loc.GetString("blob-alert-critical-NoNukeCode"),
                             colorOverride: Color.Red
                             );
-                        // blobRuleComp.CriticalAudio
+                        _audio.PlayGlobal(blobRuleComp.CriticalAudio, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
                     }
 
                     _alertLevelSystem.SetLevel(stationUid, StationAlertCritical, true, true, true, true);
