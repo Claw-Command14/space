@@ -7,13 +7,14 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
+using Content.Shared.Explosion.EntitySystems;
 
 namespace Content.Server.Explosion.EntitySystems;
 
 // This partial part of the explosion system has all of the functions used to create the actual explosion map.
 // I.e, to get the sets of tiles & intensity values that describe an explosion.
 
-public sealed partial class ExplosionSystem : EntitySystem
+public sealed partial class ExplosionSystem : SharedExplosionSystem
 {
     /// <summary>
     ///     This is the main explosion generating function.
@@ -131,7 +132,7 @@ public sealed partial class ExplosionSystem : EntitySystem
 
         // These variables keep track of the total intensity we have distributed
         List<int> tilesInIteration = new() { 1 };
-        List<float> iterationIntensity = new() {stepSize};
+        List<float> iterationIntensity = new() { stepSize };
         var totalTiles = 1;
         var remainingIntensity = totalIntensity - stepSize;
 

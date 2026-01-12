@@ -19,10 +19,11 @@ using Robust.Shared.Utility;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
+using Content.Shared.Explosion.EntitySystems;
 
 namespace Content.Server.Explosion.EntitySystems;
 
-public sealed partial class ExplosionSystem
+public sealed partial class ExplosionSystem : SharedExplosionSystem
 {
     [Dependency] private readonly FlammableSystem _flammableSystem = default!;
 
