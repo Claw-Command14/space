@@ -62,8 +62,8 @@
   - type: StationEvent
     startAnnouncement: true
     earliestStart: 30
-    reoccurrenceDelay: 12
-    minimumPlayers: 3 # Claw changed from 30
+    reoccurrenceDelay: 24
+    minimumPlayers: 12 # Claw changed from 30
     weight: 6 # Really weak compared to other critters
     duration: 60
   - type: VentCrittersRule
