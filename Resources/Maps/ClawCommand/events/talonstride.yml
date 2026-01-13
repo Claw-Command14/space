@@ -1799,8 +1799,7 @@ entities:
           15,14:
             0: 4080
           15,15:
-            0: 1
-            1: 26214
+            0: 26215
           16,12:
             0: 51647
           16,14:
@@ -2361,21 +2360,6 @@ entities:
           moles:
           - 23.903439
           - 80.02455
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 235
-          moles:
-          - 29.818268
-          - 99.82637
           - 0
           - 0
           - 0
@@ -3003,7 +2987,7 @@ entities:
       pos: 60.5,60.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -144961.17
+      secondsUntilStateChange: -144981.69
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -3349,7 +3333,7 @@ entities:
       pos: 21.5,67.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -29041.877
+      secondsUntilStateChange: -29062.393
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -25987,7 +25971,7 @@ entities:
       pos: 5.5,93.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -154871.84
+      secondsUntilStateChange: -154892.36
       state: Closing
   - uid: 3869
     components:
@@ -26064,7 +26048,7 @@ entities:
       pos: 69.5,15.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -21793.555
+      secondsUntilStateChange: -21814.07
       state: Closing
   - uid: 717
     components:
@@ -26165,7 +26149,7 @@ entities:
       pos: 14.5,87.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -156069.06
+      secondsUntilStateChange: -156089.58
       state: Opening
   - uid: 3800
     components:
@@ -26174,7 +26158,7 @@ entities:
       pos: 14.5,88.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -143174.77
+      secondsUntilStateChange: -143195.28
       state: Opening
 - proto: CurtainsRedOpen
   entities:
@@ -26225,7 +26209,7 @@ entities:
       pos: 57.5,7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130492.24
+      secondsUntilStateChange: -130512.76
       state: Closing
   - uid: 6660
     components:
@@ -45742,7 +45726,7 @@ entities:
       pos: 71.5,63.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -164000.42
+      secondsUntilStateChange: -164020.94
       state: Opening
 - proto: N14FitnessWeightLifter
   entities:
@@ -56649,6 +56633,11 @@ entities:
     - type: Transform
       pos: 27.5,17.5
       parent: 2
+  - uid: 2047
+    components:
+    - type: Transform
+      pos: 10.5,55.5
+      parent: 2
   - uid: 5718
     components:
     - type: Transform
@@ -56658,13 +56647,6 @@ entities:
     components:
     - type: Transform
       pos: 66.5,18.5
-      parent: 2
-- proto: SpawnMobArcticFoxSiobhan
-  entities:
-  - uid: 2047
-    components:
-    - type: Transform
-      pos: 10.5,55.5
       parent: 2
 - proto: SpawnMobBee
   entities:
@@ -68269,7 +68251,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -164698.8
+      secondsUntilStateChange: -164719.31
       state: Opening
   - uid: 3376
     components:
@@ -68297,7 +68279,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -164702.3
+      secondsUntilStateChange: -164722.81
       state: Opening
   - uid: 3438
     components:

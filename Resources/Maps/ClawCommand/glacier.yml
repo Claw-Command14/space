@@ -12087,7 +12087,7 @@ entities:
       pos: -4.5,37.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -8899.704
+      secondsUntilStateChange: -8924.856
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12399,7 +12399,7 @@ entities:
       pos: 50.5,73.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -18348.63
+      secondsUntilStateChange: -18373.783
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -48754,7 +48754,7 @@ entities:
             - -0.25,0.48
           mask:
           - Impassable
-          - TableLayer
+          - MidImpassable
           - LowImpassable
           layer:
           - BulletImpassable
@@ -51652,7 +51652,7 @@ entities:
       pos: -29.5,28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -1480.6111
+      secondsUntilStateChange: -1505.7631
       state: Opening
   - uid: 7419
     components:
