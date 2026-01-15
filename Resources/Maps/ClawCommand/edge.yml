@@ -13428,21 +13428,6 @@ entities:
       parent: 2
 - proto: AtmosFixBlockerMarker
   entities:
-  - uid: 552
-    components:
-    - type: Transform
-      pos: 5.5,-47.5
-      parent: 2
-  - uid: 553
-    components:
-    - type: Transform
-      pos: 6.5,-47.5
-      parent: 2
-  - uid: 554
-    components:
-    - type: Transform
-      pos: 7.5,-47.5
-      parent: 2
   - uid: 555
     components:
     - type: Transform
@@ -13457,6 +13442,23 @@ entities:
     components:
     - type: Transform
       pos: 5.5,-51.5
+      parent: 2
+- proto: AtmosFixCarbonDioxideMarker
+  entities:
+  - uid: 552
+    components:
+    - type: Transform
+      pos: 7.5,-47.5
+      parent: 2
+  - uid: 553
+    components:
+    - type: Transform
+      pos: 6.5,-47.5
+      parent: 2
+  - uid: 554
+    components:
+    - type: Transform
+      pos: 5.5,-47.5
       parent: 2
 - proto: AtmosFixFreezerMarker
   entities:
@@ -60696,7 +60698,7 @@ entities:
       pos: 40.5,14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -127119.24
+      secondsUntilStateChange: -129457.56
       state: Closing
     - type: DeviceNetwork
       deviceLists:

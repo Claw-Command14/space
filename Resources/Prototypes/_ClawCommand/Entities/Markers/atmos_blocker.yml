@@ -1,0 +1,33 @@
+- type: entity
+  name: Atmos Fix CarbonDioxide Marker
+  id: AtmosFixCarbonDioxideMarker
+  description: "CarbonDioxide @ gas miner pressure, T20C"
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - sprite: Markers/atmos.rsi # {
+          state: base
+          shader: unshaded
+        #- sprite: Markers/atmos.rsi
+        #  shader: unshaded # }
+        #  state: plasma
+    - type: AtmosFixMarker
+      mode: 8
+
+- type: entity
+  name: Atmos Fix NitrousOxide Marker
+  id: AtmosFixNitrousOxideMarker
+  description: "NitrousOxide @ gas miner pressure, T20C"
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - sprite: Markers/atmos.rsi # {
+          state: base
+          shader: unshaded
+        #- sprite: Markers/atmos.rsi
+        #  shader: unshaded # }
+        #  state: plasma
+    - type: AtmosFixMarker
+      mode: 9
