@@ -115,6 +115,22 @@
         - Borg
         - MedicalBorg
         - Mime
+        - Warden
+        - SeniorOfficer
+        - SecurityOfficer
+        - SecurityCadet
+        - HeadOfSecurity
+        - Captain
+        - ForensicMantis
+        - CentralCommandOfficial
+        - HeadOfPersonnel
+        - Quartermaster
+        - ChiefEngineer
+        - ChiefMedicalOfficer
+        - ResearchDirector
+        - BlueshieldOfficer
+        - BlueshieldMaid
+        - AdministrativeAssistant
   functions:
     - !type:TraitAddComponent
       components:
