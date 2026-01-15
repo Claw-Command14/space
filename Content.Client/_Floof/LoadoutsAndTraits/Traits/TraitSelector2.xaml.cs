@@ -56,7 +56,7 @@ public sealed partial class TraitSelector2 : AbstractLoadoutSelector
 
     private void UpdateFromPreference()
     {
-        CostLabel.Text = $"{Prototype.Points} | {Prototype.Slots}";
+        CostLabel.Text = $"{Prototype.Points}";//claw command | {Prototype.Slots}";
         NameLabel.Text = Owner.GetLocalizedName(Prototype);
         PreferenceButtonRef.Pressed = Preference.Selected;
     }

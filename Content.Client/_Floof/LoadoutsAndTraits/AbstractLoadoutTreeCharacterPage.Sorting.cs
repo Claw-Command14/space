@@ -14,16 +14,19 @@ public abstract partial class AbstractLoadoutTreeCharacterPage<TProto, TCategory
     /// </summary>
     protected virtual Comparison<TProto> GetItemComparison()
     {
-        if (SortByCounter == 0)
-            return (a, b) => string.Compare(GetLocalizedName(a), GetLocalizedName(b), StringComparison.OrdinalIgnoreCase);
+        // If there are no counters, fall back to name sorting
+        if (Counters.Count == 0)
+        {
+            return (a, b) =>
+                string.Compare(GetLocalizedName(a), GetLocalizedName(b), StringComparison.OrdinalIgnoreCase);
+        }
 
-        // Ensure SortByCounter is valid
-        SortByCounter = Math.Clamp(SortByCounter, 0, Counters.Count);
+        // 0 now means "points" (first counter)
+        SortByCounter = Math.Clamp(SortByCounter, 0, Counters.Count - 1);
+        var counter = Counters[SortByCounter];
 
-        var counter = Counters[SortByCounter - 1];
         return (a, b) =>
         {
-            // Sort by the counter first, fall back to sorting by name if counters are equal.
             var result = counter.GetPrototypeCost(a) - counter.GetPrototypeCost(b);
             return result != 0
                 ? result
@@ -36,10 +39,20 @@ public abstract partial class AbstractLoadoutTreeCharacterPage<TProto, TCategory
     /// </summary>
     protected virtual void SetSortingMode(int sortByCounter)
     {
-        SortByCounter = Math.Abs(sortByCounter % (Counters.Count + 1));
+        if (Counters.Count == 0)
+        {
+            SortByCounter = 0;
+            UpdateChoices();
+            Model.SortModeToggleButton.Text =
+                Loc.GetString("loadouts-and-traits-sort-mode-text", ("mode", "name"));
+            return;
+        }
+
+        SortByCounter = Math.Abs(sortByCounter % Counters.Count);
         UpdateChoices();
 
-        var choiceName = SortByCounter == 0 ? "null" : Loc.GetString(Counters[SortByCounter - 1].NameLoc);
-        Model.SortModeToggleButton.Text = Loc.GetString("loadouts-and-traits-sort-mode-text", ("mode", choiceName));
+        var choiceName = Loc.GetString(Counters[SortByCounter].NameLoc);
+        Model.SortModeToggleButton.Text =
+            Loc.GetString("loadouts-and-traits-sort-mode-text", ("mode", choiceName));
     }
 }
