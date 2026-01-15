@@ -2,7 +2,7 @@
   id: Cyberiad
   mapName: 'Cyberiad'
   mapPath: /Maps/ClawCommand/cyberiad.yml # Claw Command
-  minPlayers: 0
+  minPlayers: 7
   maxPlayers: 30
   stations:
     Cyberiad:

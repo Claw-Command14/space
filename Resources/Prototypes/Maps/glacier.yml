@@ -2,7 +2,7 @@
   id: Glacier
   mapName: Glacier
   mapPath: /Maps/ClawCommand/glacier.yml # Claw Command
-  minPlayers: 6
+  minPlayers: 7
   maxPlayers: 60
   stations:
     Glacier:

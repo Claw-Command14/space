@@ -2,7 +2,7 @@
   id: Lighthouse
   mapName: Lighthouse
   mapPath: /Maps/Floof/lighthouse.yml # Floofstation
-  minPlayers: 15
+  minPlayers: 30
   maxPlayers: 55
   stations:
     Lighthouse:

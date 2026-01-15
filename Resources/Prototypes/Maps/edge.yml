@@ -2,7 +2,7 @@
   id: Edge
   mapName: 'Edge'
   mapPath: /Maps/ClawCommand/edge.yml # ClawCommand
-  minPlayers: 15
+  minPlayers: 20
   maxPlayers: 80
   stations:
     Edge:

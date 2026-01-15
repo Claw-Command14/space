@@ -2,7 +2,7 @@
   id: Meta
   mapName: 'Meta Station'
   mapPath: /Maps/Floof/meta.yml
-  minPlayers: 40 #
+  minPlayers: 20 #
   maxPlayers: 85 #
   stations:
     Meta:

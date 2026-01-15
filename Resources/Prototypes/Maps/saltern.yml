@@ -2,7 +2,7 @@
   id: Saltern
   mapName: 'Saltern'
   mapPath: /Maps/ClawCommand/saltern.yml # Claw Command
-  minPlayers: 30
+  minPlayers: 0
   maxPlayers: 60
   fallback: true
   stations:
