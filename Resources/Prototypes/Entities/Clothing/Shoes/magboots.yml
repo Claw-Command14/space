@@ -134,8 +134,8 @@
         - type: NoSlip
     - type: Magboots
       slot: outerClothing
-    #- type: ItemToggle
-    #  onUse: false # can't really wear it like that
+    - type: ItemToggle
+      onUse: false # can't really wear it like that
 
 - type: entity
   id: BaseIntegratedManeuveringThrusters
