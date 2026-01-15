@@ -32,7 +32,7 @@
         shape:
           !type:PhysShapeAabb
           bounds: "-0.4,-0.4,0.4,0.29"
-        density: 50
+        density: 35 # Claw Command decrease density from 50
         mask:
         - CrateMask #this is so they can go under plastic flaps
         layer:
