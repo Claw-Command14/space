@@ -30,3 +30,11 @@
       id: LoadoutClothingUniformJumpsuitBlueshieldOfficer
     - type: loadout
       id: LoadoutClothingUniformJumpskirtBlueshieldMaid
+
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldMaidKatanas
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutClothingBlueshieldMaidKatanas
