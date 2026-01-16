@@ -1,7 +1,7 @@
 - type: job
   id: BlueshieldOfficer
   name: Claw Command Officer
-  description: "Act as a bodyguard and advisor for Claw Command and CentCom VIPs."
+  description: "Act as a bodyguard and advisor for Crew, Claw Command and CentCom VIPs." # Claw Command edit
   playTimeTracker: JobBlueshieldOfficer
   requirements:
     - !type:DepartmentTimeRequirement
@@ -20,19 +20,19 @@
   joinNotifyCrew: true
   supervisors: job-supervisors-command
   canBeAntag: false
-  access:
+  access: #Claw Command edits to the access
   - Security
   - Brig
   - External
   - Cryogenics
   - Maintenance
-  - Atmospherics
+#  - Atmospherics
   - Justice
   - Medical
-  - Research
-  - Engineering
+#  - Research
+#  - Engineering
   - Command
-  - CentralCommand
+#  - CentralCommand
   - BlueshieldOfficer
   special:
   - !type:AddImplantSpecial
