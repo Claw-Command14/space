@@ -142,8 +142,6 @@
     - type: loadout # Claw Command
       id: LoadoutClothingBlueshieldMaidRevolver
     - type: loadout # Claw Command
-      id: LoadoutClothingBlueshieldMaidKatanas
-    - type: loadout # Claw Command
       id: LoadoutMartialArtsBlueshieldCQC
 
 - type: characterItemGroup
