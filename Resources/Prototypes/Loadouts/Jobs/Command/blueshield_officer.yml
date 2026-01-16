@@ -53,6 +53,8 @@
   cost: 8
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutSecurityWeapons
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
