@@ -15,9 +15,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Command
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterJobRequirement
+        jobs:
+        - NanotrasenRepresentative
+      - !type:CharacterDepartmentRequirement
+        departments:
+        - Command
   items:
   - TelescopicBaton
 
@@ -29,9 +34,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Command
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterJobRequirement
+        jobs:
+        - NanotrasenRepresentative
+      - !type:CharacterDepartmentRequirement
+        departments:
+        - Command
   items:
   - WeaponDisabler
 
@@ -43,9 +53,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Command
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterJobRequirement
+        jobs:
+        - NanotrasenRepresentative
+      - !type:CharacterDepartmentRequirement
+        departments:
+        - Command
   items:
   - Stunbaton
 
@@ -57,9 +72,14 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutCommandSelfDefense
-    - !type:CharacterDepartmentRequirement
-      departments:
-      - Command
+    - !type:CharacterLogicOrRequirement
+      requirements:
+      - !type:CharacterJobRequirement
+        jobs:
+        - NanotrasenRepresentative
+      - !type:CharacterDepartmentRequirement
+        departments:
+        - Command
   items:
   - Flash
 
