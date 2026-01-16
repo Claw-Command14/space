@@ -13,7 +13,7 @@
     grid:
       - 0,0,7,1
     # So, the thought is, it can hold katanas, and anything both janibelt and security belt can. However, there's psychological tax of having two melee weapons.
-    whitelist:
+    whitelist: # nerfed a little, since she is not meant to do sec job....
       tags:
         - Katana
         - Wrench
@@ -27,24 +27,17 @@
         - HolosignProjector
         - Plunger
         - Taser
-        - SecBeltEquip
         - Radio
         - Sidearm
         - MagazinePistol
         - MagazineMagnum
         - CombatKnife
-        - Truncheon
       components:
         - LightReplacer
-        - SmokeOnTrigger
         - Stunbaton
-        - FlashOnTrigger
-        - SmokeOnTrigger
         - Flash
-        - Handcuff
         - BallisticAmmoProvider
         - CartridgeAmmo
-        - DoorRemote
         - Whistle
         - HolosignProjector
         - BalloonPopper
