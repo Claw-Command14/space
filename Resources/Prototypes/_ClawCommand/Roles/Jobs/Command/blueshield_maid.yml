@@ -23,23 +23,29 @@
   supervisors: job-supervisors-command
   canBeAntag: false
   access:
-  - Security
-  - Brig
-  - External
+  - External # Generic
   - Cryogenics
-  - Maintenance
-  - Service
-  - Janitor
-  - Medical
-  - Command
-  - CentralCommand
-  - BlueshieldOfficer
-  - Bar
+  - Maintenance 
+  - Bar # Service, except mime and clown becasue CCM shouldnt be a fool.
   - Kitchen
   - Hydroponics
+  - Service
+  - Janitor
   - Theatre
-  - Cargo
-  - Salvage
+  - Chapel 
+  - Lawyer
+  - Boxer
+  - Library 
+  - Musician 
+  - Reporter 
+  - Zookeeper
+  - Engineering # Engi - no atmos, becasue >:3
+  - Cargo # Cargo - no salvage, becasue maid is supposed to stay on station
+  - Mail
+  - Orders 
+  - Research # Science, no Mantis
+  - Command
+  - BlueshieldMaid 
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -63,10 +69,7 @@
     #belt: ClothingBeltKatanaSheathFilledMaid
   storage:
     back:
-    - Zipties
-    - Zipties
-    - Zipties
-    - AdvMopItem
+    - AdvMopItem # removed zipties, CCM is not security
     - MegaSprayBottleSpaceCleaner
     #outerClothing: ClothingBlueshieldArmourVest
     #ears: ClothingHeadsetAltCommand
