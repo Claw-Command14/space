@@ -53,6 +53,8 @@
   cost: 0
   exclusive: true
   requirements:
+    - !type:CharacterItemGroupRequirement 
+      group: LoadoutSecurityEquipment
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldMaid
@@ -61,9 +63,9 @@
 
 - type: loadout
   id: LoadoutClothingBlueshieldMaidKatanas
-  category: JobsSecurityWeapons
-  cost: 0
-  exclusive: true
+  category: JobsSecurityWeapons # now she can take both a gun and sheats. But instead they cost 2 points now
+  cost: 2
+  exclusive: true 
   requirements:
     - !type:CharacterJobRequirement
       jobs:
