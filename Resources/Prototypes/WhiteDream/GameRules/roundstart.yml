@@ -6,10 +6,10 @@
   - type: GameRule
     minPlayers: 15
   - type: StationEvent # Claw Command
-    minPlayers: 15
+    minimumPlayers: 15
     reoccurrenceDelay: 600
     startAnnouncement: false
-    weight: 1
+    weight: 2
   - type: BloodCultRule
   - type: AntagSelection
     definitions:

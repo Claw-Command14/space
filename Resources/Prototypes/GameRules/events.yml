@@ -465,7 +465,7 @@
   components:
   - type: StationEvent
     earliestStart: 20
-    minimumPlayers: 7
+    minimumPlayers: 15
     weight: 2
     duration: 1
   - type: ZombieRule
