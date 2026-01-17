@@ -41,15 +41,15 @@
   parent: ClothingOuterEVASuitBase
   id: ClothingOuterSuitEmergency
   name: emergency vacsuit
-  description: An emergency vacsuit with a built-in helmet. It's horribly slow and lacking in temperature protection, but enough to bide you time from the harsh vaccuum of space.
+  description: An emergency vacsuit with a built-in helmet. It's slow and lacking in temperature protection, but enough to bide you time from the harsh vaccuum of space.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva_emergency.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/eva_emergency.rsi
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
+    walkModifier: 0.75
+    sprintModifier: 0.75
   - type: HeldSpeedModifier
   - type: TemperatureProtection
     coefficient: 0.5
