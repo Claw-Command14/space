@@ -23,7 +23,7 @@
     sprintModifier: 0.85
   - type: HeldSpeedModifier
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.65
   - type: GroupExamine
   - type: Unremoveable
 #  - type: ModifyDelayedKnockdown # ! UNCOMMENT WHEN PORTED, goobstation

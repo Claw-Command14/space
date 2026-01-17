@@ -76,7 +76,7 @@
         Heat: 0.7
         Caustic: 0.75 # not the full 90% from ss13 because of the head
   - type: ExplosionResistance
-    damageCoefficient: 0.9
+    damageCoefficient: 0.5
 
 - type: entity
   abstract: true
@@ -91,7 +91,7 @@
         Piercing: 0.7
         Heat: 0.7
   - type: ExplosionResistance
-    damageCoefficient: 0.9
+    damageCoefficient: 0.5
 
 - type: entity
   parent: [ClothingOuterArmorHoS, ClothingOuterWinterCoat] # Floof

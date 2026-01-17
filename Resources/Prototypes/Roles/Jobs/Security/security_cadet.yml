@@ -23,7 +23,7 @@
   - Cryogenics
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, GetUpImplant ]
 
 - type: startingGear
   id: SecurityCadetGear

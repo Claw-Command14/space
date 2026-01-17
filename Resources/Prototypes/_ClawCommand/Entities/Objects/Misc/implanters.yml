@@ -1,0 +1,7 @@
+- type: entity
+  id: GetUpImplanter
+  name: get up implanter
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: GetUpImplant

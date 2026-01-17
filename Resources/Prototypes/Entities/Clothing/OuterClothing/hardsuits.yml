@@ -45,7 +45,7 @@
   - type: TemperatureProtection
     coefficient: 0.001
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.45
   - type: Armor
     modifiers:
       coefficients:
@@ -78,7 +78,7 @@
     highPressureMultiplier: 0.04
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.45
   - type: Armor
     modifiers:
       coefficients:
@@ -312,7 +312,7 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.4
+    damageCoefficient: 0.5
   - type: Armor
     modifiers:
       coefficients:
@@ -502,7 +502,7 @@
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.4
   - type: Armor
     modifiers:
       coefficients:
@@ -1014,7 +1014,7 @@
   - type: TemperatureProtection
     coefficient: 0.001
   - type: ExplosionResistance
-    damageCoefficient: 0.7
+    damageCoefficient: 0.4
   - type: Armor
     modifiers:
       coefficients:

@@ -20,7 +20,7 @@
     walkModifier: 0.90
     sprintModifier: 0.90
   - type: ExplosionResistance # More protective against explosives than you think. Helps in preventing all those vital organs from jiggling around o.o
-    damageCoefficient: 0.70
+    damageCoefficient: 0.65
 
 #Alternate / slim basic armor vest replacement
 - type: entity
@@ -41,7 +41,7 @@
         Piercing: 0.90
         Heat: 0.90
   - type: ExplosionResistance # Better than nothing against a blast or shockwave.
-    damageCoefficient: 0.90
+    damageCoefficient: 0.75
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing]

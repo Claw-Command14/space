@@ -46,7 +46,7 @@
         - TelepathyPower
         - AssayPower
   - !type:AddImplantSpecial # Floof
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, GetUpImplant ]
 
 - type: startingGear
   id: ForensicMantisGear

@@ -23,6 +23,7 @@ using Robust.Shared.Physics.Systems;
 using Content.Shared.Actions.Events;
 using Content.Shared.Climbing.Components;
 using Content.Shared._Goobstation.MartialArts.Components;
+using Content.Shared.Damage.Components;
 
 namespace Content.Shared.Stunnable;
 
@@ -210,6 +211,12 @@ public abstract class SharedStunSystem : EntitySystem
     public bool TryKnockdown(EntityUid uid, TimeSpan time, bool refresh, DropHeldItemsBehavior behavior,
         StatusEffectsComponent? status = null)
     {
+        // Claw Command
+        if (TryComp<GetUpComponent>(uid, out var getUpComp))
+        {
+            time *= getUpComp.Modifier;
+        }
+        // End Claw Command
         if (time <= TimeSpan.Zero || !Resolve(uid, ref status, false))
             return false;
 

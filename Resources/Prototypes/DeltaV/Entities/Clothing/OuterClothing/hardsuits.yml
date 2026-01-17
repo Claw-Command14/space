@@ -13,7 +13,7 @@
     highPressureMultiplier: 0.50
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.50
+    damageCoefficient: 0.40
   - type: Armor # Good armour resistance across the board, comparable to the standard security hardsuit.
     modifiers:
       coefficients:
@@ -57,7 +57,7 @@
     highPressureMultiplier: 0.60
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.60
+    damageCoefficient: 0.40
   - type: Armor # Slightly less armour than the standard hardsuit, but far higher mobility.
     modifiers:
       coefficients:
@@ -101,7 +101,7 @@
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.40
+    damageCoefficient: 0.4
   - type: Armor # More protective than a standard security hardsuit, but far slower.
     modifiers:
       coefficients:
@@ -145,7 +145,7 @@
     highPressureMultiplier: 0.40
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.40
+    damageCoefficient: 0.35
   - type: Armor # About as protective as a riot hardsuit but with far less movement penalty.
     modifiers:
       coefficients:

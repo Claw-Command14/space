@@ -22,7 +22,7 @@
   - Maintenance
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, GetUpImplant ]
 
 
 - type: startingGear
