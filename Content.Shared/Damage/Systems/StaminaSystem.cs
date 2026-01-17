@@ -445,12 +445,14 @@ public sealed partial class StaminaSystem : EntitySystem
 
         }
         var stunTime = component.StunTime * getUpModifier;
-        // End Claw Command
-
-        _stunSystem.TryParalyze(uid, stunTime, true);
+        // Intentionally pass normal value because itll get reduced in tryParalize itself.
+        _stunSystem.TryParalyze(uid, component.StunTime, true);
 
         // Give them buffer before being able to be re-stunned
+        // use reduce stuntime value.
         component.NextUpdate = _timing.CurTime + stunTime + StamCritBufferTime;
+        // End Claw Command
+
         EnsureComp<ActiveStaminaComponent>(uid);
         Dirty(uid, component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Medium, $"{ToPrettyString(uid):user} entered stamina crit");
