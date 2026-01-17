@@ -686,7 +686,7 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: FlashImmunity
+        #- type: FlashImmunity
         - type: EyeProtection
 
 - type: trait
