@@ -45334,6 +45334,9 @@ entities:
     - type: Transform
       pos: 38.5,-36.5
       parent: 2
+    - type: SingletonDeviceNetServer
+      active: False
+      available: False
 - proto: CryogenicSleepUnit
   entities:
   - uid: 6791

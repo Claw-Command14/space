@@ -61888,6 +61888,9 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
+    - type: SingletonDeviceNetServer
+      active: False
+      available: False
 - proto: CrowbarRed
   entities:
   - uid: 4694

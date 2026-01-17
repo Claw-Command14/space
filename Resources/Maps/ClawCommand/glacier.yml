@@ -51453,8 +51453,9 @@ entities:
     - type: Transform
       pos: 34.5,73.5
       parent: 2
-    - type: StationLimitedNetwork
-      allowNonStationPackets: True
+    - type: SingletonDeviceNetServer
+      active: False
+      available: False
 - proto: CriminalRecordsComputerCircuitboard
   entities:
   - uid: 7386
