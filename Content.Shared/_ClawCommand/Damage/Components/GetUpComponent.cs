@@ -10,5 +10,5 @@ namespace Content.Shared.Damage.Components;
 public sealed partial class GetUpComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("modifier"), AutoNetworkedField]
-    public float Modifier = 0.65f;
+    public float Modifier = 0.6f;
 }
