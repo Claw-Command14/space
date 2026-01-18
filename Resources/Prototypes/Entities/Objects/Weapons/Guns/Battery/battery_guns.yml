@@ -426,6 +426,9 @@
   id: WeaponLaserCannon
   description: A heavy duty, high powered laser weapon.
   components:
+  - type: Tag
+    tags:
+    - TurretCompatibleWeapon
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
     layers:
@@ -582,7 +585,7 @@
   components:
   - type: Item # Floof - Gun Shape Refactor
     size: Large
-    shape: 
+    shape:
     - 0,0,3,1
   - type: Tag
     tags:
@@ -685,7 +688,7 @@
     steps: 5
     zeroVisible: true
   - type: Appearance
-  
+
 - type: entity
   name: antique laser pistol
   parent: BaseWeaponBatterySmall

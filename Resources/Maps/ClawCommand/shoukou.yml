@@ -8398,7 +8398,7 @@ entities:
       pos: 34.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -36797.14
+      secondsUntilStateChange: -37131.3
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8438,7 +8438,7 @@ entities:
       pos: -36.5,-36.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -67567.05
+      secondsUntilStateChange: -67901.2
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8828,7 +8828,7 @@ entities:
       pos: -32.5,-41.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -66995.87
+      secondsUntilStateChange: -67330.02
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9014,7 +9014,7 @@ entities:
       pos: -20.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -93253.51
+      secondsUntilStateChange: -93587.664
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9287,7 +9287,7 @@ entities:
       pos: -25.5,9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -23720.303
+      secondsUntilStateChange: -24054.46
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 2
@@ -9454,7 +9454,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -121103.42
+      secondsUntilStateChange: -121437.58
       state: Opening
   - uid: 7972
     components:
@@ -9649,7 +9649,7 @@ entities:
       pos: 13.5,12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -72459.27
+      secondsUntilStateChange: -72793.43
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9753,7 +9753,7 @@ entities:
       pos: -4.5,-3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -77314.7
+      secondsUntilStateChange: -77648.86
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10208,7 +10208,7 @@ entities:
       pos: 5.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4172.2734
+      secondsUntilStateChange: -4506.4316
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10950,7 +10950,7 @@ entities:
       pos: 81.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -115571.875
+      secondsUntilStateChange: -115906.03
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11121,7 +11121,7 @@ entities:
       pos: 6.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -81663.96
+      secondsUntilStateChange: -81998.12
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11353,7 +11353,7 @@ entities:
       pos: 10.5,18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -81487.5
+      secondsUntilStateChange: -81821.66
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -60996,7 +60996,7 @@ entities:
       pos: 53.5,-9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3277.3271
+      secondsUntilStateChange: -3611.4856
       state: Closing
   - uid: 13825
     components:
@@ -70927,7 +70927,7 @@ entities:
       pos: 9.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -128506.65
+      secondsUntilStateChange: -128840.805
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -71197,7 +71197,7 @@ entities:
       pos: -36.5,-22.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -342884.66
+      secondsUntilStateChange: -343218.8
       state: Closing
   - uid: 5912
     components:
@@ -71831,7 +71831,7 @@ entities:
       pos: -40.5,-0.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -273113.56
+      secondsUntilStateChange: -273447.72
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -125811,7 +125811,7 @@ entities:
       pos: -1.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -87648.53
+      secondsUntilStateChange: -87982.69
       state: Opening
   - uid: 23486
     components:
@@ -125819,7 +125819,7 @@ entities:
       pos: -2.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -77331.37
+      secondsUntilStateChange: -77665.52
       state: Opening
   - uid: 26933
     components:
@@ -169736,6 +169736,100 @@ entities:
     - type: Transform
       pos: 47.501106,-31.454418
       parent: 2
+- proto: WeaponEnergyTurretAI
+  entities:
+  - uid: 19899
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 88.5,11.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 26953
+  - uid: 19900
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 88.5,7.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 26953
+  - uid: 19901
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 95.5,8.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 26953
+  - uid: 19902
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 95.5,10.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 26953
+  - uid: 19903
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 85.5,8.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 26953
+  - uid: 19904
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 85.5,10.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 26953
+- proto: WeaponEnergyTurretAIControlPanel
+  entities:
+  - uid: 26953
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 92.5,6.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 19902
+      - 19901
+      - 19900
+      - 19899
+      - 19903
+      - 19904
+- proto: WeaponEnergyTurretStation
+  entities:
+  - uid: 26951
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,-7.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 26952
+- proto: WeaponEnergyTurretStationControlPanel
+  entities:
+  - uid: 26952
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 28.5,-9.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 26951
 - proto: WeaponFlareGun
   entities:
   - uid: 19233
@@ -169775,36 +169869,6 @@ entities:
     components:
     - type: Transform
       pos: 47.5,-43.5
-      parent: 2
-  - uid: 19899
-    components:
-    - type: Transform
-      pos: 88.5,11.5
-      parent: 2
-  - uid: 19900
-    components:
-    - type: Transform
-      pos: 88.5,7.5
-      parent: 2
-  - uid: 19901
-    components:
-    - type: Transform
-      pos: 95.5,10.5
-      parent: 2
-  - uid: 19902
-    components:
-    - type: Transform
-      pos: 95.5,8.5
-      parent: 2
-  - uid: 19903
-    components:
-    - type: Transform
-      pos: 85.5,10.5
-      parent: 2
-  - uid: 19904
-    components:
-    - type: Transform
-      pos: 85.5,8.5
       parent: 2
 - proto: WelderIndustrial
   entities:
@@ -169998,7 +170062,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -199371.52
+      secondsUntilStateChange: -199705.67
       state: Opening
   - uid: 10028
     components:
@@ -170413,7 +170477,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -107492.73
+      secondsUntilStateChange: -107826.88
       state: Opening
   - uid: 26858
     components:

@@ -76,6 +76,11 @@ namespace Content.Shared.DrawDepth
         /// </summary>
         Items = DrawDepthTag.Default + 3,
 
+        /// <summary>
+        /// Stuff that should be drawn below mobs, but on top of items. Like muzzle flash.
+        /// </summary>
+        BelowMobs = DrawDepthTag.Default + 4,
+
         Mobs = DrawDepthTag.Default + 4,
 
         OverMobs = DrawDepthTag.Default + 5,

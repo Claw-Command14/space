@@ -4391,7 +4391,7 @@ entities:
       pos: 56.5,-2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2414.4229
+      secondsUntilStateChange: -2787.3171
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7927,8 +7927,11 @@ entities:
   - uid: 652
     components:
     - type: Transform
-      pos: -41.465733,13.714587
+      pos: -41.645084,14.352718
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: BoxBodyBag
   entities:
   - uid: 653
@@ -28639,8 +28642,11 @@ entities:
   - uid: 4579
     components:
     - type: Transform
-      pos: 47.41938,-15.510298
+      pos: 47.26304,-16.461176
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: CrewMonitoringServer
   entities:
   - uid: 4580
@@ -28656,8 +28662,11 @@ entities:
   - uid: 4581
     components:
     - type: Transform
-      pos: 47.679794,-15.312244
+      pos: 47.617207,-16.398676
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: CriminalRecordsComputerCircuitboard
   entities:
   - uid: 4582
@@ -57779,11 +57788,6 @@ entities:
     - type: Transform
       pos: 47.5,-14.5
       parent: 2
-  - uid: 8895
-    components:
-    - type: Transform
-      pos: 47.5,-15.5
-      parent: 2
   - uid: 8896
     components:
     - type: Transform
@@ -65559,11 +65563,6 @@ entities:
     components:
     - type: Transform
       pos: -36.5,11.5
-      parent: 2
-  - uid: 10172
-    components:
-    - type: Transform
-      pos: -41.5,13.5
       parent: 2
   - uid: 10173
     components:
@@ -75145,6 +75144,49 @@ entities:
     - type: Transform
       pos: -49.55981,11.439514
       parent: 2
+- proto: WeaponEnergyTurretAI
+  entities:
+  - uid: 8895
+    components:
+    - type: Transform
+      pos: 47.5,-15.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 12269
+- proto: WeaponEnergyTurretAIControlPanel
+  entities:
+  - uid: 12269
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 46.5,-17.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 8895
+- proto: WeaponEnergyTurretStation
+  entities:
+  - uid: 10172
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -41.5,13.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 12270
+- proto: WeaponEnergyTurretStationControlPanel
+  entities:
+  - uid: 12270
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -40.5,14.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 10172
 - proto: WeaponLaserCarbine
   entities:
   - uid: 11950

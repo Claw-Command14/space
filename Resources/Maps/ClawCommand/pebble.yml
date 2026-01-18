@@ -4868,6 +4868,22 @@ entities:
     - type: Transform
       pos: 24.735107,12.70734
       parent: 2
+- proto: ActionToggleInternals
+  entities:
+  - uid: 11140
+    components:
+    - type: Transform
+      parent: 4511
+    - type: InstantAction
+      container: 4511
+- proto: ActionToggleJetpack
+  entities:
+  - uid: 8217
+    components:
+    - type: Transform
+      parent: 4511
+    - type: InstantAction
+      container: 4511
 - proto: AirAlarm
   entities:
   - uid: 4
@@ -28592,13 +28608,19 @@ entities:
   - uid: 4443
     components:
     - type: Transform
-      pos: 23.70889,-17.523159
+      pos: 24.294594,-17.74578
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 4444
     components:
     - type: Transform
-      pos: 23.33389,-17.445034
+      pos: 24.638344,-17.636406
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 4445
     components:
     - type: Transform
@@ -28986,14 +29008,75 @@ entities:
   - uid: 4511
     components:
     - type: Transform
-      pos: 23.288805,-17.384716
+      pos: 24.716469,-17.605156
       parent: 2
+    - type: ContainerContainer
+      containers:
+        toggleable-clothing: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+        actions: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 8217
+          - 11140
+    - type: GroupExamine
+      group:
+      - hoverMessage: ""
+        contextText: verb-examine-group-other
+        icon: /Textures/Interface/examine-star.png
+        components:
+        - Armor
+        - ClothingSpeedModifier
+        entries:
+        - message: This decreases your speed by [color=yellow]25%[/color].
+          priority: 0
+          component: ClothingSpeedModifier
+        - message: >-
+            It provides the following protection:
+
+            - [color=yellow]Blunt[/color] damage reduced by [color=lightblue]40%[/color].
+
+            - [color=yellow]Slash[/color] damage reduced by [color=lightblue]40%[/color].
+
+            - [color=yellow]Piercing[/color] damage reduced by [color=lightblue]40%[/color].
+
+            - [color=yellow]Radiation[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=yellow]Caustic[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=yellow]Heat[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=aqua]Stamina[/color] damage reduced by [color=lightblue]25%[/color].
+
+            - [color=orange]Explosion[/color] damage reduced by [color=lightblue]50%[/color].
+          priority: 0
+          component: Armor
+        title: null
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+    - type: GasTank
+      toggleActionEntity: 11140
+    - type: Jetpack
+      toggleActionEntity: 8217
+    - type: ActionsContainer
 - proto: ClothingOuterHardsuitCombatRiot
   entities:
   - uid: 4512
     components:
     - type: Transform
-      pos: 23.75764,-17.494669
+      pos: 24.482094,-17.55828
+      parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+  - uid: 11152
+    components:
+    - type: Transform
+      pos: 24.396156,-17.62078
       parent: 2
 - proto: ClothingOuterWinterCap
   entities:
@@ -54720,11 +54803,6 @@ entities:
     - type: Transform
       pos: 23.5,-15.5
       parent: 2
-  - uid: 8217
-    components:
-    - type: Transform
-      pos: 23.5,-17.5
-      parent: 2
   - uid: 8218
     components:
     - type: Transform
@@ -69626,6 +69704,59 @@ entities:
     - type: Transform
       pos: 13.865994,-17.62056
       parent: 2
+- proto: WeaponEnergyTurretAI
+  entities:
+  - uid: 11166
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,47.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 11168
+  - uid: 11167
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,47.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 11168
+- proto: WeaponEnergyTurretAIControlPanel
+  entities:
+  - uid: 11168
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -11.5,45.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 11166
+      - 11167
+- proto: WeaponEnergyTurretStation
+  entities:
+  - uid: 11154
+    components:
+    - type: Transform
+      pos: 24.5,-16.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 11165
+- proto: WeaponEnergyTurretStationControlPanel
+  entities:
+  - uid: 11165
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 21.5,-17.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 11154
 - proto: WeaponFlareGun
   entities:
   - uid: 10838

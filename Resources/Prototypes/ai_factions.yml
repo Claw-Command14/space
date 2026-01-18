@@ -22,6 +22,7 @@
   - Revolutionary
   - Gorilla # Floof
   - Blob # Goobstation - Blob
+  - Changeling
 
 - type: npcFaction
   id: Mouse
@@ -110,6 +111,7 @@
   - Dragon
   - Gorilla # Floof
   - Blob # Goobstation - Blob
+  - Changeling
 
 - type: npcFaction
   id: Pibble
@@ -146,6 +148,7 @@
   - SimpleHostile
   - Dragon
   - Blob # Goobstation - Blob
+  - Changeling
 
 - type: npcFaction
   id: GladiabotFFA
@@ -204,3 +207,25 @@
   - Xeno
   - Changeling
   - Blob # Goobstation - Blob
+
+- type: npcFaction
+  id: AllHostile
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - GeometerOfBlood
+  - Gorilla
+  - Changeling # goob edit - changelings
+#  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+# - Wizard # goob edit - wizard
+#  - PirateFaction # goob - pirates

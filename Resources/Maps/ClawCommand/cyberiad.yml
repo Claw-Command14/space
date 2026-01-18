@@ -10559,6 +10559,14 @@ entities:
     - type: Transform
       pos: 1.5165133,30.497892
       parent: 2
+- proto: ActionToggleInternals
+  entities:
+  - uid: 23180
+    components:
+    - type: Transform
+      parent: 21959
+    - type: InstantAction
+      container: 21959
 - proto: AirAlarm
   entities:
   - uid: 5
@@ -14229,7 +14237,7 @@ entities:
       pos: 44.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2937.6914
+      secondsUntilStateChange: -3577.627
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -80976,8 +80984,11 @@ entities:
   - uid: 12770
     components:
     - type: Transform
-      pos: 75.5,-104.5
+      pos: 75.18519,-104.24842
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: ClothingMaskClown
   entities:
   - uid: 12777
@@ -99662,7 +99673,7 @@ entities:
       pos: 33.5,26.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -217.42764
+      secondsUntilStateChange: -857.3633
       state: Closing
   - uid: 31658
     components:
@@ -139487,12 +139498,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 69.5,-102.5
       parent: 2
-  - uid: 21359
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 68.5,-103.5
-      parent: 2
   - uid: 21360
     components:
     - type: Transform
@@ -144292,8 +144297,19 @@ entities:
   - uid: 21959
     components:
     - type: Transform
-      pos: 75.5,-104.5
+      pos: 75.206024,-104.602585
       parent: 2
+    - type: GasTank
+      toggleActionEntity: 23180
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 23180
 - proto: PackPaperRollingFilters
   entities:
   - uid: 21960
@@ -152018,12 +152034,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 64.5,-109.5
       parent: 2
-  - uid: 23180
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 71.5,-107.5
-      parent: 2
   - uid: 23181
     components:
     - type: Transform
@@ -158825,8 +158835,11 @@ entities:
   - uid: 24461
     components:
     - type: Transform
-      pos: 71.5,-107.5
+      pos: 75.706024,-104.540085
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: SheetGlass10
   entities:
   - uid: 24462
@@ -159014,8 +159027,11 @@ entities:
   - uid: 24492
     components:
     - type: Transform
-      pos: 71.5,-107.5
+      pos: 75.735634,-104.63868
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: SheetRGlass
   entities:
   - uid: 24493
@@ -159224,8 +159240,11 @@ entities:
   - uid: 24524
     components:
     - type: Transform
-      pos: 71.5,-107.5
+      pos: 75.735634,-104.63868
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: SheetSteel10
   entities:
   - uid: 24525
@@ -196332,6 +196351,140 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
+- proto: WeaponEnergyTurretAI
+  entities:
+  - uid: 31053
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 71.5,-107.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 21359
+  - uid: 31679
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 67.5,-94.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 21359
+  - uid: 31682
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 65.5,-107.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 21359
+  - uid: 31683
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 70.5,-117.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 21359
+  - uid: 31684
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 66.5,-117.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 21359
+  - uid: 31685
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 71.5,-97.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 21359
+  - uid: 31686
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 65.5,-97.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 21359
+  - uid: 31687
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 64.5,-104.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 21359
+  - uid: 31688
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 72.5,-104.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 21359
+  - uid: 31689
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 69.5,-94.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 21359
+- proto: WeaponEnergyTurretAIControlPanel
+  entities:
+  - uid: 21359
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 68.5,-103.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 31683
+      - 31684
+      - 31053
+      - 31682
+      - 31688
+      - 31687
+      - 31686
+      - 31685
+      - 31679
+      - 31689
+- proto: WeaponEnergyTurretStation
+  entities:
+  - uid: 31680
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,38.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 31681
+- proto: WeaponEnergyTurretStationControlPanel
+  entities:
+  - uid: 31681
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,36.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 31680
 - proto: WeaponLaserCarbinePractice
   entities:
   - uid: 31051
@@ -196392,13 +196545,6 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: WeaponTurretSyndicateBroken
-  entities:
-  - uid: 31053
-    components:
-    - type: Transform
-      pos: 68.5,-102.5
-      parent: 2
 - proto: WeedSpray
   entities:
   - uid: 31054

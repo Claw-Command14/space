@@ -858,6 +858,10 @@
     idleState: icon
     runningState: icon
     staticRecipes:
+      - WeaponEnergyTurretAIMachineCircuitboard
+      - WeaponEnergyTurretStationMachineCircuitboard
+      - WeaponEnergyTurretAIControlPanelElectronics
+      - WeaponEnergyTurretStationControlPanelElectronics
       - BoxLethalshot
       - BoxShotgunFlare
       - BoxShotgunPractice

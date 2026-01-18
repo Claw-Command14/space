@@ -12,6 +12,7 @@ using Content.Shared.Fluids.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Inventory;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Turrets;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
@@ -54,6 +55,7 @@ public sealed class NPCUtilitySystem : EntitySystem
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!; // Floof
+    [Dependency] private readonly TurretTargetSettingsSystem _turretTargetSettings = default!;
 
     private EntityQuery<PuddleComponent> _puddleQuery;
     private EntityQuery<TransformComponent> _xformQuery;
@@ -169,206 +171,214 @@ public sealed class NPCUtilitySystem : EntitySystem
         switch (consideration)
         {
             case FoodValueCon:
-            {
-                if (!TryComp<FoodComponent>(targetUid, out var food))
-                    return 0f;
-
-                // mice can't eat unpeeled bananas, need monkey's help
-                if (_openable.IsClosed(targetUid))
-                    return 0f;
-
-                if (!_food.IsDigestibleBy(owner, targetUid, food))
-                    return 0f;
-
-                var avoidBadFood = !HasComp<IgnoreBadFoodComponent>(owner);
-
-                // only eat when hungry or if it will eat anything
-                if (TryComp<HungerComponent>(owner, out var hunger) && hunger.CurrentThreshold > HungerThreshold.Okay && avoidBadFood)
-                    return 0f;
-
-                // no mouse don't eat the uranium-235
-                if (avoidBadFood && HasComp<BadFoodComponent>(targetUid))
-                    return 0f;
-
-                return 1f;
-            }
-            case DrinkValueCon:
-            {
-                if (!TryComp<DrinkComponent>(targetUid, out var drink))
-                    return 0f;
-
-                // can't drink closed drinks
-                if (_openable.IsClosed(targetUid))
-                    return 0f;
-
-                // only drink when thirsty
-                if (TryComp<ThirstComponent>(owner, out var thirst) && thirst.CurrentThirstThreshold > ThirstThreshold.Okay)
-                    return 0f;
-
-                // no janicow don't drink the blood puddle
-                if (HasComp<BadDrinkComponent>(targetUid))
-                    return 0f;
-
-                // needs to have something that will satiate thirst, mice wont try to drink 100% pure mutagen.
-                var hydration = _drink.TotalHydration(targetUid, drink);
-                if (hydration <= 1.0f)
-                    return 0f;
-
-                return 1f;
-            }
-            case OrderedTargetCon:
-            {
-                if (!blackboard.TryGetValue<EntityUid>(NPCBlackboard.CurrentOrderedTarget, out var orderedTarget, EntityManager))
-                    return 0f;
-
-                if (targetUid != orderedTarget)
-                    return 0f;
-
-                return 1f;
-            }
-            case TargetAccessibleCon:
-            {
-                if (_container.TryGetContainingContainer(targetUid, out var container))
                 {
-                    if (TryComp<EntityStorageComponent>(container.Owner, out var storageComponent))
+                    if (!TryComp<FoodComponent>(targetUid, out var food))
+                        return 0f;
+
+                    // mice can't eat unpeeled bananas, need monkey's help
+                    if (_openable.IsClosed(targetUid))
+                        return 0f;
+
+                    if (!_food.IsDigestibleBy(owner, targetUid, food))
+                        return 0f;
+
+                    var avoidBadFood = !HasComp<IgnoreBadFoodComponent>(owner);
+
+                    // only eat when hungry or if it will eat anything
+                    if (TryComp<HungerComponent>(owner, out var hunger) && hunger.CurrentThreshold > HungerThreshold.Okay && avoidBadFood)
+                        return 0f;
+
+                    // no mouse don't eat the uranium-235
+                    if (avoidBadFood && HasComp<BadFoodComponent>(targetUid))
+                        return 0f;
+
+                    return 1f;
+                }
+            case DrinkValueCon:
+                {
+                    if (!TryComp<DrinkComponent>(targetUid, out var drink))
+                        return 0f;
+
+                    // can't drink closed drinks
+                    if (_openable.IsClosed(targetUid))
+                        return 0f;
+
+                    // only drink when thirsty
+                    if (TryComp<ThirstComponent>(owner, out var thirst) && thirst.CurrentThirstThreshold > ThirstThreshold.Okay)
+                        return 0f;
+
+                    // no janicow don't drink the blood puddle
+                    if (HasComp<BadDrinkComponent>(targetUid))
+                        return 0f;
+
+                    // needs to have something that will satiate thirst, mice wont try to drink 100% pure mutagen.
+                    var hydration = _drink.TotalHydration(targetUid, drink);
+                    if (hydration <= 1.0f)
+                        return 0f;
+
+                    return 1f;
+                }
+            case OrderedTargetCon:
+                {
+                    if (!blackboard.TryGetValue<EntityUid>(NPCBlackboard.CurrentOrderedTarget, out var orderedTarget, EntityManager))
+                        return 0f;
+
+                    if (targetUid != orderedTarget)
+                        return 0f;
+
+                    return 1f;
+                }
+            case TargetAccessibleCon:
+                {
+                    if (_container.TryGetContainingContainer(targetUid, out var container))
                     {
-                        if (storageComponent is { Open: false } && _weldable.IsWelded(container.Owner))
+                        if (TryComp<EntityStorageComponent>(container.Owner, out var storageComponent))
                         {
+                            if (storageComponent is { Open: false } && _weldable.IsWelded(container.Owner))
+                            {
+                                return 0.0f;
+                            }
+                        }
+                        else
+                        {
+                            // If we're in a container (e.g. held or whatever) then we probably can't get it. Only exception
+                            // Is a locker / crate
+                            // TODO: Some mobs can break it so consider that.
                             return 0.0f;
                         }
                     }
-                    else
-                    {
-                        // If we're in a container (e.g. held or whatever) then we probably can't get it. Only exception
-                        // Is a locker / crate
-                        // TODO: Some mobs can break it so consider that.
-                        return 0.0f;
-                    }
-                }
 
-                // TODO: Pathfind there, though probably do it in a separate con.
-                return 1f;
-            }
+                    // TODO: Pathfind there, though probably do it in a separate con.
+                    return 1f;
+                }
             // Floofstation - because upstream didnt implement anything to prevent e.g. cleanbots from trying to clean under walls.
             case TargetUnobstructedCon:
-            {
-                if (_lookup.GetEntitiesIntersecting(targetUid, LookupFlags.Uncontained) is not { Count: > 0 } intersectors)
-                    return 1f;
-
-                // For each obstructor, multiply the score by 0.1. This way unobstructed entities will be prioritized.
-                var score = 1f;
-                var (_, ownCollisionMask) = _physics.GetHardCollision(owner);
-                foreach (var intersector in intersectors)
                 {
-                    if (TryComp<FixturesComponent>(intersector, out var fixs)
-                        && fixs.Fixtures.Values.Any(it => it.Hard && (it.CollisionLayer & ownCollisionMask) != 0))
-                        score *= 0.1f;
+                    if (_lookup.GetEntitiesIntersecting(targetUid, LookupFlags.Uncontained) is not { Count: > 0 } intersectors)
+                        return 1f;
 
-                    if (TryComp<AirtightComponent>(intersector, out var airtight) && airtight.AirBlocked)
-                        score *= 0.25f; // This can be a door, so we don't penalize as much, because someone might just open it for the mob
+                    // For each obstructor, multiply the score by 0.1. This way unobstructed entities will be prioritized.
+                    var score = 1f;
+                    var (_, ownCollisionMask) = _physics.GetHardCollision(owner);
+                    foreach (var intersector in intersectors)
+                    {
+                        if (TryComp<FixturesComponent>(intersector, out var fixs)
+                            && fixs.Fixtures.Values.Any(it => it.Hard && (it.CollisionLayer & ownCollisionMask) != 0))
+                            score *= 0.1f;
+
+                        if (TryComp<AirtightComponent>(intersector, out var airtight) && airtight.AirBlocked)
+                            score *= 0.25f; // This can be a door, so we don't penalize as much, because someone might just open it for the mob
+                    }
+
+                    return score;
                 }
-
-                return score;
-            }
             // Floofstation section end
             case TargetAmmoMatchesCon:
-            {
-                if (!blackboard.TryGetValue(NPCBlackboard.ActiveHand, out Hand? activeHand, EntityManager) ||
-                    !TryComp<BallisticAmmoProviderComponent>(activeHand.HeldEntity, out var heldGun))
                 {
-                    return 0f;
-                }
+                    if (!blackboard.TryGetValue(NPCBlackboard.ActiveHand, out Hand? activeHand, EntityManager) ||
+                        !TryComp<BallisticAmmoProviderComponent>(activeHand.HeldEntity, out var heldGun))
+                    {
+                        return 0f;
+                    }
 
-                if (_whitelistSystem.IsWhitelistFailOrNull(heldGun.Whitelist, targetUid))
-                {
-                    return 0f;
-                }
+                    if (_whitelistSystem.IsWhitelistFailOrNull(heldGun.Whitelist, targetUid))
+                    {
+                        return 0f;
+                    }
 
-                return 1f;
-            }
+                    return 1f;
+                }
             case TargetDistanceCon:
-            {
-                var radius = blackboard.GetValueOrDefault<float>(blackboard.GetVisionRadiusKey(EntityManager), EntityManager);
-
-                if (!TryComp<TransformComponent>(targetUid, out var targetXform) ||
-                    !TryComp<TransformComponent>(owner, out var xform))
                 {
-                    return 0f;
-                }
+                    var radius = blackboard.GetValueOrDefault<float>(blackboard.GetVisionRadiusKey(EntityManager), EntityManager);
 
-                if (!targetXform.Coordinates.TryDistance(EntityManager, _transform, xform.Coordinates,
-                        out var distance))
-                {
-                    return 0f;
-                }
+                    if (!TryComp<TransformComponent>(targetUid, out var targetXform) ||
+                        !TryComp<TransformComponent>(owner, out var xform))
+                    {
+                        return 0f;
+                    }
 
-                return Math.Clamp(distance / radius, 0f, 1f);
-            }
+                    if (!targetXform.Coordinates.TryDistance(EntityManager, _transform, xform.Coordinates,
+                            out var distance))
+                    {
+                        return 0f;
+                    }
+
+                    return Math.Clamp(distance / radius, 0f, 1f);
+                }
             case TargetAmmoCon:
-            {
-                if (!HasComp<GunComponent>(targetUid))
-                    return 0f;
+                {
+                    if (!HasComp<GunComponent>(targetUid))
+                        return 0f;
 
-                var ev = new GetAmmoCountEvent();
-                RaiseLocalEvent(targetUid, ref ev);
+                    var ev = new GetAmmoCountEvent();
+                    RaiseLocalEvent(targetUid, ref ev);
 
-                if (ev.Count == 0)
-                    return 0f;
+                    if (ev.Count == 0)
+                        return 0f;
 
-                // Wat
-                if (ev.Capacity == 0)
-                    return 1f;
+                    // Wat
+                    if (ev.Capacity == 0)
+                        return 1f;
 
-                return (float) ev.Count / ev.Capacity;
-            }
+                    return (float) ev.Count / ev.Capacity;
+                }
             case TargetHealthCon:
-            {
-                return 0f;
-            }
+                {
+                    return 0f;
+                }
             case TargetInLOSCon:
-            {
-                var radius = blackboard.GetValueOrDefault<float>(blackboard.GetVisionRadiusKey(EntityManager), EntityManager);
+                {
+                    var radius = blackboard.GetValueOrDefault<float>(blackboard.GetVisionRadiusKey(EntityManager), EntityManager);
 
-                return _examine.InRangeUnOccluded(owner, targetUid, radius + 0.5f, null) ? 1f : 0f;
-            }
+                    return _examine.InRangeUnOccluded(owner, targetUid, radius + 0.5f, null) ? 1f : 0f;
+                }
             case TargetInLOSOrCurrentCon:
-            {
-                var radius = blackboard.GetValueOrDefault<float>(blackboard.GetVisionRadiusKey(EntityManager), EntityManager);
-                const float bufferRange = 0.5f;
-
-                if (blackboard.TryGetValue<EntityUid>("Target", out var currentTarget, EntityManager) &&
-                    currentTarget == targetUid &&
-                    TryComp<TransformComponent>(owner, out var xform) &&
-                    TryComp<TransformComponent>(targetUid, out var targetXform) &&
-                    xform.Coordinates.TryDistance(EntityManager, _transform, targetXform.Coordinates, out var distance) &&
-                    distance <= radius + bufferRange)
                 {
-                    return 1f;
-                }
+                    var radius = blackboard.GetValueOrDefault<float>(blackboard.GetVisionRadiusKey(EntityManager), EntityManager);
+                    const float bufferRange = 0.5f;
 
-                return _examine.InRangeUnOccluded(owner, targetUid, radius + bufferRange, null) ? 1f : 0f;
-            }
+                    if (blackboard.TryGetValue<EntityUid>("Target", out var currentTarget, EntityManager) &&
+                        currentTarget == targetUid &&
+                        TryComp<TransformComponent>(owner, out var xform) &&
+                        TryComp<TransformComponent>(targetUid, out var targetXform) &&
+                        xform.Coordinates.TryDistance(EntityManager, _transform, targetXform.Coordinates, out var distance) &&
+                        distance <= radius + bufferRange)
+                    {
+                        return 1f;
+                    }
+
+                    return _examine.InRangeUnOccluded(owner, targetUid, radius + bufferRange, null) ? 1f : 0f;
+                }
             case TargetIsAliveCon:
-            {
-                return _mobState.IsAlive(targetUid) ? 1f : 0f;
-            }
-            case TargetIsCritCon:
-            {
-                return _mobState.IsCritical(targetUid) ? 1f : 0f;
-            }
-            case TargetIsDeadCon:
-            {
-                return _mobState.IsDead(targetUid) ? 1f : 0f;
-            }
-            case TargetMeleeCon:
-            {
-                if (TryComp<MeleeWeaponComponent>(targetUid, out var melee))
                 {
-                    return melee.Damage.GetTotal().Float() * melee.AttackRate / 100f;
+                    return _mobState.IsAlive(targetUid) ? 1f : 0f;
                 }
+            case TargetIsCritCon:
+                {
+                    return _mobState.IsCritical(targetUid) ? 1f : 0f;
+                }
+            case TargetIsDeadCon:
+                {
+                    return _mobState.IsDead(targetUid) ? 1f : 0f;
+                }
+            case TargetMeleeCon:
+                {
+                    if (TryComp<MeleeWeaponComponent>(targetUid, out var melee))
+                    {
+                        return melee.Damage.GetTotal().Float() * melee.AttackRate / 100f;
+                    }
 
-                return 0f;
-            }
+                    return 0f;
+                }
+            case TurretTargetingCon:
+                {
+                    if (!TryComp<TurretTargetSettingsComponent>(owner, out var turretTargetSettings) ||
+                        _turretTargetSettings.EntityIsTargetForTurret((owner, turretTargetSettings), targetUid))
+                        return 1f;
+
+                    return 0f;
+                }
             default:
                 throw new NotImplementedException();
         }
@@ -398,80 +408,80 @@ public sealed class NPCUtilitySystem : EntitySystem
         switch (query)
         {
             case ComponentQuery compQuery:
-            {
-                if (compQuery.Components.Count == 0)
-                    return;
-
-                var mapPos = _transform.GetMapCoordinates(owner, xform: _xformQuery.GetComponent(owner));
-                _compTypes.Clear();
-                var i = -1;
-                EntityPrototype.ComponentRegistryEntry compZero = default!;
-
-                foreach (var compType in compQuery.Components.Values)
                 {
-                    i++;
+                    if (compQuery.Components.Count == 0)
+                        return;
 
-                    if (i == 0)
+                    var mapPos = _transform.GetMapCoordinates(owner, xform: _xformQuery.GetComponent(owner));
+                    _compTypes.Clear();
+                    var i = -1;
+                    EntityPrototype.ComponentRegistryEntry compZero = default!;
+
+                    foreach (var compType in compQuery.Components.Values)
                     {
-                        compZero = compType;
-                        continue;
+                        i++;
+
+                        if (i == 0)
+                        {
+                            compZero = compType;
+                            continue;
+                        }
+
+                        _compTypes.Add(compType);
                     }
 
-                    _compTypes.Add(compType);
-                }
+                    _entitySet.Clear();
+                    _lookup.GetEntitiesInRange(compZero.Component.GetType(), mapPos, vision, _entitySet);
 
-                _entitySet.Clear();
-                _lookup.GetEntitiesInRange(compZero.Component.GetType(), mapPos, vision, _entitySet);
-
-                foreach (var comp in _entitySet)
-                {
-                    var ent = comp.Owner;
-
-                    if (ent == owner)
-                        continue;
-
-                    var othersFound = true;
-
-                    foreach (var compOther in _compTypes)
+                    foreach (var comp in _entitySet)
                     {
-                        if (!HasComp(ent, compOther.Component.GetType()))
+                        var ent = comp.Owner;
+
+                        if (ent == owner)
+                            continue;
+
+                        var othersFound = true;
+
+                        foreach (var compOther in _compTypes)
                         {
-                            othersFound = false;
-                            break;
+                            if (!HasComp(ent, compOther.Component.GetType()))
+                            {
+                                othersFound = false;
+                                break;
+                            }
+                        }
+
+                        if (!othersFound)
+                            continue;
+
+                        entities.Add(ent);
+                    }
+
+                    break;
+                }
+            case InventoryQuery:
+                {
+                    if (!_inventory.TryGetContainerSlotEnumerator(owner, out var enumerator))
+                        break;
+
+                    while (enumerator.MoveNext(out var slot))
+                    {
+                        foreach (var child in slot.ContainedEntities)
+                        {
+                            RecursiveAdd(child, entities);
                         }
                     }
 
-                    if (!othersFound)
-                        continue;
-
-                    entities.Add(ent);
-                }
-
-                break;
-            }
-            case InventoryQuery:
-            {
-                if (!_inventory.TryGetContainerSlotEnumerator(owner, out var enumerator))
                     break;
-
-                while (enumerator.MoveNext(out var slot))
-                {
-                    foreach (var child in slot.ContainedEntities)
-                    {
-                        RecursiveAdd(child, entities);
-                    }
                 }
-
-                break;
-            }
             case NearbyHostilesQuery:
-            {
-                foreach (var ent in _npcFaction.GetNearbyHostiles(owner, vision))
                 {
-                    entities.Add(ent);
+                    foreach (var ent in _npcFaction.GetNearbyHostiles(owner, vision))
+                    {
+                        entities.Add(ent);
+                    }
+                    break;
                 }
-                break;
-            }
             default:
                 throw new NotImplementedException();
         }
@@ -495,49 +505,49 @@ public sealed class NPCUtilitySystem : EntitySystem
         switch (filter)
         {
             case ComponentFilter compFilter:
-            {
-                _entityList.Clear();
-
-                foreach (var ent in entities)
                 {
-                    foreach (var comp in compFilter.Components)
+                    _entityList.Clear();
+
+                    foreach (var ent in entities)
                     {
-                        if (HasComp(ent, comp.Value.Component.GetType()))
-                            continue;
+                        foreach (var comp in compFilter.Components)
+                        {
+                            if (HasComp(ent, comp.Value.Component.GetType()))
+                                continue;
 
-                        _entityList.Add(ent);
-                        break;
+                            _entityList.Add(ent);
+                            break;
+                        }
                     }
-                }
 
-                foreach (var ent in _entityList)
-                {
-                    entities.Remove(ent);
-                }
+                    foreach (var ent in _entityList)
+                    {
+                        entities.Remove(ent);
+                    }
 
-                break;
-            }
+                    break;
+                }
             case PuddleFilter:
-            {
-                _entityList.Clear();
-
-                foreach (var ent in entities)
                 {
-                    if (!_puddleQuery.TryGetComponent(ent, out var puddleComp) ||
-                        !_solutions.TryGetSolution(ent, puddleComp.SolutionName, out _, out var sol) ||
-                        _puddle.CanFullyEvaporate(sol))
+                    _entityList.Clear();
+
+                    foreach (var ent in entities)
                     {
-                        _entityList.Add(ent);
+                        if (!_puddleQuery.TryGetComponent(ent, out var puddleComp) ||
+                            !_solutions.TryGetSolution(ent, puddleComp.SolutionName, out _, out var sol) ||
+                            _puddle.CanFullyEvaporate(sol))
+                        {
+                            _entityList.Add(ent);
+                        }
                     }
-                }
 
-                foreach (var ent in _entityList)
-                {
-                    entities.Remove(ent);
-                }
+                    foreach (var ent in _entityList)
+                    {
+                        entities.Remove(ent);
+                    }
 
-                break;
-            }
+                    break;
+                }
             default:
                 throw new NotImplementedException();
         }

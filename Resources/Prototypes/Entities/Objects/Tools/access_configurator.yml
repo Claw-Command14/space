@@ -22,6 +22,9 @@
       - Armory
       - Atmospherics
       - Bar
+      - BasicSilicon
+      - Borg
+      - StationAi
       #- Brig #Delta V: Removed Brig Access
       - Boxer #Delta V: Add Boxer Access
       - Detective
