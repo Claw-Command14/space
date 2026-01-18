@@ -29925,6 +29925,13 @@ entities:
     - type: Transform
       pos: 24.5,-17.5
       parent: 2
+- proto: CrateSecurityTrackingMindshieldImplants
+  entities:
+  - uid: 8216
+    components:
+    - type: Transform
+      pos: 22.5,-17.5
+      parent: 2
 - proto: Crematorium
   entities:
   - uid: 4643
@@ -54712,11 +54719,6 @@ entities:
     components:
     - type: Transform
       pos: 23.5,-15.5
-      parent: 2
-  - uid: 8216
-    components:
-    - type: Transform
-      pos: 22.5,-17.5
       parent: 2
   - uid: 8217
     components:

@@ -12087,7 +12087,7 @@ entities:
       pos: -4.5,37.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -8924.856
+      secondsUntilStateChange: -8974.177
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12399,7 +12399,7 @@ entities:
       pos: 50.5,73.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -18373.783
+      secondsUntilStateChange: -18423.104
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -51311,6 +51311,13 @@ entities:
           showEnts: False
           occludes: True
           ent: null
+- proto: CrateSecurityTrackingMindshieldImplants
+  entities:
+  - uid: 14539
+    components:
+    - type: Transform
+      pos: -15.5,9.5
+      parent: 2
 - proto: CrateServiceCustomSmokable
   entities:
   - uid: 7369
@@ -51653,7 +51660,7 @@ entities:
       pos: -29.5,28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -1505.7631
+      secondsUntilStateChange: -1555.083
       state: Opening
   - uid: 7419
     components:
@@ -96169,11 +96176,6 @@ entities:
     components:
     - type: Transform
       pos: 78.5,-24.5
-      parent: 2
-  - uid: 14539
-    components:
-    - type: Transform
-      pos: -15.5,9.5
       parent: 2
   - uid: 14540
     components:

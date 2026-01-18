@@ -20506,7 +20506,7 @@ entities:
       pos: -102.5,-28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2091.8853
+      secondsUntilStateChange: -2137.404
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -89990,6 +89990,13 @@ entities:
     components:
     - type: Transform
       pos: 21.5,-17.5
+      parent: 2
+- proto: CrateSecurityTrackingMindshieldImplants
+  entities:
+  - uid: 31087
+    components:
+    - type: Transform
+      pos: 23.5,-19.5
       parent: 2
 - proto: CrateServiceJanitorialSupplies
   entities:
@@ -209540,11 +209547,6 @@ entities:
     components:
     - type: Transform
       pos: 14.5,-18.5
-      parent: 2
-  - uid: 31087
-    components:
-    - type: Transform
-      pos: 23.5,-19.5
       parent: 2
   - uid: 31088
     components:
