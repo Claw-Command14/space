@@ -8398,7 +8398,7 @@ entities:
       pos: 34.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -37131.3
+      secondsUntilStateChange: -37434.906
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8438,7 +8438,7 @@ entities:
       pos: -36.5,-36.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -67901.2
+      secondsUntilStateChange: -68204.81
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8828,7 +8828,7 @@ entities:
       pos: -32.5,-41.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -67330.02
+      secondsUntilStateChange: -67633.63
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9014,7 +9014,7 @@ entities:
       pos: -20.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -93587.664
+      secondsUntilStateChange: -93891.27
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9287,7 +9287,7 @@ entities:
       pos: -25.5,9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -24054.46
+      secondsUntilStateChange: -24358.066
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 2
@@ -9454,7 +9454,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -121437.58
+      secondsUntilStateChange: -121741.19
       state: Opening
   - uid: 7972
     components:
@@ -9649,7 +9649,7 @@ entities:
       pos: 13.5,12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -72793.43
+      secondsUntilStateChange: -73097.04
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9753,7 +9753,7 @@ entities:
       pos: -4.5,-3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -77648.86
+      secondsUntilStateChange: -77952.47
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10208,7 +10208,7 @@ entities:
       pos: 5.5,-16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -4506.4316
+      secondsUntilStateChange: -4810.038
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10950,7 +10950,7 @@ entities:
       pos: 81.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -115906.03
+      secondsUntilStateChange: -116209.64
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11121,7 +11121,7 @@ entities:
       pos: 6.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -81998.12
+      secondsUntilStateChange: -82301.73
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11353,7 +11353,7 @@ entities:
       pos: 10.5,18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -81821.66
+      secondsUntilStateChange: -82125.266
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16203,7 +16203,7 @@ entities:
   - uid: 18528
     components:
     - type: Transform
-      pos: -31.323895,-29.191893
+      pos: -29.39248,-29.287024
       parent: 2
     - type: Physics
       angularDamping: 0
@@ -58836,6 +58836,13 @@ entities:
       linkedPorts:
         19390:
         - ArtifactAnalyzerSender: ArtifactAnalyzerReceiver
+- proto: ComputerAtmosMonitoring
+  entities:
+  - uid: 17430
+    components:
+    - type: Transform
+      pos: -31.5,-29.5
+      parent: 2
 - proto: ComputerCargoBounty
   entities:
   - uid: 5918
@@ -60996,7 +61003,7 @@ entities:
       pos: 53.5,-9.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3611.4856
+      secondsUntilStateChange: -3915.092
       state: Closing
   - uid: 13825
     components:
@@ -70927,7 +70934,7 @@ entities:
       pos: 9.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -128840.805
+      secondsUntilStateChange: -129144.414
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -71197,7 +71204,7 @@ entities:
       pos: -36.5,-22.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -343218.8
+      secondsUntilStateChange: -343522.4
       state: Closing
   - uid: 5912
     components:
@@ -71831,7 +71838,7 @@ entities:
       pos: -40.5,-0.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -273447.72
+      secondsUntilStateChange: -273751.3
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -76291,6 +76298,34 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -64.5,-71.5
       parent: 2
+- proto: GasPipeSensorDistribution
+  entities:
+  - uid: 6434
+    components:
+    - type: Transform
+      pos: -37.5,-25.5
+      parent: 2
+- proto: GasPipeSensorTEGCold
+  entities:
+  - uid: 8995
+    components:
+    - type: Transform
+      pos: -57.5,-26.5
+      parent: 2
+- proto: GasPipeSensorTEGHot
+  entities:
+  - uid: 11573
+    components:
+    - type: Transform
+      pos: -57.5,-32.5
+      parent: 2
+- proto: GasPipeSensorWaste
+  entities:
+  - uid: 6438
+    components:
+    - type: Transform
+      pos: -38.5,-25.5
+      parent: 2
 - proto: GasPipeStraight
   entities:
   - uid: 51
@@ -77516,14 +77551,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
-  - uid: 6434
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -37.5,-25.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#0000FFFF'
   - uid: 6435
     components:
     - type: Transform
@@ -77545,14 +77572,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -38.5,-26.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF0000FF'
-  - uid: 6438
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -38.5,-25.5
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
@@ -87918,14 +87937,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#00FFFFFF'
-  - uid: 8995
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -57.5,-26.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#00FFFFFF'
   - uid: 9102
     components:
     - type: Transform
@@ -90739,14 +90750,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
-  - uid: 17430
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -57.5,-32.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FFA500FF'
   - uid: 17440
     components:
     - type: Transform
@@ -125546,18 +125549,27 @@ entities:
   - uid: 9701
     components:
     - type: Transform
-      pos: -31.765686,-29.31949
+      pos: -32.18415,-29.287024
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 9702
     components:
     - type: Transform
-      pos: -31.776102,-29.402882
+      pos: -32.100815,-29.182856
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 9703
     components:
     - type: Transform
-      pos: -31.765686,-29.507122
+      pos: -32.100815,-29.182856
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
   - uid: 9707
     components:
     - type: Transform
@@ -125811,7 +125823,7 @@ entities:
       pos: -1.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -87982.69
+      secondsUntilStateChange: -88286.3
       state: Opening
   - uid: 23486
     components:
@@ -125819,7 +125831,7 @@ entities:
       pos: -2.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -77665.52
+      secondsUntilStateChange: -77969.13
       state: Opening
   - uid: 26933
     components:
@@ -147564,11 +147576,6 @@ entities:
     components:
     - type: Transform
       pos: 23.5,-16.5
-      parent: 2
-  - uid: 11573
-    components:
-    - type: Transform
-      pos: -31.5,-29.5
       parent: 2
   - uid: 11575
     components:
@@ -170062,7 +170069,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -199705.67
+      secondsUntilStateChange: -200009.28
       state: Opening
   - uid: 10028
     components:
@@ -170477,7 +170484,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -107826.88
+      secondsUntilStateChange: -108130.49
       state: Opening
   - uid: 26858
     components:
