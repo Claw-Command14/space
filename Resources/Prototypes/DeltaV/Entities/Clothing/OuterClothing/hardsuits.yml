@@ -13,7 +13,7 @@
     highPressureMultiplier: 0.50
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.40
+    damageCoefficient: 0.50
   - type: Armor # Good armour resistance across the board, comparable to the standard security hardsuit.
     modifiers:
       coefficients:
@@ -28,6 +28,12 @@
     sprintModifier: 0.75
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCombatStandard
+  - type: FireProtection
+    reduction: 1
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: StaminaDamageResistance
+    coefficient: 0.75
 
 - type: entity
   parent: ClothingOuterHardsuitCombatStandard
@@ -44,7 +50,7 @@
 
 # Medical Combat Hardsuits
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedManeuveringThrusters]
+  parent: ClothingOuterHardsuitCombatStandard
   id: ClothingOuterHardsuitCombatMedical
   name: medical combat hardsuit
   description: A purpose-built combat suit designed to allow its user greater mobility for superior support of friendly units in active combat zones.
@@ -57,7 +63,7 @@
     highPressureMultiplier: 0.60
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.40
+    damageCoefficient: 0.5
   - type: Armor # Slightly less armour than the standard hardsuit, but far higher mobility.
     modifiers:
       coefficients:
@@ -68,8 +74,8 @@
         Caustic: 0.80
         Heat: 0.80
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCombatMedical
 
@@ -145,7 +151,7 @@
     highPressureMultiplier: 0.40
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.35
+    damageCoefficient: 0.5
   - type: Armor # About as protective as a riot hardsuit but with far less movement penalty.
     modifiers:
       coefficients:
@@ -160,6 +166,12 @@
     sprintModifier: 0.80
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCombatAdvanced
+  - type: FireProtection
+    reduction: 1
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: StaminaDamageResistance
+    coefficient: 0.5
 
 - type: entity
   parent: ClothingOuterHardsuitCombatAdvanced

@@ -234,7 +234,7 @@
 
 #Security Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitCombatStandard
   id: ClothingOuterHardsuitSecurity
   name: security hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
@@ -243,34 +243,14 @@
     sprite: Clothing/OuterClothing/Hardsuits/security.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/security.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.5
-    lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.4
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.6
-        Caustic: 0.7
-  - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
-  - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurity
   - type: StaminaDamageResistance
     coefficient: 0.75 # 25%
-  - type: TemperatureProtection
-    coefficient: 0.001
-  - type: FireProtection
-    reduction: 1
 
 #Brigmedic Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitCombatMedical]
   id: ClothingOuterHardsuitBrigmedic
   name: corpsman hardsuit # DeltaV - rename brigmedic to corpsman
   description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit. # I will fix the rest of this entry later when I resprite sec suits
@@ -279,27 +259,12 @@
     sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.3
-    lowPressureMultiplier: 1000
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.7
-  - type: ClothingSpeedModifier
-    walkModifier: 0.80
-    sprintModifier: 0.80
-  - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic
-  - type: StaminaDamageResistance
-    coefficient: 0.75 # 25%
 
 #Warden's Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitCombatWarden]
   id: ClothingOuterHardsuitWarden
   name: warden's hardsuit
   description: A specialized riot suit geared to combat low pressure environments.
@@ -308,34 +273,12 @@
     sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.5
-    lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.5
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.5
-        Slash: 0.6
-        Piercing: 0.6
-        Caustic: 0.7
-  - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
-  - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWarden
-  - type: StaminaDamageResistance
-    coefficient: 0.65 # 35%
-  - type: TemperatureProtection
-    coefficient: 0.001
-  - type: FireProtection
-    reduction: 1
 
 #Captain's Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseIntegratedManeuveringThrusters]
+  parent: [ClothingOuterHardsuitCombatAdvanced]
   id: ClothingOuterHardsuitCap
   name: captain's armored spacesuit
   description: A formal armored spacesuit, made for the station's captain.
@@ -344,34 +287,24 @@
     sprite: Clothing/OuterClothing/Hardsuits/capspace.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/capspace.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.02
-    lowPressureMultiplier: 1000
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.6
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
         Heat: 0.5
         Radiation: 0.5
         Caustic: 0.6
   - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
-  - type: HeldSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitCap
-  - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
   - type: GuideHelp
     guides: [ NanoTrasen ]
-  - type: TemperatureProtection
-    coefficient: 0.001
-  - type: FireProtection
-    reduction: 1
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -489,7 +422,7 @@
 
 #Head of Security's Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitSecurity
+  parent: ClothingOuterHardsuitCombatStandard
   id: ClothingOuterHardsuitSecurityRed
   name: head of security's hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
@@ -498,31 +431,8 @@
     sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.45
-    lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.4
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.6
-        Slash: 0.5
-        Piercing: 0.5
-        Radiation: 0.5
-        Caustic: 0.6
-  - type: ClothingSpeedModifier
-    walkModifier: 0.8
-    sprintModifier: 0.8
-  - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecurityRed
-  - type: StaminaDamageResistance
-    coefficient: 0.5 # 50%
-  - type: TemperatureProtection
-    coefficient: 0.001
-  - type: FireProtection
-    reduction: 1
 
 #Luxury Mining Hardsuit
 - type: entity
