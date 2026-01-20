@@ -32,3 +32,4 @@
     - type: GasVentPump
       maxPressure: 13500
       PumpPower: 6
+      TargetPressureChange: 101

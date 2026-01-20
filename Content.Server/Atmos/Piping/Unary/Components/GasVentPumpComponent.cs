@@ -102,7 +102,7 @@ namespace Content.Server.Atmos.Piping.Unary.Components
         /// </remarks>
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("targetPressureChange")]
-        public float TargetPressureChange = Atmospherics.OneAtmosphere /*Claw Command:*/ * 0.25f;
+        public float TargetPressureChange = Atmospherics.OneAtmosphere /*Claw Command:*/ * 0.05f;
 
         /// <summary>
         ///     Ratio of max output air pressure and pipe pressure, representing the vent's ability to increase pressure
