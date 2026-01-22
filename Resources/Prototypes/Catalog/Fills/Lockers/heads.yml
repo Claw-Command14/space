@@ -50,6 +50,7 @@
         prob: 0.1
       - id: DoorRemoteCommand
       - id: RubberStampCaptain
+      - id: ClothingShoesBootsMag
       - id: JetpackCaptainFilled
       - id: MedalCase # Floof - we keep this.
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
@@ -221,6 +222,7 @@
       - id: ClothingHeadHatBeretCmo
       - id: ClothingOuterHardsuitMedical
       - id: ClothingLongcoatCMO # Floofstation
+      - id: ClothingShoesBootsMag
       - id: Hypospray
       - id: HandheldCrewMonitor
       - id: DoorRemoteMedical
@@ -290,6 +292,7 @@
       - id: ClothingHeadsetAltScience
       - id: EncryptionKeyBinary
       - id: Intellicard
+      - id: ClothingShoesBootsMag
       - id: LunchboxCommandFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: PrinterDocFlatpack  # Corvax-Printer

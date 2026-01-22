@@ -93,6 +93,7 @@
       - id: ClothingHeadHelmetAtmosFire
       - id: GasAnalyzer
       - id: MedkitOxygenFilled
+      - id: ClothingShoesBootsMag
       - id: HolofanProjector
       - id: DoorRemoteFirefight
       - id: RCD
