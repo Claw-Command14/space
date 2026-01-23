@@ -13,12 +13,14 @@
     - Engineering
     - Medical
     - Science
+    - Prison
     - Security
+    - Justice
     - Service
     - Supply
   - type: ActiveRadio
-    receiveAllChannels: true
-    globalReceive: true
+    receiveAllChannels: false
+    globalReceive: false
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
