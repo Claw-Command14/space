@@ -165,7 +165,7 @@ public sealed class AmbientSoundSystem : SharedAmbientSoundSystem
         if (_gameTiming.CurTime < _targetTime)
             return;
 
-        _targetTime = _gameTiming.CurTime+TimeSpan.FromSeconds(_cooldown);
+        _targetTime = _gameTiming.CurTime + TimeSpan.FromSeconds(_cooldown);
 
         var player = _playerManager.LocalEntity;
         if (!EntityManager.TryGetComponent(player, out TransformComponent? xform))

@@ -3,6 +3,8 @@ using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Atmos;
 using JetBrains.Annotations;
 using Robust.Shared.Map.Components;
+using Content.Server.Doors.Systems;
+using Content.Server.Atmos.EntitySystems;
 
 namespace Content.Server.Atmos.EntitySystems
 {
@@ -13,6 +15,7 @@ namespace Content.Server.Atmos.EntitySystems
         [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;
         [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
         [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+        [Dependency] private readonly AirtightSystem _airtightSystem = default!;
 
         public override void Initialize()
         {
@@ -84,7 +87,7 @@ namespace Content.Server.Atmos.EntitySystems
         private void OnAirtightMoved(Entity<AirtightComponent> ent, ref MoveEvent ev)
         {
             var (owner, airtight) = ent;
-            airtight.CurrentAirBlockedDirection = (int) Rotate((AtmosDirection)airtight.InitialAirBlockedDirection, ev.NewRotation);
+            airtight.CurrentAirBlockedDirection = (int) Rotate((AtmosDirection) airtight.InitialAirBlockedDirection, ev.NewRotation);
             var pos = airtight.LastPosition;
             UpdatePosition(ent, ev.Component);
             var airtightEv = new AirtightChanged(owner, airtight, false, pos);

@@ -57,6 +57,6 @@ namespace Content.Server.Atmos.Components
 
         /// <inheritdoc cref="CurrentAirBlockedDirection"/>
         [Access(Other = AccessPermissions.ReadWriteExecute)]
-        public AtmosDirection AirBlockedDirection => (AtmosDirection)CurrentAirBlockedDirection;
+        public AtmosDirection AirBlockedDirection => (AtmosDirection) CurrentAirBlockedDirection;
     }
 }
