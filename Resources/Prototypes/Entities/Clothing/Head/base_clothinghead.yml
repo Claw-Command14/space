@@ -278,9 +278,9 @@
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     coefficient: 0.2
-  - type: IgniteFromGasImmunity
-    parts:
-    - Head
+  #- type: IgniteFromGasImmunity
+  #  parts:
+  #  - Head
   - type: Clothing
     #Copies ClothingHeadHardsuitBase behavior
     equipSound: /Audio/Mecha/mechmove03.ogg
