@@ -21,6 +21,12 @@ public sealed partial class AccessReaderComponent : Component
     public bool Enabled = true;
 
     /// <summary>
+    /// Whether or not the owner of the lock (IPC/Cyborg) can always access it.
+    /// </summary>
+    [DataField]
+    public bool OwnerHasAccess = false;
+
+    /// <summary>
     /// The set of tags that will automatically deny an allowed check, if any of them are present.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite)]
@@ -31,7 +37,8 @@ public sealed partial class AccessReaderComponent : Component
     /// List of access groups that grant access to this reader. Only a single matching group is required to gain access.
     /// A group matches if it is a subset of the set being checked against.
     /// </summary>
-    [DataField("access")] [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("access")]
+    [ViewVariables(VVAccess.ReadWrite)]
     public List<HashSet<ProtoId<AccessLevelPrototype>>> AccessLists = new();
 
     /// <summary>

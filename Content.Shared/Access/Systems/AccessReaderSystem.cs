@@ -100,6 +100,12 @@ public sealed class AccessReaderSystem : EntitySystem
         if (!reader.Enabled)
             return true;
 
+        if (reader.OwnerHasAccess && target == user)
+        {
+            LogAccess((target, reader), user);
+            return true;
+        }
+
         var accessSources = FindPotentialAccessItems(user);
         var access = FindAccessTags(user, accessSources);
         FindStationRecordKeys(user, out var stationKeys, accessSources);
@@ -322,7 +328,7 @@ public sealed class AccessReaderSystem : EntitySystem
         component.AccessLists.Clear();
         foreach (var access in accesses)
         {
-            component.AccessLists.Add(new HashSet<ProtoId<AccessLevelPrototype>>(){access});
+            component.AccessLists.Add(new HashSet<ProtoId<AccessLevelPrototype>>() { access });
         }
         Dirty(uid, component);
         RaiseLocalEvent(uid, new AccessReaderConfigurationChangedEvent());
