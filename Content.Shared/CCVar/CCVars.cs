@@ -448,6 +448,12 @@ namespace Content.Shared.CCVar
             CVarDef.Create("game.traits_punish_cheaters", false, CVar.REPLICATED);
 
         /// <summary>
+        /// Whether the RestrictedGear trait can be used on the server.
+        /// </summary>
+        public static readonly CVarDef<bool> RestrictedGearEnabled =
+            CVarDef.Create("trait.restrictedgear_enabled", true, CVar.SERVERONLY);
+
+        /// <summary>
         ///     Whether to allow characters to select loadout items.
         /// </summary>
         public static readonly CVarDef<bool> GameLoadoutsEnabled =
