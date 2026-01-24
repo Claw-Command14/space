@@ -5,7 +5,7 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    reoccurrenceDelay: 45
+    reoccurrenceDelay: 120
     weight: 7.5
     minimumPlayers: 10
     duration: 1
@@ -97,7 +97,7 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    reoccurrenceDelay: 45
+    reoccurrenceDelay: 150
     weight: 7.5
     minimumPlayers: 20
     duration: 1
@@ -226,5 +226,7 @@
     weight: 3
     duration: 50
     minimumPlayers: 15
+    maxOccurrences: 1
+
   - type: RandomSpawnRule
     prototype: SpawnPointGhostBinglePrime
