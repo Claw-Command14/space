@@ -12088,8 +12088,8 @@ entities:
       pos: -4.5,37.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -9752.579
       state: Opening
+      secondsUntilStateChange: -9878.369
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12400,8 +12400,8 @@ entities:
       pos: 50.5,73.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -19201.508
       state: Opening
+      secondsUntilStateChange: -19327.297
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -51681,8 +51681,8 @@ entities:
       pos: -29.5,28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2333.4856
       state: Opening
+      secondsUntilStateChange: -2459.2756
   - uid: 7419
     components:
     - type: Transform
@@ -121601,15 +121601,6 @@ entities:
       - 19362
 - proto: WeaponEnergyTurretAIControlPanel
   entities:
-  - uid: 17832
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -13.5,11.5
-      parent: 2
-    - type: DeviceList
-      devices:
-      - 17599
   - uid: 19362
     components:
     - type: Transform
@@ -121638,6 +121629,27 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 17832
+  - uid: 19369
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -14.5,11.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 17832
+- proto: WeaponEnergyTurretStationControlPanel
+  entities:
+  - uid: 17832
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -13.5,11.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 17599
+      - 19369
 - proto: WeaponFlareGun
   entities:
   - uid: 19132
