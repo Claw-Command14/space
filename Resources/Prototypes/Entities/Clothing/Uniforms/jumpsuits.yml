@@ -1097,6 +1097,7 @@
     sprite: Clothing/Uniforms/Jumpsuit/ninja.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/ninja.rsi
+  - type: Unremoveable
 
 - type: entity
   parent: [ClothingUniformBase, ClothingUniformFoldableBase]

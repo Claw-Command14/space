@@ -6,7 +6,7 @@
 - type: entity
   categories: [ HideSpawnMenu ]
   parent: ClothingBackpackSatchel
-  id: ClothingBackpackSatchelTools
+  id: ClothingBackpackSatchelNinjaTools
   components:
   - type: StorageFill
     contents:
@@ -16,6 +16,9 @@
       - id: Wirecutter
       - id: Welder
       - id: Multitool
+      - id: FoodSnackDango
+      - id: FoodSnackDango
+      - id: DrinkSakeBottleFull
 
 - type: entity
   parent: ClothingBackpackSatchelClown
