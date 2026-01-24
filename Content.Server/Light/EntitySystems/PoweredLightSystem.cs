@@ -41,7 +41,7 @@ namespace Content.Server.Light.EntitySystems
         [Dependency] private readonly SharedAmbientSoundSystem _ambientSystem = default!;
         [Dependency] private readonly LightBulbSystem _bulbSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-        [Dependency] private readonly IAdminLogManager _adminLogger= default!;
+        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
         [Dependency] private readonly DeviceLinkSystem _signalSystem = default!;
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
@@ -69,6 +69,7 @@ namespace Content.Server.Light.EntitySystems
             SubscribeLocalEvent<PoweredLightComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
 
             SubscribeLocalEvent<PoweredLightComponent, PowerChangedEvent>(OnPowerChanged);
+            SubscribeLocalEvent<PoweredLightComponent, SidePowerChangedEvent>(OnSidePowerChanged);
 
             SubscribeLocalEvent<PoweredLightComponent, PoweredLightDoAfterEvent>(OnDoAfter);
             SubscribeLocalEvent<PoweredLightComponent, EmpPulseEvent>(OnEmpPulse);
@@ -145,7 +146,7 @@ namespace Content.Server.Light.EntitySystems
 
 
             //removing a broken/burned bulb, so allow instant removal
-            if(TryComp<LightBulbComponent>(bulbUid.Value, out var bulb) && bulb.State != LightBulbState.Normal)
+            if (TryComp<LightBulbComponent>(bulbUid.Value, out var bulb) && bulb.State != LightBulbState.Normal)
             {
                 args.Handled = EjectBulb(uid, userUid, light) != null;
                 return;
@@ -297,7 +298,7 @@ namespace Content.Server.Light.EntitySystems
             if (bulbUid == null || !EntityManager.TryGetComponent(bulbUid.Value, out LightBulbComponent? lightBulb))
             {
                 SetLight(uid, false, light: light);
-                powerReceiver.Load = 0;
+                powerReceiver.SideLoad = 0;
                 _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.Empty, appearance);
                 return;
             }
@@ -307,8 +308,7 @@ namespace Content.Server.Light.EntitySystems
                 case LightBulbState.Normal:
                     if (powerReceiver.Powered && light.On)
                     {
-                        SetLight(uid, true, lightBulb.Color, light, lightBulb.LightRadius, lightBulb.LightEnergy, lightBulb.LightSoftness, lightBulb.Darklight);
-                        _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);
+                        SetLight(uid, true, lightBulb.Color, light, lightBulb.LightRadius, lightBulb.LightEnergy * powerReceiver.SideLoadFraction, lightBulb.LightSoftness); _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.On, appearance);
                         var time = _gameTiming.CurTime;
                         if (time > light.LastThunk + ThunkDelay)
                         {
@@ -320,6 +320,7 @@ namespace Content.Server.Light.EntitySystems
                     {
                         SetLight(uid, false, light: light);
                         _appearance.SetData(uid, PoweredLightVisuals.BulbState, PoweredLightState.Off, appearance);
+                        _appearance.SetData(uid, PoweredLightVisuals.GlowAlpha, powerReceiver.SideLoadFraction, appearance);
                     }
                     break;
                 case LightBulbState.Broken:
@@ -332,9 +333,18 @@ namespace Content.Server.Light.EntitySystems
                     break;
             }
 
-            powerReceiver.Load = (light.On && lightBulb.State == LightBulbState.Normal) ? lightBulb.PowerUse : 0;
+            powerReceiver.SideLoad = (light.On && lightBulb.State == LightBulbState.Normal) ? lightBulb.PowerUse : 0;
         }
+        private void OnSidePowerChanged(EntityUid uid, PoweredLightComponent comp, ref SidePowerChangedEvent args)
+        {
+            if (!comp.On || GetBulb(uid, comp) is not EntityUid bulbUid ||
+                !TryComp<LightBulbComponent>(bulbUid, out var bulb) ||
+                bulb.State != LightBulbState.Normal)
+                return;
 
+            _pointLight.SetEnergy(uid, bulb.LightEnergy * args.SideLoadFraction);
+            _appearance.SetData(uid, PoweredLightVisuals.GlowAlpha, args.SideLoadFraction);
+        }
         /// <summary>
         ///     Destroy the light bulb if the light took any damage.
         /// </summary>
