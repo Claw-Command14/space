@@ -70,7 +70,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
@@ -91,7 +91,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
@@ -112,7 +112,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
@@ -133,7 +133,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
@@ -154,7 +154,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
@@ -175,7 +175,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
@@ -196,7 +196,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
@@ -219,7 +219,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
@@ -240,7 +240,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
@@ -261,7 +261,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement
@@ -282,7 +282,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSalvageSpecialistWeapons
     - !type:CharacterJobRequirement

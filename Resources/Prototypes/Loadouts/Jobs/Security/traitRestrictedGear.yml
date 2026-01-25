@@ -101,7 +101,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -121,7 +121,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -142,7 +142,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -163,7 +163,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -184,7 +184,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -205,7 +205,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityEquipment
     - !type:CharacterDepartmentRequirement
@@ -226,7 +226,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -248,7 +248,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -269,7 +269,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -290,7 +290,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -311,7 +311,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -332,7 +332,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -353,7 +353,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -374,7 +374,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -395,7 +395,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
@@ -416,7 +416,7 @@
       traits:
         - RestrictedGear
     - !type:OverallTimeRequirement
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterItemGroupRequirement
       group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentRequirement
