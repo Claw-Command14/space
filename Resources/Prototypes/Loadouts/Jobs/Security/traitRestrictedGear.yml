@@ -95,7 +95,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearMagazinePistol
   category: JobsSecurityAUncategorized
-  cost: 2
+  cost: 4
   requirements:
     - !type:CharacterTraitRequirement
       traits:
@@ -115,7 +115,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearMagazinePistolRubber
   category: JobsSecurityAUncategorized
-  cost: 2
+  cost: 3
   requirements:
     - !type:CharacterTraitRequirement
       traits:
@@ -135,7 +135,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearSpeedLoaderMagnum
   category: JobsSecurityAUncategorized
-  cost: 4
+  cost: 5
   exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -177,7 +177,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearMagazineMagnum
   category: JobsSecurityAUncategorized
-  cost: 4
+  cost: 5
   exclusive: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -280,31 +280,31 @@
     - WeaponLaserSvalinn
 
 # Miniature Energy Gun
-- type: loadout
-  id: LoadoutSecurityRestrictedGearEnergyGunMini
-  category: JobsSecurityAUncategorized
-  cost: 5
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - RestrictedGear
-    - !type:OverallTimeRequirement
-      min: 36000 # 10 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Security
-  items:
-    - WeaponEnergyGunMini
+#- type: loadout
+#  id: LoadoutSecurityRestrictedGearEnergyGunMini
+#  category: JobsSecurityAUncategorized
+#  cost: 6
+#  canBeHeirloom: true
+#  requirements:
+#    - !type:CharacterTraitRequirement
+#      traits:
+#        - RestrictedGear
+#    - !type:OverallTimeRequirement
+#      min: 36000 # 10 hours
+#    - !type:CharacterItemGroupRequirement
+#      group: LoadoutSecurityWeapons
+#    - !type:CharacterDepartmentRequirement
+#      inverted: true
+#      departments:
+#        - Security
+#  items:
+#    - WeaponEnergyGunMini
 
 # Energy Pistol
 - type: loadout
   id: LoadoutSecurityRestrictedGearEnergyGunPistol
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 6
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -325,7 +325,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearRevolverSnub
   category: JobsSecurityAUncategorized
-  cost: 6
+  cost: 7
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -346,7 +346,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearRevolverK38Master
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 6
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -388,7 +388,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearArgenti
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 6
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
@@ -404,24 +404,3 @@
         - Security
   items:
     - WeaponRevolverArgenti
-
-# Energy Revolver
-- type: loadout
-  id: LoadoutSecurityRestrictedGearEnergyRevolver
-  category: JobsSecurityAUncategorized
-  cost: 10
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterTraitRequirement
-      traits:
-        - RestrictedGear
-    - !type:OverallTimeRequirement
-      min: 36000 # 10 hours
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
-    - !type:CharacterDepartmentRequirement
-      inverted: true
-      departments:
-        - Security
-  items:
-    - WeaponEnergyRevolver
