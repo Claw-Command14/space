@@ -57,7 +57,7 @@
           Scientist: [ 3, 4 ]
           Roboticist: [ 1, 1 ]
           ResearchAssistant: [ 2, 3 ]
-          Borg: [ 1, 2 ]
+          Borg: [ 2, 2 ]
           Librarian: [ 1, 1 ]
           SeniorResearcher: [ 1, 1 ]
         #security
@@ -84,3 +84,9 @@
           Clerk: [ 1, 1 ] #FloofStation
           Lawyer: [ 2, 2 ] #FloofStation
           Prosecutor: [ 1, 1 ] #FloofStation
+        # Sillicon
+          MedicalBorg: [ 1, 2 ]
+          ServiceQuadBorg: [ 2, 3 ] #Floofstation
+          MedicalQuadBorg: [ 2, 3 ] #Floofstation
+          SecurityQuadBorg: [ 2, 3 ] #Claw Command
+          SalvageQuadBorg: [ 2, 3 ] #Claw Command

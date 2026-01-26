@@ -85,3 +85,5 @@
             MedicalBorg: [ 1, 2 ]
             ServiceQuadBorg: [ 1, 2 ] #Floofstation
             MedicalQuadBorg: [ 1, 2 ] #Floofstation
+            SecurityQuadBorg: [ 2, 3 ] #Claw Command
+            SalvageQuadBorg: [ 2, 3 ] #Claw Command

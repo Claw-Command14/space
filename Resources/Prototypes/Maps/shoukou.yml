@@ -88,4 +88,6 @@
           CargoTechnician: [ 3, 3 ]
           #silicon
           StationAi: [ 1, 1 ]
+          SecurityQuadBorg: [ 2, 3 ] #Claw Command
+          SalvageQuadBorg: [ 2, 3 ] #Claw Command
 

@@ -81,3 +81,8 @@
           Prosecutor: [ 4, 4 ] #FloofStation
           #silicon
           StationAi: [ 1, 1 ]
+          MedicalBorg: [ 8, 8 ]
+          ServiceQuadBorg: [ 8, 8 ] #Floofstation
+          MedicalQuadBorg: [ 8, 8 ] #Floofstation
+          SecurityQuadBorg: [ 8, 8 ] #Claw Command
+          SalvageQuadBorg: [ 8, 8 ] #Claw Command

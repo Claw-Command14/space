@@ -85,8 +85,10 @@
             Lawyer: [ 2, 2 ] #FloofStation
             Prosecutor: [ 1, 1 ] #FloofStation
           # Silicon
-          # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
             Borg: [ 2, 3 ]
             MedicalBorg: [ 1, 2 ]
             ServiceQuadBorg: [ 2, 3 ] #Floofstation
             MedicalQuadBorg: [ 2, 3 ] #Floofstation
+            SecurityQuadBorg: [ 2, 3 ] #Claw Command
+            SalvageQuadBorg: [ 2, 3 ] #Claw Command

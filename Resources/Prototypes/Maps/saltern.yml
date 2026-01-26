@@ -87,3 +87,5 @@
             Passenger: [ -1, -1 ]
             #silicon
             StationAi: [ 1, 1 ]
+            SecurityQuadBorg: [ 2, 3 ] #Claw Command
+            SalvageQuadBorg: [ 2, 3 ] #Claw Command

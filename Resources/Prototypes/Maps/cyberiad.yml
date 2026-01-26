@@ -54,7 +54,7 @@
             ForensicMantis: [ 1, 1 ]
             Scientist: [ 2, 3 ]
             ResearchAssistant: [ 2, 2 ]
-            Borg: [ 1, 1 ]
+            Borg: [ 2, 2 ]
             SeniorResearcher: [ 1, 1 ]
           #security
             HeadOfSecurity: [ 1, 1 ]
@@ -78,3 +78,8 @@
             Prosecutor: [ 1, 1 ] #FloofStation
             #silicon
             StationAi: [ 1, 1 ]
+            MedicalBorg: [ 1, 2 ]
+            ServiceQuadBorg: [ 2, 3 ] #Floofstation
+            MedicalQuadBorg: [ 2, 3 ] #Floofstation
+            SecurityQuadBorg: [ 2, 3 ] #Claw Command
+            SalvageQuadBorg: [ 2, 3 ] #Claw Command
