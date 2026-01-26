@@ -32,7 +32,10 @@ public sealed class DoorSystem : SharedDoorSystem
             airlock.Time += frameTime;
             if (airlock.Time >= 1)
             {
-                _airtightSystem.SetAirblocked((uid, airtight), false);
+                if (door.State == DoorState.Open)
+                {
+                    _airtightSystem.SetAirblocked((uid, airtight), false);
+                }
                 RemComp<AirlockAtmosBlockOpenComponent>(uid);
             }
         }
