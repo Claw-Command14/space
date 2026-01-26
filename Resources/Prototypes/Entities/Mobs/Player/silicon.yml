@@ -18,9 +18,23 @@
     - Justice
     - Service
     - Supply
+    - CentCom
   - type: ActiveRadio
     receiveAllChannels: false
     globalReceive: false
+    channels:
+    - Binary
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Prison
+    - Security
+    - Justice
+    - Service
+    - Supply
+    - CentCom
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
