@@ -9,3 +9,7 @@
     inverted: true
     species:
     - IPC
+  - !type:CharacterTraitRequirement # Claw Command
+    inverted: true
+    traits:
+      - Tiny # Claw Command - Too much of an advantage in a gunfight or stealth

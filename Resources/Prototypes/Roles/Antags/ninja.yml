@@ -7,3 +7,7 @@
   requirements:
   - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
     min: 3600 # floof - 1 hours
+  - !type:CharacterTraitRequirement # Claw Command
+    inverted: true
+    traits:
+      - Tiny # Claw Command - Too much of an advantage in a gunfight or stealth
