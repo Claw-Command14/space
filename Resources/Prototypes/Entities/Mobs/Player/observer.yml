@@ -29,6 +29,14 @@
         - GhostImpassable
 
 - type: entity
+  parent: MobObserver
+  id: MobObserverVip
+  name: VIP observer
+  components:
+  - type: Ghost
+    color: '#aa00ff'
+
+- type: entity
   parent:
   - Incorporeal
   - BaseMob

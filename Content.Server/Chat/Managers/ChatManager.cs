@@ -245,15 +245,19 @@ namespace Content.Server.Chat.Managers
             }
 
             Color? colorOverride = null;
-            var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName",player.Name), ("message", FormattedMessage.EscapeText(message)));
+            var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
             if (_adminManager.HasAdminFlag(player, AdminFlags.Admin))
             {
                 var prefs = _preferencesManager.GetPreferences(player.UserId);
                 colorOverride = prefs.AdminOOCColor;
             }
-            if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
+            if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) && player.Channel.UserData.PatronTier is { } patron && PatronOocColors.TryGetValue(patron, out var patronColor))
             {
-                wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+                wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", patronColor), ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+            }
+            if (_adminManager.HasAdminFlag(player, AdminFlags.VIP))
+            {
+                colorOverride = Color.FromHex("#aa00ff");
             }
 
             //TODO: player.Name color, this will need to change the structure of the MsgChatMessage
