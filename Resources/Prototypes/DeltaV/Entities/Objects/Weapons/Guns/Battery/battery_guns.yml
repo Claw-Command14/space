@@ -55,7 +55,7 @@
   name: x-01 multiphase energy gun
   parent: BaseWeaponBatterySmall
   id: WeaponEnergyGunMultiphase
-  description: This is an expensive, modern recreation of an antique laser gun. This gun has several unique firemodes, but lacks the ability to recharge over time.
+  description: This is an expensive, modern recreation of an antique laser gun. This gun has several unique firemodes, but lacks the ability to recharge over time when under use. # Claw Command change added "when under use"
   components:
   - type: Sprite
     sprite: DeltaV/Objects/Weapons/Guns/Battery/multiphase_energygun.rsi
@@ -78,6 +78,11 @@
   - type: Battery
     maxCharge: 1000
     startingCharge: 1000
+  - type: BatterySelfRecharger # Claw Command change so its not a resprited PDW-9
+    autoRecharge: true
+    autoRechargeRate: 50 # 10 points faster than speed as caps pistol
+    autoRechargePause: true
+    autoRechargePauseTime: 20 # needs to not shoot for 20 secounds for the battery to start recharing
   - type: ProjectileBatteryAmmoProvider
     proto: BulletDisabler
     fireCost: 50
