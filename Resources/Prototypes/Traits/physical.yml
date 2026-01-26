@@ -580,7 +580,8 @@
           allowedStates:
           - Alive
           - Critical
-          damageCap: 400
+          - SoftCritical # Claw Command
+          #damageCap: 400 # Claw Command
           damage:
             groups:
               Brute: -0.30
