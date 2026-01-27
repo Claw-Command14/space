@@ -54,10 +54,11 @@
     price: 1000 # Living critters are valuable in space.
   - type: Perishable
   - type: Reflect
-    reflectProb: 0.5  #Claw change from .7 to .5  (like the hold captaine sabre reflect chance)
+    reflectProb: .5  #Claw change from .7 to .5  (like the hold captaine sabre reflect chance)
     innate: true
- # reflects:   #Claw removed energy reflect to where it reflects everything
- #   - Energy
+    reflects:   #Claw removed energy reflect to where it reflects everything
+      - Energy
+      - NonEnergy
   - type: Fixtures
     fixtures:
       fix1:
