@@ -141,7 +141,7 @@
   - type: SpawnArtifact
     maxSpawns: 1
     spawns:
-    - id: MobHellspawnArtifact
+    - id: MobHellspawn #Claw command no more weaker hellspawn its a Demon a spawn from hell. not a wimpy critter
 
 - type: artifactEffect # Floof - A Supermatter is still safer then a Singulo or a Tesla
   id: EffectSupermatter

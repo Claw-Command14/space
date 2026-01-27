@@ -30,8 +30,8 @@
     damageContainer: BiologicalMetaphysical
     damageModifierSet: HellSpawn
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2
-    baseSprintSpeed: 3
+    baseWalkSpeed: 3 #Claw
+    baseSprintSpeed: 4 #Claw
   - type: Sprite
     sprite: Mobs/Demons/hellspawn.rsi
     layers:
@@ -54,10 +54,10 @@
     price: 1000 # Living critters are valuable in space.
   - type: Perishable
   - type: Reflect
-    reflectProb: 0.7
+    reflectProb: 0.5  #Claw change from .7 to .5  (like the hold captaine sabre reflect chance)
     innate: true
-    reflects:
-      - Energy
+ # reflects:   #Claw removed energy reflect to where it reflects everything
+ #   - Energy
   - type: Fixtures
     fixtures:
       fix1:
@@ -92,6 +92,7 @@
       types:
         Blunt: 150
         Structural: 70
+    wideAnimationRotation: -135 #claw
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepThud
@@ -100,3 +101,18 @@
     energy: 4.5
     color: "#ff4242"
     castShadows: false
+    #Claw added below
+  - type: Gun  #
+    soundGunshot:
+      path: /Audio/Animals/space_dragon_roar.ogg
+    soundEmpty: null
+    projectileSpeed: 7
+    useKey: false
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 7
+    rechargeSound:
+      path: /Audio/Animals/space_dragon_roar.ogg
+  - type: BasicEntityAmmoProvider
+    proto: ProjectileDragonsBreath
+    capacity: 2
+    count: 2

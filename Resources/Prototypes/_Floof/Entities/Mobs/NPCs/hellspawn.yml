@@ -1,5 +1,7 @@
 # Altered Hellspawn to be Spawned by Artifact, much slower and doesn't hit as hard. Enough for Epi to scream "SEC TO ART SCI"
 
+# Claw command change from artifact to the regular.  Security can do their job and check on the departments
+
 - type: entity
   name: hellspawn
   parent: MobHellspawn
