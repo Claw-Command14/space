@@ -39,10 +39,10 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 65
-    attackRate: 1.5 # Floofstation - this is hertz, not seconds
+    attackRate: 0.8 # Floofstation - this is hertz, not seconds
     damage:
       types:
-        Slash: 14
+        Slash: 12
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
   - type: Item

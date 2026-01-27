@@ -38,17 +38,19 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25 # Floofstation - this is hertz, not seconds
-    range: 1.75
+    attackRate: .8
+    range: 1.8
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 15
+    clickPartDamageMultiplier: 3
+    heavyPartDamageMultiplier: 2.5
     heavyRateModifier: 1.25
-    heavyRangeModifier: 1
+    heavyRangeModifier: 1.8
     heavyDamageBaseModifier: 1
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     maxTargets: 7
     angle: 80
   - type: DamageOtherOnHit
@@ -69,7 +71,7 @@
   - type: DisarmMalus
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-inanimate
-    weight: 0.0002 # 5,000 times less likely than 1 regular animal
+    weight: 0.02 # 5,000 times less likely than 1 regular animal
   - type: PirateAccent
     # not putting a BlockMovement component here cause that's funny.
 
@@ -87,16 +89,16 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.5 # Floofstation - this is hertz, not seconds
+    attackRate: .6
     soundHit:
       path: /Audio/SimpleStation14/Weapons/Melee/rapierhit.ogg
     damage:
       types:
         Slash: 12
-    heavyRateModifier: 2
+    heavyRateModifier: 4
     heavyRangeModifier: 2.75 #Superior Japanese folded steel
-    heavyDamageBaseModifier: 1.25
-    heavyStaminaCost: 15
+    heavyDamageBaseModifier: 2
+    heavyStaminaCost: 10
     maxTargets: 1
     angle: 20
   - type: DamageOtherOnHit
@@ -142,7 +144,7 @@
     - Back
     - Belt
   - type: Reflect
-    reflectProb: 0.6
+    reflectProb: 0.5
     velocityBeforeNotMaxProb: 6.0 # don't punish ninjas for being ninjas
     velocityBeforeMinProb: 10.0
 
@@ -160,14 +162,14 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.8 # Floofstation - this is hertz, not seconds
+    attackRate: 1.25
     damage:
       types:
         Slash: 15
     heavyRateModifier: 1.25
     heavyRangeModifier: 1.25
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7.5
+    heavyStaminaCost: 2.5
     angle: 80
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg
@@ -192,17 +194,17 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.65 # Floofstation - this is hertz, not seconds
+    attackRate: 1.5
     range: 1.85
     damage:
       types:
         Slash: 19
         Blunt: 1
     bluntStaminaDamageFactor: 25.0
-    heavyRateModifier: 2
-    heavyRangeModifier: 1
+    heavyRateModifier: 4
+    heavyRangeModifier: 1.85
     heavyDamageBaseModifier: 1
-    heavyStaminaCost: 15
+    heavyStaminaCost: 10
     maxTargets: 10
     angle: 200
     soundHit:
@@ -234,14 +236,14 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25 # Floofstation - this is hertz, not seconds
+    attackRate: .8
     damage:
       types:
         Slash: 12
     heavyRateModifier: 1.25
-    heavyRangeModifier: 1.2
+    heavyRangeModifier: 1.75
     heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 7.5
+    heavyStaminaCost: 2.5
     maxTargets: 3
     angle: 40
     soundHit:
@@ -267,7 +269,7 @@
       state: icon
     - type: MeleeWeapon
       wideAnimationRotation: -135
-      attackRate: 10 # Floofstation - this is hertz, not seconds
+      attackRate: .1
       damage:
         types:
           Structural: 150

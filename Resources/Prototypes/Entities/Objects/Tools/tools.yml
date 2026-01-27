@@ -36,7 +36,7 @@
     damage:
       types:
         Blunt: 6.5
-    heavyRateModifier: 0.9
+    heavyRateModifier: 1.4
     heavyDamageBaseModifier: 1.2
     maxTargets: 4
     soundHit:
@@ -126,11 +126,11 @@
     storedRotation: -90
   - type: MeleeWeapon
     wideAnimationRotation: -90
-    attackRate: 1.35 # Floofstation - this is hertz, not seconds
+    attackRate: .8
     damage:
       types:
         Piercing: 6
-    heavyRateModifier: 0.75
+    heavyRateModifier: 1.75
     heavyDamageBaseModifier: 1.5
     maxTargets: 1
     angle: 20
@@ -203,14 +203,14 @@
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: 135
-    attackRate: 1.1
+    attackRate: 1.25
     range: 1.6
     damage:
       types:
         Blunt: 6.5
     bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 0.75
-    heavyDamageBaseModifier: 1.75
+    heavyRateModifier: 1.5
+    heavyDamageBaseModifier: 1.5
     angle: 100
     soundHit:
       collection: MetalThud
@@ -261,12 +261,12 @@
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25 # Floofstation - this is hertz, not seconds
+    attackRate: .8
     damage:
       types:
         Blunt: 6
     bluntStaminaDamageFactor: 2
-    heavyStaminaCost: 5
+    heavyStaminaCost: 2.5
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
@@ -326,14 +326,15 @@
     - state: green-unlit
       shader: unshaded
   - type: MeleeWeapon
-    attackRate: 0.75 # Floofstation - this is hertz, not seconds
+    attackRate: 1.3
     damage:
       types:
-        Shock: 2
-    heavyRateModifier: 0.9
-    heavyDamageBaseModifier: 1.2
+        Shock: 3
+    heavyRateModifier: 3
+    heavyRangeModifier: 1.25
+    heavyDamageBaseModifier: 3
     maxTargets: 1
-    angle: 20
+    angle: 10
   - type: DamageOtherOnHit
   - type: Item
     size: Small
@@ -363,8 +364,9 @@
       - DoorElectronicsConfigurator
   - type: PhysicalComposition
     materialComposition:
-      Steel: 100
-      Plastic: 100
+      Aluminum: 50
+      Plastic: 50
+      Circuitry: 25
   - type: StaticPrice
     price: 56
 
@@ -463,7 +465,8 @@
   - type: PhysicalComposition
     materialComposition:
       Steel: 300
-      Plastic: 100
+      Plastic: 50
+      Circuitry: 50
 #  - type: DynamicPrice
 #    price: 100
   - type: StaticPrice
@@ -475,7 +478,7 @@
     damage:
       types:
         Piercing: 8
-    heavyRateModifier: 0.9
+    heavyRateModifier: 1.1
     heavyDamageBaseModifier: 1.2
     maxTargets: 1
     angle: 20
@@ -492,7 +495,7 @@
     difficulty: 2
     recipes:
       - PowerDrill
-    # Floof Shitmed - Still not the intended tool but faster
+  # Floof Shitmed - Still not the intended tool but faster
   - type: Retractor
     speed: 1
   - type: Tending
@@ -530,6 +533,13 @@
     - HVCable
     - CableTerminal
     - Deconstruct
+    - VolumetricPumpHighFlow
+    - PressureValveHighFlow
+    - OutletInjectorHighFlow
+    - VentScrubberHighFlow
+    - DualPortVentHighFlow
+    - MixerGasHighFlow
+    - FilterGasHighFlow
   - type: LimitedCharges
     maxCharges: 30
     charges: 30
@@ -546,8 +556,9 @@
     - Belt
   - type: PhysicalComposition
     materialComposition:
-      Steel: 600
-      Plastic: 150
+      Steel: 400
+      Plastic: 100
+      Circuitry: 50
   - type: StaticPrice
     price: 100
   - type: UserInterface
@@ -560,7 +571,6 @@
     difficulty: 3
     recipes:
       - RCD
-
 
 - type: entity
   id: RPD
@@ -593,13 +603,6 @@
     - CanisterPort
     - FilterGas
     - Deconstruct
-    - VolumetricPumpHighFlow
-    - PressureValveHighFlow
-    - OutletInjectorHighFlow
-    - VentScrubberHighFlow
-    - DualPortVentHighFlow
-    - MixerGasHighFlow
-    - FilterGasHighFlow
   - type: LimitedCharges
     maxCharges: 50
     charges: 50
@@ -640,6 +643,39 @@
     - Firelock
 
 - type: entity
+  id: RPDEmpty
+  parent: RPD
+  suffix: Empty
+  components:
+  - type: LimitedCharges
+    charges: 0
+  - type: Tag
+    tags:
+      - RPD
+  - type: RCD
+    isRpd: true
+    availablePrototypes:
+    - PipeFourway
+    - PipeStraight
+    - PipeBend
+    - PipeTJunction
+    - OutletInjector
+    - ManualValve
+    - VolumetricPump
+    - PressurePump
+    - VentScrubber
+    - PressureValve
+    - DualPortVent
+    - VentGas
+    - VentPassive
+    - MixerGas
+    - Radiator
+    - SignalValve
+    - CanisterPort
+    - FilterGas
+    - Deconstruct
+
+- type: entity
   id: RCDRecharging
   parent: RCD
   name: experimental RCD
@@ -658,6 +694,29 @@
   suffix: Admeme
   name: experimental RCD
   description: A bluespace-enhanced rapid construction device that passively generates its own compressed matter.
+  components:
+  - type: AutoRecharge
+    rechargeDuration: 1
+
+- type: entity
+  id: RPDRecharging
+  parent: RPD
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
+  suffix: AutoRecharge
+  components:
+  - type: LimitedCharges
+    maxCharges: 25
+    charges: 25
+  - type: AutoRecharge
+    rechargeDuration: 10
+
+- type: entity
+  id: RPDExperimental
+  parent: RPD
+  suffix: Admeme
+  name: experimental RPD
+  description: A bluespace-enhanced rapid piping device that passively generates its own compressed matter.
   components:
   - type: AutoRecharge
     rechargeDuration: 1
@@ -785,16 +844,16 @@
     state: icon
   - type: MeleeWeapon
     wideAnimationRotation: 45
-    attackRate: 0.8 # Floofstation - this is hertz, not seconds
+    attackRate: 1.25
     range: 1.75
     damage:
       types:
         Blunt: 8
-    bluntStaminaDamageFactor: 1.5
-    heavyRateModifier: 0.9
+    bluntStaminaDamageFactor: 2
+    heavyRateModifier: 1.75
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 7.5
-    angle: 100
+    heavyStaminaCost: 2.5
+    angle: 120
     soundHit:
       collection: MetalThud
   - type: DamageOtherOnHit
@@ -838,13 +897,13 @@
     - Belt
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 0.9 # Floofstation - this is hertz, not seconds
+    attackRate: 1.1
     damage:
       types:
         Blunt: 7
     bluntStaminaDamageFactor: 2.0
-    heavyRateModifier: 0.8
-    heavyDamageBaseModifier: 1.5
+    heavyRateModifier: 2.5
+    heavyDamageBaseModifier: 2
     maxTargets: 2
     angle: 20
     soundHit:
