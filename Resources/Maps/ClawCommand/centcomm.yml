@@ -9193,7 +9193,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 52.5,-3.5
       parent: 2
-- proto: AirlockExternalGlassShuttleLocked
+- proto: AirlockExternalGlassShuttleEscapePodLanding
   entities:
   - uid: 232
     components:
@@ -9214,19 +9214,21 @@ entities:
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 40.5,-44.5
+      pos: 40.5,-48.5
       parent: 2
   - uid: 236
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 40.5,-48.5
+      pos: 40.5,-44.5
       parent: 2
   - uid: 237
     components:
     - type: Transform
       pos: 32.5,-52.5
       parent: 2
+- proto: AirlockExternalGlassShuttleLocked
+  entities:
   - uid: 238
     components:
     - type: Transform
@@ -9440,8 +9442,8 @@ entities:
       pos: -19.5,-24.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -67587.766
       state: Opening
+      secondsUntilStateChange: -67677.67
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True

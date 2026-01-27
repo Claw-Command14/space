@@ -27,3 +27,7 @@
 
 - type: Tag
   id: DroneElectronics
+
+# Tag used for escape pod landing.
+- type: Tag
+  id: DockPod

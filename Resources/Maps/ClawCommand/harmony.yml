@@ -4564,6 +4564,32 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 88.5,43.5
       parent: 1
+- proto: AirlockExternalGlassShuttleEscapePodLanding
+  entities:
+  - uid: 576
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 53.5,85.5
+      parent: 1
+  - uid: 666
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 49.5,85.5
+      parent: 1
+  - uid: 4339
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 61.5,85.5
+      parent: 1
+  - uid: 4341
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 57.5,85.5
+      parent: 1
 - proto: AirlockExternalGlassShuttleLocked
   entities:
   - uid: 371
@@ -4578,23 +4604,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 15.5,49.5
       parent: 1
-  - uid: 576
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 53.5,85.5
-      parent: 1
   - uid: 614
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 36.5,76.5
-      parent: 1
-  - uid: 666
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 49.5,85.5
       parent: 1
   - uid: 986
     components:
@@ -4611,18 +4625,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 36.5,74.5
-      parent: 1
-  - uid: 4339
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 61.5,85.5
-      parent: 1
-  - uid: 4341
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 57.5,85.5
       parent: 1
 - proto: AirlockFreezerLocked
   entities:
