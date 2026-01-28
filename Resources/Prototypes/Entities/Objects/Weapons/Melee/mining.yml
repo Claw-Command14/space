@@ -57,8 +57,8 @@
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
-    attackRate: 0.5
-    range: 1.5
+    attackRate: 4
+    range: 1.75
     damage:
       groups:
         Brute: 3
@@ -71,7 +71,7 @@
     damage:
       types:
         Structural: 25
-        Piercing: 9
+        Piercing: 1
   - type: ThrowingAngle
     angle: 270
 
@@ -87,6 +87,7 @@
   - type: MeleeWeapon
     autoAttack: true
     angle: 0
+    range: 2.0
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
