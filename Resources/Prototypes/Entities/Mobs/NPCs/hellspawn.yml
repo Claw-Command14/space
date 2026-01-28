@@ -30,8 +30,8 @@
     damageContainer: BiologicalMetaphysical
     damageModifierSet: HellSpawn
   - type: MovementSpeedModifier
-    baseWalkSpeed: 3 #Claw
-    baseSprintSpeed: 4 #Claw
+    baseWalkSpeed: 2 #Claw
+    baseSprintSpeed: 3 #Claw
   - type: Sprite
     sprite: Mobs/Demons/hellspawn.rsi
     layers:
@@ -110,10 +110,10 @@
     projectileSpeed: 7
     useKey: false
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 7
+    rechargeCooldown: 14
     rechargeSound:
       path: /Audio/Animals/space_dragon_roar.ogg
   - type: BasicEntityAmmoProvider
     proto: ProjectileDragonsBreath
-    capacity: 2
-    count: 2
+    capacity: 1
+    count: 1

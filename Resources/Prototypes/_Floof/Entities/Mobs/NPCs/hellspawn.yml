@@ -1,6 +1,5 @@
 # Altered Hellspawn to be Spawned by Artifact, much slower and doesn't hit as hard. Enough for Epi to scream "SEC TO ART SCI"
 
-# Claw command change from artifact to the regular.  Security can do their job and check on the departments
 
 - type: entity
   name: hellspawn
@@ -10,13 +9,13 @@
   suffix: Artifact spawn
   components:
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1
-    baseSprintSpeed: 2
-  - type: Reflect
-    reflectProb: 0.3
-    innate: true
-    reflects:
-      - Energy
+    baseWalkSpeed: 2 #Claw
+    baseSprintSpeed: 3 #Claw
+ #- type: Reflect   #Claw command change removed reflect component inherit from parent
+ #  reflectProb: 0.3
+ #  innate: true
+ #  reflects:
+ #    - Energy
   - type: Butcherable
     spawned:
       - id: ArtifactFragment1
