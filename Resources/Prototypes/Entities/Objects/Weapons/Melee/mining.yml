@@ -53,7 +53,7 @@
     state: handdrill
   - type: MeleeWeapon
     autoAttack: true
-    angle: 0 #Floof
+    angle: 0
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
@@ -65,9 +65,9 @@
       types:
         Structural: 15
         Piercing: 6
-    heavyStaminaCost: 0.7 #floof
+    heavyStaminaCost: 0 #claw command
   - type: DamageOtherOnHit #floof
-    staminaCost: 9
+    staminaCost: 0 #claw command
     damage:
       types:
         Structural: 25
@@ -86,7 +86,7 @@
     state: handdrill
   - type: MeleeWeapon
     autoAttack: true
-    angle: 27 #floof
+    angle: 0
     wideAnimationRotation: -90
     soundHit:
       path: "/Audio/Items/drill_hit.ogg"
@@ -95,10 +95,15 @@
       groups:
         Brute: 6
       types:
+        Structural: 40
+    heavyStaminaCost: 0 #claw command
+  - type: DamageOtherOnHit
+    staminaCost: 0 #claw command
+    damage:
+      types:
         Structural: 30
-    heavyStaminaCost: 0 #floof
-  - type: DamageOtherOnHit #floof
-    staminaCost: 8
+        Piercing: 9
+
 
 - type: entity
   abstract: true
