@@ -16,7 +16,7 @@ public sealed partial class GatewayComponent : Component
     /// If you are making a gateway for an admeme set this once you are ready for players to select it.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool Enabled;
+    public bool Enabled = true;
 
     /// <summary>
     /// Can the gateway be interacted with? If false then only settable via admins / mappers.

@@ -83,10 +83,13 @@ public sealed class GatewayGeneratorSystem : EntitySystem
 
         generator.NextUnlock = TimeSpan.FromMinutes(5);
 
-        for (var i = 0; i < 3; i++)
+        // Claw Command
+        /*for (var i = 0; i < 3; i++)
         {
             GenerateDestination(uid, generator);
-        }
+        }*/
+        GenerateDestination(uid, generator);
+
     }
 
     private void GenerateDestination(EntityUid uid, GatewayGeneratorComponent? generator = null)
