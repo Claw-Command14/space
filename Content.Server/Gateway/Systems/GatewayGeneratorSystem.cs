@@ -179,6 +179,9 @@ public sealed class GatewayGeneratorSystem : EntitySystem
         ent.Comp.Locked = false;
         ent.Comp.Loaded = true;
 
+        // Claw Command
+        return;
+
         // Do dungeon
         var seed = ent.Comp.Seed;
         var origin = ent.Comp.Origin;
