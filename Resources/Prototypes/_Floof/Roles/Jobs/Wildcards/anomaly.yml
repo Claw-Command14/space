@@ -10,7 +10,7 @@
   canBeAntagTarget: false
   icon: "JobIconNoId"
   joinNotifyCrew: false
-  whitelisted: false
+  whitelisted: true  # Claw command
   access:
   - Maintenance
   requirements:
