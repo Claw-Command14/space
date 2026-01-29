@@ -14,6 +14,11 @@ using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
+using Content.Shared.Standing;
+using Content.Shared.Stunnable;
+using Robust.Shared.Prototypes;
+using System.Linq;
+using Content.Shared.Decals;
 
 namespace Content.Server.Atmos.EntitySystems;
 
@@ -37,8 +42,13 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly MapSystem _map = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] public readonly PuddleSystem Puddle = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
+
+    [Dependency] private readonly ThrownItemSystem _thrown = default!;
+    [Dependency] private readonly SharedStunSystem _sharedStunSystem = default!;
+    [Dependency] private readonly StandingStateSystem _standingSystem = default!;
 
     private const float ExposedUpdateDelay = 1f;
     private float _exposedTimer = 0f;
@@ -48,6 +58,8 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     private EntityQuery<AirtightComponent> _airtightQuery;
     private EntityQuery<FirelockComponent> _firelockQuery;
     private HashSet<EntityUid> _entSet = new();
+
+    private string[] _burntDecals = [];
 
     public override void Initialize()
     {
@@ -68,6 +80,9 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         _firelockQuery = GetEntityQuery<FirelockComponent>();
 
         SubscribeLocalEvent<TileChangedEvent>(OnTileChanged);
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+
+        CacheDecals();
 
     }
 
@@ -76,6 +91,12 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         base.Shutdown();
 
         ShutdownCommands();
+    }
+
+    private void OnPrototypesReloaded(PrototypesReloadedEventArgs ev)
+    {
+        if (ev.WasModified<DecalPrototype>())
+            CacheDecals();
     }
 
     private void OnTileChanged(ref TileChangedEvent ev)
@@ -95,9 +116,10 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         if (_exposedTimer < ExposedUpdateDelay)
             return;
 
-        var query = EntityQueryEnumerator<AtmosExposedComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out _, out var transform))
+        var query = EntityQueryEnumerator<AtmosExposedComponent>();
+        while (query.MoveNext(out var uid, out _))
         {
+            var transform = Transform(uid);
             var air = GetContainingMixture((uid, transform));
 
             if (air == null)
@@ -108,5 +130,10 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         }
 
         _exposedTimer -= ExposedUpdateDelay;
+    }
+
+    private void CacheDecals()
+    {
+        _burntDecals = _prototypeManager.EnumeratePrototypes<DecalPrototype>().Where(x => x.Tags.Contains("burnt")).Select(x => x.ID).ToArray();
     }
 }

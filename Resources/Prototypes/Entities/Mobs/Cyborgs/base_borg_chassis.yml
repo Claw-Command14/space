@@ -238,9 +238,9 @@
     - TauCetiBasic
     - RobotTalk
   - type: PsionicInsulation
-  - type: Vore # Floofstation - Vore
-    canVore: true
-    canBeVored: false
+  #- type: Vore # Floofstation - Vore
+  #  canVore: true
+  #  canBeVored: false
   - type: TwistedConstructionTarget
     replacementProto: ConstructShell
 
@@ -284,6 +284,8 @@
     enabled: false
     groups:
     - AllAccessBorg
+    tags:
+    - Borg
   - type: AccessReader
     access: [["Command"], ["Research"]]
   - type: ShowJobIcons

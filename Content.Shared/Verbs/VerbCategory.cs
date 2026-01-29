@@ -53,7 +53,7 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory Antag =
             new("verb-categories-antag", "/Textures/Interface/VerbIcons/antag-e_sword-temp.192dpi.png", iconsOnly: true)
-                { Columns = 5 };
+            { Columns = 5 };
 
         public static readonly VerbCategory Examine =
             new("verb-categories-examine", "/Textures/Interface/VerbIcons/examine.svg.192dpi.png");
@@ -75,15 +75,15 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory Rotate =
             new("verb-categories-rotate", "/Textures/Interface/VerbIcons/refresh.svg.192dpi.png", iconsOnly: true)
-                { Columns = 5 };
+            { Columns = 5 };
 
         public static readonly VerbCategory Smite =
             new("verb-categories-smite", "/Textures/Interface/VerbIcons/smite.svg.192dpi.png", iconsOnly: true)
-                { Columns = 6 };
+            { Columns = 6 };
 
         public static readonly VerbCategory Tricks =
             new("verb-categories-tricks", "/Textures/Interface/AdminActions/tricks.png", iconsOnly: true)
-                { Columns = 5 };
+            { Columns = 5 };
 
         public static readonly VerbCategory SetTransferAmount =
             new("verb-categories-transfer", "/Textures/Interface/VerbIcons/spill.svg.192dpi.png");
@@ -103,6 +103,9 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory PowerLevel = new("verb-categories-power-level");
 
         public static readonly VerbCategory Interaction = new("verb-categories-interaction");
+
+        // Shitmed - Starlight Abductors
+        public static readonly VerbCategory Switch = new("verb-categories-switch", "/Textures/Interface/VerbIcons/group.svg.192dpi.png");
 
         // Floof section
         // Note for future users editors: DO NOT PUT YOUR CATEGORIES HERE!

@@ -149,7 +149,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     ///     The maximum height for this species
     /// </summary>
     [DataField]
-    public float MaxHeight = 1.1f; // Claw Command Station, decrease default maximum height.
+    public float MaxHeight = 1.2f; // Claw Command Station.
 
     /// <summary>
     ///     The minimum width for this species
@@ -167,7 +167,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     ///     The maximum width for this species
     /// </summary>
     [DataField]
-    public float MaxWidth = 1.1f; // Claw Command Station, decrease default maximum width.
+    public float MaxWidth = 1.2f; // Claw Command Station.
 
     /// <summary>
     ///     The average height in centimeters for this species, used to calculate player facing height values in UI elements

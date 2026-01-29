@@ -60,10 +60,13 @@
         map: [ "blade" ]
   - type: MeleeWeapon
     wideAnimationRotation: -135
-    attackRate: 1.25 # Floofstation - this is hertz, not seconds
+    attackRate: 0.8 # Floofstation - this is hertz, not seconds
+    range: 1.6
     damage:
       types:
-        Blunt: 4.5
+        Blunt: 2.5
+    clickPartDamageMultiplier: 3
+    heavyPartDamageMultiplier: 2.5
   - type: DamageOtherOnHit
   - type: EmbeddableProjectile
     embedOnThrow: false
@@ -95,6 +98,8 @@
   # Shitmed Change
   - type: Scalpel
     speed: 0.75
+  - type: BoneSaw # Floof - It'll take a while but you'll get through bone
+    speed: 0.5
   - type: Cautery
     speed: 0.2
   - type: SurgeryTool
@@ -252,7 +257,7 @@
         shader: unshaded
         map: [ "blade" ]
   - type: MeleeWeapon # DeltaV - reduced attack rate of e-cutlass; slower, more brutal swings
-    attackRate: 0.75
+    attackRate: 1.5
     soundHit:
       path: /Audio/Weapons/eblade1.ogg
     damage:
@@ -270,7 +275,7 @@
       right:
       - state: inhand-right-blade
         shader: unshaded
-        
+
 - type: entity
   name: energy cutlass
   parent: EnergyCutlass

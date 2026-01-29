@@ -29,7 +29,8 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] NoSpawnMaps =
         {
-            "CentComm",
+            "CentCommMain",
+            "CentCommHarmony",
             "Dart",
             "NukieOutpost"
         };
@@ -37,6 +38,7 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] Grids =
         {
             "/Maps/centcomm.yml",
+            "/Maps/ClawCommand/harmony.yml", // Harmony CC version
             "/Maps/Shuttles/cargo.yml",
             "/Maps/Shuttles/emergency.yml",
             "/Maps/Shuttles/infiltrator.yml",
@@ -46,7 +48,8 @@ namespace Content.IntegrationTests.Tests
         {
             "Dev",
             "TestTeg",
-            "CentComm",
+            "CentCommMain",
+            "CentCommHarmony",
             "MeteorArena",
             "NukieOutpost",
             "Core",
@@ -69,6 +72,7 @@ namespace Content.IntegrationTests.Tests
             //"talos", // Floof	- Derotated, no current maintainer
             "Train", // Floof
             "Fland", // Floof,
+            "Getaway", // Floof
             "Amber", // Apparently, floof?
             //"Europa" // Floof - Derotated, no current maintainer
         };

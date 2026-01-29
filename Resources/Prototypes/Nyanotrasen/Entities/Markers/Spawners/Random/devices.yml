@@ -102,7 +102,7 @@
       - HoloprojectorEngineering
       - HandheldStationMap
       - ComputerMassMediaCircuitboard
-      - SensorConsoleCircuitboard
+      #- SensorConsoleCircuitboard #Claw Command
       - AmmoTechFabCircuitboard
       - ArtifactCrusherMachineCircuitboard
       - AnomalyVesselExperimentalCircuitboard

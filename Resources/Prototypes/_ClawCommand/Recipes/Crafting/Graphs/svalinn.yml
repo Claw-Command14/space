@@ -1,0 +1,28 @@
+- type: constructionGraph
+  id: SvalinnPDWGraph # The recipe have been selected to need multiple departments worth of stuff to craft - flash is sec, multitools are largely engi, and that's not even talking about the difficulty of getting brass.
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: svalinnPDW
+      steps:
+      - tag: WeaponLaserSvalinn
+        icon:
+          sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+          state: icon
+        name: svalinn laser pistol
+      - tag: Flash
+        icon:
+          sprite: Objects/Weapons/Melee/flash.rsi
+          state: flash
+        name: flash
+      - tag: Multitool
+        icon:
+          sprite: Objects/Tools/multitool.rsi
+          state: icon
+        name: multitool
+      - material: Brass
+        amount: 1
+        doAfter: 10
+  - node: svalinnPDW
+    entity: WeaponLaserSvalinnPDW

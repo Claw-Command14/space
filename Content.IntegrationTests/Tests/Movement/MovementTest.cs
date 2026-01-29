@@ -24,6 +24,17 @@ public abstract class MovementTest : InteractionTest
     /// </summary>
     protected virtual bool AddWalls => true;
 
+
+    /// <summary>
+    ///     If true, the grid will generate gravity.
+    /// </summary>
+    protected virtual bool AddGravity => true;
+
+    /// <summary>
+    ///     If true, the grid will generate an atmosphere.
+    /// </summary>
+    protected virtual bool AddAtmosphere => true;
+
     [SetUp]
     public override async Task Setup()
     {
@@ -42,8 +53,11 @@ public abstract class MovementTest : InteractionTest
             await SpawnEntity("WallSolid", pCoords.Offset(new Vector2(Tiles, 0)));
         }
 
-        await AddGravity();
-        await AddAtmosphere();
+        if (AddGravity)
+            await AddGravity();
+
+        if (AddAtmosphere)
+            await AddAtmosphere();
     }
 
     /// <summary>

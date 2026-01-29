@@ -147,17 +147,10 @@ public sealed class AtmosDebugOverlay : Overlay
         CheckAndShowBlockDir(data, handle, AtmosDirection.West, tileCentre);
 
         // -- Pressure Direction --
-        if (data.PressureDirection != AtmosDirection.Invalid)
-        {
-            DrawPressureDirection(handle, data.PressureDirection, tileCentre, Color.Blue);
-        }
-        else if (data.LastPressureDirection != AtmosDirection.Invalid)
-        {
-            DrawPressureDirection(handle, data.LastPressureDirection, tileCentre, Color.LightGray);
-        }
+        DrawPressureDirection(handle, data.LastPressureDirection, tileCentre, Color.Blue);
 
         // -- Excited Groups --
-        if (data.InExcitedGroup is {} grp)
+        if (data.InExcitedGroup is { } grp)
         {
             var basisA = tile;
             var basisB = tile + new Vector2(1.0f, 1.0f);
@@ -196,17 +189,9 @@ public sealed class AtmosDebugOverlay : Overlay
         handle.DrawLine(basisA, basisB, Color.Azure);
     }
 
-    private void DrawPressureDirection(
-        DrawingHandleWorld handle,
-        AtmosDirection d,
-        Vector2 center,
-        Color color)
-    {
-        // Account for South being 0.
-        var atmosAngle = d.ToAngle() - Angle.FromDegrees(90);
-        var atmosAngleOfs = atmosAngle.ToVec() * 0.4f;
-        handle.DrawLine(center, center + atmosAngleOfs, color);
-    }
+
+    private void DrawPressureDirection(DrawingHandleWorld handle, Vector2 lastPressureDirection, Vector2 center, Color color) =>
+        handle.DrawLine(center, center + lastPressureDirection, color);
 
     private void DrawTooltip(in OverlayDrawArgs args)
     {
@@ -218,7 +203,7 @@ public sealed class AtmosDebugOverlay : Overlay
         if (_ui.MouseGetControl(mousePos) is not IViewportControl viewport)
             return;
 
-        var coords= viewport.PixelToMap(mousePos.Position);
+        var coords = viewport.PixelToMap(mousePos.Position);
         var box = Box2.CenteredAround(coords.Position, 3 * Vector2.One);
         GetGrids(coords.MapId, new Box2Rotated(box));
 
@@ -239,7 +224,7 @@ public sealed class AtmosDebugOverlay : Overlay
     private void DrawTooltip(DrawingHandleScreen handle, Vector2 pos, AtmosDebugOverlayData data)
     {
         var lineHeight = _font.GetLineHeight(1f);
-        var offset  = new Vector2(0, lineHeight);
+        var offset = new Vector2(0, lineHeight);
 
         var moles = data.Moles == null
             ? "No Air"

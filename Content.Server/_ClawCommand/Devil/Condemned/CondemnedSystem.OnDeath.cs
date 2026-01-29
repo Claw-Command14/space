@@ -1,0 +1,33 @@
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared._ClawCommand.CheatDeath;
+using Content.Shared._ClawCommand.devil.Condemned;
+using Content.Shared.Mobs;
+
+namespace Content.Server._ClawCommand.devil.Condemned;
+
+public sealed partial class CondemnedSystem
+{
+    public void InitializeOnDeath()
+    {
+        SubscribeLocalEvent<CondemnedComponent, MobStateChangedEvent>(OnMobStateChanged);
+    }
+
+    private void OnMobStateChanged(EntityUid uid, CondemnedComponent comp, MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead
+            || comp.SoulOwnedNotDevil
+            || !comp.CondemnOnDeath)
+            return;
+
+        if (TryComp<CheatDeathComponent>(uid, out var cheatDeath)
+            && cheatDeath.ReviveAmount > 0 || cheatDeath is { InfiniteRevives: true })
+            return;
+
+        StartCondemnation(uid, behavior: CondemnedBehavior.Delete);
+    }
+}

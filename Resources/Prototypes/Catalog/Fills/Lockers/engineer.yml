@@ -93,10 +93,13 @@
       - id: ClothingHeadHelmetAtmosFire
       - id: GasAnalyzer
       - id: MedkitOxygenFilled
+      - id: ClothingShoesBootsMag
       - id: HolofanProjector
       - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: ClothingBeltUtilityAtmos # Floofstation
@@ -117,6 +120,8 @@
       - id: DoorRemoteFirefight
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: ClothingBeltUtilityAtmos # Floofstation
@@ -134,6 +139,8 @@
       - id: ClothingShoesBootsMag
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: ClothingBeltUtilityEngineering # Floofstation
@@ -150,6 +157,8 @@
       - id: trayScanner
       - id: RCD
       - id: RCDAmmo
+      - id: RPD
+      - id: RCDAmmo # Extra Compressed matter for the RPD
       - id: LunchboxEngineeringFilledRandom # Delta-V Lunchboxes!
         prob: 0.3
       - id: ClothingBeltUtilityEngineering # Floofstation

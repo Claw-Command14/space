@@ -18,6 +18,7 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Map;
 
 namespace Content.Server.Construction
 {
@@ -66,7 +67,7 @@ namespace Content.Server.Construction
             {
                 while (containerSlotEnumerator.MoveNext(out var containerSlot))
                 {
-                    if(!containerSlot.ContainedEntity.HasValue)
+                    if (!containerSlot.ContainedEntity.HasValue)
                         continue;
 
                     if (EntityManager.TryGetComponent(containerSlot.ContainedEntity.Value, out StorageComponent? storage))
@@ -93,7 +94,14 @@ namespace Content.Server.Construction
         }
 
         // LEGACY CODE. See warning at the top of the file!
-        private async Task<EntityUid?> Construct(EntityUid user, string materialContainer, ConstructionGraphPrototype graph, ConstructionGraphEdge edge, ConstructionGraphNode targetNode)
+        private async Task<EntityUid?> Construct(
+            EntityUid user,
+            string materialContainer,
+            ConstructionGraphPrototype graph,
+            ConstructionGraphEdge edge,
+            ConstructionGraphNode targetNode,
+            EntityCoordinates coords,
+            Angle angle = default)
         {
             // We need a place to hold our construction items!
             var container = _container.EnsureContainer<Container>(user, materialContainer, out var existed);
@@ -263,7 +271,7 @@ namespace Content.Server.Construction
             }
 
             var newEntityProto = graph.Nodes[edge.Target].Entity.GetId(null, user, new(EntityManager));
-            var newEntity = EntityManager.SpawnEntity(newEntityProto, EntityManager.GetComponent<TransformComponent>(user).Coordinates);
+            var newEntity = Spawn(newEntityProto, _transformSystem.ToMapCoordinates(coords), rotation: angle);
 
             if (!TryComp(newEntity, out ConstructionComponent? construction))
             {
@@ -310,7 +318,7 @@ namespace Content.Server.Construction
 
         private async void HandleStartItemConstruction(TryStartItemConstructionMessage ev, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is {Valid: true} user)
+            if (args.SenderSession.AttachedEntity is { Valid: true } user)
                 await TryStartItemConstruction(ev.PrototypeName, user);
         }
 
@@ -378,7 +386,13 @@ namespace Content.Server.Construction
                 }
             }
 
-            if (await Construct(user, "item_construction", constructionGraph, edge, targetNode) is not { Valid: true } item)
+            if (await Construct(
+                    user,
+                    "item_construction",
+                    constructionGraph,
+                    edge,
+                    targetNode,
+                    Transform(user).Coordinates) is not { Valid: true } item)
                 return false;
 
             // Just in case this is a stack, attempt to merge it. If it isn't a stack, this will just normally pick up
@@ -404,7 +418,7 @@ namespace Content.Server.Construction
                 return;
             }
 
-            if (args.SenderSession.AttachedEntity is not {Valid: true} user)
+            if (args.SenderSession.AttachedEntity is not { Valid: true } user)
             {
                 Log.Error($"Client sent {nameof(TryStartStructureConstructionMessage)} with no attached entity!");
                 return;
@@ -437,7 +451,7 @@ namespace Content.Server.Construction
             }
             else
             {
-                var newSet = new HashSet<int> {ev.Ack};
+                var newSet = new HashSet<int> { ev.Ack };
                 _beingBuilt[args.SenderSession] = newSet;
             }
 
@@ -478,12 +492,12 @@ namespace Content.Server.Construction
 
             var edge = startNode.GetEdge(pathFind[0].Name);
 
-            if(edge == null)
+            if (edge == null)
                 throw new InvalidDataException($"Can't find edge from starting node to the next node in pathfinding! Recipe: {ev.PrototypeName}");
 
             var valid = false;
 
-            if (hands.ActiveHandEntity is not {Valid: true} holding)
+            if (hands.ActiveHandEntity is not { Valid: true } holding)
             {
                 Cleanup();
                 return;
@@ -513,22 +527,17 @@ namespace Content.Server.Construction
                 return;
             }
 
-            if (await Construct(user, (ev.Ack + constructionPrototype.GetHashCode()).ToString(), constructionGraph,
-                    edge, targetNode) is not {Valid: true} structure)
+            if (await Construct(user,
+                (ev.Ack + constructionPrototype.GetHashCode()).ToString(),
+                constructionGraph,
+                edge,
+                targetNode,
+                GetCoordinates(ev.Location),
+                constructionPrototype.CanRotate ? ev.Angle : Angle.Zero) is not { Valid: true } structure)
             {
                 Cleanup();
                 return;
             }
-
-            // We do this to be able to move the construction to its proper position in case it's anchored...
-            // Oh wow transform anchoring is amazing wow I love it!!!!
-            // ikr
-            var xform = Transform(structure);
-            var wasAnchored = xform.Anchored;
-            xform.Anchored = false;
-            xform.Coordinates = GetCoordinates(ev.Location);
-            xform.LocalRotation = constructionPrototype.CanRotate ? ev.Angle : Angle.Zero;
-            xform.Anchored = wasAnchored;
 
             RaiseNetworkEvent(new AckStructureConstructionMessage(ev.Ack, GetNetEntity(structure)));
             _adminLogger.Add(LogType.Construction, LogImpact.Low, $"{ToPrettyString(user):player} has turned a {ev.PrototypeName} construction ghost into {ToPrettyString(structure)} at {Transform(structure).Coordinates}");

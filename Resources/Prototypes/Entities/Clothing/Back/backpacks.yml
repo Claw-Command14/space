@@ -31,6 +31,17 @@
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: AllowsSleepInside # DeltaV - enable sleeping inside bags
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 35
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   parent: ClothingBackpack
@@ -277,6 +288,16 @@
   - type: Sprite
     sprite: Clothing/Back/Backpacks/ertchaplain.rsi
 
+- type: entity
+  parent: ClothingBackpackERTSecurity
+  id: ClothingBackpackDeathSquad
+  name: death squad backpack
+  description: Holds the kit of CentComm's most feared agents.
+  components:
+    - type: Storage
+      grid:
+      - 0,0,7,6
+
 #Syndicate
 - type: entity
   parent: ClothingBackpack
@@ -287,7 +308,7 @@
   - type: Sprite
     sprite: Clothing/Back/Backpacks/syndicate.rsi
   - type: ExplosionResistance
-    damageCoefficient: 0.1
+    damageCoefficient: 0.9
 
 #Special
 - type: entity

@@ -24,7 +24,7 @@
         Caustic: 0.2
         Radiation: 0.2
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.75
   - type: TemperatureProtection
     coefficient: 0.001
   - type: ToggleableClothing

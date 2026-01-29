@@ -7,14 +7,14 @@
   markingLimits: MobKitsuneMarkingLimits
   dollPrototype: MobKitsuneDummy
 # Floof - M3739 - #1062 | Begin Changes
-  skinColoration: Hues 
+  skinColoration: Hues
   minHeight: 0.65
-#  defaultHeight: 0.8 
-  maxHeight: 1.1 
-  minWidth: 0.6 
-#  defaultWidth: 0.8 
-  maxWidth: 1.15  
-  customName: true 
+#  defaultHeight: 0.8
+  maxHeight: 1.1
+  minWidth: 0.6
+#  defaultWidth: 0.8
+  maxWidth: 1.1
+  customName: true
 - type: markingPoints
   id: MobKitsuneMarkingLimits
   points:

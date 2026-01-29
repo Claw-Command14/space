@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-NC-SA-4.0",
-    "copyright": "Dzordz, JenreyDominos, Shy_ivy, faefyr",
+    "copyright": "Dzordz, JenreyDominos, Shy_ivy, faefyr, strawofman, oBanditx/honeydothannah",
     "size": {
         "x": 32,
         "y": 32
@@ -10,22 +10,22 @@
         {
             "name": "chill"
         },
-		{
+        {
             "name": "kitsune"
         },
         {
             "name": "salvager"
         },
-		{
+        {
             "name": "harpy"
         },
-		{
+        {
             "name": "vulp1"
         },
-		{
+        {
             "name": "vulp2"
         },
-		{
+        {
             "name": "vulp3"
         },
         {
@@ -90,28 +90,28 @@
         },
         {
             "name": "tiredcargo"
-        },	
+        },
         {
             "name": "unholyred"
-        },	
+        },
         {
             "name": "detective"
-        },	
+        },
         {
             "name": "ursinegal"
-        },	
+        },
         {
             "name": "electric"
-        },	
+        },
         {
             "name": "harpy2"
         },
         {
             "name": "harpy3"
-        },	
+        },
         {
             "name": "cuddlyipc"
-        },	
+        },
         {
             "name": "fluffyvulp"
         },
@@ -119,7 +119,61 @@
             "name": "tank"
         },
         {
+            "name": "brash"
+        },
+        {
+            "name": "harmless"
+        },
+        {
             "name": "CMObun"
+        },
+        {
+            "name": "kinddetective"
+        },
+        {
+            "name": "cheerfulquadborg"
+        },
+        {
+            "name": "notaspider"
+        },
+        {
+            "name": "medicalmoth"
+        },
+        {
+            "name": "vampiricvulpkanin"
+        },
+        {
+            "name": "ntunathi"
+        },
+        {
+            "name": "madscientist"
+        },
+        {
+            "name": "musicianraccoon"
+        },
+        {
+            "name": "sleepyharpy"
+        },
+        {
+            "name": "goblin"
+        },
+        {
+            "name": "bravecaptain"
+        },
+        {
+            "name": "happyparamedic"
+        },
+        {
+            "name": "mutant"
+        },
+        {
+            "name": "bluecorpsmanshadekin"
+        },
+        {
+            "name": "twotailedcommand"
+        },
+        {
+            "name": "detectivevulps"
         }
     ]
 }

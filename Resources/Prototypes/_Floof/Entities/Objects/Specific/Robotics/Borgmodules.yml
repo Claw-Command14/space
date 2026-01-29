@@ -48,6 +48,7 @@
     - WeaponAdvancedLaser
     - WeaponborgPistolMk58
     - CombatKnife
+    - Gauze10Lingering
   - type: GuideHelp
     guides:
     - Quadborgs
@@ -85,9 +86,31 @@
     - state: icon-Advmeasures
   - type: ItemBorgModule
     items:
+    - WeaponAdvancedLaser
+    - WeaponborgPistolMk58
+    - CombatKnife
+    - Gauze
     - BorgWeaponXrayCannon
   - type: GuideHelp
     guides:
     - Quadborgs
     - Cyborgs
 
+#Claw Command
+- type: entity
+  id: BorgModuleGorillaGauntlet
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: gorrila gauntlet cyborg module
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi
+    layers:
+    - state: security
+    - state: icon-Advmeasures
+  - type: ItemBorgModule
+    items:
+    - WeaponGauntletGorilla
+  - type: GuideHelp
+    guides:
+    - Quadborgs
+    - Cyborgs

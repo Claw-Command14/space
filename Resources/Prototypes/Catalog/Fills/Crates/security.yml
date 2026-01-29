@@ -130,7 +130,7 @@
     contents:
       - id: MindShieldImplanter   #Floof Change
         amount: 8    #Floof Change
-#      - id: TrackingImplanter   Floof Change
-#        amount: 4
+      - id: TrackingImplanter
+        amount: 4
 
 # Cosmetic Crates

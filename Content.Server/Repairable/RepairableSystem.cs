@@ -5,6 +5,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Repairable;
 using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
+using Content.Server.Repairable;
 
 namespace Content.Server.Repairable
 {
@@ -13,7 +14,7 @@ namespace Content.Server.Repairable
         [Dependency] private readonly SharedToolSystem _toolSystem = default!;
         [Dependency] private readonly DamageableSystem _damageableSystem = default!;
         [Dependency] private readonly SharedPopupSystem _popup = default!;
-        [Dependency] private readonly IAdminLogManager _adminLogger= default!;
+        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
 
         public override void Initialize()
         {
@@ -46,6 +47,8 @@ namespace Content.Server.Repairable
                 ("target", uid),
                 ("tool", args.Used!));
             _popup.PopupEntity(str, uid, args.User);
+            var ev = new RepairedEvent((uid, component), args.User);
+            RaiseLocalEvent(uid, ref ev);
         }
 
         public async void Repair(EntityUid uid, RepairableComponent component, InteractUsingEvent args)
@@ -73,3 +76,10 @@ namespace Content.Server.Repairable
         }
     }
 }
+/// <summary>
+/// Event raised on an entity when its successfully repaired.
+/// </summary>
+/// <param name="Ent"></param>
+/// <param name="User"></param>
+[ByRefEvent]
+public readonly record struct RepairedEvent(Entity<RepairableComponent> Ent, EntityUid User);

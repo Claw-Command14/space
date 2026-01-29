@@ -3,6 +3,9 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Physics;
 using Robust.Shared.Utility;
+// Shitmed Change
+using Content.Shared._ClawCommand.Antags.Abductor;
+using Content.Shared.Silicons.StationAi;
 
 namespace Content.Shared.DoAfter;
 
@@ -152,7 +155,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         if (args.Used is { } used && !xformQuery.HasComponent(used))
             return true;
 
-        if (args.EventTarget is {Valid: true} eventTarget && !xformQuery.HasComponent(eventTarget))
+        if (args.EventTarget is { Valid: true } eventTarget && !xformQuery.HasComponent(eventTarget))
             return true;
 
         if (!xformQuery.TryGetComponent(args.User, out var userXform))
@@ -209,7 +212,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
             }
             else
             {
-                if (!_interaction.InRangeUnobstructed(args.User,args.Used.Value))
+                if (!_interaction.InRangeUnobstructed(args.User, args.Used.Value))
                     return true;
             }
         }
@@ -229,7 +232,8 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
             }
         }
 
-        if (args.RequireCanInteract && !_actionBlocker.CanInteract(args.User, args.Target))
+        var hasNoSpecificComponents = !HasComp<StationAiOverlayComponent>(args.User) && !HasComp<AbductorScientistComponent>(args.User); // Shitmed Change
+        if (args.RequireCanInteract && !_actionBlocker.CanInteract(args.User, args.Target) && hasNoSpecificComponents) // Shitmed Change
             return true;
 
 

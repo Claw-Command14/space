@@ -26,7 +26,7 @@ station-goal-xeno=
     2. When captured fauna dies, you are required to catch another, cloning is strictly prohibited.
 
     Once you collect the required fauna, you must study them and write a report on their properties.
-    The report must be stamped by the head of the department and faxed to Central Command.
+    The report must be stamped by the head of the department and faxed to Claw Command.
 
     Experience Requirements:
     1. Experience should be documented in detail;
@@ -74,7 +74,7 @@ station-goal-bureaucraticerror =
     ACCESS TO THIS DOCUMENT IS PROHIBITED FOR PERSONS WHO DO NOT HAVE LEGAL IMMUNITY
 
     Dear Station Command, we inform you that the purpose of your shift was lost as a result of a bureaucratic error.
-    With this news, Central Command gives you the opportunity to independently assign a new goal for the station.
+    With this news, Claw Command gives you the opportunity to independently assign a new goal for the station.
 
     New goal requirements:
     1. Relevance: The goal must be relevant and relevant to the current situation;
@@ -82,7 +82,7 @@ station-goal-bureaucraticerror =
     3. Scope: The goal should involve sufficient, but not excessive, amounts of work to ensure the effective completion of the task.
 
     Please note that distribution of the contents of this document to persons who do not have legal immunity is strictly prohibited due to the possibility of discrediting the management of the Corporation.
-    Therefore, in order to present a new goal to the crew, the command staff must contact Central Command for approval of your ideas.
+    Therefore, in order to present a new goal to the crew, the command staff must contact Claw Command for approval of your ideas.
 
 station-goal-anomalies=
     Dear Station Command, the purpose of your shift is to provide new information about anomalies to NanoTrasen.
@@ -98,7 +98,7 @@ station-goal-anomalies=
     5. Consequences of the collapse;
     6. Location of the anomaly.
 
-    The document must be certified by the stamp of the supervisor and faxed to Central Command.
+    The document must be certified by the stamp of the supervisor and faxed to Claw Command.
 
 station-goal-combat=
     Dear station Command, due to the increase in attacks of pirate ships in this sector, the purpose of your shift is to raise the overall combat readiness of the station.
@@ -142,7 +142,7 @@ station-goal-shuttle=
         1 medic/chemist;
         1 security officer.
 
-    The shuttle should take on board all the station Command representatives as passengers and, in parallel with the evacuation shuttle, go to the Central Command station.
+    The shuttle should take on board all the station Command representatives as passengers and, in parallel with the evacuation shuttle, go to the Claw Command station.
 
 station-goal-singularity=
     Dear station Command, the goal of your shift is to build a generator based on the gravitational singularity.

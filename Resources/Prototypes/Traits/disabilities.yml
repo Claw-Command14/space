@@ -22,7 +22,7 @@
 - type: trait
   id: Nearsighted
   category: Visual
-  points: 1
+  points: 3
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -115,6 +115,22 @@
         - Borg
         - MedicalBorg
         - Mime
+        - Warden
+        - SeniorOfficer
+        - SecurityOfficer
+        - SecurityCadet
+        - HeadOfSecurity
+        - Captain
+        - ForensicMantis
+        - CentralCommandOfficial
+        - HeadOfPersonnel
+        - Quartermaster
+        - ChiefEngineer
+        - ChiefMedicalOfficer
+        - ResearchDirector
+        - BlueshieldOfficer
+        - BlueshieldMaid
+        - AdministrativeAssistant
   functions:
     - !type:TraitAddComponent
       components:

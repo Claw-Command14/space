@@ -18,7 +18,7 @@ public interface ISharedAdminManager
     /// </param>
     /// <returns><see langword="null" /> if the player is not an admin.</returns>
     AdminData? GetAdminData(EntityUid uid, bool includeDeAdmin = false);
-    
+
     /// <summary>
     ///     Gets the admin data for a player, if they are an admin.
     /// </summary>
@@ -43,7 +43,7 @@ public interface ISharedAdminManager
         var data = GetAdminData(player);
         return data != null && data.HasFlag(flag);
     }
-    
+
     /// <summary>
     ///     See if a player has an admin flag.
     /// </summary>
@@ -69,9 +69,10 @@ public interface ISharedAdminManager
     /// <returns>true if the player is an admin, false otherwise.</returns>
     bool IsAdmin(EntityUid uid, bool includeDeAdmin = false)
     {
-        return GetAdminData(uid, includeDeAdmin) != null;
+        var datz = GetAdminData(uid, includeDeAdmin);
+        return datz != null && datz.HasFlag(AdminFlags.Admin);
     }
-    
+
     /// <summary>
     ///     Checks if a player is an admin.
     /// </summary>
@@ -84,6 +85,7 @@ public interface ISharedAdminManager
     /// <returns>true if the player is an admin, false otherwise.</returns>
     bool IsAdmin(ICommonSession session, bool includeDeAdmin = false)
     {
-        return GetAdminData(session, includeDeAdmin) != null;
+        var datz = GetAdminData(session, includeDeAdmin);
+        return datz != null && datz.HasFlag(AdminFlags.Admin);
     }
 }

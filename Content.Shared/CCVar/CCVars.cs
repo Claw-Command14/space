@@ -1,5 +1,5 @@
 using Content.Shared.Maps;
-using Content.Shared.Supermatter.Components;
+using Content.Shared._EE.Supermatter.Components;
 using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
@@ -446,6 +446,12 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> TraitsPunishCheaters =
             CVarDef.Create("game.traits_punish_cheaters", false, CVar.REPLICATED);
+
+        /// <summary>
+        /// Whether the RestrictedGear trait can be used on the server.
+        /// </summary>
+        public static readonly CVarDef<bool> RestrictedGearEnabled =
+            CVarDef.Create("trait.restrictedgear_enabled", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether to allow characters to select loadout items.
@@ -1362,54 +1368,44 @@ namespace Content.Shared.CCVar
          */
 
         /// <summary>
+        ///     Whether pipes will unanchor on ANY conflicting connection. May break maps.
+        ///     If false, allows you to stack pipes as long as new directions are added (i.e. in a new pipe rotation, layer or multi-Z link), otherwise unanchoring them.
+        /// </summary>
+        public static readonly CVarDef<bool> StrictPipeStacking =
+            CVarDef.Create("atmos.strict_pipe_stacking", false, CVar.SERVERONLY);
+
+
+        /// <summary>
         ///     Whether gas differences will move entities.
         /// </summary>
         public static readonly CVarDef<bool> SpaceWind =
             CVarDef.Create("atmos.space_wind", true, CVar.SERVERONLY);
 
-        /// <summary>
-        ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
-        /// </summary>
-        public static readonly CVarDef<float> SpaceWindPressureForceDivisorThrow =
-            CVarDef.Create("atmos.space_wind_pressure_force_divisor_throw", 15f, CVar.SERVERONLY);
 
         /// <summary>
-        ///     Divisor from maxForce (pressureDifference * 2.25f) to force applied on objects.
+        ///     A direct multiplier on how violent space wind is.
         /// </summary>
-        public static readonly CVarDef<float> SpaceWindPressureForceDivisorPush =
-            CVarDef.Create("atmos.space_wind_pressure_force_divisor_push", 2500f, CVar.SERVERONLY);
+        public static readonly CVarDef<float> SpaceWindStrengthMultiplier =
+        CVarDef.Create("atmos.space_wind_strength_multiplier", 1f, CVar.SERVERONLY);
 
         /// <summary>
-        ///     The maximum velocity (not force) that may be applied to an object by atmospheric pressure differences.
+        ///     The maximum Force (in Newtons) that may be applied to an object by atmospheric pressure differences.
         ///     Useful to prevent clipping through objects.
         /// </summary>
-        public static readonly CVarDef<float> SpaceWindMaxVelocity =
-            CVarDef.Create("atmos.space_wind_max_velocity", 15f, CVar.SERVERONLY);
+        public static readonly CVarDef<float> SpaceWindMaxForce =
+            CVarDef.Create("atmos.space_wind_max_force", 200f, CVar.SERVERONLY);
 
         /// <summary>
-        ///     The maximum force that may be applied to an object by pushing (i.e. not throwing) atmospheric pressure differences.
-        ///     A "throwing" atmospheric pressure difference ignores this limit, but not the max. velocity limit.
+        ///      The maximum angular velocity that space wind can spin objects at while throwing them. This one is mostly for fun.
         /// </summary>
-        public static readonly CVarDef<float> SpaceWindMaxPushForce =
-            CVarDef.Create("atmos.space_wind_max_push_force", 20f, CVar.SERVERONLY);
+        public static readonly CVarDef<float> SpaceWindMaxAngularVelocity =
+        CVarDef.Create("atmos.space_wind_max_angular_velocity", 3f, CVar.SERVERONLY);
 
         /// <summary>
-        ///     If an object's mass is below this number, then this number is used in place of mass to determine whether air pressure can throw an object.
-        ///     This has nothing to do with throwing force, only acting as a way of reducing the odds of tiny 5 gram objects from being yeeted by people's breath
+        ///     The amount of time (in seconds) for space wind to knock down a player character if they are subjected to space wind.</summary>
         /// </summary>
-        /// <remarks>
-        ///     If you are reading this because you want to change it, consider looking into why almost every item in the game weighs only 5 grams
-        ///     And maybe do your part to fix that? :)
-        /// </remarks>
-        public static readonly CVarDef<float> SpaceWindMinimumCalculatedMass =
-            CVarDef.Create("atmos.space_wind_minimum_calculated_mass", 10f, CVar.SERVERONLY);
-
-        /// <summary>
-        /// 	Calculated as 1/Mass, where Mass is the physics.Mass of the desired threshold.
-        /// 	If an object's inverse mass is lower than this, it is capped at this. Basically, an upper limit to how heavy an object can be before it stops resisting space wind more.
-        /// </summary>
-        public static readonly CVarDef<float> SpaceWindMaximumCalculatedInverseMass =
-            CVarDef.Create("atmos.space_wind_maximum_calculated_inverse_mass", 0.04f, CVar.SERVERONLY);
+        public static readonly CVarDef<float> SpaceWindKnockdownTime =
+        CVarDef.Create("atmos.space_wind_knockdown_time", 0.75f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether monstermos tile equalization is enabled.
@@ -1432,21 +1428,14 @@ namespace Content.Shared.CCVar
 		///     Also looks weird on slow spacing for unrelated reasons. If you do want to enable this, you should probably turn on instaspacing.
         /// </summary>
         public static readonly CVarDef<bool> MonstermosRipTiles =
-            CVarDef.Create("atmos.monstermos_rip_tiles", true, CVar.SERVERONLY);
+            CVarDef.Create("atmos.monstermos_rip_tiles", false, CVar.SERVERONLY);
 
         /// <summary>
         ///     Taken as the cube of a tile's mass, this acts as a minimum threshold of mass for which air pressure calculates whether or not to rip a tile from the floor
         ///     This should be set by default to the cube of the game's lowest mass tile as defined in their prototypes, but can be increased for server performance reasons
         /// </summary>
         public static readonly CVarDef<float> MonstermosRipTilesMinimumPressure =
-            CVarDef.Create("atmos.monstermos_rip_tiles_min_pressure", 7500f, CVar.SERVERONLY);
-
-        /// <summary>
-        ///     Taken after the minimum pressure is checked, the effective pressure is multiplied by this amount.
-        ///		This allows server hosts to finely tune how likely floor tiles are to be ripped apart by air pressure
-        /// </summary>
-        public static readonly CVarDef<float> MonstermosRipTilesPressureOffset =
-            CVarDef.Create("atmos.monstermos_rip_tiles_pressure_offset", 0.44f, CVar.SERVERONLY);
+            CVarDef.Create("atmos.monstermos_rip_tiles_min_pressure", 20f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether explosive depressurization will cause the grid to gain an impulse.
@@ -1454,13 +1443,6 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> AtmosGridImpulse =
             CVarDef.Create("atmos.grid_impulse", false, CVar.SERVERONLY);
-
-        /// <summary>
-        ///     What fraction of air from a spaced tile escapes every tick.
-        ///     1.0 for instant spacing, 0.2 means 20% of remaining air lost each time
-        /// </summary>
-        public static readonly CVarDef<float> AtmosSpacingEscapeRatio =
-            CVarDef.Create("atmos.mmos_spacing_speed", 0.05f, CVar.SERVERONLY);
 
         /// <summary>
         ///     Minimum amount of air allowed on a spaced tile before it is reset to 0 immediately in kPa
@@ -1476,13 +1458,6 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> AtmosSpacingMaxWind =
             CVarDef.Create("atmos.mmos_max_wind", 500f, CVar.SERVERONLY);
-
-        /// <summary>
-        /// Increases default airflow calculations to O(n^2) complexity, for use with heavy space wind optimizations. Potato servers BEWARE
-        /// This solves the problem of objects being trapped in an infinite loop of slamming into a wall repeatedly.
-        /// </summary>
-        public static readonly CVarDef<bool> MonstermosUseExpensiveAirflow =
-            CVarDef.Create("atmos.mmos_expensive_airflow", true, CVar.SERVERONLY);
 
         /// <summary>
         ///     Whether atmos superconduction is enabled.
@@ -1546,6 +1521,18 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<float> AtmosHumanoidThrowMultiplier =
             CVarDef.Create("atmos.humanoid_throw_multiplier", 2f, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Whether or not Space Wind is allowed to attempt to knock down player characters.
+        /// </summary>
+        public static readonly CVarDef<bool> SpaceWindAllowKnockdown =
+            CVarDef.Create("atmos.space_wind_allow_knockdown", true, CVar.SERVERONLY);
+
+        /// <summary>
+        ///     Whether or not Space Wind will create subtle visual indicators for the presence of air currents.
+        /// </summary>
+        public static readonly CVarDef<bool> SpaceWindVisuals =
+            CVarDef.Create("atmos.space_wind_visuals", true, CVar.SERVERONLY);
 
         #endregion
         #region MIDI instruments
@@ -1800,7 +1787,7 @@ namespace Content.Shared.CCVar
         /// The map to use for the arrivals station.
         /// </summary>
         public static readonly CVarDef<string> ArrivalsMap =
-            CVarDef.Create("shuttle.arrivals_map", "/Maps/Misc/terminal.yml", CVar.SERVERONLY);
+            CVarDef.Create("shuttle.arrivals_map", "/Maps/ClawCommand/misc/terminal.yml", CVar.SERVERONLY);
 
         /// <summary>
         /// Cooldown between arrivals departures. This should be longer than the FTL time or it will double cycle.
@@ -2937,16 +2924,32 @@ namespace Content.Shared.CCVar
             CVarDef.Create("supermatter.do_force_delam", false, CVar.SERVER);
 
         /// <summary>
+        ///     Base amount of radiation that the supermatter emits.
+        /// </summary>
+        public static readonly CVarDef<float> SupermatterRadsBase =
+            CVarDef.Create("supermatter.rads_base", 3f, CVar.SERVER);
+
+
+        /// <summary>
         ///     If supermatter.do_force_delam is true, this determines the delamination type, bypassing the normal checks.
         /// </summary>
         public static readonly CVarDef<DelamType> SupermatterForcedDelamType =
             CVarDef.Create("supermatter.forced_delam_type", DelamType.Singulo, CVar.SERVER);
 
         /// <summary>
+
+        /// <summary>
         ///     Directly multiplies the amount of rads put out by the supermatter. Be VERY conservative with this.
         /// </summary>
         public static readonly CVarDef<float> SupermatterRadsModifier =
             CVarDef.Create("supermatter.rads_modifier", 1f, CVar.SERVER);
+
+
+        /// <summary>
+        ///     How often the supermatter should announce its status.
+        /// </summary>
+        public static readonly CVarDef<float> SupermatterYellTimer =
+            CVarDef.Create("supermatter.yell_timer", 60f, CVar.SERVER);
 
         #endregion
         #region Mood System
@@ -3024,7 +3027,7 @@ namespace Content.Shared.CCVar
         ///     When true, jetpacks can be enabled on grids that have zero gravity.
         /// </summary>
         public static readonly CVarDef<bool> JetpackEnableInNoGravity =
-            CVarDef.Create("jetpack.enable_in_no_gravity", true, CVar.REPLICATED);
+            CVarDef.Create("jetpack.enable_in_no_gravity", false, CVar.REPLICATED);
 
         #endregion
         #region GhostRespawn

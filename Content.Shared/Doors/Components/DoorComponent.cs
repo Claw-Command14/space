@@ -15,6 +15,11 @@ namespace Content.Shared.Doors.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
 public sealed partial class DoorComponent : Component
 {
+
+    /// Claw command
+    [DataField]
+    public bool BlockOpenAtmos = false;
+
     /// <summary>
     /// The current state of the door -- whether it is open, closed, opening, or closing.
     /// </summary>
@@ -242,7 +247,7 @@ public sealed partial class DoorComponent : Component
             }
 
             var curTime = IoCManager.Resolve<IGameTiming>().CurTime;
-            return (float)(NextStateChange.Value - curTime).TotalSeconds;
+            return (float) (NextStateChange.Value - curTime).TotalSeconds;
         }
         set
         {

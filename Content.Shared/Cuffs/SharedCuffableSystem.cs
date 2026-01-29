@@ -472,7 +472,16 @@ namespace Content.Shared.Cuffs
 
             if (!_interaction.InRangeUnobstructed(handcuff, target))
                 return false;
+            // if the amount of hands the target has is equal to or less than the amount of hands that are cuffed
+            // don't apply the new set of cuffs
+            // (how would you even end up with more cuffed hands than actual hands? either way accounting for it)
+            if (TryComp<HandsComponent>(target, out var hands) && hands.Count <= component.CuffedHandCount)
+                return false;
 
+            // Shitmed Change Start
+            EnsureComp<HandcuffComponent>(handcuff, out var handcuffsComp);
+            handcuffsComp.Used = true;
+            Dirty(handcuff, handcuffsComp);
             // Success!
             if (cuff.RemoveOnUse)
                 _hands.TryDrop(user, handcuff);
@@ -482,8 +491,9 @@ namespace Content.Shared.Cuffs
                 var newcuffs = EnsureComp<HandcuffComponent>(handcuff);
                 newcuffs.Used = true;
             }
+            var result = _container.Insert(handcuff, component.Container);
+            // Shitmed Change End
 
-            _container.Insert(handcuff, component.Container);
             UpdateHeldItems(target, handcuff, component);
             return true;
         }
@@ -555,7 +565,24 @@ namespace Content.Shared.Cuffs
             _audio.PlayPredicted(handcuffComponent.StartCuffSound, handcuff, user);
             return true;
         }
+        /// <summary>
+        /// Checks if the target is handcuffed.
+        /// </summary>
+        /// <param name="requireFullyCuffed">when true, return false if the target is only partially cuffed (for things with more than 2 hands)</param>
+        /// <returns></returns>
+        public bool IsCuffed(Entity<CuffableComponent> target, bool requireFullyCuffed = true)
+        {
+            if (!TryComp<HandsComponent>(target, out var hands))
+                return false;
 
+            if (target.Comp.CuffedHandCount <= 0)
+                return false;
+
+            if (requireFullyCuffed && hands.Count > target.Comp.CuffedHandCount)
+                return false;
+
+            return true;
+        }
         /// <summary>
         /// Attempt to uncuff a cuffed entity. Can be called by the cuffed entity, or another entity trying to help uncuff them.
         /// If the uncuffing succeeds, the cuffs will drop on the floor.

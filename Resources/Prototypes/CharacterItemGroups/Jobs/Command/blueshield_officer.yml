@@ -4,6 +4,10 @@
   items:
     - type: loadout
       id: LoadoutClothingBackpackBlueshield
+    - type: loadout
+      id: LoadoutClothingBackpackSatchelBlueshieldOfficer
+    - type: loadout
+      id: LoadoutClothingBackpackDuffelBlueshieldOfficer
 
 - type: characterItemGroup
   id: LoadoutBlueshieldOfficerVests
@@ -13,6 +17,10 @@
       id: LoadoutClothingBlueshieldArmoredJacket
     - type: loadout
       id: LoadoutClothingBlueshieldArmoredCowboyJacket
+    - type: loadout
+      id: LoadoutClothingBlueshieldOfficerArmorVest
+    - type: loadout
+      id: LoadoutClothingBlueshieldOfficerDuraVest
 
 - type: characterItemGroup
   id: LoadoutBlueshieldOfficerUniforms

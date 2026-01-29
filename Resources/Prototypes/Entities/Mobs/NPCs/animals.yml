@@ -76,6 +76,7 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  - type: Absorbable
 
 - type: entity
   name: bee
@@ -263,6 +264,7 @@
     barkType: chicken
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
+  - type: Absorbable
 
 - type: entity
   parent: MobChicken
@@ -705,6 +707,7 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+  - type: Absorbable
 
 - type: entity
   name: white duck #Quack
@@ -888,6 +891,7 @@
     barkMultiplier: 3
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
+  - type: Absorbable
 
 
 - type: entity
@@ -967,6 +971,7 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+  - type: Absorbable
 
 - type: entity
   name: goat
@@ -1065,6 +1070,7 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+  - type: Absorbable
 
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
@@ -1115,6 +1121,7 @@
     - Passive
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
+  - type: Absorbable
 
 - type: entity
   name: kangaroo
@@ -1206,6 +1213,7 @@
       task: SimpleHostileCompound
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
+  - type: Absorbable
 
 - type: entity
   name: boxing kangaroo
@@ -1395,6 +1403,7 @@
         Burn: 3
     clumsySound:
       path: /Audio/Animals/monkey_scream.ogg
+  - type: Absorbable
 
 - type: entity
   name: monkey
@@ -1549,6 +1558,7 @@
         Burn: 3
     clumsySound:
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
+  - type: Absorbable
 
 - type: entity
   id: MobBaseSyndicateKobold
@@ -1605,7 +1615,7 @@
   id: MobMouse
   description: Squeak!
   components:
-  - type: Vore
+  #- type: Vore
   - type: Body
     prototype: Mouse
   - type: GhostRole
@@ -2144,6 +2154,7 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+  - type: Absorbable
 
 - type: entity
   name: penguin
@@ -2211,6 +2222,7 @@
   - type: LanguageKnowledge
     speaks: [Penguin]
     understands: [Penguin]
+  - type: Absorbable
 
 - type: entity
   name: grenade penguin
@@ -2334,6 +2346,7 @@
   - type: LanguageKnowledge
     speaks: [Hissing]
     understands: [Hissing]
+  - type: Absorbable
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -2465,6 +2478,7 @@
     interfaces:
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+  - type: Absorbable
 
 - type: entity
   parent: MobSpiderBase
@@ -2658,6 +2672,7 @@
     kind: Intrinsic
   - type: RandomBark
     barkType: possum
+  - type: Absorbable
 
 - type: entity
   name: possum
@@ -2738,6 +2753,7 @@
     kind: Intrinsic
   - type: RandomBark
     barkType: raccoon
+  - type: Absorbable
 
 - type: entity
   name: fox
@@ -2830,6 +2846,7 @@
   - type: RandomBark
     barkType: fox
     barkMultiplier: 0.5 # Talkative <3
+  - type: Absorbable
 
 - type: entity
   name: corgi
@@ -2901,6 +2918,7 @@
     barkType: dog
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
+  - type: Absorbable
 
 - type: entity
   name: corrupted corgi
@@ -3063,6 +3081,7 @@
     barkType: cat
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
+  - type: Absorbable
 
 - type: entity
   name: calico cat
@@ -3362,6 +3381,7 @@
     - Hissing
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
+  - type: Absorbable
 
 - type: entity
   name: hamster
@@ -3513,6 +3533,7 @@
     normalState: Mouse_burning
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
+  - type: Absorbable
 
 - type: entity
   parent: MobHamster
@@ -3598,6 +3619,7 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: Absorbable
 
 - type: entity
   name: diona nymph

@@ -1,6 +1,34 @@
 # Uncategorized
 # Backpacks
 - type: loadout
+  id: LoadoutClothingBackpackSatchelBlueshieldOfficer
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBackpackSatchelBlueshield
+
+- type: loadout
+  id: LoadoutClothingBackpackDuffelBlueshieldOfficer
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerBackpacks
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBackpackDuffelBlueshield
+
+- type: loadout
   id: LoadoutClothingBackpackBlueshield
   category: JobsCommandBlueshieldOfficer
   cost: 0
@@ -11,7 +39,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-        - BlueshieldMaid
   items:
     - ClothingBackpackBlueshield
 
@@ -22,13 +49,15 @@
 # Equipment
 - type: loadout
   id: LoadoutMartialArtsBlueshieldCQC
-  category: JobsCommandBlueshieldOfficer
-  cost: 10
+  category: JobsSecurityWeapons
+  cost: 8
   exclusive: true
   requirements:
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
+        #kitty doesnt go brr.
+        #- BlueshieldMaid
   items:
     - BSOManual
 
@@ -56,7 +85,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-        - BlueshieldMaid
   items:
     - ClothingBlueshieldArmoredJacket
 
@@ -71,9 +99,36 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-        - BlueshieldMaid
   items:
     - ClothingBlueshieldArmoredCowboyJacket
+
+- type: loadout
+  id: LoadoutClothingBlueshieldOfficerArmorVest
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingBlueshieldArmourVest
+
+- type: loadout
+  id: LoadoutClothingBlueshieldOfficerDuraVest
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutBlueshieldOfficerVests
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+  items:
+    - ClothingOuterArmorDuraVest
 
 # Shoes
 
@@ -89,7 +144,6 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-        - BlueshieldMaid
   items:
     - ClothingUniformJumpskirtBlueshieldOfficer
 
@@ -104,6 +158,5 @@
     - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
-        - BlueshieldMaid
   items:
     - ClothingUniformJumpsuitBlueshieldOfficer

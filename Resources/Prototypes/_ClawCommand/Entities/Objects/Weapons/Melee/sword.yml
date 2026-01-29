@@ -1,0 +1,85 @@
+- type: entity
+  name: stun wakizashi
+  parent: BaseItem
+  id: WakizashiStun
+  description: A short, blunt sword of plasteel construction, modified with an electric field for incapacitation.
+  components:
+  - type: Tag
+    tags:
+    - Katana
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Weapons/Melee/stunwakizashi.rsi
+    layers:
+    - state: stunbaton_off
+      map: [ "enum.ToggleVisuals.Layer" ]
+  - type: Item
+    heldPrefix: off
+    size: Normal
+  - type: Stunbaton
+    energyPerUse: 50
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      collection: sparks
+      params:
+        variation: 0.250
+    soundDeactivate:
+      collection: sparks
+      params:
+        variation: 0.250
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+      params:
+        variation: 0.250
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types:
+        Blunt: 0
+  - type: ItemToggleDamageOtherOnHit
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 7
+    bluntStaminaDamageFactor: 2.5
+    heavyRateModifier: 0.75
+    heavyDamageBaseModifier: 1.75
+    heavyStaminaCost: 1
+    animation: WeaponArcSlash
+  - type: DamageOtherOnHit
+  - type: StaminaDamageOnHit
+    damage: 35
+    sound: /Audio/Weapons/egloves.ogg
+  - type: StaminaDamageOnCollide
+    damage: 35
+    sound: /Audio/Weapons/egloves.ogg
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: DisarmMalus
+    malus: 0.225
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+     enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: {state: stunbaton_on}
+          False: {state: stunbaton_off}
+  - type: SolutionContainerManager
+    solutions:
+      battery:
+        maxVol: 5
+  - type: InjectableSolution
+    solution: battery
+  - type: DrawableSolution
+    solution: battery
+  - type: Explosive
+    explosionType: Default
+    intensitySlope: 1.5
+    maxIntensity: 200
+  - type: GuideHelp
+    guides:
+    - Security
+  - type: MartialArtBlocked # Goobstation - Martial Arts
+    form: CorporateJudo # Goobstation - Martial Arts
+

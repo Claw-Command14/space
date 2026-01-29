@@ -294,7 +294,7 @@
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconScience
-  suffix: Epistemics #Delta V - Renamed
+  suffix: Science #Delta V - Renamed
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-epistemics #Delta V - Renamed
@@ -351,7 +351,7 @@
 - type: entity
   parent: DefaultStationBeacon
   id: DefaultStationBeaconSupply
-  suffix: Logistics #Delta V - Renamed
+  suffix: Cargo #Delta V - Renamed
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-logistics #Delta V - Renamed
@@ -360,7 +360,7 @@
 - type: entity
   parent: DefaultStationBeaconSupply
   id: DefaultStationBeaconCargoReception
-  suffix: Logistics Reception #Delta V - Renamed
+  suffix: Cargo Reception #Delta V - Renamed
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-logistics-reception #Delta V - Renamed

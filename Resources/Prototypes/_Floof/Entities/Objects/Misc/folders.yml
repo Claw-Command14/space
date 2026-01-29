@@ -32,7 +32,7 @@
 - type: entity
   id: BoxFolderEpistemics
   parent: BoxFolderBase
-  suffix: Epistemics
+  suffix: Science
   components:
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
@@ -92,7 +92,7 @@
 - type: entity
   id: BoxFolderLogistics
   parent: BoxFolderBase
-  suffix: Logistics
+  suffix: Cargo
   components:
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi

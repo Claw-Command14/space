@@ -26,9 +26,11 @@
   - External
   - Cryogenics
   - Maintenance
-  - Engineering
+  - Atmospherics
+  - Justice
   - Medical
   - Research
+  - Engineering
   - Command
   - CentralCommand
   - BlueshieldOfficer
@@ -49,7 +51,7 @@
     ears: ClothingHeadsetAltCommand
     gloves: ClothingHandsGlovesCombat
     id: BlueshieldPDA
-    outerClothing: ClothingOuterArmorDuraVest
+    #outerClothing: ClothingOuterArmorDuraVest
     #pocket1: UniqueBlueshieldOfficerLockerTeleporter
 
     #outerClothing: ClothingBlueshieldArmourVest

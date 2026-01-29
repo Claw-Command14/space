@@ -201,6 +201,9 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      # Goobstation - changelings
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
       enum.InstrumentUiKey.Key:
         type: InstrumentBoundUserInterface
         requireInputValidation: false
@@ -229,8 +232,8 @@
     price: 1500 # Kidnapping a living person and selling them for cred is a good move.
     deathPenalty: 0.01 # However they really ought to be living and intact, otherwise they're worth 100x less.
   - type: CanEscapeInventory # Carrying system from nyanotrasen.
-  - type: Vore # Floofstation - Vore
-    canVore: true
+  #- type: Vore # Floofstation - Vore
+  #  canVore: true
   - type: LanguageKnowledge # This is here so even if species doesn't have a defined language, they at least speak GC
     speaks:
     - TauCetiBasic
@@ -243,6 +246,8 @@
     - DoorBumpOpener
   - type: Targeting
   - type: SurgeryTarget
+  - type: MovedByPressure
+    cutoffTime: 1.0
   - type: FootPrints
   - type: Wagging
   - type: ModifyUndies  # FLOOF Add
@@ -259,6 +264,7 @@
   abstract: true
   components:
   - type: Flashable
+  - type: Absorbable # Goobstation - changelings
   - type: Barotrauma
     damage:
       types:
@@ -420,6 +426,7 @@
   - type: Body
     prototype: Human
     requiredLegs: 2
+  - type: Absorbable # Goobstation - changelings
   - type: UserInterface
     interfaces:
       enum.HumanoidMarkingModifierKey.Key: # sure, this can go here too

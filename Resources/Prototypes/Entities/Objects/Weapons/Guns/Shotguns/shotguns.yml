@@ -9,9 +9,10 @@
     layers:
     - state: icon
       map: [ "enum.GunVisualLayers.Base" ]
-  - type: Item
-    # If you update this also update the bulldog's size.
+  - type: Item # Floof - Gun Shape Refactor
     size: Large
+    shape:
+    - 0,0,4,1
   - type: Clothing
     sprite: DeltaV/Objects/Weapons/Guns/Shotguns/db_shotgun.rsi # Delta-V
     quickEquip: false
@@ -77,8 +78,10 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Item
+  - type: Item # Floof - Gun Shape Refactor
     size: Large
+    shape:
+    - 0,0,4,1
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
     quickEquip: false
@@ -295,9 +298,11 @@
   id: WeaponShotgunHandmade
   description: Looks unreliable. Uses .50 shotgun shells.
   components:
-  - type: Item
+  - type: Item # Floof - Gun Shape Refactor
     size: Small
-    storedRotation: 90
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/hm_pistol.rsi
   - type: Clothing

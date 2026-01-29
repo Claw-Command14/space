@@ -26,23 +26,23 @@
           Piercing: 0.8
           Heat: 0.8
         flatReductions:
-          Blunt: 1
-          Slash: 1
-          Piercing: 1
-          Heat: 1
+          Blunt: 2
+          Slash: 2
+          Piercing: 2
+          Heat: 2
     - type: Damageable
       damageContainer: Shield
     - type: Destructible
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 80
+            damage: 120
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
         - trigger:
             !type:DamageTrigger
-            damage: 40 #This is probably enough damage before it breaks
+            damage: 70 #This is probably enough damage before it breaks
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
@@ -89,7 +89,7 @@
         coefficients:
           Heat: 0.7
         flatReductions:
-          Heat: 2
+          Heat: 3
 
 - type: entity
   name: riot bullet shield
@@ -111,8 +111,8 @@
           Blunt: 0.7
           Piercing: 0.7
         flatReductions:
-          Blunt: 1.5
-          Piercing: 1.5
+          Blunt: 2.5
+          Piercing: 2.5
 
 #Craftable shields
 
@@ -469,7 +469,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 100
+            damage: 120
           behaviors:
             - !type:DoActsBehavior
               acts: [ "Destruction" ]

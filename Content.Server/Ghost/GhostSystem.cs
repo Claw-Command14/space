@@ -24,6 +24,8 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Server.Administration.Managers;
+using Content.Shared.Administration;
 
 namespace Content.Server.Ghost
 {
@@ -44,6 +46,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly TransformSystem _transformSystem = default!;
         [Dependency] private readonly VisibilitySystem _visibilitySystem = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
+        [Dependency] private readonly IAdminManager _adminManager = default!;
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -242,7 +245,7 @@ namespace Content.Server.Ghost
 
         private void OnGhostReturnToBodyRequest(GhostReturnToBodyRequest msg, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is not {Valid: true} attached
+            if (args.SenderSession.AttachedEntity is not { Valid: true } attached
                 || !_ghostQuery.TryComp(attached, out var ghost)
                 || !ghost.CanReturnToBody
                 || !TryComp(attached, out ActorComponent? actor))
@@ -258,7 +261,7 @@ namespace Content.Server.Ghost
 
         private void OnGhostWarpsRequest(GhostWarpsRequestEvent msg, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is not {Valid: true} entity
+            if (args.SenderSession.AttachedEntity is not { Valid: true } entity
                 || !_ghostQuery.HasComp(entity))
             {
                 Log.Warning($"User {args.SenderSession.Name} sent a {nameof(GhostWarpsRequestEvent)} without being a ghost.");
@@ -271,7 +274,7 @@ namespace Content.Server.Ghost
 
         private void OnGhostWarpToTargetRequest(GhostWarpToTargetRequestEvent msg, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is not {Valid: true} attached
+            if (args.SenderSession.AttachedEntity is not { Valid: true } attached
                 || !_ghostQuery.HasComp(attached))
             {
                 Log.Warning($"User {args.SenderSession.Name} tried to warp to {msg.Target} without being a ghost.");
@@ -291,14 +294,14 @@ namespace Content.Server.Ghost
 
         private void OnGhostnadoRequest(GhostnadoRequestEvent msg, EntitySessionEventArgs args)
         {
-            if (args.SenderSession.AttachedEntity is not {} uid
+            if (args.SenderSession.AttachedEntity is not { } uid
                 || !_ghostQuery.HasComp(uid))
             {
                 Log.Warning($"User {args.SenderSession.Name} tried to ghostnado without being a ghost.");
                 return;
             }
 
-            if (_followerSystem.GetMostFollowed() is not {} target)
+            if (_followerSystem.GetMostFollowed() is not { } target)
                 return;
 
             WarpTo(uid, target);
@@ -333,7 +336,7 @@ namespace Content.Server.Ghost
         {
             foreach (var player in _playerManager.Sessions)
             {
-                if (player.AttachedEntity is not {Valid: true} attached)
+                if (player.AttachedEntity is not { Valid: true } attached)
                     continue;
 
                 if (attached == except) continue;
@@ -439,9 +442,20 @@ namespace Content.Server.Ghost
                 _minds.TransferTo(mind.Owner, null, createGhost: false, mind: mind.Comp);
                 return null;
             }
+            var ghostPrototype = GameTicker.ObserverPrototypeName;
 
-            var ghost = SpawnAtPosition(GameTicker.ObserverPrototypeName, spawnPosition.Value);
+            if (mind.Comp.CurrentEntity is not null)
+            {
+
+                if (_adminManager.HasAdminFlag(mind.Comp.CurrentEntity.Value, AdminFlags.VIP))
+                {
+                    ghostPrototype = "MobObserverVip";
+                }
+            }
+
+            var ghost = SpawnAtPosition(ghostPrototype, spawnPosition.Value);
             var ghostComponent = Comp<GhostComponent>(ghost);
+
 
             // Try setting the ghost entity name to either the character name or the player name.
             // If all else fails, it'll default to the default entity prototype name, "observer".
@@ -463,6 +477,7 @@ namespace Content.Server.Ghost
             else
                 _minds.TransferTo(mind.Owner, ghost, mind: mind.Comp);
             Log.Debug($"Spawned ghost \"{ToPrettyString(ghost)}\" for {mind.Comp.CharacterName}.");
+
             return ghost;
         }
     }

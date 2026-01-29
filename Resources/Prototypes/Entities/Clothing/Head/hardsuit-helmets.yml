@@ -233,6 +233,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Brigmedic Hardsuit
 - type: entity
@@ -301,6 +303,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Chief Engineer's Hardsuit
 - type: entity
@@ -319,6 +323,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -337,6 +343,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Research Director's Hardsuit
 - type: entity
@@ -355,6 +363,8 @@
   - type: PressureProtection
     highPressureMultiplier: 0.60
     lowPressureMultiplier: 1000
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Head of Security's hardsuit
 - type: entity
@@ -380,6 +390,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Luxury Mining Hardsuit
 - type: entity
@@ -399,6 +411,8 @@
   - type: PointLight
     radius: 7
     energy: 3
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #ANTAG HARDSUITS
 #Blood-red Hardsuit
@@ -664,6 +678,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #ERT Medical Hardsuit
 - type: entity
@@ -679,6 +695,8 @@
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertmedical.rsi
   - type: PointLight
     color: "#adffec"
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #ERT Security Hardsuit
 - type: entity
@@ -701,6 +719,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #ERT Janitor Hardsuit
 - type: entity
@@ -716,6 +736,8 @@
     sprite: Clothing/Head/Hardsuits/ERThelmets/ertjanitor.rsi
   - type: PointLight
     color: "#cbadff"
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #CBURN Hardsuit
 - type: entity
@@ -755,6 +777,8 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #Deathsquad Hardsuit
 - type: entity
@@ -784,6 +808,8 @@
     isEquipment: true
     color: "#98EEFB"
     lightRadius: 15
+  - type: FlashImmunity # Goobstation
+  - type: FlashSoundSuppression # Goobstation
 
 #MISC. HARDSUITS
 #Clown Hardsuit

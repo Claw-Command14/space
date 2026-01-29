@@ -174,8 +174,8 @@
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
     offset: 0, 0.2
-  - type: Vore
-    canVore: true
+  #- type: Vore
+  #  canVore: true
 
 - type: palette
   id: ScugCatColors

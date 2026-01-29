@@ -5,9 +5,8 @@
   description: job-description-station-ai
   playTimeTracker: JobStationAi
   requirements:
-  - !type:CharacterPlaytimeRequirement
-    tracker: JobBorg
-    min: 4500  # 1.25 hrs
+  - !type:CharacterOverallTimeRequirement
+      min: 9900
   canBeAntag: false
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
@@ -24,8 +23,40 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 3600 #1 hr
+      min: 8800
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
   jobEntity: PlayerBorgGeneric
+
+- type: job
+  id: SecurityQuadBorg
+  name: job-name-security-quadborg
+  description: job-description-borg
+  playTimeTracker: JobSecurityQuadBorg
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 8800
+    - !type:DepartmentTimeRequirement
+      department: Security
+      min: 3600 #1 hrs floof
+  canBeAntag: false
+  icon: JobIconBorg
+  supervisors: job-supervisors-hos
+  jobEntity: PlayerBorgQuadsec
+
+- type: job
+  id: SalvageQuadBorg
+  name: job-name-salvage-quadborg
+  description: job-description-borg
+  playTimeTracker: JobSalvageQuadBorg
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 8800 #1 hr
+    - !type:DepartmentTimeRequirement
+      department: Logistics
+      min: 3600 #1 hrs floof
+  canBeAntag: false
+  icon: JobIconBorg
+  supervisors: job-supervisors-qm
+  jobEntity: PlayerBorgQuadsalvage

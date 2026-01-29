@@ -8,6 +8,7 @@
   - SalvageSpecialist
   - MailCarrier # Nyanotrasen - MailCarrier, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Cargo/mail-carrier.yml
   - InventorySpecialist #Floof, see Resources/Prototypes/Floof/Roles/Jobs/Cargo/inventory_specialist.yml
+  - SalvageQuadBorg # Claw Command
 
 - type: department
   id: Civilian
@@ -119,6 +120,7 @@
   - Warden
   - PrisonGuard # Nyanotrasen - PrisonGuard, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Security/prisonguard.yml
   - Brigmedic # DeltaV - Brigmedic, see Resources/Prototypes/DeltaV/Roles/Jobs/Security/brigmedic.yml
+  - SecurityQuadBorg # Claw Command
 
 - type: department
   id: Epistemics # DeltaV - Epistemics Department replacing Science

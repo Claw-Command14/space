@@ -6,8 +6,10 @@
 
   components:
   - type: Sprite
-    sprite: _ClawCommand/Objects/Fun/plushies.rsi
+    sprite: _ClawCommand/Objects/Fun/steele_plushie.rsi
     state: steele
+  - type: Item
+    heldPrefix: steele
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnUse
@@ -32,7 +34,7 @@
 
 - type: entity
   parent: BasePlushie
-  id: mattew_plushie
+  id: PlushieMattew
   name: Mattew Chief plushie
   description:  A much more pettable version of Mattew Chief. It seems like it had ruff day.
   components:
@@ -41,11 +43,14 @@
     state: mattew-plushie
   - type: Item
     heldPrefix: mattew
+  - type: UseDelay
+    delay: 3.0
   - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Misc/gamma.ogg
+  - type: EmitSoundOnLand
     sound: &PlushieVulpSound
       path: /Audio/DeltaV/Voice/Vulpkanin/dog_snarl2.ogg
-  - type: EmitSoundOnLand
-    sound: *PlushieVulpSound
   - type: EmitSoundOnActivate
     sound: *PlushieVulpSound
   - type: EmitSoundOnTrigger
@@ -58,18 +63,22 @@
 
 - type: entity
   parent: BasePlushie
-  id: stefanie_plushie
+  id: PlushieStefanie
   name: Stefanie plushie
   description:  This plushie seems... evil. You have no clue why.
   components:
   - type: Sprite
-    sprite: _ClawCommand/Objects/Fun/plushies.rsi
-    state: stefanie
+    sprite: _ClawCommand/Objects/Fun/stefanie_plushie.rsi
+    state: stefanie-plushie
+  - type: Item
+    heldPrefix: stefanie
   - type: UseDelay
-    delay: 3.0
+    delay: 5.0
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Misc/invisible_start.ogg
+      params:
+        volume: -8
   - type: EmitSoundOnLand
     sound:
       path: /Audio/DeltaV/Voice/Vulpkanin/dog_bark1.ogg

@@ -26,7 +26,7 @@
     whitelist:
       tags:
       - NukeOpsUplink
-        
+
 # Martial Arts
 - type: listing
   id: UplinkCQCManual
@@ -60,3 +60,13 @@
     - !type:BuyerSpeciesCondition
       blacklist:
         - Oni
+
+- type: listing
+  id: UplinkHoloCigar
+  name: uplink-holo-cigar-name
+  description: uplink-holo-cigar-desc
+  productEntity: HoloCigar
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkWearables

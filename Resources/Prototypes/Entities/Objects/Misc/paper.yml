@@ -368,6 +368,48 @@
     damage:
       types:
         Piercing: 3
+  # Floof: make pens clicky
+  # TODO: make this toggle writeable state
+  - type: EmitSoundOnUse
+    sound:
+      collection: PenClick
+  - type: UseDelay
+    delay: 0.5
+
+- type: entity
+  id: BaseAdvancedPen
+  # Goobstation - Return pen embeddability
+  parent: PenEmbeddable
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Write
+    - WriteIgnoreStamps
+    - Pickaxe
+    - Pen
+  - type: MeleeWeapon
+    wideAnimationRotation: -45
+    damage:
+      types:
+        Piercing: 15
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Tool
+    qualities:
+    - Screwing
+    useSound:
+      collection: Screwdriver
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 20 # Goobstation - ow
+  - type: EmitSoundOnUse
+    sound:
+      collection: PenClick
+  - type: UseDelay
+    delay: 0.5
+
 
 - type: entity
   parent: Pen

@@ -36,6 +36,8 @@ namespace Content.Shared.DrawDepth
         /// </summary>
         FloorObjects = DrawDepthTag.Default - 5,
 
+        BlobTiles = DrawDepthTag.Default - 4, // Goobstation - Blob
+
         DeadMobs = DrawDepthTag.Default - 4,
 
         /// <summary>
@@ -74,8 +76,13 @@ namespace Content.Shared.DrawDepth
         /// </summary>
         Items = DrawDepthTag.Default + 3,
 
+        /// <summary>
+        /// Stuff that should be drawn below mobs, but on top of items. Like muzzle flash.
+        /// </summary>
+        BelowMobs = DrawDepthTag.Default + 4,
+
         Mobs = DrawDepthTag.Default + 4,
-		
+
         OverMobs = DrawDepthTag.Default + 5,
 
         Doors = DrawDepthTag.Default + 6,

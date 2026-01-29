@@ -8313,3 +8313,435 @@ Entries:
   id: 885
   time: '2025-10-21T18:08:37.0000000+00:00'
   url: https://github.com/Floof-Station/Floof-Station/pull/1486
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: Pirate hat and coat are now available in the loadout (YARR!)
+  id: 886
+  time: '2025-10-29T11:36:54.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1382
+- author: ashkitten
+  changes:
+    - type: Fix
+      message: >-
+        Shaders will no longer fail to compile and crash the game on certain
+        system configurations.
+    - type: Fix
+      message: Hunger is now properly copied to Kitsune polymorph.
+    - type: Fix
+      message: >-
+        Doors are no longer blocked by intangible hitboxes like the portable
+        flasher.
+  id: 887
+  time: '2025-11-10T18:09:13.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1520
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Nerfed some of the new artifact effects.
+  id: 888
+  time: '2025-11-10T18:10:28.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1525
+- author: jack-thedragon95
+  changes:
+    - type: Fix
+      message: vox displacement maps now appear in game
+  id: 889
+  time: '2025-11-10T18:18:12.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1501
+- author: PubliclyExecutedPig
+  changes:
+    - type: Tweak
+      message: Reworked Asterisk Station's brig!
+  id: 890
+  time: '2025-11-11T17:41:37.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1504
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Submarine now has a full Justice department, better dorms & holopads.
+        See discord for the rest.
+  id: 891
+  time: '2025-11-11T23:24:42.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1485
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Tweaked more knives and swords to do more surgery things.
+  id: 892
+  time: '2025-11-12T14:31:12.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1522
+- author: Gaybritishcow
+  changes:
+    - type: Add
+      message: Added Ghee to Chefvend
+    - type: Add
+      message: Added Hotcross Bun & Meat Bun recipes.
+  id: 893
+  time: '2025-11-12T14:31:58.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1517
+- author: Raikyr0
+  changes:
+    - type: Remove
+      message: Removed extra winter boots from the medidrobe contraband list.
+  id: 894
+  time: '2025-11-12T14:32:41.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1511
+- author: ashkitten
+  changes:
+    - type: Add
+      message: Pens are clicky now.
+  id: 895
+  time: '2025-11-12T14:33:18.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1512
+- author: Dogbone10
+  changes:
+    - type: Tweak
+      message: Moths can now eat pills
+  id: 896
+  time: '2025-11-12T14:34:00.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1513
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: Fixed a bunch of coats to properly be resistant to the cold
+  id: 897
+  time: '2025-11-12T14:36:36.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1502
+- author: ItsDzordz
+  changes:
+    - type: Add
+      message: Added 2 new plushies
+  id: 898
+  time: '2025-11-12T14:37:56.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1491
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Fixed lotophagoi oil localization.
+  id: 899
+  time: '2025-11-12T14:38:51.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1497
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: You can now properly deconstruct bar counters.
+  id: 900
+  time: '2025-11-12T14:35:04.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1509
+- author: jack-thedragon95
+  changes:
+    - type: Add
+      message: ADDS VOX MASKS! GLORY TO THE SHOAL!
+  id: 901
+  time: '2025-11-12T14:47:21.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1474
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: >-
+        Added a medical breath mask to the Surgery bag. No more scrambling
+        around looking for one.
+  id: 902
+  time: '2025-11-12T14:35:49.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1510
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: >-
+        You ever want to shoot like an Oni? Yeah, me neither but I turned it
+        into a trait you can take.
+  id: 903
+  time: '2025-11-12T15:12:29.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1461
+- author: sprkl
+  changes:
+    - type: Add
+      message: More languages are now available to learn
+  id: 904
+  time: '2025-11-12T15:17:25.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1464
+- author: JFerrix
+  changes:
+    - type: Add
+      message: Added displacement map for arachne
+    - type: Tweak
+      message: Updated arachne prototype to work with the new map
+    - type: Fix
+      message: Fixed horrible arachne texture hirarchy and naming convention
+  id: 905
+  time: '2025-11-12T17:34:16.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1508
+- author: Jazun
+  changes:
+    - type: Add
+      message: Added a sound for blinking
+  id: 906
+  time: '2025-11-12T17:53:17.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1528
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: 'Re-add vapes to the shady cigs vendor. '
+  id: 907
+  time: '2025-11-14T11:51:58.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1530
+- author: KyuPolaris
+  changes:
+    - type: Add
+      message: Added 15 new plushies of various goobers that call this sector home
+  id: 908
+  time: '2025-11-15T17:58:59.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1500
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: IPC are a little more resistant to being air fried.
+  id: 909
+  time: '2025-11-15T18:00:15.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1498
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: A magician never reveals their secrets.
+    - type: Tweak
+      message: Magician's tophat has a little more space, fits atleast 1 Andy Stall.
+  id: 910
+  time: '2025-11-15T18:03:26.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1493
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Changes Gun Storage Sizes
+  id: 911
+  time: '2025-11-15T18:05:17.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1470
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Ported the weather cycle system from Vulpstation. Glacier, Asterisk, and
+        Train will now have a varying weather cycle: sometimes it will be warm,
+        sometimes cold, sometimes it will rain, and more.
+    - type: Fix
+      message: >-
+        Weather occlusion is now correctly calculated: standing outdoors will
+        make weather sounds louder, standing indoors will make them quieter.
+  id: 912
+  time: '2025-11-15T18:07:49.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1478
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Loadouts and traits UI has been remade from scratch, fixing an
+        uncountable amount of bugs. This also means that the game will no longer
+        freeze for 5-20 seconds during startup.
+    - type: Fix
+      message: >-
+        If you have multiple conflicting loadouts (e.g. multiple survival boxes
+        for different jobs), only one of them will spawn in (the one that passes
+        the requirements). This means that you no longer have to create separate
+        characters just to have survival boxes on all jobs, etc.
+  id: 913
+  time: '2025-11-15T18:16:46.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1518
+- author: Arbitrated
+  changes:
+    - type: Tweak
+      message: >-
+        Radstation has been updated. The changes include the addition of a fully
+        functional mailing and disposal systems. See PR#1521 for more info.
+  id: 914
+  time: '2025-11-15T19:59:23.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1521
+- author: WhiteLightningTwister
+  changes:
+    - type: Add
+      message: Added a bunch of new grids that admins can use.
+    - type: Tweak
+      message: Central Command 2.0
+    - type: Remove
+      message: outdated ships.
+  id: 915
+  time: '2025-11-16T00:00:43.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1443
+- author: WhiteLightningTwister
+  changes:
+    - type: Add
+      message: quadborg spawn points, to certain maps.
+    - type: Tweak
+      message: Made adjustments to saltern & shoukou.
+    - type: Remove
+      message: Removed surplus crates from LPO.
+  id: 916
+  time: '2025-11-16T19:49:04.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1539
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Added Getaway the Floof Sectors first leisure station for play testing.
+  id: 917
+  time: '2025-11-16T20:19:09.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1514
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        The trait selections counter no longer shows the same max value as the
+        trait points counter, the loadouts ui now correctly fetches your
+        playtimes when checking if a loadout is usable, and the server now
+        correctly keeps track of trait slots.
+  id: 918
+  time: '2025-11-16T23:47:18.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1542
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        N14 tiles will no longer show wasteland when pried up and will no longer
+        have weather effects on them.
+  id: 919
+  time: '2025-11-17T20:22:18.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1548
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Epistemics can now research the cloning pod as a tier 3 experimental
+        technology, with a relatively low softcap multiplier.
+  id: 920
+  time: '2025-11-24T06:06:10.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1562
+- author: HR Department
+  changes:
+    - type: Add
+      message: >-
+        HR was contacted over this issue, we've added a whole ass filled
+        Nitrogen Tank for Vox to take in the loadout. This was just hindsight,
+        the Vox will not be suing us over this.
+  id: 921
+  time: '2025-11-27T17:06:17.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1566
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Lighthouse now has a full Justice department, better dorms & holopads.
+        See discord for the rest.
+  id: 922
+  time: '2025-11-29T00:21:03.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1553
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Added Borg, Medical Borg, Service Quad Borg and Medical Quad Borg slots
+        to most maps.
+    - type: Tweak
+      message: Small tweaks to a few of the maps.
+  id: 923
+  time: '2025-11-29T01:06:26.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1559
+- author: WhiteLightningTwister
+  changes:
+    - type: Add
+      message: Added Captains Office & Cyorpods to CC.
+    - type: Tweak
+      message: Made map & evac ship adjustment
+  id: 924
+  time: '2025-11-29T16:08:54.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1558
+- author: Dogbone10
+  changes:
+    - type: Add
+      message: >-
+        Dragons and Raptors now have player-ready variants. Ask an admin for
+        one!
+    - type: Tweak
+      message: Adjusted Dragon and Laser Raptor bodyparts.
+    - type: Fix
+      message: Fix Librarian PDA's ID light and flashlight overlays.
+  id: 925
+  time: '2025-11-23T03:24:49.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1465
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Fixed the issue where positive traits preceding negative ones could fail
+        to apply due to locally insufficient trait balance. This is all
+        shitcode.
+    - type: Add
+      message: >-
+        There is now a "sorting mode" toggle in the loadouts that lets you
+        change how options are sorted.
+  id: 926
+  time: '2025-11-23T03:51:48.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1549
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        The "get up automatically" setting should now work as expected. Also, if
+        you are already laying down (e.g. in a bed), you won't be forced to get
+        up after getting stunned, regardless of this setting.
+  id: 927
+  time: '2025-11-23T03:51:10.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1551
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: The big diamond lie has been unveiled.
+  id: 928
+  time: '2025-11-23T03:53:04.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1550
+- author: router
+  changes:
+    - type: Add
+      message: Ported Resomi laughs from RMC14.
+  id: 929
+  time: '2025-11-24T02:23:44.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1492
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added Magic Candles Box to Loadout
+  id: 930
+  time: '2025-11-23T04:15:24.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1532
+- author: KyuPolaris
+  changes:
+    - type: Fix
+      message: Fixed comms consoles not showing job role in announcement
+  id: 931
+  time: '2025-11-23T04:17:51.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1557
+- author: PubliclyExecutedPig
+  changes:
+    - type: Tweak
+      message: Tweaked Kettle's Permabrig
+  id: 932
+  time: '2025-11-23T04:37:44.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1547
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: detective vulps plush texture
+    - type: Add
+      message: prize counter recipe for plush
+    - type: Add
+      message: detective vulps to plush spawner
+  id: 933
+  time: '2025-11-23T04:15:44.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1540
+- author: >-
+    Individual that does not exist whose sole purpose is to push a test
+    changelog entry and to stress test the workflow in question
+  changes:
+    - type: Tweak
+      message: Test entry. Please ignore.
+  id: 934
+  time: '2025-12-12T03:23:13.0000000+00:00'
+  url: https://github.com/Floof-Station/Floof-Station/pull/1569

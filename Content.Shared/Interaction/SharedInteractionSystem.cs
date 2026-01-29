@@ -164,7 +164,7 @@ namespace Content.Shared.Interaction
             if (!_actionBlockerSystem.CanInteract(ev.Actor, ev.Target))
             {
                 // We permit ghosts to open uis unless explicitly blocked
-                if (ev.Message is not OpenBoundInterfaceMessage || !HasComp<GhostComponent>(ev.Actor) || uiComp?.BlockSpectators == true)
+                if (ev.Message is not OpenBoundInterfaceMessage || !HasComp<GhostComponent>(ev.Actor) || uiComp?.BlockSpectators == true || _tagSystem.HasTag(ev.Actor, "CantInteract")) // Shitmed Change
                 {
                     ev.Cancel();
                     return;
@@ -1168,7 +1168,7 @@ namespace Content.Shared.Interaction
                 return false;
 
             // Goobstation [
-            var useAttemptEv = new UseInHandAttemptEvent(user); 
+            var useAttemptEv = new UseInHandAttemptEvent(user);
             RaiseLocalEvent(used, useAttemptEv);
 
             if (useAttemptEv.Cancelled)
@@ -1371,7 +1371,7 @@ namespace Content.Shared.Interaction
                 return;
 
             if (!TryComp(uidB, out MetaDataComponent? metaB) || metaB.EntityPaused)
-                return ;
+                return;
 
             // TODO Struct event
             var ev = new ContactInteractionEvent(uidB.Value);

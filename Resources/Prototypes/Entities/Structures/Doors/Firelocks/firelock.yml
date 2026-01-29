@@ -81,6 +81,8 @@
         path: /Audio/Machines/airlock_deny.ogg
       openingAnimationTime: 0.6
       closingAnimationTime: 0.6
+      #claw command
+      pryedBlocksAtmos: true
     - type: Weldable
       fuel: 5
       time: 3

@@ -13,6 +13,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Maths; // Shitmed Change
 
 namespace Content.Shared.Movement.Systems
 {
@@ -92,7 +93,13 @@ namespace Content.Shared.Movement.Systems
 
             // Relay the fact we had any movement event.
             // TODO: Ideally we'd do these in a tick instead of out of sim.
-            var moveEvent = new MoveInputEvent(component.Owner, component, component.HeldMoveButtons);
+            // Shitmed Change Start
+            Vector2 vector2 = DirVecForButtons(buttons);
+            Vector2i vector2i = new Vector2i((int) vector2.X, (int) vector2.Y);
+            Direction dir = (vector2i == Vector2i.Zero) ? Direction.Invalid : vector2i.AsDirection();
+            var moveEvent = new MoveInputEvent(component.Owner, component, component.HeldMoveButtons, dir, buttons != 0);
+
+            // Shitmed Change End
             component.HeldMoveButtons = buttons;
             RaiseLocalEvent(component.Owner, ref moveEvent);
             Dirty(component.Owner, component);
@@ -117,10 +124,14 @@ namespace Content.Shared.Movement.Systems
             // Reset
             component.LastInputTick = GameTick.Zero;
             component.LastInputSubTick = 0;
-
+            // Shitmed Change Start
+            Vector2 vector2 = DirVecForButtons(component.HeldMoveButtons);
+            Vector2i vector2i = new Vector2i((int) vector2.X, (int) vector2.Y);
+            Direction dir = (vector2i == Vector2i.Zero) ? Direction.Invalid : vector2i.AsDirection();
+            // Shitmed Change End
             if (component.HeldMoveButtons != state.HeldMoveButtons)
             {
-                var moveEvent = new MoveInputEvent(uid, component, component.HeldMoveButtons);
+                var moveEvent = new MoveInputEvent(uid, component, component.HeldMoveButtons, dir, state.HeldMoveButtons != 0); // Shitmed Change
                 component.HeldMoveButtons = state.HeldMoveButtons;
                 RaiseLocalEvent(uid, ref moveEvent);
 
@@ -150,7 +161,7 @@ namespace Content.Shared.Movement.Systems
 
         public bool DiagonalMovementEnabled { get; private set; }
 
-        protected virtual void HandleShuttleInput(EntityUid uid, ShuttleButtons button, ushort subTick, bool state) {}
+        protected virtual void HandleShuttleInput(EntityUid uid, ShuttleButtons button, ushort subTick, bool state) { }
 
         private void OnAutoParentChange(EntityUid uid, AutoOrientComponent component, ref EntParentChangedMessage args)
         {
@@ -173,10 +184,17 @@ namespace Content.Shared.Movement.Systems
             {
                 return;
             }
+            // Shitmed Change Start
+            var xform = XformQuery.GetComponent(uid);
+            if (TryComp(uid, out RelayInputMoverComponent? relay)
+                 && TryComp(relay.RelayEntity, out TransformComponent? relayXform)
+                 && MoverQuery.TryGetComponent(relay.RelayEntity, out var relayMover))
+                xform = relayXform;
 
             // If we updated parent then cancel the accumulator and force it now.
-            if (!TryUpdateRelative(mover, XformQuery.GetComponent(uid)) && mover.TargetRelativeRotation.Equals(Angle.Zero))
+            if (!TryUpdateRelative(mover, xform) && mover.TargetRelativeRotation.Equals(Angle.Zero))
                 return;
+            // Shitmed Change End
 
             mover.LerpTarget = TimeSpan.Zero;
             mover.TargetRelativeRotation = Angle.Zero;
@@ -322,6 +340,12 @@ namespace Content.Shared.Movement.Systems
 
             if (!MoverQuery.TryGetComponent(entity, out var moverComp))
                 return;
+            // Shitmed Change Start
+            var moverEntity = new Entity<InputMoverComponent>(entity, moverComp);
+            var moveEvent = new MoveInputEvent(entity, moverEntity, moverComp.HeldMoveButtons, dir, state);
+
+            RaiseLocalEvent(entity, ref moveEvent);
+            // Shitmed Change End
 
             // For stuff like "Moving out of locker" or the likes
             // We'll relay a movement input to the parent.

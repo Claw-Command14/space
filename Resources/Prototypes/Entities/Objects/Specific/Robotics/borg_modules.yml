@@ -178,6 +178,7 @@
     - Wirecutter
     - Multitool
     - WelderIndustrial
+    - FlashlightSeclite
 
 # cargo modules
 - type: entity
@@ -301,6 +302,19 @@
     items:
     - RCDRecharging
 
+- type: entity
+  id: BorgModuleRPD
+  parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]
+  name: RPD cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: engineering
+    - state: icon-rpd
+  - type: ItemBorgModule
+    items:
+    - RPDRecharging
+
 # janitorial modules (this gets its own unique things because janis are epic)
 - type: entity
   id: BorgModuleLightReplacer
@@ -376,10 +390,10 @@
     - state: icon-treatment
   - type: ItemBorgModule
     items:
-    - Brutepack10Lingering
-    - Ointment10Lingering
-    - Gauze10Lingering
-    - Bloodpack10Lingering
+    - Brutepack
+    - Ointment
+    - Gauze
+    - Bloodpack
     - Syringe
     - Dropper
 

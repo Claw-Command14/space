@@ -70,3 +70,47 @@
       shader: unshaded
       map: ["light"]
       visible: false
+
+- type: entity
+  id: SpawnPointSecurityQuadborg
+  parent: SpawnPointJobBase
+  name: security quadborg
+  components:
+  - type: SpawnPoint
+    job_id: SecurityQuadBorg
+  - type: Sprite
+    sprite: _Floof/Mobs/Silicon/quad.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: quadspriteserv
+      map: ["movement"]
+    - state: quadspriteservl
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadspriteservr
+      shader: unshaded
+      map: ["light"]
+      visible: false
+
+- type: entity
+  id: SpawnPointSalvageQuadborg
+  parent: SpawnPointJobBase
+  name: salvage quadborg
+  components:
+  - type: SpawnPoint
+    job_id: SalvageQuadBorg
+  - type: Sprite
+    sprite: _Floof/Mobs/Silicon/quad.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: quadspritesalv
+      map: ["movement"]
+    - state: quadspritesalvl
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadspritesalvr
+      shader: unshaded
+      map: ["light"]
+      visible: false

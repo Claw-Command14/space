@@ -10,6 +10,7 @@ using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
+using Content.Server._ClawCommand.Bible.Components;
 
 namespace Content.Server.WhiteDream.BloodCult.Constructs.SoulShard;
 

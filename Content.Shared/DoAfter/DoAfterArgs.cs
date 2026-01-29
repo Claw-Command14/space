@@ -46,6 +46,9 @@ public sealed partial class DoAfterArgs
     [DataField]
     public bool Hidden;
 
+    /// Whether the delay multiplier event should be raised
+    [DataField]
+    public bool MultiplyDelay = true;
     #region Event options
     /// <summary>
     ///     The event that will get raised when the DoAfter has finished. If null, this will simply raise a <see cref="SimpleDoAfterEvent"/>
@@ -91,6 +94,13 @@ public sealed partial class DoAfterArgs
     [DataField("breakOnHandChange")]
     public bool BreakOnHandChange = true;
 
+    /// <summary>
+    ///     Whether the do-after should get interrupted if we drop the
+    ///     active item we started the do-after with
+    ///     This does nothing if <see cref="NeedHand"/> is false.
+    /// </summary>
+    [DataField]
+    public bool BreakOnDropItem = true;
     /// <summary>
     ///     If do_after stops when the user or target moves
     /// </summary>
@@ -248,6 +258,7 @@ public sealed partial class DoAfterArgs
         Broadcast = other.Broadcast;
         NeedHand = other.NeedHand;
         BreakOnHandChange = other.BreakOnHandChange;
+        BreakOnDropItem = other.BreakOnDropItem;
         BreakOnMove = other.BreakOnMove;
         BreakOnWeightlessMove = other.BreakOnWeightlessMove;
         MovementThreshold = other.MovementThreshold;
@@ -259,6 +270,8 @@ public sealed partial class DoAfterArgs
         BlockDuplicate = other.BlockDuplicate;
         CancelDuplicate = other.CancelDuplicate;
         DuplicateCondition = other.DuplicateCondition;
+
+        MultiplyDelay = other.MultiplyDelay; // Goobstation
 
         // Networked
         NetUser = other.NetUser;

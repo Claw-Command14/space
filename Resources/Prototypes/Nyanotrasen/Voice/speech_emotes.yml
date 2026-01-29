@@ -30,6 +30,7 @@
     - FelinidEmotes
     - HarpyEmotes
     - ShadowkinEmotes
+    - VulpEmotes
   blacklist:
     tags:
       - SiliconEmotes
@@ -49,6 +50,7 @@
   icon: Interface/Emotes/mew.png
   whitelist:
     tags:
+    - VulpEmotes
     - FelinidEmotes
     - HarpyEmotes
     - ShadowkinEmotes
@@ -89,6 +91,7 @@
   icon: Interface/Emotes/purr.png
   whitelist:
     tags:
+    - VulpEmotes
     - FelinidEmotes
     - HarpyEmotes
     - ShadowkinEmotes

@@ -31,19 +31,6 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
         [AtmosAlarmType.Danger] = "atmos-alerts-window-danger-state",
     };
 
-    private Dictionary<Gas, string> _gasShorthands = new Dictionary<Gas, string>()
-    {
-        [Gas.Ammonia] = "NH₃",
-        [Gas.CarbonDioxide] = "CO₂",
-        [Gas.Frezon] = "F",
-        [Gas.Nitrogen] = "N₂",
-        [Gas.NitrousOxide] = "N₂O",
-        [Gas.Oxygen] = "O₂",
-        [Gas.Plasma] = "P",
-        [Gas.Tritium] = "T",
-        [Gas.WaterVapor] = "H₂O",
-    };
-
     public AtmosAlarmEntryContainer(NetEntity uid, EntityCoordinates? coordinates)
     {
         RobustXamlLoader.Load(this);
@@ -109,18 +96,18 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
             if (focusData != null)
             {
                 // Update temperature
-                var tempK = (FixedPoint2)focusData.Value.TemperatureData.Item1;
-                var tempC = (FixedPoint2)TemperatureHelpers.KelvinToCelsius(tempK.Float());
+                var tempK = (FixedPoint2) focusData.Value.TemperatureData.Item1;
+                var tempC = (FixedPoint2) TemperatureHelpers.KelvinToCelsius(tempK.Float());
 
                 TemperatureLabel.Text = Loc.GetString("atmos-alerts-window-temperature-value", ("valueInC", tempC), ("valueInK", tempK));
                 TemperatureLabel.FontColorOverride = GetAlarmStateColor(focusData.Value.TemperatureData.Item2);
 
                 // Update pressure
-                PressureLabel.Text = Loc.GetString("atmos-alerts-window-pressure-value", ("value", (FixedPoint2)focusData.Value.PressureData.Item1));
+                PressureLabel.Text = Loc.GetString("atmos-alerts-window-pressure-value", ("value", (FixedPoint2) focusData.Value.PressureData.Item1));
                 PressureLabel.FontColorOverride = GetAlarmStateColor(focusData.Value.PressureData.Item2);
 
                 // Update oxygenation
-                var oxygenPercent = (FixedPoint2)0f;
+                var oxygenPercent = (FixedPoint2) 0f;
                 var oxygenAlert = AtmosAlarmType.Invalid;
 
                 if (focusData.Value.GasData.TryGetValue(Gas.Oxygen, out var oxygenData))
@@ -160,15 +147,12 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
                     // Add an entry for each gas
                     foreach ((var gas, (var mol, var percent, var alert)) in gasData)
                     {
-                        var gasPercent = (FixedPoint2)0f;
-                        gasPercent = percent * 100f;
-
-                        if (!_gasShorthands.TryGetValue(gas, out var gasShorthand))
-                            gasShorthand = "X";
+                        FixedPoint2 gasPercent = percent * 100f;
+                        var gasAbbreviation = Atmospherics.GasAbbreviations.GetValueOrDefault(gas, Loc.GetString("gas-unknown-abbreviation"));
 
                         var gasLabel = new Label()
                         {
-                            Text = Loc.GetString("atmos-alerts-window-other-gases-value", ("shorthand", gasShorthand), ("value", gasPercent)),
+                            Text = Loc.GetString("atmos-alerts-window-other-gases-value", ("shorthand", gasAbbreviation), ("value", gasPercent)),
                             FontOverride = normalFont,
                             FontColorOverride = GetAlarmStateColor(alert),
                             HorizontalAlignment = HAlignment.Center,

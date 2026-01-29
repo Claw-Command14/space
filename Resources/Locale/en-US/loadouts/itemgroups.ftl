@@ -92,8 +92,6 @@ character-item-group-LoadoutBlueshieldOfficerUniforms = Claw Command Officer Uni
 character-item-group-LoadoutBlueshieldMaidBackpacks = Claw Command Maid Backpacks
 character-item-group-LoadoutBlueshieldMaidVests = Claw Command Maid Vests
 character-item-group-LoadoutBlueshieldMaidUniforms = Claw Command Maid Uniforms
-character-item-group-LoadoutBlueshieldMaidWeapons = Claw Command Maid Weapons
-
 
 # Dignitary - Magistrate
 character-item-group-LoadoutMagistrateHead = Magistrate Headgear

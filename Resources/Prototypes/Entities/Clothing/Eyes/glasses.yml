@@ -258,6 +258,7 @@
   - type: NightVision
     isEquipment: true
   - type: VisionCorrection
+  - type: Unremoveable
 
 - type: entity #Fake goggles, the latest in anti-valid hunting technology
   parent: ClothingEyesBase

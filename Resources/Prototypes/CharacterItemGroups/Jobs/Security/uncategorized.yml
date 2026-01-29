@@ -139,6 +139,12 @@
       id: LoadoutSecurityWeaponEnergyShotgun
     - type: loadout # Floofstation - BSO Energy Revolver
       id: LoadoutSecurityEnergyRevolver
+    - type: loadout # Claw Command
+      id: LoadoutClothingBlueshieldMaidRevolver
+    - type: loadout # Claw Command
+      id: LoadoutClothingBlueshieldMaidKatanas
+    - type: loadout # Claw Command
+      id: LoadoutMartialArtsBlueshieldCQC
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
@@ -176,7 +182,7 @@
 #  maxItems: 1
 #  items:
 #
-- type: characterItemGroup 
+- type: characterItemGroup
   id: LoadoutSecurityNeck # Floof - M3739 - #988
   maxItems: 1
   items:

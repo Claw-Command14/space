@@ -4,8 +4,10 @@
   abstract: true
   components:
   - type: Sprite
-  - type: Item
-    size: Huge
+  - type: Item # Floof - Gun Shape Refactor
+    size: Large
+    shape:
+    - 0,0,4,1
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/laser_retro.rsi
     quickEquip: false
@@ -149,8 +151,11 @@
   parent: BaseWeaponPowerCell
   abstract: true
   components:
-  - type: Item
+  - type: Item # Floof - Gun Shape Refactor
     size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
   - type: Tag
     tags:
     - Sidearm
@@ -173,8 +178,11 @@
   name: svalinn laser pistol
   parent: BaseWeaponPowerCellSmall
   id: WeaponLaserSvalinn
-  description: A cheap and widely used laser pistol.
+  description: A cheap and widely used civilian-grade laser pistol.
   components:
+  - type: Tag
+    tags:
+    - WeaponLaserSvalinn
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
     layers:
@@ -418,6 +426,9 @@
   id: WeaponLaserCannon
   description: A heavy duty, high powered laser weapon.
   components:
+  - type: Tag
+    tags:
+    - TurretCompatibleWeapon
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
     layers:
@@ -572,8 +583,10 @@
   id: WeaponDisablerSMG
   description: Advanced weapon that exhausts organic targets, weakening them until they collapse.
   components:
-  - type: Item
+  - type: Item # Floof - Gun Shape Refactor
     size: Large
+    shape:
+    - 0,0,3,1
   - type: Tag
     tags:
       - Taser
@@ -675,7 +688,7 @@
     steps: 5
     zeroVisible: true
   - type: Appearance
-  
+
 - type: entity
   name: antique laser pistol
   parent: BaseWeaponBatterySmall
@@ -895,10 +908,10 @@
       fireCost: 200
     - proto: BulletDisablerSmgSpread
       fireCost: 120
-  - type: Item
+  - type: Item # Floof - Gun Shape Refactor
     size: Large
     shape:
-    - 0,0,3,1
+    - 0,0,4,1
     sprite: Objects/Weapons/Guns/Battery/inhands_64x.rsi
     heldPrefix: energy
   - type: Tag
@@ -947,10 +960,10 @@
       fireCost: 200
     - proto: BulletDisablerSmgSpread
       fireCost: 120
-  - type: Item
+  - type: Item # Floof - Gun Shape Refactor
     size: Large
     shape:
-    - 0,0,3,1
+    - 0,0,4,1
     sprite: Objects/Weapons/Guns/Battery/inhands_64x.rsi
     heldPrefix: energy
   - type: Tag

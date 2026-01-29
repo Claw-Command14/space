@@ -1,4 +1,4 @@
-job-supervisors-centcom = Central Command
+job-supervisors-centcom = Claw Command
 job-supervisors-captain = the captain
 job-supervisors-hop = the head of personnel
 job-supervisors-hos = the head of security
@@ -13,4 +13,3 @@ job-supervisors-security = security officers, the warden, and the head of securi
 job-supervisors-science = scientists, and the mystagogue
 job-supervisors-hire = whoever hires you
 job-supervisors-everyone = absolutely everyone
-job-supervisors-command = staff heads (command)

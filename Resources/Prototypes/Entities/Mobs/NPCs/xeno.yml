@@ -143,15 +143,16 @@
     - Xeno
     understands:
     - Xeno
-  - type: Vore # Floofstation - Vore
-    canVore: true
-    canBeVored: false
+  #- type: Vore # Floofstation - Vore
+  #  canVore: true
+  #  canBeVored: false
   - type: NightVision # Floof - M3739 - Originally came with ThermalVision. While acceptable at EE and Goob, Floof has stricter privacy standards. Same as Rat King.
     isActive: true
     toggleAction: null
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  - type: Absorbable
 
 - type: entity
   name: Praetorian
@@ -189,6 +190,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Absorbable
 
 - type: entity
   name: Drone
@@ -227,6 +229,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Absorbable
 
 - type: entity
   name: Queen
@@ -276,6 +279,7 @@
     understands:
     - TauCetiBasic
     - Xeno
+  - type: Absorbable
 
 - type: entity
   name: Ravager
@@ -314,6 +318,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Absorbable
 
 - type: entity
   name: Runner
@@ -345,6 +350,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Absorbable
 
 - type: entity
   name: Rouny
@@ -367,6 +373,7 @@
     spawned:
     - id: FoodMeatRouny
       amount: 3
+  - type: Absorbable
 
 - type: entity
   name: Spitter
@@ -414,6 +421,7 @@
         - MobMask
         layer:
         - MobLayer
+  - type: Absorbable
 
 - type: entity
   name: space adder
@@ -479,6 +487,7 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: Absorbable
 
 - type: entity
   name: space adder
@@ -503,3 +512,4 @@
         Base: dead_small_purple_snake
   - type: SolutionTransfer
     maxTransferAmount: 1
+  - type: Absorbable

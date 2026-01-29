@@ -313,6 +313,7 @@
   - type: InnatePsionicPowers
     powersToAdd:
       - TelepathyPower
+  - type: GhostTakeoverAvailable
 
 - type: entity
   name: Reagent Slime Spawner
@@ -339,7 +340,6 @@
         - ReagentSlimeNorepinephricAcid
         - ReagentSlimeEphedrine
         - ReagentSlimeRobustHarvest
-        - ReagentSlimeCum # Floofstation
         - ReagentSlimePomelustine # Floofstation
         - ReagentSlimePhilterex # Floofstation
         - ReagentSlimeLibidozenithizine # Floofstation
@@ -589,3 +589,4 @@
   - type: GhostRole
     prob: 1 #it's significantly more psionic than the others
     description: ghost-role-information-angry-slimes-description
+  - type: GhostTakeoverAvailable

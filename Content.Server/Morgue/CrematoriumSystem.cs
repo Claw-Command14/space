@@ -18,6 +18,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
+using Content.Shared._ClawCommand.CrematorImmune;
 
 namespace Content.Server.Morgue;
 
@@ -135,6 +136,10 @@ public sealed class CrematoriumSystem : EntitySystem
             for (var i = storage.Contents.ContainedEntities.Count - 1; i >= 0; i--)
             {
                 var item = storage.Contents.ContainedEntities[i];
+
+                if (HasComp<CrematoriumImmuneComponent>(item)) // GOOBCODE ALERT //
+                    continue;
+
                 _containers.Remove(item, storage.Contents);
                 EntityManager.DeleteEntity(item);
             }

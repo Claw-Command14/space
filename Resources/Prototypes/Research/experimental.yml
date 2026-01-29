@@ -30,6 +30,7 @@
   - BorgModuleAnomaly
   - APECircuitboard
   - AnomalyVesselCircuitboard
+  - DroneElectronics
   # Goobstation R&D Console rework start
   position: -2,0
   technologyPrerequisites:
@@ -69,7 +70,7 @@
   - TechDiskComputerCircuitboard
   - ReverseEngineeringMachineCircuitboard #DeltaV
   # Goobstation R&D Console rework start
-  position: -2,2
+  position: -1,-1
   technologyPrerequisites:
   - BasicRobotics
   # Goobstation R&D Console rework end
@@ -104,6 +105,7 @@
   cost: 10000
   recipeUnlocks:
   - WeaponGauntletGorilla
+  - BorgModuleGorillaGauntlet
   # Goobstation R&D Console rework start
   position: -3,1
   technologyPrerequisites:
@@ -202,7 +204,7 @@
     state: cloning_idle
   discipline: Experimental
   tier: 2
-  cost: 15000
+  cost: 10000
   recipeUnlocks:
     - BiomassReclaimerMachineCircuitboard
     - CloningConsoleComputerCircuitboard

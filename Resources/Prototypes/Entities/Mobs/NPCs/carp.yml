@@ -72,8 +72,11 @@
         - Carp
         - DoorBumpOpener
         - NoPaint
-    - type: ReplacementAccent
-      accent: genericAggressive
+    - type: LanguageKnowledge # Floof - Replaced genericAggressive accent with Draconic language
+      speaks:
+      - Kobold
+      understands:
+      - Kobold
     - type: Speech
       speechVerb: LargeMob
     - type: InteractionPopup
@@ -81,8 +84,8 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
-    - type: Vore # Floofstation - Vore
-      canVore: true
+    #- type: Vore # Floofstation - Vore
+    #  canVore: true
     - type: Body # Shitmed - Adds carp organs.
       prototype: Carp
     - type: SurgeryTarget
@@ -96,6 +99,7 @@
       color: "#808080"
       activateSound: null
       deactivateSound: null
+    - type: Absorbable
 
 - type: entity
   parent: BaseMobCarp
@@ -260,6 +264,7 @@
       interfaces:
         enum.SurgeryUIKey.Key:
           type: SurgeryBui
+    - type: Absorbable
 
 - type: entity
   id: MobSharkSalvage

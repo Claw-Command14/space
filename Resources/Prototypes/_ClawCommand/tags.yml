@@ -1,0 +1,33 @@
+- type: Tag
+  id: WeaponLaserSvalinn
+
+- type: Tag
+  id: Flash
+
+- type: Tag
+  id: Abductor
+
+- type: Tag
+  id: AbductorScientist
+
+- type: Tag
+  id: CantInteract
+
+- type: Tag
+  id: ShowWires
+
+- type: Tag
+  id: ChangelingInfectionImplant
+
+- type: Tag
+  id: CannotSuicideAny
+
+- type: Tag
+  id: DroneUsable
+
+- type: Tag
+  id: DroneElectronics
+
+# Tag used for escape pod landing.
+- type: Tag
+  id: DockPod

@@ -31,8 +31,7 @@
     - BaseStationCaptainState # DeltaV
     - BaseStationStockMarket # DeltaV
     - BaseStationEmergencyAccessMedbayState # claw command
-  #  - BaseStationCodeBlueSecretState # claw command
-
+    - BaseStationCodeBlueSecretState # claw command
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
@@ -83,6 +82,7 @@
     - BaseStationCaptainState # DeltaV
     - BaseStationStockMarket # DeltaV
     - BaseStationEmergencyAccessMedbayState # claw command
+    - BaseStationCodeBlueSecretState # claw command
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform

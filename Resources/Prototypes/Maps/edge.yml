@@ -1,8 +1,8 @@
 - type: gameMap
   id: Edge
   mapName: 'Edge'
-  mapPath: /Maps/Floof/edge.yml # Floofstation
-  minPlayers: 10
+  mapPath: /Maps/ClawCommand/edge.yml # ClawCommand
+  minPlayers: 20
   maxPlayers: 80
   stations:
     Edge:
@@ -23,7 +23,8 @@
             Anomaly: [ 4, 4 ] # Floofstation
           #service
             Captain: [ 1, 1 ]
-            #BlueshieldOfficer: [ 1, 1] Floof - uncomment once implemented on Floof maps
+            BlueshieldOfficer: [ 1, 1] #Floof - uncomment once implemented on Floof maps
+            BlueshieldMaid: [ 1, 1] #Floof - uncomment once implemented on Floof maps
             #NanotrasenRepresentative: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
             #AdministrativeAssistant: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
             HeadOfPersonnel: [ 1, 1 ]
@@ -58,7 +59,6 @@
             ResearchAssistant: [ 2, 4 ]
             Librarian: [ 1, 1 ]
             Roboticist: [ 1, 1 ]
-            Borg: [ 2, 3 ]
             SeniorResearcher: [ 1, 1 ]
           #security
             HeadOfSecurity: [ 1, 1 ]
@@ -82,4 +82,11 @@
             Clerk: [ 1, 1 ] #FloofStation
             Lawyer: [ 2, 2 ] #FloofStation
             Prosecutor: [ 1, 1 ] #FloofStation
-
+          # Silicon
+            # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            Borg: [ 1, 2 ]
+            MedicalBorg: [ 1, 2 ]
+            ServiceQuadBorg: [ 1, 2 ] #Floofstation
+            MedicalQuadBorg: [ 1, 2 ] #Floofstation
+            SecurityQuadBorg: [ 2, 3 ] #Claw Command
+            SalvageQuadBorg: [ 2, 3 ] #Claw Command

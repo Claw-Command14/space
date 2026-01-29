@@ -50,7 +50,7 @@ namespace Content.Server.Flash
 
             SubscribeLocalEvent<FlashComponent, MeleeHitEvent>(OnFlashMeleeHit);
             // ran before toggling light for extra-bright lantern
-            SubscribeLocalEvent<FlashComponent, UseInHandEvent>(OnFlashUseInHand, before: new []{ typeof(HandheldLightSystem) });
+            SubscribeLocalEvent<FlashComponent, UseInHandEvent>(OnFlashUseInHand, before: new[] { typeof(HandheldLightSystem) });
             SubscribeLocalEvent<FlashComponent, ThrowDoHitEvent>(OnFlashThrowHitEvent);
             SubscribeLocalEvent<InventoryComponent, FlashAttemptEvent>(OnInventoryFlashAttempt);
             SubscribeLocalEvent<FlashImmunityComponent, FlashAttemptEvent>(OnFlashImmunityFlashAttempt);
@@ -156,17 +156,17 @@ namespace Content.Server.Flash
             if (TryComp<BlindableComponent>(target, out var blindable)
                 && !blindable.IsBlind
                 && _random.Prob(flashable.EyeDamageChance))
-                _blindingSystem.AdjustEyeDamage((target, blindable), flashable.EyeDamage);
+                //_blindingSystem.AdjustEyeDamage((target, blindable), flashable.EyeDamage);
 
-            if (stunDuration != null)
-            {
-                _stun.TryParalyze(target, stunDuration.Value, true);
-            }
-            else
-            {
-                _stun.TrySlowdown(target, TimeSpan.FromSeconds(flashDuration/1000f), true,
-                slowTo, slowTo);
-            }
+                if (stunDuration != null)
+                {
+                    _stun.TryParalyze(target, stunDuration.Value, true);
+                }
+                else
+                {
+                    _stun.TrySlowdown(target, TimeSpan.FromSeconds(flashDuration / 1000f), true,
+                    slowTo, slowTo);
+                }
 
             if (displayPopup && user != null && target != user && Exists(user.Value))
             {
@@ -213,7 +213,7 @@ namespace Content.Server.Flash
 
         private void OnFlashImmunityFlashAttempt(EntityUid uid, FlashImmunityComponent component, FlashAttemptEvent args)
         {
-            if(component.Enabled)
+            if (component.Enabled)
                 args.Cancel();
         }
 

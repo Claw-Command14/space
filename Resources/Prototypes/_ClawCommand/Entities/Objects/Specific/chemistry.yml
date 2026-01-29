@@ -1,0 +1,83 @@
+- type: entity
+  name: traumoxadone beaker
+  description: Filled with a reagent used in cryogenic tubes.
+  parent: Beaker
+  id: TraumoxadoneBeakerSmall
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 50
+        reagents:
+        - ReagentId: Traumoxadone
+          Quantity: 50
+
+- type: entity
+  name: aloxadone beaker
+  description: Filled with a reagent used in cryogenic tubes.
+  parent: Beaker
+  id: AloxadoneBeakerSmall
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 50
+        reagents:
+        - ReagentId: Aloxadone
+          Quantity: 50
+
+- type: entity
+  name: stelloxadone beaker
+  description: Filled with a reagent used in cryogenic tubes.
+  parent: Beaker
+  id: StelloxadoneBeakerSmall
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 50
+        reagents:
+        - ReagentId: Stelloxadone
+          Quantity: 50
+
+- type: entity
+  name: doxarubixadone beaker
+  description: Filled with a reagent used in cryogenic tubes.
+  parent: Beaker
+  id: DoxarubixadoneBeakerSmall
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 50
+        reagents:
+        - ReagentId: Doxarubixadone
+          Quantity: 50
+
+- type: entity
+  name: necrosol beaker
+  description: Filled with a reagent used in cryogenic tubes.
+  parent: Beaker
+  id: NecrosolBeakerSmall
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 50
+        reagents:
+        - ReagentId: Necrosol
+          Quantity: 50
+
+- type: entity
+  name: opporozidone beaker
+  description: Filled with a reagent used in cryogenic tubes.
+  parent: Beaker
+  id: OpporozidoneBeakerSmall
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 50
+        reagents:
+        - ReagentId: Opporozidone
+          Quantity: 50

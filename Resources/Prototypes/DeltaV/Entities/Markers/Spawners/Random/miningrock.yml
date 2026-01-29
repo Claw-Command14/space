@@ -10,7 +10,7 @@
         state: full
   - type: RandomSpawner
     prototypes:
-      - AsteroidAltRock
+      - AsteroidRock
     chance: .90
     rarePrototypes:
       - AsteroidAltRockMining
@@ -22,7 +22,7 @@
       - RandomBasaltRockSpawner
       - AsteroidRockOreCrab
       - RandomWoodenStructure
-    rareChance: 0.15
+    rareChance: 0.05
 
 - type: entity
   name: Crystal Spawner
@@ -63,7 +63,10 @@
       - WallRockTin
       - WallRockUranium
       - WallRockBananium
+      - WallRockDiamond
       - WallRockArtifactFragment
+      - WallRockBluespace
+      - WallRockNormality
 
 - type: entity
   name: Basalt Rock Spawner
@@ -83,7 +86,10 @@
       - WallRockBasaltSilver
       - WallRockBasaltTin
       - WallRockBasaltUranium
+      - WallRockBasaltDiamond
       - WallRockBasaltArtifactFragment
+      - WallRockBasaltBluespace
+      - WallRockBasaltNormality
 
 - type: entity
   id: RandomWoodenStructure
@@ -99,4 +105,4 @@
     prototypes:
       - RandomWoodenWall
       - RandomWoodenSupport
-    chance: 0.9
+    chance: 1

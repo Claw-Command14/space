@@ -6,6 +6,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using static Content.Shared.Decals.DecalGridComponent;
+using ChunkIndicesEnumerator = Robust.Shared.Map.Enumerators.ChunkIndicesEnumerator;
 
 namespace Content.Shared.Decals
 {
@@ -19,7 +20,7 @@ namespace Content.Shared.Decals
         // Note that this constant is effectively baked into all map files, because of how they save the grid decal component.
         // So if this ever needs changing, the maps need converting.
         public const int ChunkSize = 32;
-        public static Vector2i GetChunkIndices(Vector2 coordinates) => new ((int) Math.Floor(coordinates.X / ChunkSize), (int) Math.Floor(coordinates.Y / ChunkSize));
+        public static Vector2i GetChunkIndices(Vector2 coordinates) => new((int) Math.Floor(coordinates.X / ChunkSize), (int) Math.Floor(coordinates.Y / ChunkSize));
 
         public override void Initialize()
         {
@@ -80,7 +81,7 @@ namespace Content.Shared.Decals
             return comp.ChunkCollection.ChunkCollection;
         }
 
-        protected virtual void DirtyChunk(EntityUid id, Vector2i chunkIndices, DecalChunk chunk) {}
+        protected virtual void DirtyChunk(EntityUid id, Vector2i chunkIndices, DecalChunk chunk) { }
 
         // internal, so that client/predicted code doesn't accidentally remove decals. There is a public server-side function.
         protected bool RemoveDecalInternal(EntityUid gridId, uint decalId, [NotNullWhen(true)] out Decal? removed, DecalGridComponent? component = null)
@@ -103,6 +104,34 @@ namespace Content.Shared.Decals
             OnDecalRemoved(gridId, decalId, component, indices, chunk);
             return true;
         }
+
+        public HashSet<(uint Index, Decal Decal)> GetDecalsIntersecting(EntityUid gridUid, Box2 bounds, DecalGridComponent? component = null)
+        {
+            var decalIds = new HashSet<(uint, Decal)>();
+            var chunkCollection = ChunkCollection(gridUid, component);
+
+            if (chunkCollection == null)
+                return decalIds;
+
+            var chunks = new ChunkIndicesEnumerator(bounds, ChunkSize);
+
+            while (chunks.MoveNext(out var chunkOrigin))
+            {
+                if (!chunkCollection.TryGetValue(chunkOrigin.Value, out var chunk))
+                    continue;
+
+                foreach (var (id, decal) in chunk.Decals)
+                {
+                    if (!bounds.Contains(decal.Coordinates))
+                        continue;
+
+                    decalIds.Add((id, decal));
+                }
+            }
+
+            return decalIds;
+        }
+
 
         protected virtual void OnDecalRemoved(EntityUid gridId, uint decalId, DecalGridComponent component, Vector2i indices, DecalChunk chunk)
         {

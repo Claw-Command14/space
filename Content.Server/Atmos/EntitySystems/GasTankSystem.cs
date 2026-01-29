@@ -106,7 +106,7 @@ namespace Content.Server.Atmos.EntitySystems
 
         private void OnExamined(EntityUid uid, GasTankComponent component, ExaminedEvent args)
         {
-            using(args.PushGroup(nameof(GasTankComponent)));
+            using (args.PushGroup(nameof(GasTankComponent))) ;
             if (args.IsInDetailsRange)
                 args.PushMarkup(Loc.GetString("comp-gas-tank-examine", ("pressure", Math.Round(component.Air?.Pressure ?? 0))));
             if (component.IsConnected)
@@ -182,6 +182,8 @@ namespace Content.Server.Atmos.EntitySystems
 
         private void ToggleInternals(Entity<GasTankComponent> ent)
         {
+            if (!ent.Comp.IsInternals)
+                return;
             if (ent.Comp.IsConnected)
             {
                 DisconnectFromInternals(ent);
@@ -220,7 +222,7 @@ namespace Content.Server.Atmos.EntitySystems
         public bool CanConnectToInternals(GasTankComponent component)
         {
             var internals = GetInternalsComponent(component, component.User);
-            return internals != null && internals.BreathToolEntity != null && !component.IsValveOpen;
+            return component.IsInternals && internals != null /*&& internals.BreathTools.Count != 0*/ && !component.IsValveOpen;
         }
 
         public void ConnectToInternals(Entity<GasTankComponent> ent)
@@ -251,7 +253,7 @@ namespace Content.Server.Atmos.EntitySystems
         public void DisconnectFromInternals(Entity<GasTankComponent> ent)
         {
             var (owner, component) = ent;
-            if (component.User == null)
+            if (component.User == null || !ent.Comp.IsInternals)
                 return;
 
             var internals = GetInternalsComponent(component);
@@ -269,7 +271,7 @@ namespace Content.Server.Atmos.EntitySystems
         private InternalsComponent? GetInternalsComponent(GasTankComponent component, EntityUid? owner = null)
         {
             owner ??= component.User;
-            if (Deleted(component.Owner))return null;
+            if (Deleted(component.Owner)) return null;
             if (owner != null) return CompOrNull<InternalsComponent>(owner.Value);
             return _containers.TryGetContainingContainer(component.Owner, out var container)
                 ? CompOrNull<InternalsComponent>(container.Owner)
@@ -318,7 +320,7 @@ namespace Content.Server.Atmos.EntitySystems
                 if (component.Integrity <= 0)
                 {
                     var environment = _atmosphereSystem.GetContainingMixture(owner, false, true);
-                    if(environment != null)
+                    if (environment != null)
                         _atmosphereSystem.Merge(environment, component.Air);
 
                     _audioSys.PlayPvs(component.RuptureSound, Transform(component.Owner).Coordinates, AudioParams.Default.WithVariation(0.125f));

@@ -36,7 +36,7 @@ public sealed class SuitSensorSystem : EntitySystem
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly SingletonDeviceNetServerSystem _singletonServerSystem = default!;
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
-
+    private readonly HashSet<Entity<SuitSensorComponent>> _wornSensors = new();
     public override void Initialize()
     {
         base.Initialize();
@@ -62,7 +62,10 @@ public sealed class SuitSensorSystem : EntitySystem
         while (sensors.MoveNext(out var uid, out var sensor, out var device))
         {
             if (device.TransmitFrequency is null)
+            {
+                //_wornSensors.Remove(ent); //Not a valid suit sensor array, cease all processing for it.
                 continue;
+            }
 
             // check if sensor is ready to update
             if (curTime < sensor.NextUpdate)
@@ -82,8 +85,10 @@ public sealed class SuitSensorSystem : EntitySystem
             // get sensor status
             var status = GetSensorState(uid, sensor);
             if (status == null)
+            {
+                //_wornSensors.Remove(ent); //Someone turned the suit off, cease all checking.
                 continue;
-
+            }
             //Retrieve active server address if the sensor isn't connected to a server
             if (sensor.ConnectedServer == null)
             {
@@ -339,7 +344,7 @@ public sealed class SuitSensorSystem : EntitySystem
         var isAlive = false;
         if (EntityManager.TryGetComponent(sensor.User.Value, out MobStateComponent? mobState))
             isAlive = !_mobStateSystem.IsDead(sensor.User.Value, mobState);
-        
+
         // Floofstation - get IPC battery status
         var isDischarged = TryComp(sensor.User.Value, out SiliconComponent? SiliconComp) && (SiliconComp.ChargeState == 0);
 

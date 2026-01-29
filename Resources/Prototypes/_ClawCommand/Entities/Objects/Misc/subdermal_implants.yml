@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseSubdermalImplant
+  id: GetUpImplant
+  name: get up implant
+  description: This implant decreases the time spent on the ground when dropped or critical stamina.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SubdermalImplant
+      whitelist:
+        components:
+        - MobState
+    - type: GetUp

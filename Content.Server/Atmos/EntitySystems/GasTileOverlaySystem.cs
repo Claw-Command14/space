@@ -57,7 +57,7 @@ namespace Content.Server.Atmos.EntitySystems
         /// <summary>
         ///     Overlay update interval, in seconds.
         /// </summary>
-        private float _updateInterval;
+        private float _updateInterval = 1f;
 
         private int _thresholds;
         private EntityQuery<GasTileOverlayComponent> _query;
@@ -221,7 +221,7 @@ namespace Content.Server.Atmos.EntitySystems
                 oldData = new GasOverlayData(tile.Hotspot.State, oldData.Opacity);
             }
 
-            if (tile is {Air: not null, NoGridTile: false})
+            if (tile is { Air: not null, NoGridTile: false })
             {
                 for (var i = 0; i < VisibleGasId.Length; i++)
                 {
@@ -291,21 +291,18 @@ namespace Content.Server.Atmos.EntitySystems
         }
 
         public override void Update(float frameTime)
-        {
+        { // Prevent this system from running the expensive checks on every frame.
             base.Update(frameTime);
             AccumulatedFrameTime += frameTime;
+            if (AccumulatedFrameTime < _updateInterval)
+                return;
+            AccumulatedFrameTime = 0f;
 
             if (_doSessionUpdate)
             {
                 UpdateSessions();
                 return;
             }
-
-            if (AccumulatedFrameTime < _updateInterval)
-                return;
-
-            AccumulatedFrameTime -= _updateInterval;
-
             // First, update per-chunk visual data for any invalidated tiles.
             UpdateOverlayData();
 

@@ -111,6 +111,7 @@
   - type: DamageForceSay # Floofstation - added unqiue pain messages
     forceSayStringPrefix: damage-force-say-feroxi-
     forceSayStringCount: 4 # Default is 7, I couldn't come up with 7 things. Sharks don't even MAKE noises! Except maybe little clicks.
+  - type: CanMoveInAir
 
 - type: entity
   parent: MobHumanDummy

@@ -23,11 +23,12 @@
   - !type:AddComponentSpecial
     components:
       - type: AnomalyJob
+      - type: Pacified
 
 - type: startingGear
   id: AnomalyGear
   equipment:
-    jumpsuit: ClothingUniformNudityPermit
+    #jumpsuit: ClothingUniformNudityPermit
     shoes: ClothingClothWrap
     id: AnomalyIDCard
     ears: ClothingHeadsetGrey

@@ -2,6 +2,8 @@ using Content.Shared.Damage;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Physics.Dynamics;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Projectiles;
 
@@ -41,7 +43,8 @@ public sealed partial class ProjectileComponent : Component
     /// <summary>
     ///     The amount of damage the projectile will do.
     /// </summary>
-    [DataField(required: true)] [ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
+    [ViewVariables(VVAccess.ReadWrite)]
     public DamageSpecifier Damage = new();
 
     /// <summary>
@@ -79,4 +82,18 @@ public sealed partial class ProjectileComponent : Component
     /// </summary>
     [DataField]
     public bool DamagedEntity;
+
+    // Goobstation start
+    [DataField]
+    public bool Penetrate;
+
+    /// <summary>
+    ///     Collision mask of what not to penetrate if <see cref="Penetrate"/> is true.
+    /// </summary>
+    [DataField(customTypeSerializer: typeof(FlagSerializer<CollisionMask>))]
+    public int NoPenetrateMask = 0;
+
+    [NonSerialized]
+    public List<EntityUid> IgnoredEntities = new();
+    // Goobstation end
 }

@@ -24,6 +24,9 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Implants.Components;
+using Robust.Shared.Containers;
 
 namespace Content.Shared.Damage.Systems;
 
@@ -40,6 +43,9 @@ public sealed partial class StaminaSystem : EntitySystem
     [Dependency] private readonly SharedStunSystem _stunSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
+    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
+
 
     /// <summary>
     /// How much of a buffer is there between the stun duration and when stuns can be re-applied.
@@ -182,7 +188,7 @@ public sealed partial class StaminaSystem : EntitySystem
 
             if (hitEvent.Handled)
                 return;
-            
+
             // Begin DeltaV additions
             // Allow users to modifier stamina damage as well, this part of the event is not handle-able by listeners.
             RaiseLocalEvent(args.User, hitEvent);
@@ -420,9 +426,33 @@ public sealed partial class StaminaSystem : EntitySystem
         component.Critical = true;
         component.StaminaDamage = component.CritThreshold;
 
+
+        // Claw Command
+        var getUpModifier = 1f;
+
+        if (_container.TryGetContainer(uid, ImplanterComponent.ImplantSlotId, out var implantContainer))
+        {
+
+            var implantCompQuery = GetEntityQuery<GetUpComponent>();
+            foreach (var implant in implantContainer.ContainedEntities)
+            {
+                if (implantCompQuery.TryGetComponent(implant, out var implantComp))
+                {
+                    getUpModifier = implantComp.Modifier;
+                    break;
+                }
+            }
+
+        }
+        var stunTime = component.StunTime * getUpModifier;
+        // Intentionally pass normal value because itll get reduced in tryParalize itself.
         _stunSystem.TryParalyze(uid, component.StunTime, true);
+
         // Give them buffer before being able to be re-stunned
-        component.NextUpdate = _timing.CurTime + component.StunTime + StamCritBufferTime;
+        // use reduce stuntime value.
+        component.NextUpdate = _timing.CurTime + stunTime + StamCritBufferTime;
+        // End Claw Command
+
         EnsureComp<ActiveStaminaComponent>(uid);
         Dirty(uid, component);
         _adminLogger.Add(LogType.Stamina, LogImpact.Medium, $"{ToPrettyString(uid):user} entered stamina crit");

@@ -66,6 +66,17 @@ public sealed partial class GravityWellComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     [Access(typeof(GravityWellSystem))]
     public TimeSpan LastPulseTime { get; internal set; } = default!;
+    /// <summary>
+    ///     Whether to also apply Newton's third law.
+    /// </summary>
+    [DataField]
+    public bool ApplyCounterforce;
+
+    /// <summary>
+    ///     If <see cref="ApplyCounterforce"/> is true, how much to pull self to static objects. Does not pull static objects if null.
+    /// </summary>
+    [DataField]
+    public float? StaticAttraction = null;
 
     #endregion Update Timing
 }

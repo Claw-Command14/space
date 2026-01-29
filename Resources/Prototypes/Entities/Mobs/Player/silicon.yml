@@ -13,12 +13,28 @@
     - Engineering
     - Medical
     - Science
+    - Prison
     - Security
+    - Justice
     - Service
     - Supply
+    - CentCom
   - type: ActiveRadio
-    receiveAllChannels: true
-    globalReceive: true
+    receiveAllChannels: false
+    globalReceive: false
+    channels:
+    - Binary
+    - Common
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Prison
+    - Security
+    - Justice
+    - Service
+    - Supply
+    - CentCom
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
@@ -374,7 +390,7 @@
     unlistedNumber: true
     requiresPower: false
   - type: Holopad
-  - type: StationAiWhitelist  
+  - type: StationAiWhitelist
   - type: UserInterface
     interfaces:
         enum.HolopadUiKey.AiRequestWindow:
@@ -425,6 +441,7 @@
   - type: Access
     groups:
     - AllAccess
+    - Silicon
   - type: Eye
     drawFov: false
   - type: Examiner
@@ -520,7 +537,7 @@
 # Borgs
 - type: entity
   id: PlayerBorgGeneric
-  parent: BorgChassisGeneric
+  parent: BorgChassisQuadserv
   suffix: Battery, Tools
   components:
   - type: ContainerFill

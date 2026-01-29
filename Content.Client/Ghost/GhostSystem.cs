@@ -71,7 +71,10 @@ namespace Content.Client.Ghost
         private void OnStartup(EntityUid uid, GhostComponent component, ComponentStartup args)
         {
             if (TryComp(uid, out SpriteComponent? sprite))
+            {
                 sprite.Visible = GhostVisibility || uid == _playerManager.LocalEntity;
+                sprite.LayerSetColor(0, component.color);
+            }
         }
 
         private void OnToggleLighting(EntityUid uid, EyeComponent component, ToggleLightingActionEvent args)

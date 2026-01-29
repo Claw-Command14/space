@@ -49,6 +49,25 @@
   # Goobstation R&D Console rework end
 
 - type: technology
+  id: LaserTurrets
+  name: research-technology-laser-sentry-turrets
+  icon:
+    sprite: Objects/Weapons/Guns/Turrets/sentry_turret.rsi
+    state: base
+  discipline: Arsenal
+  tier: 3
+  cost: 20000
+  recipeUnlocks:
+  - WeaponEnergyTurretAIMachineCircuitboard
+  - WeaponEnergyTurretStationMachineCircuitboard
+  - WeaponEnergyTurretAIControlPanelElectronics
+  - WeaponEnergyTurretStationControlPanelElectronics
+  technologyPrerequisites:
+  - ConcentratedLaserWeaponry
+  softCapContribution: 1.5
+  position: 5,-1
+
+- type: technology
   id: WeaponizedLaserManipulation
   name: research-technology-weaponized-laser-manipulation
   icon:
@@ -60,6 +79,8 @@
   recipeUnlocks:
   - WeaponLaserCarbine
   - WeaponMechCombatFiredartLaser # Goobstation
+  - WeaponLaserSvalinn
+  - BorgModuleadvancedmeasures
   # Goobstation R&D Console rework start
   position: 4,0
   #technologyPrerequisites:

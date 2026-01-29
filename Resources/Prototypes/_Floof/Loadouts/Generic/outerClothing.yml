@@ -261,4 +261,16 @@
   requirements:
   - !type:CharacterItemGroupRequirement
     group: LoadoutOuter
+
+- type: loadout
+  id: LoadoutPirateCoat
+  category: Outer
+  cost: 1
+  items:
+    - ClothingOuterCoatPirate
+  requirements:
+    - !type:CharacterItemGroupRequirement
+      group: LoadoutOuter
 # Section end
+
+

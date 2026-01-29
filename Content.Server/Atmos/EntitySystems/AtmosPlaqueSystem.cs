@@ -11,6 +11,7 @@ public sealed class AtmosPlaqueSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
 
+
     public override void Initialize()
     {
         base.Initialize();

@@ -119,6 +119,16 @@
   result: FireAlarmElectronics
 
 - type: latheRecipe
+  id: DroneElectronics
+  result: DroneElectronics
+  category: Circuitry
+  completetime: 2
+  materials:
+    Steel: 1000
+    Plastic: 1000
+    Gold: 500
+
+- type: latheRecipe
   parent: BaseCheapElectronicsRecipe
   id: SignalTimerElectronics
   result: SignalTimerElectronics
@@ -322,7 +332,7 @@
   parent: BaseCircuitboardRecipe
   id: CentrifugeMachineCircuitboard
   result: CentrifugeMachineCircuitboard
-  
+
 - type: latheRecipe # Floof
   parent: BaseCircuitboardRecipe
   id: MaterialReclaimerMachineCircuitboard
@@ -393,11 +403,11 @@
   parent: BaseCircuitboardRecipe
   id: SMESMachineCircuitboard
   result: SMESMachineCircuitboard
-# Floof - Uncomment when we get there.
-#- type: latheRecipe
-#  parent: BaseGoldCircuitboardRecipe
-#  id: SMESAdvancedMachineCircuitboard
-#  result: SMESAdvancedMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: SMESAdvancedMachineCircuitboard
+  result: SMESAdvancedMachineCircuitboard
 
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
@@ -678,3 +688,44 @@
   parent: BaseGoldCircuitboardRecipe
   id: MaterialSiloCircuitboard
   result: MaterialSiloCircuitboard
+
+
+- type: latheRecipe
+  id: WeaponEnergyTurretAIMachineCircuitboard
+  result: WeaponEnergyTurretAIMachineCircuitboard
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+- type: latheRecipe
+  id: WeaponEnergyTurretStationMachineCircuitboard
+  result: WeaponEnergyTurretStationMachineCircuitboard
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+- type: latheRecipe
+  id: WeaponEnergyTurretAIControlPanelElectronics
+  result: WeaponEnergyTurretAIControlPanelElectronics
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100
+
+- type: latheRecipe
+  id: WeaponEnergyTurretStationControlPanelElectronics
+  result: WeaponEnergyTurretStationControlPanelElectronics
+  category: Circuitry
+  completetime: 5
+  materials:
+    Steel: 100
+    Glass: 500
+    Gold: 100

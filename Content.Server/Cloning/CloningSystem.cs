@@ -204,7 +204,7 @@ public sealed partial class CloningSystem : EntitySystem
             || !_playerManager.TryGetSessionById(mind.UserId.Value, out var client)
             || !CheckBiomassCost(uid, physics, clonePod, cloningCostMultiplier))
             return false;
-        
+
         // Special handling for humanoid data related to metempsychosis. This function is needed for Paradox Anomaly code to play nice with reincarnated people
         var pref = humanoid.LastProfileLoaded;
         if (pref == null
@@ -357,7 +357,8 @@ public sealed partial class CloningSystem : EntitySystem
             ? ev.ReincarnationChances
             : chance * ev.ReincarnationChanceModifier;
 
-        switch (ev.ForcedType)
+        // Claw command disable random species change effect from cloning.
+        /*switch (ev.ForcedType)
         {
             case ForcedMetempsychosisType.None:
                 if (!ev.NeverTrulyClone
@@ -388,7 +389,7 @@ public sealed partial class CloningSystem : EntitySystem
             case ForcedMetempsychosisType.RandomNonHumanoid:
                 species = null;
                 return entityPrototype.ID;
-        }
+        }*/
         changeProfile = false;
         return oldSpecies.Prototype;
     }

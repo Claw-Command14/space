@@ -77,11 +77,12 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         if (_afk.IsAfk(player))
             return;
 
+        // Claw Command
         if (_adminManager.IsAdmin(player))
         {
             trackers.Add(PlayTimeTrackingShared.TrackerAdmin);
-            trackers.Add(PlayTimeTrackingShared.TrackerOverall);
-            return;
+            //trackers.Add(PlayTimeTrackingShared.TrackerOverall);
+            //return;
         }
 
         if (!IsPlayerAlive(player))
@@ -265,7 +266,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
             }
 
             roles.Add(job.ID);
-            NoRole:;
+        NoRole:;
         }
 
         return roles;

@@ -8,6 +8,9 @@
     - Zombie
     - Revolutionary
     - Gorilla # Floof
+    - RatKingFaction # CLAW
+    - Changeling
+    - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: NanoTrasen
@@ -18,6 +21,8 @@
   - Zombie
   - Revolutionary
   - Gorilla # Floof
+  - Blob # Goobstation - Blob
+  - Changeling
 
 - type: npcFaction
   id: Mouse
@@ -35,6 +40,7 @@
   - Zombie
   - Xeno
   - Gorilla # Floof
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Critter
@@ -52,6 +58,8 @@
   - Revolutionary
   - Gorilla  # Floof
   - GeometerOfBlood
+  - RatKingFaction # Claw
+  - Changeling
 
 - type: npcFaction
   id: SimpleNeutral
@@ -65,6 +73,7 @@
   - PetsNT
   - Zombie
   - Gorilla # Floof
+  - Changeling
 
 - type: npcFaction
   id: Xeno
@@ -76,6 +85,8 @@
   - Zombie
   - Revolutionary
   - Gorilla # Floof
+  - RatKingFaction #claw
+  - Changeling
 
 - type: npcFaction
   id: Zombie
@@ -88,6 +99,8 @@
   - PetsNT
   - Revolutionary
   - Gorilla # Floof
+  - Changeling
+  - Blob # Goobstation - Blob
 
 - type: npcFaction
   id: Revolutionary
@@ -97,6 +110,8 @@
   - SimpleHostile
   - Dragon
   - Gorilla # Floof
+  - Blob # Goobstation - Blob
+  - Changeling
 
 - type: npcFaction
   id: Pibble
@@ -132,6 +147,8 @@
   - Xeno
   - SimpleHostile
   - Dragon
+  - Blob # Goobstation - Blob
+  - Changeling
 
 - type: npcFaction
   id: GladiabotFFA
@@ -173,3 +190,42 @@
     - GladiabotRed
     - GladiabotGreen
     - GladiabotBlue
+
+# Claw command
+- type: npcFaction
+  id: RatKingFaction # the servants should go against its king
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - Gorilla
+  - GeometerOfBlood
+  - AnimalFriend
+  - Xeno
+  - Changeling
+  - Blob # Goobstation - Blob
+
+- type: npcFaction
+  id: AllHostile
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - GeometerOfBlood
+  - Gorilla
+  - Changeling # goob edit - changelings
+#  - Heretic # goob edit - heretics
+  - Blob # Goobstation - Blob
+# - Wizard # goob edit - wizard
+#  - PirateFaction # goob - pirates

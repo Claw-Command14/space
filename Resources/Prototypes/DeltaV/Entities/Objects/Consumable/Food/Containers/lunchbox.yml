@@ -288,7 +288,7 @@
 - type: entity
   parent: LunchboxGeneric
   id: LunchboxLogistics
-  suffix: Logistics
+  suffix: Cargo
   components:
   - type: Sprite
     layers:
@@ -301,7 +301,7 @@
 - type: entity
   parent: LunchboxGenericFilledRandom
   id: LunchboxLogisticsFilledRandom
-  suffix: Logistics, Filled, Random
+  suffix: Cargo, Filled, Random
   components:
   - type: Sprite
     layers:
@@ -340,7 +340,7 @@
 - type: entity
   parent: LunchboxGeneric
   id: LunchboxEpistemics
-  suffix: Epistemics
+  suffix: Science
   components:
   - type: Sprite
     layers:
@@ -353,7 +353,7 @@
 - type: entity
   parent: LunchboxGenericFilledRandom
   id: LunchboxEpistemicsFilledRandom
-  suffix: Epistemics, Filled, Random
+  suffix: Science, Filled, Random
   components:
   - type: Sprite
     layers:

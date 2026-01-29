@@ -14,7 +14,7 @@
     range: 1.5
     soundHit:
       collection: ToySqueak
-    attackRate: 1 # Floofstation - this is hertz, not seconds
+    attackRate: 0.9 # Floofstation - this is hertz, not seconds
     damage:
       types:
         Blunt: 16

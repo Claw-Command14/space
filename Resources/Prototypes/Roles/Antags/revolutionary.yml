@@ -10,6 +10,11 @@
   - !type:CharacterDepartmentTimeRequirement # DeltaV - Command dept time requirement
     department: Command
     min: 3600 # Floofstation - 1 hours
+  - !type:CharacterTraitRequirement # Claw Command
+    inverted: true
+    traits:
+      - Tiny # Claw Command - Too much of an advantage in a gunfight or stealth
+
 
 - type: antag
   id: Rev

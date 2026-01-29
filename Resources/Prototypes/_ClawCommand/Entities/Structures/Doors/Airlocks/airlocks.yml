@@ -1,0 +1,15 @@
+- type: entity
+  parent: AirlockCommandGlass # see standard
+  id: AirlockClawCommandGlass
+  suffix: Central Command
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Structures/Doors/Airlocks/Glass/clawcommand.rsi
+
+- type: entity
+  parent: AirlockCommand # if you get centcom door somehow it counts as command, also inherit panel
+  id: AirlockClawCommand
+  suffix: Central Command
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Structures/Doors/Airlocks/Standard/clawcommand.rsi

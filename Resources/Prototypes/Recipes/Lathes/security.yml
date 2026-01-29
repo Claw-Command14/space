@@ -87,6 +87,32 @@
     Glass: 1000
     Gold: 850
 
+
+#claw command
+- type: latheRecipe
+  id: BorgModuleadvancedmeasures
+  result: BorgModuleadvancedmeasures
+  category: Weapons
+  completetime: 5
+  materials:
+    Steel: 1500
+    Glass: 1000
+    Gold: 850
+    Plastic: 250
+
+#claw command
+- type: latheRecipe
+  id: BorgModuleGorillaGauntlet
+  result: BorgModuleGorillaGauntlet
+  category: Weapons
+  completetime: 5
+  materials:
+    Steel: 1500
+    Plastic: 300
+    Glass: 500
+    Plasma: 500
+    Silver: 250
+
 - type: latheRecipe
   id: BorgModuleInvestigation
   result: BorgModuleInvestigation

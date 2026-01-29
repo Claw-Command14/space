@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "license": "CC-BY-NC-SA-3.0",
+    "copyright": "Sprite by the Mighty DeKwadrat22.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "stefanie-plushie"
+        },
+        {
+            "name": "stefanie-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "stefanie-inhand-right",
+            "directions": 4
+        }
+    ]
+}

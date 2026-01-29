@@ -5,7 +5,7 @@
   playTimeTracker: JobSecurityCadet
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 7200 # Floofstation - 2 hour
+      min: 3600 # Floofstation - 2 hour
 #    - !type:DepartmentTimeRequirement # DeltaV - Removes time limit
 #      department: Security
 #      time: 54000 #15 hrs
@@ -23,7 +23,7 @@
   - Cryogenics
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, GetUpImplant ]
 
 - type: startingGear
   id: SecurityCadetGear

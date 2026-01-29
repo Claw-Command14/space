@@ -5,24 +5,20 @@
   items:
     - type: loadout
       id: LoadoutClothingBackpackBlueshieldMaid
+    - type: loadout
+      id: LoadoutClothingBackpackSatchelBlueshieldMaid
+    - type: loadout
+      id: LoadoutClothingBackpackDuffelBlueshieldMaid
 
 - type: characterItemGroup
   id: LoadoutBlueshieldMaidVests
   maxItems: 1
   items:
     - type: loadout
-      id: LoadoutClothingBlueshieldArmoredJacket
-    - type: loadout
-      id: LoadoutClothingBlueshieldArmoredCowboyJacket
+      id: LoadoutClothingBlueshieldMaidArmorVest
     - type: loadout
       id: LoadoutClothingBlueshieldMaidDuraVest
 
-- type: characterItemGroup
-  id: LoadoutBlueshieldMaidWeapons
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutClothingBlueshieldMaidRevolver
 
 - type: characterItemGroup
   id: LoadoutBlueshieldMaidUniforms
@@ -32,3 +28,5 @@
       id: LoadoutClothingUniformJumpskirtBlueshieldOfficer
     - type: loadout
       id: LoadoutClothingUniformJumpsuitBlueshieldOfficer
+    - type: loadout
+      id: LoadoutClothingUniformJumpskirtBlueshieldMaid

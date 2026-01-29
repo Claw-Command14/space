@@ -27,7 +27,8 @@
           Passenger: [ -1, -1 ]
           Anomaly: [ 4, 4 ] # Floofstation
           Captain: [ 1, 1 ]
-          #BlueshieldOfficer: [ 1, 1] Floof - uncomment once implemented on Floof maps
+          BlueshieldOfficer: [ 1, 1]
+          BlueshieldMaid: [ 1, 1]
           #NanotrasenRepresentative: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
           #AdministrativeAssistant: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
         #service
@@ -60,7 +61,6 @@
           Psychologist: [ 1, 1 ]
           MedicalDoctor: [ 2, 3 ]
           MedicalIntern: [ 2, 2 ]
-          MedicalBorg: [ 1, 2 ]
           SeniorPhysician: [ 1, 1 ]
         #science
           ResearchDirector: [ 1, 1 ]
@@ -68,7 +68,6 @@
           ForensicMantis: [ 1, 1 ]
           Scientist: [ 2, 3 ]
           ResearchAssistant: [ 2, 2 ]
-          Borg: [ 2, 3 ]
           Roboticist: [ 1, 1 ]
           Librarian: [ 1, 1 ]
           SeniorResearcher: [ 1, 1 ]
@@ -88,4 +87,12 @@
           MailCarrier: [ 2, 3 ]
           SalvageSpecialist: [ 2, 3 ]
           CargoTechnician: [ 2, 3 ]
+        # Silicon
+          # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+          Borg: [ 1, 2 ]
+          MedicalBorg: [ 1, 2 ]
+          ServiceQuadBorg: [ 1, 2 ] #Floofstation
+          MedicalQuadBorg: [ 1, 2 ] #Floofstation
+          SecurityQuadBorg: [ 2, 3 ] #Claw Command
+          SalvageQuadBorg: [ 2, 3 ] #Claw Command
 

@@ -54,7 +54,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadHelmetBasic
   id: ClothingHeadHatBeretSecurity
   name: security beret
   description: A stylish clothing option for security officers.
@@ -131,7 +131,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadHelmetBasic
   id: ClothingHeadHatBeretHoS
   name: head of security's beret
   description: A black beret with a commander's rank emblem. For officers that are more inclined towards style than safety.
@@ -147,7 +147,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadHelmetBasic
   id: ClothingHeadHatBeretWarden
   name: warden's beret
   description: A black beret with a warden's rank emblem. For officers that are more inclined towards style than safety. # DeltaV - changed description to match sprite
@@ -169,7 +169,7 @@
     sprite: Clothing/Head/Hats/beret_physician.rsi
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadHelmetBasic
   id: ClothingHeadHatBeretBrigmedic
   name: brigmedical beret
   description: White beret, looks like a cream pie on the head.
@@ -358,7 +358,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadHelmetBasic
   id: ClothingHeadHatHoshat
   name: head of security's hat
   description: "There's a new sheriff in station."
@@ -573,7 +573,7 @@
     coefficient: 0.2
 
 - type: entity
-  parent: ClothingHeadBase
+  parent: ClothingHeadHelmetBasic
   id: ClothingHeadHatWarden
   name: warden's cap
   description: The responsibility weighs heavy, like a barbed crown. # DeltaV - changed description to remove THE LAW
@@ -911,12 +911,13 @@
         offset: "0, 0.12"
     sprite: Clothing/Head/Hats/magician.rsi
   - type: Item
-    size: Small
+    size: Ginormous # Floof. Must be greater than the size of items it can fit so people dont create a singularity with it.
     sprite: Clothing/Head/Hats/magician.rsi
     storedRotation: 0
   - type: Storage
+    maxItemSize: Huge # Floof
     grid:
-    - 0,0,0,0
+    - 0,0,2,2
   - type: UserInterface
     interfaces:
         enum.StorageUiKey.Key:

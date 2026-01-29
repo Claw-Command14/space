@@ -98,6 +98,17 @@
 
 - type: entity
   parent: ClothingNeckCollarBase
+  id: ClothingNeckCollarStef
+  name: stefany crux's collar
+  description: Be the best guard wolf on the station!
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Clothing/Neck/collar_stef.rsi
+  - type: Clothing
+    sprite: _ClawCommand/Clothing/Neck/collar_stef.rsi
+
+- type: entity
+  parent: ClothingNeckCollarBase
   id: ClothingNeckCollarCmd
   name: Captain's collar
   description: The top dog (or cat) around.

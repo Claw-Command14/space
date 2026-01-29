@@ -14,6 +14,8 @@
     rules:
     - id: Thief
       prob: 0.5
+    - id: Devil # Goob
+      prob: 0.3
 
 - type: entity
   id: DeathMatch31
@@ -82,7 +84,7 @@
   id: Nukeops
   components:
   - type: GameRule
-    minPlayers: 2
+    minPlayers: 20
   - type: LoadMapRule
     gameMap: NukieOutpost
   - type: AntagSelection
@@ -194,13 +196,18 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
-    minPlayers: 2
+    minPlayers: 15
+  - type: StationEvent # Claw Command
+    minPlayers: 15
+    reoccurrenceDelay: 600
+    startAnnouncement: false
+    weight: 1
   - type: RevolutionaryRule
   - type: AntagSelection
     definitions:
     - prefRoles: [ HeadRev ]
       max: 2
-      playerRatio: 20 # WD
+      playerRatio: 15 # claw command
       briefing:
         text: head-rev-role-greeting
         color: CornflowerBlue
@@ -233,7 +240,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
-    minPlayers: 2
+    minPlayers: 10
     delay:
       min: 600
       max: 900
@@ -280,9 +287,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RampingStationEventScheduler
-    chaosModifier: 4 # By default, one event each 30-10 seconds after two hours. Changing CVars will cause this to deviate.
-    startingChaosRatio: 0.025 # Starts as slow as survival, but quickly ramps up
-    shiftLengthModifier: 2.5
+    chaosModifier: 6 # Claw Command
+    startingChaosRatio: 0.25 # Claw Command
+    #shiftLengthModifier: 2.5
 
 - type: entity
   id: IrregularStationEventScheduler

@@ -89,6 +89,7 @@
     - id: FoodMeatGoliath
       amount: 3
     - id: MaterialGoliathHide1
+  - type: Absorbable
 
 - type: entity
   id: ActionGoliathTentacle

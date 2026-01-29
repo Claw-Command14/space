@@ -4,6 +4,11 @@
   id: WeaponLeverChester
   description: An improved lever-action rifle designed to fire specialized .45 caliber ammunition for rapid threat removal.
   components:
+  - type: Item # Floof - Gun Shape Refactor
+    size: Large
+    storedRotation: 45
+    shape:
+    - 0,0,4,1
   - type: Sprite
     sprite: _Goobstation/Objects/Weapons/Guns/Lever/chester.rsi
     layers:
@@ -31,7 +36,7 @@
           tags:
           - CartridgeMagnum
   - type: Gun
-    fireRate: 0.55
+    fireRate: 0.80
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
   - type: ChamberMagazineAmmoProvider
@@ -46,7 +51,7 @@
     soundBoltClosed:
       path: /Audio/Weapons/Guns/Bolt/lever_bolt_closed.ogg
       params:
-        volume: -3  
+        volume: -3
     soundBoltOpened:
       path: /Audio/Weapons/Guns/Bolt/lever_bolt_opened.ogg
       params:

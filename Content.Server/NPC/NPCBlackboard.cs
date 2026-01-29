@@ -158,110 +158,110 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
         switch (key)
         {
             case Access:
-            {
-                if (!TryGetValue(Owner, out owner, entManager))
                 {
-                    return false;
-                }
+                    if (!TryGetValue(Owner, out owner, entManager))
+                    {
+                        return false;
+                    }
 
-                var access = entManager.EntitySysManager.GetEntitySystem<AccessReaderSystem>();
-                value = access.FindAccessTags(owner);
-                return true;
-            }
-            case ActiveHand:
-            {
-                if (!TryGetValue(Owner, out owner, entManager) ||
-                    !entManager.TryGetComponent<HandsComponent>(owner, out var hands) ||
-                    hands.ActiveHand == null)
-                {
-                    return false;
-                }
-
-                value = hands.ActiveHand;
-                return true;
-            }
-            case ActiveHandFree:
-            {
-                if (!TryGetValue(Owner, out owner, entManager) ||
-                    !entManager.TryGetComponent<HandsComponent>(owner, out var hands) ||
-                    hands.ActiveHand == null)
-                {
-                    return false;
-                }
-
-                value = hands.ActiveHand.IsEmpty;
-                return true;
-            }
-            case CanMove:
-            {
-                if (!TryGetValue(Owner, out owner, entManager))
-                {
-                    return false;
-                }
-
-                var blocker = entManager.EntitySysManager.GetEntitySystem<ActionBlockerSystem>();
-                value = blocker.CanMove(owner);
-                return true;
-            }
-            case FreeHands:
-            {
-                if (!TryGetValue(Owner, out owner, entManager) ||
-                    !entManager.TryGetComponent<HandsComponent>(owner, out var hands) ||
-                    hands.ActiveHand == null)
-                {
-                    return false;
-                }
-
-                var handos = new List<string>();
-
-                foreach (var (id, hand) in hands.Hands)
-                {
-                    if (!hand.IsEmpty)
-                        continue;
-
-                    handos.Add(id);
-                }
-
-                value = handos;
-                return true;
-            }
-            case Inventory:
-            {
-                if (!TryGetValue(Owner, out owner, entManager) ||
-                    !entManager.TryGetComponent<HandsComponent>(owner, out var hands) ||
-                    hands.ActiveHand == null)
-                {
-                    return false;
-                }
-
-                var handos = new List<string>();
-
-                foreach (var (id, hand) in hands.Hands)
-                {
-                    if (!hand.IsEmpty)
-                        continue;
-
-                    handos.Add(id);
-                }
-
-                value = handos;
-                return true;
-            }
-            case OwnerCoordinates:
-            {
-                if (!TryGetValue(Owner, out owner, entManager))
-                {
-                    return false;
-                }
-
-                if (entManager.TryGetComponent<TransformComponent>(owner, out var xform))
-                {
-                    value = xform.Coordinates;
+                    var access = entManager.EntitySysManager.GetEntitySystem<AccessReaderSystem>();
+                    value = access.FindAccessTags(owner);
                     return true;
                 }
+            case ActiveHand:
+                {
+                    if (!TryGetValue(Owner, out owner, entManager) ||
+                        !entManager.TryGetComponent<HandsComponent>(owner, out var hands) ||
+                        hands.ActiveHand == null)
+                    {
+                        return false;
+                    }
 
-                return false;
-            }
+                    value = hands.ActiveHand;
+                    return true;
+                }
+            case ActiveHandFree:
+                {
+                    if (!TryGetValue(Owner, out owner, entManager) ||
+                        !entManager.TryGetComponent<HandsComponent>(owner, out var hands) ||
+                        hands.ActiveHand == null)
+                    {
+                        return false;
+                    }
+
+                    value = hands.ActiveHand.IsEmpty;
+                    return true;
+                }
+            case CanMove:
+                {
+                    if (!TryGetValue(Owner, out owner, entManager))
+                    {
+                        return false;
+                    }
+
+                    var blocker = entManager.EntitySysManager.GetEntitySystem<ActionBlockerSystem>();
+                    value = blocker.CanMove(owner);
+                    return true;
+                }
+            case FreeHands:
+                {
+                    if (!TryGetValue(Owner, out owner, entManager) ||
+                        !entManager.TryGetComponent<HandsComponent>(owner, out var hands) ||
+                        hands.ActiveHand == null)
+                    {
+                        return false;
+                    }
+
+                    var handos = new List<string>();
+
+                    foreach (var (id, hand) in hands.Hands)
+                    {
+                        if (!hand.IsEmpty)
+                            continue;
+
+                        handos.Add(id);
+                    }
+
+                    value = handos;
+                    return true;
+                }
+            case Inventory:
+                {
+                    if (!TryGetValue(Owner, out owner, entManager) ||
+                        !entManager.TryGetComponent<HandsComponent>(owner, out var hands) ||
+                        hands.ActiveHand == null)
+                    {
+                        return false;
+                    }
+
+                    var handos = new List<string>();
+
+                    foreach (var (id, hand) in hands.Hands)
+                    {
+                        if (!hand.IsEmpty)
+                            continue;
+
+                        handos.Add(id);
+                    }
+
+                    value = handos;
+                    return true;
+                }
+            case OwnerCoordinates:
+                {
+                    if (!TryGetValue(Owner, out owner, entManager))
+                    {
+                        return false;
+                    }
+
+                    if (entManager.TryGetComponent<TransformComponent>(owner, out var xform))
+                    {
+                        value = xform.Coordinates;
+                        return true;
+                    }
+
+                    return false;
+                }
             default:
                 return false;
         }
@@ -324,6 +324,8 @@ public sealed partial class NPCBlackboard : IEnumerable<KeyValuePair<string, obj
     /// Can the NPC climb obstacles for steering.
     /// </summary>
     public const string NavClimb = "NavClimb";
+
+    public const string NavBlob = "NavBlob"; // Goobstation - Blob
 
     /// <summary>
     /// Default key storage for a movement pathfind.

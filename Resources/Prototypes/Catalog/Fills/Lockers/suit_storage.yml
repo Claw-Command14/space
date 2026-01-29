@@ -74,6 +74,7 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitPirateEVA
         - id: ClothingMaskGas
+        - id: ClothingShoesBootsMag
 
 #NTSRA Voidsuit
 - type: entity
@@ -127,6 +128,7 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitAtmos
         - id: ClothingMaskBreath
+        - id: ClothingShoesBootsMag
   - type: AccessReader
     access: [["Atmospherics"]]
 
@@ -172,6 +174,7 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitMedical
         - id: ClothingMaskBreathMedical
+        - id: ClothingShoesBootsMag
   - type: AccessReader
     access: [ [ "ChiefMedicalOfficer" ] ]
 
@@ -186,6 +189,7 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitRd
         - id: ClothingMaskBreath
+        - id: ClothingShoesBootsMag
   - type: AccessReader
     access: [ [ "ResearchDirector" ] ]
 
@@ -232,6 +236,7 @@
         - id: ClothingOuterHardsuitCap
         - id: ClothingMaskGasCaptain
         - id: ClothingMaskGasCaptainCombat
+        - id: ClothingShoesBootsMag
   - type: AccessReader
     access: [["Captain"]]
 
@@ -263,6 +268,7 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitVoidParamed
         - id: ClothingMaskBreathMedical
+        - id: ClothingShoesBootsMag
   - type: AccessReader
     access: [ [ "Paramedic" ] ]
 
@@ -308,6 +314,7 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitPirateCap
         - id: ClothingMaskGas
+        - id: ClothingShoesBootsMag
 
 #Wizard
 - type: entity

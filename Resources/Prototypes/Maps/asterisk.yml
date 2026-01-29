@@ -1,7 +1,7 @@
 - type: gameMap
   id: Asterisk
   mapName: 'Asterisk'
-  mapPath: /Maps/Floof/asterisk.yml # Floofstation
+  mapPath: /Maps/ClawCommand/asterisk.yml # Claw Command
   minPlayers: 0
   maxPlayers: 60
   stations:
@@ -84,3 +84,9 @@
             Clerk: [ 1, 1 ] #FloofStation
             Lawyer: [ 2, 2 ] #FloofStation
             Prosecutor: [ 1, 1 ] #FloofStation
+          # Sillicon
+          MedicalBorg: [ 1, 2 ]
+          ServiceQuadBorg: [ 2, 3 ] #Floofstation
+          MedicalQuadBorg: [ 2, 3 ] #Floofstation
+          SecurityQuadBorg: [ 2, 3 ] #Claw Command
+          SalvageQuadBorg: [ 2, 3 ] #Claw Command

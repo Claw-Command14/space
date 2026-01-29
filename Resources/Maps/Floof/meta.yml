@@ -6091,8 +6091,7 @@ entities:
           6,-6:
             0: 65535
           6,-9:
-            0: 47155
-            2: 8
+            0: 47163
           7,-8:
             0: 61180
           7,-7:
@@ -6100,8 +6099,7 @@ entities:
           7,-6:
             0: 65535
           7,-9:
-            0: 57224
-            2: 3
+            0: 57227
           8,-8:
             0: 53727
           8,-7:
@@ -6109,21 +6107,17 @@ entities:
           8,-6:
             0: 65263
           8,-5:
-            0: 1279
-            2: 57344
+            0: 58623
           8,-4:
-            2: 3822
-            0: 16384
+            0: 20206
           9,-4:
-            2: 7
-            0: 58888
+            0: 58895
           9,-2:
             0: 30711
           9,-1:
             0: 61559
           9,-5:
-            2: 28672
-            0: 239
+            0: 28911
           9,-3:
             0: 12014
           9,0:
@@ -6524,15 +6518,14 @@ entities:
             1: 3584
           12,-8:
             1: 8738
-            3: 34944
+            0: 34944
           12,-7:
             1: 226
             0: 57344
           12,-9:
             1: 57589
           13,-8:
-            3: 13104
-            4: 34944
+            0: 48048
           13,-7:
             1: 240
             0: 61440
@@ -6545,8 +6538,7 @@ entities:
           13,-4:
             0: 62463
           14,-8:
-            4: 13104
-            0: 34944
+            0: 48048
           14,-7:
             1: 240
             0: 61440
@@ -6559,8 +6551,7 @@ entities:
           14,-4:
             0: 63675
           15,-8:
-            0: 13104
-            5: 34944
+            0: 48048
           15,-7:
             1: 240
             0: 61440
@@ -6573,8 +6564,7 @@ entities:
           15,-4:
             0: 65535
           16,-8:
-            5: 13104
-            6: 34944
+            0: 48048
           16,-7:
             1: 240
             0: 61440
@@ -6612,9 +6602,8 @@ entities:
           16,-3:
             0: 65535
           16,-1:
-            0: 57904
+            0: 58040
             1: 4354
-            5: 136
           12,1:
             0: 58606
           12,2:
@@ -7208,8 +7197,7 @@ entities:
             0: 15
             1: 20288
           17,-1:
-            0: 61440
-            5: 255
+            0: 61695
           17,1:
             0: 61166
           17,4:
@@ -7369,8 +7357,7 @@ entities:
           6,-11:
             0: 4095
           6,-10:
-            0: 13243
-            2: 32768
+            0: 46011
           6,-13:
             0: 65535
           7,-12:
@@ -7378,8 +7365,7 @@ entities:
           7,-11:
             0: 39931
           7,-10:
-            0: 35259
-            2: 12288
+            0: 47547
           7,-13:
             0: 26464
           8,-12:
@@ -7417,14 +7403,14 @@ entities:
             1: 257
           16,-2:
             1: 8928
-            5: 32768
+            0: 32768
           17,-4:
             0: 30583
           17,-3:
             0: 65399
           17,-2:
             1: 240
-            5: 61440
+            0: 61440
           17,-5:
             0: 30495
           18,-4:
@@ -7438,12 +7424,12 @@ entities:
             1: 24831
             0: 1792
           19,-4:
-            5: 119
+            0: 119
             1: 40960
           19,-3:
             1: 58106
           19,-5:
-            5: 28672
+            0: 28672
             1: 255
           19,-2:
             1: 8930
@@ -7460,8 +7446,7 @@ entities:
           16,-9:
             1: 63311
           17,-8:
-            6: 13104
-            5: 34944
+            0: 48048
           17,-7:
             1: 240
             0: 61440
@@ -7470,7 +7455,7 @@ entities:
           17,-9:
             1: 65391
           18,-8:
-            5: 13104
+            0: 13104
             1: 34952
           18,-7:
             1: 248
@@ -8493,81 +8478,6 @@ entities:
           - 0
           - 0
           - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 235
-          moles:
-          - 29.818268
-          - 99.82637
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 6666.982
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-        - volume: 2500
-          temperature: 293.15
-          moles:
-          - 0
-          - 0
-          - 0
-          - 6666.982
           - 0
           - 0
           - 0
@@ -12642,7 +12552,7 @@ entities:
       pos: -0.5,-58.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -1753.475
+      secondsUntilStateChange: -1873.8057
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15548,25 +15458,6 @@ entities:
     - type: Transform
       pos: 45.5,59.5
       parent: 2
-- proto: BenchSofaCorpRight
-  entities:
-  - uid: 27926
-    components:
-    - type: Transform
-      pos: 37.5,59.5
-      parent: 2
-  - uid: 27979
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 43.5,52.5
-      parent: 2
-  - uid: 28068
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 45.5,58.5
-      parent: 2
 - proto: BenchSofaCorpLeft
   entities:
   - uid: 27927
@@ -15586,31 +15477,24 @@ entities:
     - type: Transform
       pos: 44.5,59.5
       parent: 2
-- proto: BenchSofaRight
+- proto: BenchSofaCorpRight
   entities:
-  - uid: 9888
+  - uid: 27926
+    components:
+    - type: Transform
+      pos: 37.5,59.5
+      parent: 2
+  - uid: 27979
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 43.5,52.5
+      parent: 2
+  - uid: 28068
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 32.5,-0.5
-      parent: 2
-  - uid: 22068
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 21.5,-0.5
-      parent: 2
-- proto: BenchSofaMiddle
-  entities:
-  - uid: 9882
-    components:
-    - type: Transform
-      pos: 20.5,0.5
-      parent: 2
-  - uid: 9886
-    components:
-    - type: Transform
-      pos: 31.5,0.5
+      pos: 45.5,58.5
       parent: 2
 - proto: BenchSofaLeft
   entities:
@@ -15625,6 +15509,32 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 30.5,-0.5
+      parent: 2
+- proto: BenchSofaMiddle
+  entities:
+  - uid: 9882
+    components:
+    - type: Transform
+      pos: 20.5,0.5
+      parent: 2
+  - uid: 9886
+    components:
+    - type: Transform
+      pos: 31.5,0.5
+      parent: 2
+- proto: BenchSofaRight
+  entities:
+  - uid: 9888
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 32.5,-0.5
+      parent: 2
+  - uid: 22068
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.5,-0.5
       parent: 2
 - proto: BikeHorn
   entities:
@@ -67225,7 +67135,7 @@ entities:
       pos: 23.5,47.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -11924.961
+      secondsUntilStateChange: -12045.292
       state: Opening
   - uid: 27810
     components:
@@ -67291,6 +67201,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 20.5,20.5
+      parent: 2
+- proto: CyborgEndoskeleton
+  entities:
+  - uid: 28535
+    components:
+    - type: Transform
+      pos: 4.462161,-41.318527
       parent: 2
 - proto: DarkTile
   entities:
@@ -78440,7 +78357,7 @@ entities:
       pos: -3.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -39418.055
+      secondsUntilStateChange: -39538.387
       state: Closing
   - uid: 11888
     components:
@@ -135515,6 +135432,13 @@ entities:
     - type: Transform
       pos: 32.5,6.5
       parent: 2
+- proto: Quadborgendoskeleton
+  entities:
+  - uid: 28534
+    components:
+    - type: Transform
+      pos: 2.4656334,-41.205605
+      parent: 2
 - proto: Rack
   entities:
   - uid: 12021
@@ -147430,16 +147354,6 @@ entities:
     - type: Transform
       pos: -29.5,-33.5
       parent: 2
-  - uid: 27662
-    components:
-    - type: Transform
-      pos: -35.5,-32.5
-      parent: 2
-  - uid: 27663
-    components:
-    - type: Transform
-      pos: -35.5,-33.5
-      parent: 2
 - proto: SpawnPointMedicalDoctor
   entities:
   - uid: 21608
@@ -147483,6 +147397,18 @@ entities:
     components:
     - type: Transform
       pos: -8.5,-28.5
+      parent: 2
+- proto: SpawnPointMedicalQuadborg
+  entities:
+  - uid: 21638
+    components:
+    - type: Transform
+      pos: -35.5,-32.5
+      parent: 2
+  - uid: 21639
+    components:
+    - type: Transform
+      pos: -35.5,-33.5
       parent: 2
 - proto: SpawnPointMime
   entities:
@@ -147665,15 +147591,15 @@ entities:
       parent: 2
 - proto: SpawnPointRoboticist
   entities:
-  - uid: 21638
+  - uid: 28532
     components:
     - type: Transform
-      pos: 4.5,-41.5
+      pos: 1.5,-35.5
       parent: 2
-  - uid: 21639
+  - uid: 28533
     components:
     - type: Transform
-      pos: 2.5,-41.5
+      pos: 1.5,-39.5
       parent: 2
 - proto: SpawnPointSalvageSpecialist
   entities:
@@ -147780,6 +147706,18 @@ entities:
     components:
     - type: Transform
       pos: 23.5,-55.5
+      parent: 2
+- proto: SpawnPointServiceQuadborg
+  entities:
+  - uid: 27662
+    components:
+    - type: Transform
+      pos: 3.5,-39.5
+      parent: 2
+  - uid: 27663
+    components:
+    - type: Transform
+      pos: 3.5,-38.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:

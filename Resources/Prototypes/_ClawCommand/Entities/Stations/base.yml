@@ -3,3 +3,9 @@
   abstract: true
   components:
   - type: EmergencyAccessMedbayState
+
+- type: entity
+  id: BaseStationCodeBlueSecretState
+  abstract: true
+  components:
+  - type: CodeBlueSecretState

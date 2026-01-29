@@ -1,0 +1,20 @@
+- type: guideEntry
+  id: Abductors
+  name: guide-entry-abductors
+  text: "/ServerInfo/_ClawCommand/Guidebook/Antagonist/Abductors.xml"
+- type: guideEntry
+  id: Changelings
+  name: guide-entry-changelings
+  text: "/ServerInfo/_ClawCommand/Guidebook/Antagonist/Changelings.xml"
+
+- type: guideEntry
+  id: Devil
+  name: "Devil"
+  text: "/ServerInfo/_ClawCommand/Guidebook/Antagonist/Devil.xml"
+  children:
+  - DevilClauses
+
+- type: guideEntry
+  id: DevilClauses
+  name: "Devil Clauses"
+  text: "/ServerInfo/_ClawCommand/Guidebook/Antagonist/DevilClauses.xml"

@@ -580,7 +580,8 @@
           allowedStates:
           - Alive
           - Critical
-          damageCap: 400
+          - SoftCritical # Claw Command
+          #damageCap: 400 # Claw Command
           damage:
             groups:
               Brute: -0.30
@@ -686,7 +687,7 @@
   functions:
     - !type:TraitAddComponent
       components:
-        - type: FlashImmunity
+        #- type: FlashImmunity
         - type: EyeProtection
 
 - type: trait
@@ -809,6 +810,19 @@
           - BiologicalMetaphysical # Floof - M3739 - #1006
           - Inorganic
           - Silicon
+
+- type: trait
+  id: RestrictedGear
+  category: Physical
+  points: -10
+  requirements:
+  - !type:CVarRequirement
+    cvar: trait.restrictedgear_enabled
+    requiredValue: true
+  - !type:CharacterJobRequirement
+    inverted: true
+    jobs:
+      - Prisoner # Smuggling for prisoners = immediate jailbreak.
 
 - type: trait
   id: Redshirt

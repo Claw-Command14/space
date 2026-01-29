@@ -29,6 +29,14 @@
         - GhostImpassable
 
 - type: entity
+  parent: MobObserver
+  id: MobObserverVip
+  name: VIP observer
+  components:
+  - type: Ghost
+    color: '#aa00ff'
+
+- type: entity
   parent:
   - Incorporeal
   - BaseMob
@@ -67,6 +75,11 @@
     tags:
     - BypassInteractionRangeChecks
   - type: UniversalLanguageSpeaker # Ghosts should understand any language.
+  - type: UserInterface
+    interfaces:
+      enum.RevivalContractUiKey.Key: # Goobstation - Devil
+        type: RevivalContractBoundUserInterface
+        requireInputValidation: false
 
 - type: entity
   id: ActionGhostBoo

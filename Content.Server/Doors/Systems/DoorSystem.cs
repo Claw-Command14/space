@@ -18,7 +18,29 @@ public sealed class DoorSystem : SharedDoorSystem
 
         SubscribeLocalEvent<DoorBoltComponent, PowerChangedEvent>(OnBoltPowerChanged);
     }
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+        var query = EntityQueryEnumerator<DoorComponent, AirlockAtmosBlockOpenComponent, AirtightComponent>();
 
+        while (query.MoveNext(out var uid, out var door, out var airlock, out var airtight))
+        {
+            if (!door.BlockOpenAtmos)
+            {
+                continue;
+            }
+            airlock.Time += frameTime;
+            if (airlock.Time >= 1)
+            {
+                if (door.State == DoorState.Open)
+                {
+                    _airtightSystem.SetAirblocked((uid, airtight), false);
+                }
+                RemComp<AirlockAtmosBlockOpenComponent>(uid);
+            }
+        }
+
+    }
     protected override void SetCollidable(
         EntityUid uid,
         bool collidable,
@@ -30,7 +52,17 @@ public sealed class DoorSystem : SharedDoorSystem
             return;
 
         if (door.ChangeAirtight && TryComp(uid, out AirtightComponent? airtight))
-            _airtightSystem.SetAirblocked((uid, airtight), collidable);
+        {
+            // Claw Command
+            if (door.BlockOpenAtmos && collidable == false)
+            {
+                AddComp<AirlockAtmosBlockOpenComponent>(uid);
+            }
+            else
+            {
+                _airtightSystem.SetAirblocked((uid, airtight), collidable);
+            }
+        }
 
         // Pathfinding / AI stuff.
         RaiseLocalEvent(new AccessReaderChangeEvent(uid, collidable));
@@ -50,4 +82,12 @@ public sealed class DoorSystem : SharedDoorSystem
         ent.Comp.Powered = args.Powered;
         Dirty(ent, ent.Comp);
     }
+
+}
+
+// Claw Command
+[RegisterComponent]
+public sealed partial class AirlockAtmosBlockOpenComponent : Component
+{
+    public float Time;
 }

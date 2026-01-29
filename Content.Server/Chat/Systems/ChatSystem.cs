@@ -419,14 +419,23 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="colorOverride">Optional color for the announcement message</param>
     public void DispatchGlobalAnnouncement(
         string message,
-        string sender = "Central Command",
+        string sender = "Claw Command",
         bool playSound = true,
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null
         )
     {
         var wrappedMessage = Loc.GetString("chat-manager-sender-announcement-wrap-message", ("sender", sender), ("message", FormattedMessage.EscapeText(message)));
-        _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
+        Color? realColor = null;
+        if (sender != "Claw Command")
+        {
+            realColor = colorOverride;
+        }
+        else
+        {
+            realColor = Color.FromHex("#ff2768ff");
+        }
+        _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, realColor);
         if (playSound)
         {
             _audio.PlayGlobal(announcementSound != null ? announcementSound.ToString() : DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
@@ -445,7 +454,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public void DispatchStationAnnouncement(
         EntityUid source,
         string message,
-        string sender = "Central Command",
+        string sender = "Claw Command",
         bool playDefaultSound = true,
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null)

@@ -23,6 +23,10 @@ using Robust.Shared.Physics.Systems;
 using Content.Shared.Actions.Events;
 using Content.Shared.Climbing.Components;
 using Content.Shared._Goobstation.MartialArts.Components;
+using Content.Shared.Damage.Components;
+using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Implants.Components;
+using Robust.Shared.Containers;
 
 namespace Content.Shared.Stunnable;
 
@@ -142,7 +146,6 @@ public abstract class SharedStunSystem : EntitySystem
 
     private void OnKnockInit(EntityUid uid, KnockedDownComponent component, ComponentInit args)
     {
-        RaiseNetworkEvent(new CheckAutoGetUpEvent(GetNetEntity(uid)));
         _layingDown.TryLieDown(uid, null, null, component.DropHeldItemsBehavior);
     }
 
@@ -193,15 +196,35 @@ public abstract class SharedStunSystem : EntitySystem
     public bool TryStun(EntityUid uid, TimeSpan time, bool refresh,
         StatusEffectsComponent? status = null)
     {
-        if (time <= TimeSpan.Zero
+
+        // Claw Command
+        var getUpModifier = 1f;
+
+        if (_container.TryGetContainer(uid, ImplanterComponent.ImplantSlotId, out var implantContainer))
+        {
+
+            var implantCompQuery = GetEntityQuery<GetUpComponent>();
+            foreach (var implant in implantContainer.ContainedEntities)
+            {
+                if (implantCompQuery.TryGetComponent(implant, out var implantComp))
+                {
+                    getUpModifier = implantComp.Modifier;
+                    break;
+                }
+            }
+
+        }
+        var stunTime = time * getUpModifier;
+        // End Claw Command
+        if (stunTime <= TimeSpan.Zero
             || !Resolve(uid, ref status, false)
-            || !_statusEffect.TryAddStatusEffect<StunnedComponent>(uid, "Stun", time, refresh))
+            || !_statusEffect.TryAddStatusEffect<StunnedComponent>(uid, "Stun", stunTime, refresh))
             return false;
 
         var ev = new StunnedEvent();
         RaiseLocalEvent(uid, ref ev);
 
-        _adminLogger.Add(LogType.Stamina, LogImpact.Medium, $"{ToPrettyString(uid):user} stunned for {time.Seconds} seconds");
+        _adminLogger.Add(LogType.Stamina, LogImpact.Medium, $"{ToPrettyString(uid):user} stunned for {stunTime.Seconds} seconds");
         return true;
     }
 
@@ -211,12 +234,32 @@ public abstract class SharedStunSystem : EntitySystem
     public bool TryKnockdown(EntityUid uid, TimeSpan time, bool refresh, DropHeldItemsBehavior behavior,
         StatusEffectsComponent? status = null)
     {
-        if (time <= TimeSpan.Zero || !Resolve(uid, ref status, false))
+        // Claw Command
+        var getUpModifier = 1f;
+
+        if (_container.TryGetContainer(uid, ImplanterComponent.ImplantSlotId, out var implantContainer))
+        {
+
+            var implantCompQuery = GetEntityQuery<GetUpComponent>();
+            foreach (var implant in implantContainer.ContainedEntities)
+            {
+                if (implantCompQuery.TryGetComponent(implant, out var implantComp))
+                {
+                    getUpModifier = implantComp.Modifier;
+                    break;
+                }
+            }
+
+        }
+        var stunTime = time * getUpModifier;
+        // End Claw Command
+
+        if (stunTime <= TimeSpan.Zero || !Resolve(uid, ref status, false))
             return false;
 
         var component = _componentFactory.GetComponent<KnockedDownComponent>();
         component.DropHeldItemsBehavior = behavior;
-        if (!_statusEffect.TryAddStatusEffect(uid, "KnockedDown", time, refresh, component))
+        if (!_statusEffect.TryAddStatusEffect(uid, "KnockedDown", stunTime, refresh, component))
             return false;
 
         var ev = new KnockedDownEvent();
@@ -230,9 +273,30 @@ public abstract class SharedStunSystem : EntitySystem
     public bool TryKnockdown(EntityUid uid, TimeSpan time, bool refresh,
         StatusEffectsComponent? status = null)
     {
-        if (time <= TimeSpan.Zero
+
+        // Claw Command
+        var getUpModifier = 1f;
+
+        if (_container.TryGetContainer(uid, ImplanterComponent.ImplantSlotId, out var implantContainer))
+        {
+
+            var implantCompQuery = GetEntityQuery<GetUpComponent>();
+            foreach (var implant in implantContainer.ContainedEntities)
+            {
+                if (implantCompQuery.TryGetComponent(implant, out var implantComp))
+                {
+                    getUpModifier = implantComp.Modifier;
+                    break;
+                }
+            }
+
+        }
+        var stunTime = time * getUpModifier;
+        // End Claw Command
+
+        if (stunTime <= TimeSpan.Zero
             || !Resolve(uid, ref status, false)
-            || !_statusEffect.TryAddStatusEffect<KnockedDownComponent>(uid, "KnockedDown", time, refresh))
+            || !_statusEffect.TryAddStatusEffect<KnockedDownComponent>(uid, "KnockedDown", stunTime, refresh))
             return false;
 
         var ev = new KnockedDownEvent();

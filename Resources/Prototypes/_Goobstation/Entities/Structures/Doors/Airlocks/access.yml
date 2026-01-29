@@ -48,6 +48,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsBSO ]
+  - type: Sprite
+    sprite: _ClawCommand/Structures/Doors/Airlocks/Standard/clawcommand.rsi
 
 - type: entity
   parent: AirlockCentralCommandGlass
@@ -57,6 +59,8 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsBSO ]
+  - type: Sprite
+    sprite: _ClawCommand/Structures/Doors/Airlocks/Glass/clawcommand.rsi
 
 # NTR locked
 

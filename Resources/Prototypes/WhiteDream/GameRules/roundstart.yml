@@ -4,14 +4,19 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: GameRule
-    minPlayers: 2
+    minPlayers: 15
+  - type: StationEvent # Claw Command
+    minimumPlayers: 15
+    reoccurrenceDelay: 600
+    startAnnouncement: false
+    weight: 2
   - type: BloodCultRule
   - type: AntagSelection
     definitions:
     - prefRoles: [ BloodCultist ]
       max: 4
       min: 2
-      playerRatio: 15
+      playerRatio: 15 #claw command
       briefing:
         text: blood-cult-role-greeting
         color: Red

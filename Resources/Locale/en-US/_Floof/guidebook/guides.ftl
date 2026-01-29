@@ -15,3 +15,5 @@ guide-entry-epistemicsSOP = Science SOP
 guide-entry-engineeringSOP = Engineering SOP
 guide-entry-securitySOP = Security SOP
 guide-entry-briggingSOP = Brigging SOP
+guide-entry-anomSOP = Anomaly SOP
+guide-entry-ccoSOP = Claw Command Officer SOP

@@ -72,6 +72,8 @@
     - WhitelistChameleon
     - HidesNose
     - MaskGasSecurityIngredient
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasBase # FLOOF: Change parent
@@ -92,6 +94,8 @@
         Slash: 0.95
         Piercing: 0.95
         Heat: 0.95
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasBase # FLOOF: Change parent
@@ -107,6 +111,8 @@
     modifiers:
       coefficients:
         Heat: 0.80
+  - type: IngestionBlocker # Goobstation
+    blockSmokeIngestion: true
 
 - type: entity
   parent: ClothingMaskGasAtmos
@@ -715,3 +721,4 @@
   - type: Tag
     tags:
     - IPCMaskWearable # Estacao Pirata - IPCs
+  - type: Unremoveable

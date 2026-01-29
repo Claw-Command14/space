@@ -15,6 +15,9 @@
     - !type:DepartmentTimeRequirement
       department: Security
       min: 13500 # 3.25 hours
+    - !type:DepartmentTimeRequirement
+      department: Civilian
+      min: 13500 # 3.25 hours
   weight: 20
   startingGear: BlueshieldMaidGear
   icon: "JobIconClawCommandMaid"
@@ -28,14 +31,18 @@
   - External
   - Cryogenics
   - Maintenance
-  - Engineering
   - Service
   - Janitor
   - Medical
-  - Research
   - Command
   - CentralCommand
   - BlueshieldOfficer
+  - Bar
+  - Kitchen
+  - Hydroponics
+  - Theatre
+  - Cargo
+  - Salvage
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -55,8 +62,8 @@
     id: BlueshieldPDA
     ears: ClothingHeadsetAltCommand
     #pocket1: UniqueBlueshieldOfficerLockerTeleporter
-    outerClothing: ClothingOuterArmorDuraVest
-    belt: ClothingBeltKatanaSheathFilled
+    #outerClothing: ClothingOuterArmorDuraVest
+    #belt: ClothingBeltKatanaSheathFilledMaid
   storage:
     back:
     - Zipties

@@ -4,6 +4,7 @@ using Content.Server.Station.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using System.Text;
+using Content.Server.AlertLevel;
 
 namespace Content.Server.GameTicking
 {
@@ -34,6 +35,7 @@ namespace Content.Server.GameTicking
         /// The game status of a players user Id. May contain disconnected players
         /// </summary>
         public IReadOnlyDictionary<NetUserId, PlayerGameStatus> PlayerGameStatuses => _playerGameStatuses;
+        [Dependency] private readonly AlertLevelSystem _alertLevelSystem = default!;
 
         public void UpdateInfoText()
         {
@@ -56,20 +58,59 @@ namespace Content.Server.GameTicking
                 EntityQueryEnumerator<StationJobsComponent, StationSpawningComponent, MetaDataComponent>();
 
             var foundOne = false;
-
-            while (query.MoveNext(out _, out _, out var meta))
+            EntityUid stationUid = new EntityUid();
+            while (query.MoveNext(out var uid, out _, out _, out var meta))
             {
                 foundOne = true;
+                stationUid = uid;
                 if (stationNames.Length > 0)
-                        stationNames.Append('\n');
+                    stationNames.Append('\n');
 
                 stationNames.Append(meta.EntityName);
             }
+
+            var alertLevel = "[color=white]None[/color]";
 
             if (!foundOne)
             {
                 stationNames.Append(_gameMapManager.GetSelectedMap()?.MapName ??
                                     Loc.GetString("game-ticker-no-map-selected"));
+            }
+            else
+            {
+                var level = _alertLevelSystem.GetLevel(stationUid);
+                if (level == "green")
+                {
+                    alertLevel = "[color=green]Green[/color]";
+                }
+                else if (level == "blue")
+                {
+                    alertLevel = "[color=blue]Blue[/color]";
+                }
+                else if (level == "red")
+                {
+                    alertLevel = "[color=red]Red[/color]";
+                }
+                else if (level == "yellow")
+                {
+                    alertLevel = "[color=yellow]Yellow[/color]";
+                }
+                else if (level == "violet")
+                {
+                    alertLevel = "[color=purple]Violet[/color]";
+                }
+                else if (level == "delta")
+                {
+                    alertLevel = "[color=red]Delta[/color]";
+                }
+                else if (level == "gamma")
+                {
+                    alertLevel = "[color=red]Gamma[/color]";
+                }
+                else if (level == "epsilon")
+                {
+                    alertLevel = "[color=red]Epsilon[/color]";
+                }
             }
 
             var gmTitle = Loc.GetString(preset.ModeTitle);
@@ -83,7 +124,8 @@ namespace Content.Server.GameTicking
                 ("readyCount", readyCount),
                 ("mapName", stationNames.ToString()),
                 ("gmTitle", gmTitle),
-                ("desc", desc));
+                ("desc", desc),
+                ("alertLevel", alertLevel));
         }
 
         private TickerConnectionStatusEvent GetConnectionStatusMsg()
@@ -107,7 +149,7 @@ namespace Content.Server.GameTicking
 
         private TickerLobbyInfoEvent GetInfoMsg()
         {
-            return new (GetInfoText());
+            return new(GetInfoText());
         }
 
         private void UpdateLateJoinStatus()

@@ -9,10 +9,10 @@
   skinColoration: AnimalFur
   minHeight: 0.65
   defaultHeight: 0.8
-  maxHeight: 1.1
+  maxHeight: 1.2
   minWidth: 0.6
   defaultWidth: 0.8
-  maxWidth: 1.15
+  maxWidth: 1.2
   maleFirstNames: names_tajaran_first
   femaleFirstNames: names_tajaran_first
   lastNames: names_tajaran_last

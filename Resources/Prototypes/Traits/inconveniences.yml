@@ -1,6 +1,7 @@
 - type: trait
   id: LightweightDrunk
   category: Physical
+  points: 1
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
@@ -44,6 +45,7 @@
           threeRandomProb: 0
           cutRandomProb: 0
 
+# Claw Command, better for command and security to always be able to communicate with crew in case they are suspected etc.
 - type: trait
   id: ForeignerLight
   category: TraitsSpeechLanguages
@@ -55,9 +57,9 @@
         - Foreigner
         - Muted
     - !type:CharacterJobRequirement
-      inverted: true
+      inverted: false
       jobs:
-        - Mime
+        - Passenger
   functions:
     - !type:TraitAddComponent
       components:
@@ -76,9 +78,9 @@
         - ForeignerLight
         - Muted
     - !type:CharacterJobRequirement
-      inverted: true
+      inverted: false
       jobs:
-        - Mime
+        - Passenger
   functions:
     - !type:TraitAddComponent
       components:

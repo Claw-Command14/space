@@ -14,8 +14,6 @@
     slots:
     - Back
   - type: Wieldable
-    unwieldOnUse: false
-  - type: GunRequiresWield
   - type: GunWieldBonus
     minAngle: -20
     maxAngle: -20
@@ -28,6 +26,8 @@
     selectedMode: FullAuto
     availableModes:
       - FullAuto
+    unwieldOnUse: false
+  - type: GunRequiresWield
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/lmg.ogg
     soundEmpty:

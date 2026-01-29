@@ -272,6 +272,9 @@
   id: BypassInteractionRangeChecks
 
 - type: Tag
+  id: Cable
+
+- type: Tag
   id: CableCoil
 
 - type: Tag
@@ -542,6 +545,12 @@
 
 - type: Tag
   id: DiscreteHealthAnalyzer #So construction recipes don't eat medical PDAs
+
+- type: Tag
+  id: Disposal
+
+- type: Tag
+  id: DNASolutionScannable
 
 - type: Tag
   id: DockArrivals
@@ -1363,6 +1372,12 @@
   id: Wall
 
 - type: Tag
+  id: TurretCompatibleWeapon # Used in the construction of sentry turrets
+
+- type: Tag
+  id: TurretControlElectronics # Used in the construction of sentry turret control panels
+
+- type: Tag
   id: WallmountGeneratorAPUElectronics
 
 - type: Tag
@@ -1517,3 +1532,6 @@
 
 - type: Tag
   id: MagazineMarkOne
+
+- type: Tag
+  id: RPD

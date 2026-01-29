@@ -89,7 +89,7 @@ public sealed class MobReplacementRuleSystem : GameRuleSystem<MobReplacementRule
                 if (k == MathF.MaxMagnitude(component.NumberToReplace, 1)
                     && component.DoAnnouncement)
                     _chat.DispatchStationAnnouncement(stations[0], Loc.GetString("station-event-rampant-intelligence-announcement"), playDefaultSound: true,
-                        colorOverride: Color.Red, sender: "Central Command");
+                        colorOverride: Color.Red, sender: "Claw Command");
 
                 k--;
             }

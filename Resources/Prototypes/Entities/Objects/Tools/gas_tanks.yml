@@ -39,9 +39,9 @@
       types:
         Blunt: 8
     bluntStaminaDamageFactor: 2.5
-    heavyRateModifier: 1.25
+    heavyRateModifier: 1.5
     heavyDamageBaseModifier: 1.5
-    heavyStaminaCost: 10
+    heavyStaminaCost: 2.5
     maxTargets: 3
     angle: 100
     soundHit:
@@ -53,6 +53,17 @@
       Steel: 185
   - type: StaticPrice
     price: 20
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 105
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 - type: entity
   abstract: true

@@ -116,6 +116,11 @@
         Whitelist = 1 << 20,
 
         /// <summary>
+        /// Claw Command - For Patrons.
+        /// </summary>
+        VIP = 1 << 24,
+
+        /// <summary>
         ///     Dangerous host permissions like scsi.
         /// </summary>
         Host = 1u << 31,

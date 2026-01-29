@@ -221,7 +221,7 @@
 - type: trait
   id: PsionicInsulation
   category: Mental
-  points: -8 #Buy a significant disability to get this.
+  points: -6 #Buy a significant disability to get this.
   functions:
     - !type:TraitAddComponent
       components:
@@ -323,7 +323,7 @@
 - type: trait
   id: AnimalFriend
   category: Mental
-  points: -4
+  points: -3
   functions:
     - !type:TraitModifyFactions
       addFactions:

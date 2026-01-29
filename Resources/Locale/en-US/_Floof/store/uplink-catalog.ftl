@@ -35,3 +35,5 @@ uplink-dehydrated-clown-rat-name = Dehydrated Crazed Clown Rat Box
 uplink-dehydrated-clown-rat-desc = A box containing a modified clown rat, that after hydration, seeks chaos and enemies of the syndicate. Upon expiration due to physical trauma, it will split into 3-4 more and those will split further, eventually reaching the final generation of rats. 
     DISCLAIMER: remember to pet the rats head for the first generation to be friendly, as further generations are too rabid to discern between you and foe.
 
+Uplink-Clothing-Head-Hat-Magician-Syndie-name = Magician's tophat
+Uplink-Clothing-Head-Hat-Magician-Syndie-desc = A magician never reveals their secrets.

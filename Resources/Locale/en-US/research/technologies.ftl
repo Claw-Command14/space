@@ -39,6 +39,7 @@ research-technology-experimental-battery-ammo = Experimental Battery Ammo
 research-technology-basic-shuttle-armament = Shuttle basic armament
 research-technology-advanced-shuttle-weapon = Advanced shuttle weapons
 
+research-technology-laser-sentry-turrets = Laser Sentry Turret Technology
 research-technology-basic-robotics = Basic Robotics
 research-technology-basic-anomalous-research = Basic Anomalous Research
 research-technology-basic-xenoarcheology = Basic XenoArcheology

@@ -1,35 +1,35 @@
-- type: trait
-  id: MindSwapPower
-  category: Mental
-  points: -3
-  functions:
-    - !type:TraitAddPsionics
-      psionicPowers:
-        - MindSwapPower
-  requirements:
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterTraitRequirement
-          traits:
-            - LatentPsychic
-        - !type:CharacterJobRequirement
-          jobs:
-            - Chaplain
-            - Librarian
-    - !type:CharacterLogicOrRequirement
-      requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
-        - !type:CharacterTraitRequirement
-          traits:
-            - AnomalousPositronics
-    - !type:CharacterJobRequirement
-      inverted: true
-      jobs:
-        - ResearchDirector
-        - ForensicMantis
+#- type: trait
+#  id: MindSwapPower
+#  category: Mental
+#  points: -3
+#  functions:
+#    - !type:TraitAddPsionics
+#      psionicPowers:
+#        - MindSwapPower
+#  requirements:
+#    - !type:CharacterLogicOrRequirement
+#      requirements:
+#        - !type:CharacterTraitRequirement
+#          traits:
+#            - LatentPsychic
+#        - !type:CharacterJobRequirement
+#          jobs:
+#            - Chaplain
+#            - Librarian
+ #   - !type:CharacterLogicOrRequirement
+ #     requirements:
+#        - !type:CharacterSpeciesRequirement
+#          inverted: true
+#          species:
+#            - IPC
+#        - !type:CharacterTraitRequirement
+#          traits:
+#            - AnomalousPositronics
+#    - !type:CharacterJobRequirement
+#      inverted: true
+#      jobs:
+#        - ResearchDirector
+#        - ForensicMantis
 
 - type: trait
   id: HealingWordPower
