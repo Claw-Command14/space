@@ -61,10 +61,10 @@
     range: 1.75
     damage:
       groups:
-        Brute: 3
+        Brute: 2
       types:
         Structural: 15
-        Piercing: 6
+        #Piercing: 6
     heavyStaminaCost: 0 #claw command
   - type: DamageOtherOnHit #floof
     staminaCost: 0 #claw command
@@ -94,7 +94,7 @@
     attackRate: 4
     damage:
       groups:
-        Brute: 6
+        Brute: 2
       types:
         Structural: 40
     heavyStaminaCost: 0 #claw command
@@ -103,7 +103,7 @@
     damage:
       types:
         Structural: 30
-        Piercing: 9
+        Piercing: 1
 
 
 - type: entity
