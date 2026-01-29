@@ -266,16 +266,17 @@
     - state: omnilaser
       shader: unshaded
   - type: Physics
-  - type: Fixtures
+
+  - type: Fixtures #CLAW start
     fixtures:
       projectile:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.15,-0.3,0.15,0.3"
+          bounds: "-0.2,-0.2,0.2,0.2"
         hard: false
         mask:
-        - Impassable
-        - BulletImpassable
+        - Opaque  #CLAW end
+
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
@@ -973,16 +974,16 @@
     - state: omnilaser
       shader: unshaded
   - type: Physics
-  - type: Fixtures
+  - type: Fixtures #Claw start
     fixtures:
       projectile:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.15,-0.3,0.15,0.3"
+          bounds: "-0.2,-0.2,0.2,0.2"
         hard: false
         mask:
-        - Impassable
-        - BulletImpassable
+        - Opaque #Claw end
+
       fly-by: *flybyfixture
   - type: Ammo
   - type: StaminaDamageOnCollide
@@ -1117,22 +1118,23 @@
 - type: entity
   name: wide laser barrage
   id: BulletLaserSpread
-  parent: BulletLaser
+  parent: BulletLaserShotgun #claw
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
-    proto: BulletLaser
+    proto:  BulletLaserShotgun #Claw
     count: 5 #50 heat damage if you hit all your shots, but wide spread
     spread: 30
+
 
 - type: entity
   name: narrow laser barrage
   id: BulletLaserSpreadNarrow
-  parent: BulletLaser
+  parent: BulletLaserShotgun #Claw
   categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
-    proto: BulletLaser
+    proto: BulletLaserShotgun #Claw
     count: 4 #52 heat damage if you hit all your shots, but narrower spread
     spread: 10
 
