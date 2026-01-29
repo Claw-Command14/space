@@ -1,0 +1,19 @@
+- type: entity
+  parent: BookBase
+  id: BookMaidJuice
+  name: maid juice
+  description: This book cover features a woman in a maid outfit surrounded by slimy appendages and strange fluids, while laying on the ground. The author name reads Clara Baker.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/books.rsi
+      layers:
+      - state: paper
+      - state: cover_base
+        color: "#366ed6"
+      - state: decor_wingette
+        color: "#2739b0"
+      - state: maid_slime
+      - state: icon_corner
+        color: gold
+    - type: Paper
+      content: book-maid-juice

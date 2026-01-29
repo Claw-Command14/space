@@ -93,8 +93,8 @@ entities:
         immutable: True
         temperature: 213.15
         moles:
-        - 26.1898548
-        - 98.523744
+        - 26.189856
+        - 98.52374
         - 0
         - 0
         - 0
@@ -12089,7 +12089,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -9878.369
+      secondsUntilStateChange: -9995.273
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -12401,7 +12401,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -19327.297
+      secondsUntilStateChange: -19444.201
     - type: DeviceLinkSource
       lastSignals:
         DoorStatus: True
@@ -50766,6 +50766,15 @@ entities:
     - type: Transform
       pos: 30.5,-31.5
       parent: 2
+- proto: CrateCentCommCryo
+  entities:
+  - uid: 19370
+    components:
+    - type: Transform
+      pos: -0.5,-10.5
+      parent: 2
+    - type: Lock
+      locked: False
 - proto: CrateChemistryD
   entities:
   - uid: 7287
@@ -51682,7 +51691,7 @@ entities:
       parent: 2
     - type: Door
       state: Opening
-      secondsUntilStateChange: -2459.2756
+      secondsUntilStateChange: -2576.1797
   - uid: 7419
     components:
     - type: Transform

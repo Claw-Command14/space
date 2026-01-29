@@ -125,3 +125,6 @@
       - id: BookInspiration
         prob: 0.1
         orGroup: BookAuthor
+      - id: BookMaidJuice # Claw Command
+        prob: 0.333
+        orGroup: BookAuthor
