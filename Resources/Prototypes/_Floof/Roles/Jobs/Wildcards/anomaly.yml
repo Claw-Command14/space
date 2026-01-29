@@ -10,7 +10,7 @@
   canBeAntagTarget: false
   icon: "JobIconNoId"
   joinNotifyCrew: false
-  whitelisted: false
+  whitelisted: True #Claw
   access:
   - Maintenance
   requirements:
@@ -23,8 +23,7 @@
   - !type:AddComponentSpecial
     components:
       - type: AnomalyJob
-      - type: Pacified
-
+      #- type: Pacified # Claw
 - type: startingGear
   id: AnomalyGear
   equipment:
