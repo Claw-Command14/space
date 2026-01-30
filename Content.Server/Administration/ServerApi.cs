@@ -519,7 +519,7 @@ public sealed partial class ServerApi : IPostInjectInit
                 {
                     UserId = player.UserId.UserId,
                     Name = player.Name,
-                    IsAdmin = adminData != null,
+                    IsAdmin = (adminData != null && adminData.HasFlag(AdminFlags.Admin)),
                     IsDeadminned = !adminData?.Active ?? false
                 });
             }

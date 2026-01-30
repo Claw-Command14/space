@@ -55,7 +55,8 @@ namespace Content.Server.Administration.Managers
 
         public bool IsAdmin(ICommonSession session, bool includeDeAdmin = false)
         {
-            return GetAdminData(session, includeDeAdmin) != null;
+            var datz = GetAdminData(session, includeDeAdmin);
+            return datz != null && datz.HasFlag(AdminFlags.Admin);
         }
 
         public AdminData? GetAdminData(ICommonSession session, bool includeDeAdmin = false)
@@ -343,7 +344,7 @@ namespace Content.Server.Administration.Managers
             }
             else if (e.NewStatus == SessionStatus.Disconnected)
             {
-                if (_admins.Remove(e.Session, out var reg ) && _cfg.GetCVar(CCVars.AdminAnnounceLogout))
+                if (_admins.Remove(e.Session, out var reg) && _cfg.GetCVar(CCVars.AdminAnnounceLogout))
                 {
                     if (reg.Data.Stealth)
                         _chat.SendAdminAnnouncement(Loc.GetString("admin-manager-admin-logout-message",
@@ -453,7 +454,7 @@ namespace Content.Server.Administration.Managers
                     Flags = flags
                 };
 
-                if (dbData.Title != null  && _cfg.GetCVar(CCVars.AdminUseCustomNamesAdminRank))
+                if (dbData.Title != null && _cfg.GetCVar(CCVars.AdminUseCustomNamesAdminRank))
                 {
                     data.Title = dbData.Title;
                 }

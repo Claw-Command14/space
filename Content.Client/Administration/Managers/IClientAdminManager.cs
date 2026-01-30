@@ -70,7 +70,8 @@ namespace Content.Client.Administration.Managers
         /// <returns>true if the player is an admin, false otherwise.</returns>
         bool IsAdmin(bool includeDeAdmin = false)
         {
-            return GetAdminData(includeDeAdmin) != null;
+            var datz = GetAdminData(includeDeAdmin);
+            return datz != null && datz.HasFlag(AdminFlags.Admin);
         }
     }
 }
