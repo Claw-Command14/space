@@ -1,0 +1,29 @@
+- type: job
+  id: AdmiralClaw
+  name: job-name-admiralclaw
+  description: job-description-admiralclaw
+  playTimeTracker: JobAdmiralClaw
+  setPreference: false
+  startingGear: AdmiralClawGear
+  icon: "JobIconNanotrasen"
+  supervisors: job-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+
+- type: startingGear
+  id: AdmiralClawGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
+    shoes: ClothingShoesBootsCombatFilled
+    head: ClothingHeadHatBeretCentcomm
+    eyes: ClothingEyesGlassesMedSec
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingBlueshieldArmourVest
+    id: AdmiralClawPDA
+    ears: ClothingHeadsetAltCentCom
+    belt: ClothingBeltSecurityWebbingFilled
+    pocket1: MagazineUniversalMagnum
+    pocket2: WeaponPistolUniversal

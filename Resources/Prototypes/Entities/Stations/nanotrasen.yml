@@ -28,7 +28,7 @@
     - BaseRandomStation
     - BaseStationMail # Nyano component, required for station mail to function
     - BaseStationTheDark # Floof
-    - BaseStationCaptainState # DeltaV
+    - BaseStationCaptainState # DeltaV , claw command ert depends on it too
     - BaseStationStockMarket # DeltaV
     - BaseStationEmergencyAccessMedbayState # claw command
     - BaseStationCodeBlueSecretState # claw command
@@ -79,7 +79,7 @@
     - BaseRandomStation
     - BaseStationMail # Nyano component, required for station mail to function
     - BaseStationTheDark # Floof
-    - BaseStationCaptainState # DeltaV
+    - BaseStationCaptainState # DeltaV , claw command ert depends on it too
     - BaseStationStockMarket # DeltaV
     - BaseStationEmergencyAccessMedbayState # claw command
     - BaseStationCodeBlueSecretState # claw command

@@ -26,6 +26,10 @@ namespace Content.Server.GameTicking
 
         private WebhookIdentifier? _webhookIdentifier;
 
+        private string? DiscordRoundEndRoleWebhook { get; set; }
+
+        private string? DiscordERTNotificationWebhook { get; set; }
+
         [ViewVariables]
         private string? RoundEndSoundCollection { get; set; }
 

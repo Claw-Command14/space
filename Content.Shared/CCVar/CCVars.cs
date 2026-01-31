@@ -631,6 +631,17 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<string> DiscordRoundEndRoleWebhook =
             CVarDef.Create("discord.round_end_role", string.Empty, CVar.SERVERONLY);
 
+        /// Claw Command: URL of the Discord webhook which will relay ERT notification messages.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordERTNotificationWebhook =
+            CVarDef.Create("discord.ert_notification_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+        /// <summary>
+        /// Claw Command: Role id for the Discord webhook to ping when the round ends.
+        /// </summary>
+        public static readonly CVarDef<string> DiscordERTNotificationRoleWebhook =
+            CVarDef.Create("discord.ert_notification_role", string.Empty, CVar.SERVERONLY);
+
         /// <summary>
         ///     Enable Discord linking, show linking button and modal window
         /// </summary>

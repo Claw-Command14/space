@@ -1,3 +1,7 @@
 - type: accessLevel
   id: BlueshieldMaid
   name: id-card-access-level-bsm
+
+- type: accessLevel
+  id: AdmiralClaw
+  name: id-card-access-level-admiralclaw

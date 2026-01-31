@@ -45,6 +45,8 @@
     - Shadowkin
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
+    - Vox # Claw Command
+    - Arachne # Claw Command
   components:
     - type: MindShield
     - type: GhostRole
@@ -86,6 +88,19 @@
     - Shadowkin
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
+    - Human # Claw Command
+    - Oni # Claw Command
+    - Arachne # Claw Command
+    - Arachnid # Claw Command
+    - Rodentia # Claw Command
+    - Harpy # Claw Command
+    - Vox # Claw Command
+    - Chitinid # Claw Command
+    - Moth # Claw Command
+    - Diona # Claw Command
+    - SlimePerson # Claw Command
+    - IPC # Claw Command
+    - Lamia # Claw Command
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
@@ -513,6 +528,19 @@
     - Shadowkin
     - Monkey # Shitmed Change
     - Kobold # Shitmed Change
+    - Human # Claw Command
+    - Oni # Claw Command
+    - Arachne # Claw Command
+    - Arachnid # Claw Command
+    - Rodentia # Claw Command
+    - Harpy # Claw Command
+    - Vox # Claw Command
+    - Chitinid # Claw Command
+    - Moth # Claw Command
+    - Diona # Claw Command
+    - SlimePerson # Claw Command
+    - IPC # Claw Command
+    - Lamia # Claw Command
   components:
     - type: MindShield
     - type: Loadout

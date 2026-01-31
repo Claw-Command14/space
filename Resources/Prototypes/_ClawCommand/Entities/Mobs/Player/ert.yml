@@ -1,0 +1,35 @@
+- type: entity
+  name: Claw Command Admiral
+  id: RandomHumanoidSpawnerAdmiralClaw
+  components:
+    - type: Sprite
+      sprite: Markers/jobs.rsi
+      state: centcom
+    - type: RandomHumanoidSpawner
+      settings: AdmiralClaw
+
+- type: randomHumanoidSettings
+  id: AdmiralClaw
+  speciesBlacklist:
+    - Shadowkin
+    - Monkey # Shitmed Change
+    - Kobold # Shitmed Change
+    - Human # Claw Command
+    - Oni # Claw Command
+    - Arachne # Claw Command
+    - Arachnid # Claw Command
+    - Rodentia # Claw Command
+    - Harpy # Claw Command
+    - Vox # Claw Command
+    - Chitinid # Claw Command
+    - Moth # Claw Command
+    - Diona # Claw Command
+    - SlimePerson # Claw Command
+    - IPC # Claw Command
+    - Lamia # Claw Command
+  components:
+    - type: MindShield
+    - type: GetUp # Claw Command
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ AdmiralClawGear ]

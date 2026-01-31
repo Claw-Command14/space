@@ -45,7 +45,7 @@
   - Salvage
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, GetUpImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff

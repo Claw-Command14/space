@@ -1,0 +1,18 @@
+# Blueshield
+- type: entity
+  parent: IDCardStandard
+  id: AdmiralClawIDCard
+  name: claw command admiral ID card
+  components:
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Misc/id_cards.rsi
+    state: "clawcommand"
+  - type: Item
+    heldPrefix:
+  - type: PresetIdCard
+    job: AdmiralClaw
+  - type: Access
+    tags:
+    - CentralCommand
+    - BlueshieldOfficer
+    - AdmiralClaw
