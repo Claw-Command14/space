@@ -170,7 +170,7 @@ internal sealed class ErtSystem : EntitySystem
                 shell.WriteError("No main station found.");
                 return;
             }
-            shell.WriteLine($"Team detached. Spawning {securityI} security staff, {medicalI} medical staff, 1 leader" + admiralText + ".");
+            shell.WriteLine($"{unitName} detached. Spawning {securityI} security staff, {medicalI} medical staff, 1 leader" + admiralText + ".");
             _chatSystem.DispatchStationAnnouncement(station.Value, "Emergency Response: " + unitName + " is being detached and briefed at centcomm. ETA 10 minutes.",
                 colorOverride: Color.FromHex("#ff2768ff"),
                 sender: "Claw Command",
@@ -178,7 +178,14 @@ internal sealed class ErtSystem : EntitySystem
             _announcer.SendAnnouncementAudio(unitName, Filter.Broadcast());
             if (discordNotify)
             {
-                SendERTDiscordMessage(amount);
+                try
+                {
+                    SendERTDiscordMessage(amount);
+                }
+                catch (Exception e)
+                {
+                    Log.Error($"Error while sending ert Discord message: {e}");
+                }
             }
 
         }
