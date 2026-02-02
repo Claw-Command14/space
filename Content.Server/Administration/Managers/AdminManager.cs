@@ -190,14 +190,20 @@ namespace Content.Server.Administration.Managers
 
                 if (curAdmin == null)
                 {
+
                     // Now an admin.
-                    var reg = new AdminReg(player, aData)
+
+                    if (aData.Flags.HasFlag(AdminFlags.Admin))
                     {
-                        IsSpecialLogin = special,
-                        RankId = rankId
-                    };
-                    _admins.Add(player, reg);
-                    _chat.DispatchServerMessage(player, Loc.GetString("admin-manager-became-admin-message"));
+                        var reg = new AdminReg(player, aData)
+                        {
+                            IsSpecialLogin = special,
+                            RankId = rankId
+                        };
+                        _admins.Add(player, reg);
+
+                        _chat.DispatchServerMessage(player, Loc.GetString("admin-manager-became-admin-message"));
+                    }
                 }
                 else
                 {
@@ -366,6 +372,12 @@ namespace Content.Server.Administration.Managers
             }
 
             var (dat, rankId, specialLogin) = adminDat.Value;
+
+            if (!dat.Flags.HasFlag(AdminFlags.Admin))
+            {
+                return;
+            }
+
             var reg = new AdminReg(session, dat)
             {
                 IsSpecialLogin = specialLogin,
