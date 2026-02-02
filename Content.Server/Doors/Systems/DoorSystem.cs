@@ -56,7 +56,7 @@ public sealed class DoorSystem : SharedDoorSystem
             // Claw Command
             if (door.BlockOpenAtmos && collidable == false)
             {
-                AddComp<AirlockAtmosBlockOpenComponent>(uid);
+                EnsureComp<AirlockAtmosBlockOpenComponent>(uid);
             }
             else
             {
