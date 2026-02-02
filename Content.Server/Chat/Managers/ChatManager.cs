@@ -132,7 +132,7 @@ namespace Content.Server.Chat.Managers
 
                 DebugTools.AssertNotNull(adminData);
 
-                if (adminData == null)
+                if (adminData == null || !adminData.Flags.HasFlag(AdminFlags.Admin))
                     return false;
 
                 if (flagBlacklist != null && adminData.HasFlag(flagBlacklist.Value))
