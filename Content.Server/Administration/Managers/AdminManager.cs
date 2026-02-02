@@ -397,6 +397,8 @@ namespace Content.Server.Administration.Managers
                         IsSpecialLogin = specialLogin,
                         RankId = rankId
                     };
+
+                    reg2.Data.Active = true;
                     _vips.Add(session, reg2);
                 }
                 return;
@@ -444,7 +446,6 @@ namespace Content.Server.Administration.Managers
             var promoteHost = IsLocal(session) && _cfg.GetCVar(CCVars.ConsoleLoginLocal)
                               || _promotedPlayers.Contains(session.UserId)
                               || session.Name == _cfg.GetCVar(CCVars.ConsoleLoginHostUser);
-
             if (promoteHost)
             {
                 var data = new AdminData
