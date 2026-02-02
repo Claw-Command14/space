@@ -38,6 +38,7 @@ namespace Content.Server.Administration.Managers
         [Dependency] private readonly ILogManager _logManager = default!;
 
         private readonly Dictionary<ICommonSession, AdminReg> _admins = new();
+        private readonly Dictionary<ICommonSession, AdminReg> _vips = new();
         private readonly HashSet<NetUserId> _promotedPlayers = new();
 
         public event Action<AdminPermsChangedEventArgs>? OnPermsChanged;
@@ -64,6 +65,10 @@ namespace Content.Server.Administration.Managers
             if (_admins.TryGetValue(session, out var reg) && (reg.Data.Active || includeDeAdmin))
             {
                 return reg.Data;
+            }
+            if (_vips.TryGetValue(session, out var reg2) && (reg2.Data.Active || includeDeAdmin))
+            {
+                return reg2.Data;
             }
 
             return null;
@@ -204,6 +209,16 @@ namespace Content.Server.Administration.Managers
 
                         _chat.DispatchServerMessage(player, Loc.GetString("admin-manager-became-admin-message"));
                     }
+                    else if (aData.Flags.HasFlag(AdminFlags.VIP))
+                    {
+                        var reg = new AdminReg(player, aData)
+                        {
+                            IsSpecialLogin = special,
+                            RankId = rankId
+                        };
+                        _vips.Add(player, reg);
+                    }
+
                 }
                 else
                 {
@@ -375,6 +390,15 @@ namespace Content.Server.Administration.Managers
 
             if (!dat.Flags.HasFlag(AdminFlags.Admin))
             {
+                if (dat.Flags.HasFlag(AdminFlags.VIP))
+                {
+                    var reg2 = new AdminReg(session, dat)
+                    {
+                        IsSpecialLogin = specialLogin,
+                        RankId = rankId
+                    };
+                    _vips.Add(session, reg2);
+                }
                 return;
             }
 
