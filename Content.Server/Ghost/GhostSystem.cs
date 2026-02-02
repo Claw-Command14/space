@@ -421,8 +421,9 @@ namespace Content.Server.Ghost
             return true;
         }
 
-        public EntityUid? SpawnGhost(Entity<MindComponent?> mind, EntityCoordinates? spawnPosition = null,
-            bool canReturn = false)
+        public EntityUid? SpawnGhost(Entity<MindComponent?> mind,
+        EntityCoordinates? spawnPosition = null,
+            bool canReturn = false, ICommonSession? session = null)
         {
             if (!Resolve(mind, ref mind.Comp))
                 return null;
@@ -452,6 +453,14 @@ namespace Content.Server.Ghost
                     ghostPrototype = "MobObserverVip";
                 }
             }
+            else
+                if (session is not null)
+                {
+                    if (_adminManager.HasAdminFlag(session, AdminFlags.VIP))
+                    {
+                        ghostPrototype = "MobObserverVip";
+                    }
+                }
 
             var ghost = SpawnAtPosition(ghostPrototype, spawnPosition.Value);
             var ghostComponent = Comp<GhostComponent>(ghost);

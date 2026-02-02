@@ -128,6 +128,7 @@ namespace Content.Client.Ghost
         {
             GhostVisibility = true;
             PlayerAttached?.Invoke(component);
+
         }
 
         private void OnGhostState(EntityUid uid, GhostComponent component, ref AfterAutoHandleStateEvent args)
