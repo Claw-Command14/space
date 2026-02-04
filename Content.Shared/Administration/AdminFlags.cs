@@ -119,6 +119,10 @@
         /// Claw Command - For Patrons.
         /// </summary>
         VIP = 1 << 24,
+        /// <summary>
+        /// Claw Command - For Patrons.
+        /// </summary>
+        VIPPlus = 1 << 25,
 
         /// <summary>
         ///     Dangerous host permissions like scsi.

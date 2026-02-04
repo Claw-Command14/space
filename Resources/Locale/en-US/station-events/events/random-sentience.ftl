@@ -1,4 +1,5 @@
 ﻿## Phrases used for where central command got this information.
+random-sentience-event-data-0 = scans from our long-range sensors
 random-sentience-event-data-1 = scans from our long-range sensors
 random-sentience-event-data-2 = our sophisticated probabilistic models
 random-sentience-event-data-3 = our omnipotence

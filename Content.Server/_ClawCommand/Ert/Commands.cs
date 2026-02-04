@@ -14,10 +14,20 @@ using Robust.Shared.Player;
 using Content.Server.Discord;
 using Robust.Shared.Configuration;
 using Content.Shared.CCVar;
+using Content.Shared.Players;
+using Robust.Shared.Network;
+using Content.Shared.Roles.Jobs;
+using Content.Shared.Preferences;
+using Content.Server.Preferences.Managers;
+using Content.Server.Mind;
+using Content.Server.Station.Systems;
 namespace Content.Server._ClawCommand.Ert;
 
 internal sealed class ErtSystem : EntitySystem
 {
+
+    [Dependency] private readonly MindSystem _mindSystem = default!;
+    [Dependency] private readonly IServerPreferencesManager _prefs = default!;
     [Dependency] private readonly IConsoleHost _consoleHost = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
@@ -36,7 +46,7 @@ internal sealed class ErtSystem : EntitySystem
     {
         base.Initialize();
 
-        _consoleHost.RegisterCommand("ert", Loc.GetString("ert-command-desc"), "ert type amount discordNotify admiral",
+        _consoleHost.RegisterCommand("ert", Loc.GetString("ert-command-desc"), "ert type amount discordNotify admiral admiralMe",
             ErtCallback,
             GetCompletion);
     }
@@ -45,7 +55,7 @@ internal sealed class ErtSystem : EntitySystem
     public void ErtCallback(IConsoleShell shell, string argStr, string[] args)
     {
 
-        if (args.Length > 4 || args.Length < 1)
+        if (args.Length > 5 || args.Length < 1)
         {
             shell.WriteError("Needs at least one argument (type).");
             return;
@@ -86,6 +96,13 @@ internal sealed class ErtSystem : EntitySystem
             !bool.TryParse(args[3], out admiral))
         {
             shell.WriteError("Unable to parse admiral.");
+            return;
+        }
+        bool admiralMe = false;
+        if (args.Length > 4 &&
+            !bool.TryParse(args[4], out admiralMe))
+        {
+            shell.WriteError("Unable to parse admiralMe.");
             return;
         }
 
@@ -150,7 +167,51 @@ internal sealed class ErtSystem : EntitySystem
                 }
                 else if (isMatchingAdmiralJob && admiral)
                 {
-                    mob = Spawn(AdmiralPrototype, xform.Coordinates);
+                    if (admiralMe)
+                    {
+                        if (shell.Player is null)
+                        {
+                            shell.WriteLine("You must be Player.");
+                            continue;
+                        }
+                        if (shell.Player is not ICommonSession player)
+                        {
+                            shell.WriteError(Loc.GetString("shell-only-players-can-run-this-command"));
+                            return;
+                        }
+                        if (shell.Player.AttachedEntity is null)
+                        {
+                            shell.WriteLine("You must be attached to an entity, observe as ghost.");
+                            continue;
+                        }
+                        if (!_mindSystem.TryGetMind(shell.Player.AttachedEntity.Value, out var mindId, out var mind))
+                        {
+                            shell.WriteLine("You must have a mind, try observe as ghost.");
+                            continue;
+
+                        }
+
+                        var data = player.ContentData();
+                        if (data?.UserId == null)
+                        {
+                            shell.WriteError(Loc.GetString("shell-entity-is-not-mob"));
+                            continue;
+                        }
+
+                        HumanoidCharacterProfile character;
+
+                        character = (HumanoidCharacterProfile) _prefs.GetPreferences(data.UserId).SelectedCharacter;
+
+                        mob = _entityManager.System<StationSpawningSystem>()
+                .SpawnPlayerMob(xform.Coordinates, profile: character, entity: null, job: new JobComponent { Prototype = "AdmiralClaw" }, station: null);
+
+                        _mindSystem.TransferTo(mindId, mob);
+
+                    }
+                    else
+                    {
+                        mob = Spawn(AdmiralPrototype, xform.Coordinates);
+                    }
                 }
             }
             var admiralText = "";
@@ -237,11 +298,29 @@ internal sealed class ErtSystem : EntitySystem
         {
             return CompletionResult.FromHintOptions(["false"], "Optional boolean: Spawn admin only admiral role.");
         }
+        else if (args.Length == 5)
+        {
+            return CompletionResult.FromHintOptions(["false"], "Optional boolean: Admiral comes in as your currently selected character. Won't work if you admin ghosted. Respawn to lobby and observe as your char and then do the command without having entered aghost.");
+        }
 
         return CompletionResult.Empty;
     }
+    // copy of Content.Server.DeltaV.Administration.Commands;
+    public bool FetchCharacters(NetUserId player, out HumanoidCharacterProfile[] characters)
+    {
+        characters = null!;
+        if (!_prefs.TryGetCachedPreferences(player, out var prefs))
+            return false;
 
+        characters = prefs.Characters
+            .Where(kv => kv.Value is HumanoidCharacterProfile)
+            .Select(kv => (HumanoidCharacterProfile) kv.Value)
+            .ToArray();
+
+        return true;
+    }
 }
+
 
 public static class SecurityUnitNameGenerator
 {

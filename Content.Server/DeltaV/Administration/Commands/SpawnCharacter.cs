@@ -110,7 +110,7 @@ public sealed class SpawnCharacter : IConsoleCommand
         return CompletionResult.Empty;
     }
 
-    private bool FetchCharacters(NetUserId player, out HumanoidCharacterProfile[] characters)
+    public bool FetchCharacters(NetUserId player, out HumanoidCharacterProfile[] characters)
     {
         characters = null!;
         if (!_prefs.TryGetCachedPreferences(player, out var prefs))
