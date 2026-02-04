@@ -3,7 +3,7 @@
   mapName: 'Pebble'
   mapPath: /Maps/ClawCommand/pebble.yml # Claw Command
   minPlayers: 0
-  maxPlayers: 30
+  maxPlayers: 20
   stations:
     PebbleStation:
       stationProto: StandardNanotrasenStation
