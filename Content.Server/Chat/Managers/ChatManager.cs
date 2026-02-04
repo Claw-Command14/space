@@ -248,7 +248,15 @@ namespace Content.Server.Chat.Managers
             var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
             if (_adminManager.HasAdminFlag(player, AdminFlags.VIP))
             {
-                colorOverride = Color.FromHex("#aa00ff");
+                if (_adminManager.HasAdminFlag(player, AdminFlags.VIPPlus))
+                {
+                    colorOverride = Color.FromHex("#ff006f");
+                }
+                else
+                {
+
+                    colorOverride = Color.FromHex("#aa00ff");
+                }
             }
             if (_adminManager.HasAdminFlag(player, AdminFlags.Admin))
             {
