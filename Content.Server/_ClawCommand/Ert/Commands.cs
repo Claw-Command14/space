@@ -288,7 +288,7 @@ internal sealed class ErtSystem : EntitySystem
         }
         else if (args.Length == 2)
         {
-            return CompletionResult.FromHintOptions(["4"], "Optional integer: Amount of ERT roles to spawn.");
+            return CompletionResult.FromHintOptions(["4"], "Optional integer: Amount of ERT roles to spawn, excludes admiral. By default with admiral enabled it is 4+1=5 total.");
         }
         else if (args.Length == 3)
         {
