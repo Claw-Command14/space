@@ -262,7 +262,7 @@
 - type: loadout
   id: LoadoutSecurityRestrictedGearPistolSvalin
   category: JobsSecurityAUncategorized
-  cost: 5
+  cost: 4 #Claw command
   canBeHeirloom: true
   requirements:
     - !type:CharacterTraitRequirement
