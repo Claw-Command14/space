@@ -581,7 +581,12 @@
     duration: 1
     earliestStart: 20
     minimumPlayers: 12
+    conditions: # Claw command  added so rod wont happen without 3 engis
+    - !type:DepartmentCountCondition
+      department: Engineering
+      range: {min: 3}
   - type: ImmovableRodRule
+
 
 - type: entity
   categories: [ HideSpawnMenu ]
