@@ -279,7 +279,7 @@
     - !type:CharacterJobRequirement
       inverted: true
       jobs:
-        - Musician
+        - Musician #
 
 - type: loadout
   id: LoadoutItemAccordion
@@ -1050,7 +1050,7 @@
       group: LoadoutPets
   functions:
     - !type:LoadoutMakeFollower
-    
+
 - type: loadout # Floof - Mood Lighting for LONG ERP sessions
   id: LoadoutItemBoxCandleInfinite
   category: Items

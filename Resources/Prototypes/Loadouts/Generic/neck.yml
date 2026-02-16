@@ -165,7 +165,7 @@
   id: LoadoutItemsPrideLGBTPin
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckLGBTPin
   requirements:
@@ -176,7 +176,7 @@
   id: LoadoutItemsPrideAromanticPin
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckAromanticPin
   requirements:
@@ -187,7 +187,7 @@
   id: LoadoutItemsPrideAsexualPin
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckAsexualPin
   requirements:
@@ -198,7 +198,7 @@
   id: LoadoutItemsPrideBisexualPin
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckBisexualPin
   requirements:
@@ -209,7 +209,7 @@
   id: LoadoutItemsPrideGayPin
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckGayPin
   requirements:
@@ -220,7 +220,7 @@
   id: LoadoutItemsPrideIntersexPin
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckIntersexPin
   requirements:
@@ -231,7 +231,7 @@
   id: LoadoutItemsPrideLesbianPin
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claws
   items:
     - ClothingNeckLesbianPin
   requirements:
@@ -242,7 +242,7 @@
   id: LoadoutItemsPrideNonBinaryPin
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckNonBinaryPin
   requirements:
@@ -253,7 +253,7 @@
   id: LoadoutItemsPridePansexualPin
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claws
   items:
     - ClothingNeckPansexualPin
   requirements:
@@ -264,7 +264,7 @@
   id: LoadoutItemsPrideTransPin
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckTransPin
   requirements:
@@ -288,7 +288,7 @@
   id: LoadoutNeckCrucifixColorSaintPeter
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   customColorTint: true
   items:
     - ClothingNeckCrucifixColorSaintPeter
@@ -300,7 +300,7 @@
   id: LoadoutNeckCrucifixGold
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckCrucifixGold
   requirements:
@@ -311,7 +311,7 @@
   id: LoadoutNeckCrucifixGoldSaintPeter
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckCrucifixGoldSaintPeter
   requirements:
@@ -322,7 +322,7 @@
   id: LoadoutNeckCrucifixSilver
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckCrucifixSilver
   requirements:
@@ -333,7 +333,7 @@
   id: LoadoutNeckCrucifixSilverSaintPeter
   category: Neck
   cost: 0
-  exclusive: true
+  exclusive: false #claw
   items:
     - ClothingNeckCrucifixSilverSaintPeter
   requirements:
