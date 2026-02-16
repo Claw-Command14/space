@@ -14,8 +14,10 @@ using System.Numerics;
 
 namespace Content.Server.Atmos.EntitySystems;
 
+
 public sealed partial class AtmosphereSystem
 {
+    private const float MinAtmosForce = 1f;
     private EntProtoId _spaceWindProto = "SpaceWindVisual";
     private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new();
     private void UpdateHighPressure(float frameTime)
@@ -78,12 +80,13 @@ public sealed partial class AtmosphereSystem
             return;
         tile.LastPressureDirection = pressureVector;
 
+        // Claw Command move this pressureVector * SpaceWindStrengthMultiplier before guard against extremely small vectors.
+        pressureVector *= SpaceWindStrengthMultiplier;
+
         // Calculate this HERE so that we aren't running the square root of a whole Newton vector per item.
         var pVecLength = pressureVector.Length();
-        if (pVecLength <= 1) // Then guard against extremely small vectors.
+        if (pVecLength <= MinAtmosForce) // Then guard against extremely small vectors.
             return;
-
-        pressureVector *= SpaceWindStrengthMultiplier;
 
         if (SpaceWindVisuals && atmosComp.SpaceWindSoundCooldown == 0)
         {
@@ -161,6 +164,10 @@ public sealed partial class AtmosphereSystem
         if (TryComp(ent.Owner, out HumanoidAppearanceComponent? humanoidAppearance))
         {
             pressureVector *= HumanoidThrowMultiplier;
+
+            var pVecLength2 = pressureVector.Length();
+            if (pVecLength2 <= MinAtmosForce) // Then guard against extremely small vectors.
+                return;
 
             if (SpaceWindAllowKnockdown)
             {
