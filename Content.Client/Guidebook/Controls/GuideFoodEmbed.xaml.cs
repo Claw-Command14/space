@@ -21,7 +21,7 @@ namespace Content.Client.Guidebook.Controls;
 ///     Control for embedding a food recipe into a guidebook.
 /// </summary>
 [UsedImplicitly, GenerateTypedNameReferences]
-public sealed partial class GuideFoodEmbed : BoxContainer, IDocumentTag, ISearchableControl
+public sealed partial class GuideFoodEmbed : BoxContainer, IDocumentTag, ISearchableControl, IPrototypeRepresentationControl
 {
     [Dependency] private readonly IEntitySystemManager _systemManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
@@ -83,6 +83,8 @@ public sealed partial class GuideFoodEmbed : BoxContainer, IDocumentTag, ISearch
             FoodName.SetMarkup(Loc.GetString("guidebook-food-unknown-proto", ("id", data.Result)));
             return;
         }
+
+        RepresentedPrototype = proto;
 
         var composition = data.Composition
             .Select(it => _prototype.TryIndex<ReagentPrototype>(it.Reagent.Prototype, out var reagent) ? (reagent, it.Quantity) : (null, 0))
@@ -158,4 +160,6 @@ public sealed partial class GuideFoodEmbed : BoxContainer, IDocumentTag, ISearch
         background = new Color(r, g, b);
         text = lum > 0.5f ? Color.Black : Color.White;
     }
+
+    public IPrototype? RepresentedPrototype { get; private set; }
 }

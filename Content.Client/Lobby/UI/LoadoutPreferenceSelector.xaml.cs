@@ -9,6 +9,7 @@ using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Clothing.Loadouts.Systems;
 using Content.Shared.Customization.Systems;
+using Content.Shared.Guidebook;
 using Content.Shared.Paint;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -209,10 +210,7 @@ public sealed partial class LoadoutPreferenceSelector : Control
 
             var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
             //TODO: Don't close the guidebook if its already open, just go to the correct page
-            guidebookController.ToggleGuidebook(
-                new Dictionary<string, GuideEntry> { { Loadout.GuideEntry, guideRoot } },
-                includeChildren: true,
-                selected: Loadout.GuideEntry);
+            guidebookController.ToggleGuidebook();
         };
 
         // Create a checkbox to get the loadout

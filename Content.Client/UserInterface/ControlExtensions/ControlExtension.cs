@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Client.Guidebook.Controls;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -66,6 +67,25 @@ public static class ControlExtension
         }
 
         return controlList;
+    }
+
+    /// <summary>Q
+    /// Search the control’s tree for a parent node of type T
+    /// E.g. to find the control implementing some event handling interface.
+    /// </summary>
+    public static bool TryGetParentHandler<T>(this Control child, [NotNullWhen(true)] out T? result)
+    {
+        for (var control = child; control is not null; control = control.Parent)
+        {
+            if (control is not T handler)
+                continue;
+
+            result = handler;
+            return true;
+        }
+
+        result = default;
+        return false;
     }
 
     public static bool ChildrenContainText(this Control parent, string search)

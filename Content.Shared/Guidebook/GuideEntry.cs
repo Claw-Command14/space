@@ -2,7 +2,13 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 using Robust.Shared.Utility;
 
-namespace Content.Client.Guidebook;
+namespace Content.Shared.Guidebook;
+
+[Prototype]
+public sealed partial class GuideEntryPrototype : GuideEntry, IPrototype
+{
+    public string ID => Id;
+}
 
 [Virtual]
 public class GuideEntry
@@ -26,8 +32,8 @@ public class GuideEntry
     /// <summary>
     ///     The "children" of this guide for when guides are shown in a tree / table of contents.
     /// </summary>
-    [DataField("children", customTypeSerializer:typeof(PrototypeIdListSerializer<GuideEntryPrototype>))]
-    public List<string> Children = new();
+    [DataField]
+    public List<ProtoId<GuideEntryPrototype>> Children = new();
 
     /// <summary>
     ///     Enable filtering of items.
@@ -40,12 +46,8 @@ public class GuideEntry
     /// </summary>
     [DataField("priority")] public int Priority = 0;
 
+    [DataField] public bool RuleEntry;
+
     // Floof
     [DataField] public bool DefaultCollapsed = false;
-}
-
-[Prototype("guideEntry")]
-public sealed partial class GuideEntryPrototype : GuideEntry, IPrototype
-{
-    public string ID => Id;
 }

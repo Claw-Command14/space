@@ -84,21 +84,42 @@ public sealed partial class GuideFoodSource : BoxContainer, ISearchableControl
 
     private void GenerateControl(FoodRecipeData entry)
     {
+        SourceLabel.Visible = false;
+
         if (!_protoMan.TryIndex(entry.Recipe, out var recipe))
         {
+            SourceLabel.Visible = true;
             SourceLabel.SetMessage(Loc.GetString("guidebook-food-unknown-proto", ("id", entry.Result)));
             return;
         }
 
-        var combinedSolids = recipe.IngredientsSolids
-            .Select(it => _protoMan.TryIndex<EntityPrototype>(it.Key, out var proto) ? FormatIngredient(proto, it.Value) : "")
-            .Where(it => it.Length > 0);
-        var combinedLiquids = recipe.IngredientsReagents
-            .Select(it => _protoMan.TryIndex<ReagentPrototype>(it.Key, out var proto) ? FormatIngredient(proto, it.Value) : "")
-            .Where(it => it.Length > 0);
+        foreach (var (id, amount) in recipe.IngredientsSolids)
+        {
+            if (!_protoMan.TryIndex<EntityPrototype>(id, out var proto))
+                continue;
 
-        var combinedIngredients = string.Join("\n", combinedLiquids.Union(combinedSolids));
-        SourceLabel.SetMessage(Loc.GetString("guidebook-food-processing-recipe", ("ingredients", combinedIngredients)));
+            var msg = new FormattedMessage();
+            msg.AddMarkupOrThrow(Loc.GetString("guidebook-food-ingredient-solid", ("name", proto.Name), ("amount", amount)));
+
+            var label = new GuidebookRichPrototypeLink();
+            label.LinkedPrototype = proto;
+            label.SetMessage(msg);
+            IngredientsContainer.AddChild(label);
+        }
+
+        foreach (var (id, amount) in recipe.IngredientsReagents)
+        {
+            if (!_protoMan.TryIndex<ReagentPrototype>(id, out var proto))
+                continue;
+
+            var msg = new FormattedMessage();
+            msg.AddMarkupOrThrow(Loc.GetString("guidebook-food-ingredient-liquid", ("name", proto.LocalizedName), ("amount", amount)));
+
+            var label = new GuidebookRichPrototypeLink();
+            label.LinkedPrototype = proto;
+            label.SetMessage(msg);
+            IngredientsContainer.AddChild(label);
+        }
 
         ProcessingTexture.Texture = GetRsiTexture("/Textures/Structures/Machines/microwave.rsi", "mw");
         ProcessingLabel.Text = Loc.GetString("guidebook-food-processing-cooking", ("time", recipe.CookTime));
@@ -106,17 +127,29 @@ public sealed partial class GuideFoodSource : BoxContainer, ISearchableControl
 
     private void GenerateControl(FoodReactionData entry)
     {
+        SourceLabel.Visible = false;
+
         if (!_protoMan.TryIndex(entry.Reaction, out var reaction))
         {
+            SourceLabel.Visible = true;
             SourceLabel.SetMessage(Loc.GetString("guidebook-food-unknown-proto", ("id", entry.Reaction)));
             return;
         }
 
-        var combinedReagents = reaction.Reactants
-            .Select(it => _protoMan.TryIndex<ReagentPrototype>(it.Key, out var proto) ? FormatIngredient(proto, it.Value.Amount) : "")
-            .Where(it => it.Length > 0);
+        foreach (var (id, reactant) in reaction.Reactants)
+        {
+            if (!_protoMan.TryIndex<ReagentPrototype>(id, out var proto))
+                continue;
 
-        SourceLabel.SetMessage(Loc.GetString("guidebook-food-processing-recipe", ("ingredients", string.Join("\n", combinedReagents))));
+            var msg = new FormattedMessage();
+            msg.AddMarkupOrThrow(Loc.GetString("guidebook-food-ingredient-liquid", ("name", proto.LocalizedName), ("amount", reactant.Amount)));
+
+            var label = new GuidebookRichPrototypeLink();
+            label.LinkedPrototype = proto;
+            label.SetMessage(msg);
+            IngredientsContainer.AddChild(label);
+        }
+
         ProcessingTexture.TexturePath = "/Textures/Interface/Misc/beakerlarge.png";
         ProcessingLabel.Text = Loc.GetString("guidebook-food-processing-reaction");
     }
