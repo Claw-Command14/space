@@ -11,6 +11,8 @@ namespace Content.Client.Guidebook.RichText;
 [UsedImplicitly]
 public sealed class TextLinkTag : IMarkupTag
 {
+    public static Color LinkColor => Color.CornflowerBlue;
+
     public string Name => "textlink";
 
     public Control? Control;

@@ -2,7 +2,7 @@
                 xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-                MinSize="800 00"
+                MinSize="800 400"
                 Title="{Loc 'chem-master-bound-user-interface-title'}">
     <BoxContainer Orientation="Horizontal" VerticalExpand="true" MinSize="0 200">
         <TabContainer Name="Tabs" Margin="5 5 7 5" HorizontalExpand="True">
@@ -148,7 +148,7 @@
                 VerticalExpand="True"
                 HorizontalExpand="True"
                 Margin="2 2 2 2"
-                Columns="4" />
+                Columns="3" />
         </BoxContainer>
     </BoxContainer>
 </controls:FancyWindow>

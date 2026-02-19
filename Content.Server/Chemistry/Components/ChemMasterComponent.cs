@@ -33,7 +33,7 @@ namespace Content.Server.Chemistry.Components
         [DataField]
         public List<int> Amounts = new()
         {
-            1, 5, 10, 15, 20, 25, 30, 50
+            1, 5, 10, 15, 20, 25, 30, 50, 100
         };
     }
 }
