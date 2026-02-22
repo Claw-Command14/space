@@ -29,13 +29,6 @@
     Piercing: 1.1
 
 - type: damageModifierSet
-  id: SmallTrait
-  coefficients: # make small folks take 5% more brute damage
-    Blunt: 1.05
-    Slash: 1.05
-    Piercing: 1.05
-
-- type: damageModifierSet
   id: Dragon
   coefficients: # Floof - Dragon buffs
     Slash: 0.85
