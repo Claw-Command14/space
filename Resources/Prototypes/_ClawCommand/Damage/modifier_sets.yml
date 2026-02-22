@@ -50,3 +50,10 @@
     Slash: 1.10
     Piercing: 0.90
     Heat: 0.80 # Good against heat
+
+- type: damageModifierSet
+  id: SmallTrait
+  coefficients: # make small folks take 5% more brute damage
+    Blunt: 1.05
+    Slash: 1.05
+    Piercing: 1.05
