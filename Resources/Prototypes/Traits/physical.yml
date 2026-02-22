@@ -372,7 +372,7 @@
             - 4,0,5,4
         - type: Carriable # Claw Command
           freeHandsRequired: 2 #Default is 2, so keep it that way, isn't tiny, just small, but still beeg
-          pickupDuration: 2 # Default is 3, plus they will already be lighter. Get scooped.
+          pickupDuration: 3 # Default is 3, plus they will already be lighter. Get scooped. Reverted so all the changes are just debuffs (tiny pickup duration is like 5?)
         - type: CanEscapeInventory # Claw Command
           baseResistTime: 6 # Default is 5, takes a bit longer when small TODO: fix players able to drag themselves out of bags instantly!
         - type: CritModifier # Claw Command
