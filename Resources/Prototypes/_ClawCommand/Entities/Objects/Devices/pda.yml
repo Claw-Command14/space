@@ -28,3 +28,23 @@
       - AstroNavCartridge
       - StockTradingCartridge # DeltaV - StockTrading
       - MedTekCartridge
+
+
+
+- type: entity
+  parent: [ERTLeaderPDA, BlueshieldPDA ]
+  id: BlueshieldMaidPDA
+  name: Claw Command Maid PDA
+  description: The red C of Claw Command is engraved on the front.
+  components:
+  - type: Pda
+    id: BlueshieldIDCard
+    state: pda-blueshield
+  - type: Icon
+    sprite: _ClawCommand/Objects/Devices/pda.rsi
+    state: pda-blueshield
+  - type: Sprite
+    sprite: _ClawCommand/Objects/Devices/pda.rsi
+    state: pda-blueshield
+  - type: PdaBorderColor
+    borderColor: "#3c94c5"
