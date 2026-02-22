@@ -59,7 +59,7 @@
     eyes: ClothingEyesGlassesMedSec
     head: ClothingHeadHatCatEarsCosmetic
     gloves: ClothingHandsGlovesColorWhite
-    id: BlueshieldMaidPDAPDA #
+    id: BlueshieldMaidPDAPDA# #
     ears: ClothingHeadsetAltCommand
     #pocket1: UniqueBlueshieldOfficerLockerTeleporter
     #outerClothing: ClothingOuterArmorDuraVest

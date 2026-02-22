@@ -33,7 +33,7 @@
 
 - type: entity
   parent: [ERTLeaderPDA, BlueshieldPDA ]
-  id: BlueshieldMaidPDA
+  id: BlueshieldMaidPDA #
   name: Claw Command Maid PDA
   description: The red C of Claw Command is engraved on the front.
   components:
