@@ -513,11 +513,12 @@
     state: e-cautery-on
   - type: Item
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-cautery.rsi
-    inhandVisuals:
+    inhandVisuals: # Claw command start
       left:
-      - state: inhand-left-on
+      - state: on-inhand-left
       right:
-      - state: inhand-right-on
+      - state: on-inhand-right
+      # Claw command end
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/cautery1.ogg
@@ -576,11 +577,14 @@
     state: e-scalpel-on
   - type: Item
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
-    inhandVisuals:
+    inhandVisuals:  # Claw command start
       left:
-      - state: inhand-left-on
+     # - state: on-inhand-left
+      - state: off-inhand-left
       right:
-      - state: inhand-right-on
+     # - state: on-inhand-right
+      - state: off-inhand-right
+      # claw command end
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
@@ -639,11 +643,12 @@
     state: adv-retractor-on
   - type: Item
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/adv-retractor.rsi
-    inhandVisuals:
+    inhandVisuals: #claw command start
       left:
-      - state: inhand-left-on
+      - state: off-inhand-left
       right:
-      - state: inhand-right-on
+      - state: off-inhand-left
+      # Claw comamnd end
   - type: SurgeryTool
     startSound:
       path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
