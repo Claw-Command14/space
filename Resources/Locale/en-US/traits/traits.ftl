@@ -330,11 +330,11 @@ trait-description-Clumsy =
     You have a severe deficiency in hand-eye-coordination, resulting in an inability to do some things that others would take for granted.
     Any weapons you may try to use are more likely to injure yourself than others. You are unable to climb any objects without injuring yourself.
 
-<#-- trait-name-Small = Small    # Claw Command 
-trait-description-Small =
-    You are much smaller than a typical person, and can climb into spaces others would not normally be able to fit into, such as duffel bags.
-    This trait does not in any way modify your character's size, it merely requires that your character be at most the size of a standard Tajaran.
--->
+# Claw Command     Trait new trait description in Claw Command folder's trait.ftl file
+# trait-name-Small = Small 
+# trait-description-Small =
+#    You are much smaller than a typical person, and can climb into spaces others would not normally be able to fit into, such as duffel bags.
+#    This trait does not in any way modify your character's size, it merely requires that your character be at most the size of a standard Tajaran.
 
 trait-name-TemperatureTolerance = Temperature Tolerance
 trait-description-TemperatureTolerance =
