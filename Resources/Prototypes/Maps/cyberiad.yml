@@ -34,6 +34,7 @@
             Musician: [ 1, 1 ]
             Janitor: [ 1, 2 ]
             Mime: [ 1, 1 ]
+            Reporter: [ 1, 1 ] # Claw command
           #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 1, 1]
