@@ -23,6 +23,7 @@
 - type: entity
   parent: BaseGameRule
   id: Devil
+  categories: [ HideSpawnMenu ]
   components:
   - type: DevilRule
   - type: GameRule
@@ -30,6 +31,12 @@
   - type: AntagObjectives
     objectives:
     - DevilContractObjective
+  - type: StationEvent
+    earliestStart: 20
+    weight: 8
+    minimumPlayers: 5
+    reoccurrenceDelay: 30
+    startAnnouncement: false
   - type: AntagSelection
     selectionTime: PostPlayerSpawn
     agentName: devil-roundend-name
@@ -38,7 +45,14 @@
       max: 2
       playerRatio: 20
       lateJoinAdditional: true
-#      jobBlacklist: [ Chaplain, Mime ] # Chaplain is obvious. Mime can't write.
+      blacklist:
+        components:
+        - AntagImmune
+        - RevolutionaryRole
+        - TraitorRole
+        - ThiefRole
+        - InitialInfectedRole
+# jobBlacklist: [ Chaplain, Mime ] # Chaplain is obvious. Mime can't write.
 
 
 # Blob
