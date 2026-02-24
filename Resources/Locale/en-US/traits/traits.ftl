@@ -330,7 +330,7 @@ trait-description-Clumsy =
     You have a severe deficiency in hand-eye-coordination, resulting in an inability to do some things that others would take for granted.
     Any weapons you may try to use are more likely to injure yourself than others. You are unable to climb any objects without injuring yourself.
 
-# Claw Command     Trait new trait description in Claw Command folder's trait.ftl file
+# Claw Command     New trait description in Claw Command folder's trait.ftl file
 # trait-name-Small = Small 
 # trait-description-Small =
 #    You are much smaller than a typical person, and can climb into spaces others would not normally be able to fit into, such as duffel bags.
