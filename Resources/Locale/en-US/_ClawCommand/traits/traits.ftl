@@ -28,3 +28,18 @@ trait-description-Small =
     You also are more vulnerable (10% increased brute damage, 10% reduced crit and death thresholds) and have to exert more effort (10% reduced stamina).
 
 examine-small-trait-message = {CAPITALIZE(SUBJECT($entity))} is small. Handle with some care!
+
+trait-name-Weakservos = Weak Servos
+trait-description-Weakservos = 
+    Your servo motors and actuators are either ancient, cheap or damaged, or your hydraulics' pressure is low. One thing is sure, you're weak.
+    Your stamina pool is halved, making you greately vulnerable to shoving and stunning attacks.
+
+trait-name-Aestheticsku = Aesthetic SKU
+trait-description-Aestheticsku =
+    Your body is built more fragile than others but is also a bit more aesthetic, resulting in a greater susceptibility to critical damage.
+    Your damage threshold for shutting down is decreased by 5 points.
+
+trait-name-Porcelaindoll = Porcelain Doll
+trait-description-Porcelaindoll =
+    Your body is built more a lot fragile than others but is also a literal art piece, resulting in a far greater susceptibility to critical damage.
+    Your damage threshold for shutting down is decreased by 15 points.
