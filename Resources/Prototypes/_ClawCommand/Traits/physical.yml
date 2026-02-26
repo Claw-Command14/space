@@ -35,7 +35,7 @@
     - !type:TraitReplaceComponent
       components:
         - type: CritModifier
-          critThresholdModifier: -10
+          critThresholdModifier: -5
 
 - type: trait
   id: Porcelaindoll
