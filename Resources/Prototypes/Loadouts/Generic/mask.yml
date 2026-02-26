@@ -14,7 +14,7 @@
   id: LoadoutMaskMuzzle
   category: Mask
   cost: 1
-  exclusive: true
+  exclusive: false # Claw
   items:
     - ClothingMaskMuzzle
   requirements:
