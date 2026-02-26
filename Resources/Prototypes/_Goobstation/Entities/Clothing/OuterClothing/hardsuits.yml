@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ ClothingOuterHardsuitBase, BaseSyndicateAnchoredContraband ]
+  parent: [ ClothingOuterHardsuitBase ]
   id: ClothingOuterHardsuitCybersunDreadnought
   name: Cybersun dreadnought suit
   description: The Syndicate places its glory on your shoulders, do not disappoint.
