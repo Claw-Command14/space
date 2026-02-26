@@ -1,0 +1,57 @@
+- type: trait
+  id: Weakservos
+  category: Physical
+  points: 5
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: false
+      species:
+      - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+      - Lethargy
+      - Vigor
+  functions:
+  - !type:TraitReplaceComponent
+    components:
+      - type: StaminaCritModifier
+        critThresholdModifier: -50
+
+- type: trait
+  id: Aestheticsku
+  category: Physical
+  points: 3
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: false
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Porcelaindoll
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: CritModifier
+          critThresholdModifier: -5
+
+- type: trait
+  id: Porcelaindoll
+  category: Physical
+  points: 7
+  requirements:
+    - !type:CharacterSpeciesRequirement
+      inverted: false
+      species:
+        - IPC
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Aestheticsku
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: CritModifier
+          critThresholdModifier: -15
