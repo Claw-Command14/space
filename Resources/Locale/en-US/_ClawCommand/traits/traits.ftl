@@ -42,4 +42,5 @@ trait-description-Aestheticsku =
 trait-name-Porcelaindoll = Porcelain Doll
 trait-description-Porcelaindoll =
     Your body is built more a lot fragile than others but is also a literal art piece, resulting in a far greater susceptibility to critical damage.
+    Instead of tough alloys, your surface is a soft skin simulacrum, or an ivory-like intricately decorated shell.
     Your damage threshold for shutting down is decreased by 15 points.
