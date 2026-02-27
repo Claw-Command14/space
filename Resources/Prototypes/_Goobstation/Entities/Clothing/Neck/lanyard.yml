@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ExecutiveIDCard
+  name: ID card (Executive Access)
+  description: NanoTrasen employees are legally obligated to listen to someone with one of these.
+  components:
+  - type: Sprite
+    sprite: Resources/Textures/_Goobstation/Objects/Misc/executive.rsi/icon.png
+  - type: Clothing
+    sprite: Resources/Textures/_Goobstation/Objects/Misc/executive.rsi/icon.png
