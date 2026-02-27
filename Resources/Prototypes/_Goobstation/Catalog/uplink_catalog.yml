@@ -78,6 +78,6 @@
   icon: { sprite: _Goobstation/Clothing/OuterClothing/Hardsuits/dreadnought.rsi, state: icon }
   productEntity: CrateSyndicateDreadnought
   cost:
-    Telecrystal: 65
+    Telecrystal: 50
   categories:
   - UplinkWearables
