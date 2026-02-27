@@ -39,8 +39,7 @@
     sprintModifier: 0.5
   - type: HeldSpeedModifier
   - type: ToggleableClothing
-    clothingPrototypes:
-      head: ClothingHeadHelmetHardsuitDreadnought
+    clothingPrototype: ClothingHeadHelmetHardsuitDreadnought
   - type: Tag
     tags:
     - Hardsuit
