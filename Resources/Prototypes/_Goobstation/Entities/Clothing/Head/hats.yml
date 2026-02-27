@@ -92,4 +92,4 @@
   - type: FlashImmunity
   - type: FlashSoundSuppression
   - type: SpeechSoundsReplacer
-    speechSounds: Chrono # why? its badass.
+    speechSounds: Chrono
