@@ -42,3 +42,54 @@
     tags:
     - ClothMade
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatTrainer
+  name: NCT's hat
+  description: A hat issued to Nanotrasen Career Trainers. Makes you feel stylish.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hats/trainer.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hats/trainer.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadBeretTrainer
+  name: NCT's beret
+  description: A beret issued to Nanotrasen Career Trainers. Makes you feel stylish.
+  components:
+   - type: Sprite
+     sprite: _Goobstation/Clothing/Head/Hats/trainer_beret.rsi
+   - type: Clothing
+     sprite: _Goobstation/Clothing/Head/Hats/trainer_beret.rsi
+
+# cybersun dreadnought
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHelmetHardsuitDreadnought
+  name: cybersun Dreadnought hardsuit helmet
+  description: A helmet, looking at this you wonder if there anyone alive.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Clothing/Head/Hardsuits/dreadnought.rsi
+  - type: Clothing
+    sprite: _Goobstation/Clothing/Head/Hardsuits/dreadnought.rsi
+  - type: PointLight
+    color: red
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.89
+        Slash: 0.89
+        Piercing: 0.89
+        Heat: 0.89
+  - type: FlashImmunity
+  - type: FlashSoundSuppression
+  - type: SpeechSoundsReplacer
+    speechSounds: Chrono
