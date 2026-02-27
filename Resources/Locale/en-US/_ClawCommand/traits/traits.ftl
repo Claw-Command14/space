@@ -36,11 +36,13 @@ trait-description-Weakservos =
 
 trait-name-Aestheticsku = Aesthetic SKU
 trait-description-Aestheticsku =
-    Your body is built more fragile than others but is also a bit more aesthetic, resulting in a greater susceptibility to critical damage.
+    Your body is built more fragile than others, but is also a bit more aesthetic, resulting in a greater susceptibility to critical damage.
     Your damage threshold for shutting down is decreased by 5 points.
 
 trait-name-Porcelaindoll = Porcelain Doll
 trait-description-Porcelaindoll =
-    Your body is built more a lot fragile than others but is also a literal art piece, resulting in a far greater susceptibility to critical damage.
+    Your body has been made lot more delicate than others, a true art piece though resulting in a far greater susceptibility to critical damage.
     Instead of tough alloys, your surface is a soft skin simulacrum, or an ivory-like intricately decorated shell.
     Your damage threshold for shutting down is decreased by 15 points.
+
+examine-porcelaindoll-trait-message = {CAPITALIZE(SUBJECT($entity))} is delicate, but gorgeous!

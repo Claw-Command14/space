@@ -55,3 +55,6 @@
       components:
         - type: CritModifier
           critThresholdModifier: -15
+    - !type:TraitPushDescription
+        descriptionExtensions:
+          - description: examine-porcelaindoll-trait-message
