@@ -5,6 +5,6 @@
   description: NanoTrasen employees are legally obligated to listen to someone with one of these.
   components:
   - type: Sprite
-    sprite: Resources/Textures/_Goobstation/Clothing/Neck/executive.rsi
+    sprite: _Goobstation/Clothing/Neck/executive.rsi
   - type: Clothing
-    sprite: Resources/Textures/_Goobstation/Clothing/Neck/executive.rsi
+    sprite: _Goobstation/Clothing/Neck/executive.rsi
